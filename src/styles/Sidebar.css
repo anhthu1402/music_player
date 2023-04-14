@@ -4,10 +4,37 @@
   background-color: #ffdde5;
   height: 100%;
   overflow: auto;
+  border-top-right-radius: 1.1em;
+  border-bottom-right-radius: 1.1em;
+}
+
+.sidebar-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #86a7ff;
+  margin-bottom: 2rem;
+  margin-top: 0.5rem;
+}
+
+.sidebar-header h2 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-style: normal;
+  font-weight: 642;
+  line-height: 39px;
+  font-size: 1.8em;
+  color: #86a7ff;
+  font-stretch: 105;
+}
+
+.sidebar-header img {
+  margin-right: 1.2rem;
 }
 
 .sidebar-item {
-  padding: 0.75em 1em;
+  padding: 1em 1em;
   display: block;
   transition: background-color 0.15s;
   border-radius: 5px;
@@ -53,6 +80,7 @@
 }
 .sidebar-item.open > .sidebar-content {
   height: auto;
+  padding-top: 0.5em;
 }
 
 .sidebar-item.plain {

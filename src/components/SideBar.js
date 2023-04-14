@@ -2,11 +2,18 @@ import React from "react";
 import SidebarItem from "./SidebarItem";
 import { SidebarData } from "./SidebarData";
 import "../styles/Sidebar.css";
+import { Link } from "react-router-dom";
+import Logo from "../assets/Logo.png";
 
 function SideBar() {
   return (
     <div className="sidebar">
-      <div className="sidebar-header"></div>
+      <div>
+        <Link className="sidebar-header" to={"/home"}>
+          <img src={Logo} alt="" />
+          <h2>UIT MP3</h2>
+        </Link>
+      </div>
       {SidebarData.map((item, index) => (
         <SidebarItem key={index} item={item} />
       ))}
