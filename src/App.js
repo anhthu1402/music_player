@@ -4,6 +4,7 @@ import "./App.css";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Library from "./pages/Library";
+import Header from "./components/Header";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/home" exact Component={Home} />
         </Routes>
       </Router>
+      <Header />
     </div>
   );
 }
