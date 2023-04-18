@@ -15,7 +15,7 @@ import {
 export const SidebarData = [
   {
     title: "Thư viện",
-    path: "/library",
+    path: "/library?type=song",
     icon: <LibraryMusic />,
   },
   {
