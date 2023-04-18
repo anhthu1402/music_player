@@ -12,3 +12,6 @@ body {
   display: flex;
   height: 100vh;
 }
+.header {
+  margin-bottom: 40px;
+}

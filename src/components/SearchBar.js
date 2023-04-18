@@ -1,21 +1,31 @@
-import React, { Component } from "react";
+import React from "react";
 import ReactSearchBox from "react-search-box";
 import { SearchBarData } from "./SearchBarData";
 import SearchIcon from "@mui/icons-material/SearchRounded";
 
-export class SearchBar extends Component {
-  render() {
-    return (
+export function SearchBar() {
+  return (
+    <div className="searchBar">
       <ReactSearchBox
+        className="searchbox"
         placeholder="Tìm kiếm tên bài hát, nghệ sĩ, ..."
-        inputBorderColor="transparent"
-        leftIcon={<SearchIcon style={{ marginRight: `30px` }} />}
-        inputBackgroundColor="transparent"
-        inputHeight="2.7rem"
         data={SearchBarData}
-        value="Doe"
-        callback={(record) => console.log(record)}
+        onSelect={(record: any) => console.log(record)}
+        onFocus={() => {
+          console.log("This function is called when is focussed");
+        }}
+        onChange={(value) => console.log(value)}
+        autoFocus
+        leftIcon={
+          <>
+            <SearchIcon />
+          </>
+        }
+        inputBorderColor="transparent"
+        inputBackgroundColor="#FFE1E8"
+        inputHeight="2.7rem"
+        iconBoxSize="48px"
       />
-    );
-  }
+    </div>
+  );
 }
