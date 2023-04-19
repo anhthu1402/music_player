@@ -15,7 +15,6 @@ export function SearchBar() {
           console.log("This function is called when is focussed");
         }}
         onChange={(value) => console.log(value)}
-        autoFocus
         leftIcon={
           <>
             <SearchIcon />
