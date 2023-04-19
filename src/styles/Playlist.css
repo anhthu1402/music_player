@@ -3,21 +3,21 @@
   margin-bottom: 30px;
 }
 
-.librarySongBtn {
+.libraryPlaylistBtn {
   margin-bottom: 20px;
 }
 
-.favBtn,
-.upBtn {
+.allBtn,
+.myBtn {
   border: none;
   background-color: #e77373;
   color: rgb(255, 255, 255);
 }
 
-.favBtn,
-.upBtn,
-.noneFavBtn,
-.noneUpBtn {
+.allBtn,
+.myBtn,
+.noneAllBtn,
+.noneMyBtn {
   border-radius: 25px;
   cursor: pointer;
   justify-content: center;
@@ -28,18 +28,17 @@
   font-family: "Rubik", sans-serif;
   margin-right: 25px;
 }
-
-.noneFavBtn,
-.noneUpBtn {
+.noneAllBtn,
+.noneMyBtn {
   background-color: transparent;
   border: 2px solid #e77373;
   color: black;
 }
 
-.favBtn:hover,
-.upBtn:hover,
-.noneFavBtn:hover,
-.noneUpBtn:hover {
+.allBtn:hover,
+.myBtn:hover,
+.noneMyBtn:hover,
+.noneAllBtn:hover {
   background-color: #fba1b6;
   cursor: pointer;
   transition: 0.3s ease;

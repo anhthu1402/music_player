@@ -7,9 +7,20 @@ export default function SidebarItem({ item }) {
 
   if (item.subNav) {
     return (
-      <div className={open ? "sidebar-item open" : "sidebar-item"}>
+      <div
+        className={open ? "sidebar-item open" : "sidebar-item"}
+        id={
+          window.location.pathname === item.path && open === false
+            ? "active"
+            : "inactive"
+        }
+      >
         <div className="sidebar-title">
-          <span>
+          <span
+            onClick={() => {
+              window.location.pathname = item.path;
+            }}
+          >
             <Link
               className="sidebar-link"
               to={item.path}
@@ -36,7 +47,11 @@ export default function SidebarItem({ item }) {
     );
   } else {
     return (
-      <a href={item.path || "#"} className="sidebar-item plain">
+      <a
+        href={item.path || "#"}
+        className="sidebar-item plain"
+        id={window.location.pathname === item.path ? "active" : "inactive"}
+      >
         <span>
           {item.icon}
           {item.title}

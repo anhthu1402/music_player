@@ -15,7 +15,7 @@ function App() {
         <div style={{ margin: `20px 50px` }}>
           <Header className="header" />
           <Routes>
-            <Route path="/library" exact Component={Library} />
+            <Route path="/library?type=song" exact Component={Library} />
             <Route path="/home" exact Component={Home} />
             <Route path="/signIn" exact Component={SignIn} />
           </Routes>

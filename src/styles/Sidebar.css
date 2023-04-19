@@ -90,3 +90,8 @@
   text-decoration: none;
   padding-left: 1.5rem;
 }
+
+#active {
+  background-color: #fff0f4;
+  border-left: 6px solid #eea3a3;
+}
