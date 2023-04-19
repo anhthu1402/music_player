@@ -1,0 +1,7 @@
+.horizoneLine {
+  margin-bottom: 30px;
+}
+.favoriteSong-hide,
+.uploadedSong-hide {
+  display: none;
+}

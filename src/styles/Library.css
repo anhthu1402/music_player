@@ -31,3 +31,7 @@
   align-items: center;
   justify-content: space-between;
 }
+.Playlist > .indexHr {
+  width: 80px;
+  margin-left: 110px;
+}
