@@ -31,8 +31,11 @@ function Library() {
       <div className={song ? "Song" : "Playlist"}>
         <hr style={{ border: `0.1px solid rgba(128, 128, 128, 0.356)` }}></hr>
         <hr
-          className="indexHr"
-          style={{ width: `70px`, border: `1.6px solid #FF9EB6` }}
+          className={song ? "indexSong" : "indexPlaylist"}
+          style={{
+            border: `1.6px solid #FF9EB6`,
+            marginTop: `-3px`,
+          }}
         ></hr>
         <div className="libraryContent">
           {type === "song" && <Song />}

@@ -5,8 +5,6 @@
   background-color: #ffdde5;
   height: 100%;
   overflow: auto;
-  border-top-right-radius: 1.1em;
-  border-bottom-right-radius: 1.1em;
 }
 
 .sidebar-header {
@@ -94,4 +92,7 @@
 #active {
   background-color: #fff0f4;
   border-left: 6px solid #eea3a3;
+}
+.sidebar a:last-child {
+  bottom: 0;
 }

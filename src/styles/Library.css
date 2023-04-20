@@ -31,7 +31,10 @@
   align-items: center;
   justify-content: space-between;
 }
-.Playlist > .indexHr {
+.indexPlaylist {
   width: 80px;
   margin-left: 110px;
+}
+.indexSong {
+  width: 70px;
 }

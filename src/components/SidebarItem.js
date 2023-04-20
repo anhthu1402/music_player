@@ -4,6 +4,21 @@ import { Link } from "react-router-dom";
 
 export default function SidebarItem({ item }) {
   const [open, setOpen] = useState(false);
+  function isLibrary(path) {
+    if (path === "/library?type=song") {
+      if (window.location.pathname === "/library") {
+        return 1;
+      } else return 0;
+    } else if (path === "/recently?type=song") {
+      if (window.location.pathname === "/recently") {
+        return 1;
+      } else return 0;
+    } else {
+      if (window.location.pathname === path) {
+        return 1;
+      } else return 0;
+    }
+  }
 
   if (item.subNav) {
     return (
@@ -50,7 +65,7 @@ export default function SidebarItem({ item }) {
       <a
         href={item.path || "#"}
         className="sidebar-item plain"
-        id={window.location.pathname === item.path ? "active" : "inactive"}
+        id={isLibrary(item.path) ? "active" : "inactive"}
       >
         <span>
           {item.icon}
