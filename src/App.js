@@ -10,10 +10,19 @@ import MyRecently from "./pages/MyRecently";
 
 function App() {
   return (
-    <div className="main">
+    <div>
       <Router>
-        <SideBar />
-        <div style={{ margin: `20px 50px` }}>
+        <div style={{ width: `260px`, position: `fixed`, top: `0`, left: 0 }}>
+          <SideBar />
+        </div>
+        <div
+          style={{
+            padding: `20px 50px`,
+            width: `calc(100% - 260px)`,
+            position: `relative`,
+            left: `260px`,
+          }}
+        >
           <Header className="header" />
           <Routes>
             <Route path="/library" exact Component={Library} />
