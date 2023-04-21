@@ -1,6 +1,6 @@
 export const SongData = [
   {
-    id: "onlylove",
+    id: "1",
     title: "Only Love",
     artist: "Trademark",
     image: "onlylove.jpg",
@@ -8,7 +8,7 @@ export const SongData = [
     time: "4:02",
   },
   {
-    id: "aloha",
+    id: "2",
     title: "Aloha",
     artist: "Cool",
     image: "onlylove.jpg",
@@ -16,7 +16,7 @@ export const SongData = [
     time: "4:02",
   },
   {
-    id: "idol",
+    id: "3",
     title: "Idol",
     artist: "BTS",
     image: "idol.png",
@@ -25,7 +25,7 @@ export const SongData = [
   },
 
   {
-    id: "ido",
+    id: "4",
     title: "I do",
     artist: "911",
     image: "onlylove.jpg",
@@ -33,7 +33,7 @@ export const SongData = [
     time: "4:02",
   },
   {
-    id: "onlylove",
+    id: "5",
     title: "Only Love",
     artist: "Trademark",
     image: "onlylove.jpg",
@@ -41,7 +41,7 @@ export const SongData = [
     time: "4:02",
   },
   {
-    id: "aloha",
+    id: "6",
     title: "Aloha",
     artist: "Cool",
     image: "onlylove.jpg",
@@ -49,7 +49,7 @@ export const SongData = [
     time: "4:02",
   },
   {
-    id: "idol",
+    id: "7",
     title: "Idol",
     artist: "BTS",
     image: "idol.png",
@@ -57,7 +57,7 @@ export const SongData = [
     time: "4:02",
   },
   {
-    id: "onlylove",
+    id: "8",
     title: "Only Love",
     artist: "Trademark",
     image: "onlylove.jpg",
@@ -65,7 +65,7 @@ export const SongData = [
     time: "4:02",
   },
   {
-    id: "aloha",
+    id: "9",
     title: "Aloha",
     artist: "Cool",
     image: "onlylove.jpg",
@@ -73,7 +73,7 @@ export const SongData = [
     time: "4:02",
   },
   {
-    id: "idol",
+    id: "10",
     title: "Idol",
     artist: "BTS",
     image: "idol.png",

@@ -36,3 +36,35 @@
 .songTitle {
   font-weight: 200 !important;
 }
+.moreOption {
+  background-color: transparent;
+  border: none;
+  display: none;
+  cursor: pointer;
+  margin-left: 25px;
+  margin-right: 10px;
+}
+.playBtn {
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  left: 85px;
+  display: none;
+  cursor: pointer;
+}
+.cardSong:hover {
+  background-color: #c2c2c3 !important;
+}
+.cardSong:hover .songFavorite,
+.cardSong:hover .time {
+  display: none;
+}
+.cardSong:hover .moreOption,
+.cardSong:hover .playBtn {
+  display: block;
+}
+.cardSong:hover .songMedia {
+  opacity: 50%;
+}
