@@ -1,9 +1,9 @@
 import React from "react";
-import SidebarItem from "./SidebarItem";
-import { SidebarData } from "./SidebarData";
+import SidebarItem from "./Item/SidebarItem";
 import "../styles/Sidebar.css";
 import { Link } from "react-router-dom";
 import Logo from "../assets/Logo.png";
+import { SidebarData } from "./Data/SidebarData";
 
 function SideBar() {
   return (

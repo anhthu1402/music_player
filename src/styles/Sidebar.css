@@ -3,10 +3,8 @@
   width: 260px;
   flex-shrink: 0;
   background-color: #ffdde5;
-  height: 100%;
+  height: 100vh;
   overflow: auto;
-  border-top-right-radius: 1.1em;
-  border-bottom-right-radius: 1.1em;
 }
 
 .sidebar-header {
@@ -89,4 +87,12 @@
   color: black;
   text-decoration: none;
   padding-left: 1.5rem;
+}
+
+#active {
+  background-color: #fff0f4;
+  border-left: 6px solid #eea3a3;
+}
+.sidebar a:last-child {
+  bottom: 0;
 }

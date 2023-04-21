@@ -1,16 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/Song.css";
+import FavoriteSong from "../components/FavoriteSong";
+import UploadedSong from "../components/UploadedSong";
 
 function Song() {
+  const [favorite, setFavorite] = useState(true);
+  const Page = favorite ? FavoriteSong : UploadedSong;
   return (
     <div className="librarySong">
-      <hr style={{ border: `0.1px solid rgba(128, 128, 128, 0.356)` }}></hr>
-      <hr
-        style={{
-          width: `70px`,
-          border: `1.6px solid #FF9EB6`,
-        }}
-      ></hr>
+      <div>
+        <div className="horizoneLine"></div>
+        <div className="librarySongBtn">
+          <button
+            className={favorite ? "favBtn" : "noneFavBtn"}
+            onClick={() => setFavorite(true)}
+          >
+            Yêu thích
+          </button>
+          <button
+            className={favorite ? "noneUpBtn" : "upBtn"}
+            onClick={() => setFavorite(false)}
+          >
+            Đã tải lên
+          </button>
+        </div>
+      </div>
+      <div className="librarySongContent">
+        <Page />
+      </div>
     </div>
   );
 }

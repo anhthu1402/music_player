@@ -6,6 +6,7 @@ import Playlist from "./Playlist";
 import { Link, useLocation } from "react-router-dom";
 
 function Library() {
+  const [song, setSongPage] = useState(true);
   const { search } = useLocation();
   const match = search.match(/type=(.*)/);
   const type = match?.[1];
@@ -21,15 +22,25 @@ function Library() {
       </div>
       <div className="librarySubHeader">
         <Link className="librarySongLink" to={"/library?type=song"}>
-          <button>Bài hát</button>
+          <button onClick={() => setSongPage(true)}>Bài hát</button>
         </Link>
         <Link to={"/library?type=playlist"}>
-          <button>Playlist</button>
+          <button onClick={() => setSongPage(false)}>Playlist</button>
         </Link>
       </div>
-      <div className="libraryContent">
-        {type === "song" && <Song />}
-        {type === "playlist" && <Playlist />}
+      <div className={song ? "Song" : "Playlist"}>
+        <hr style={{ border: `0.1px solid rgba(128, 128, 128, 0.356)` }}></hr>
+        <hr
+          className={song ? "indexSong" : "indexPlaylist"}
+          style={{
+            border: `1.6px solid #FF9EB6`,
+            marginTop: `-3px`,
+          }}
+        ></hr>
+        <div className="libraryContent">
+          {type === "song" && <Song />}
+          {type === "playlist" && <Playlist />}
+        </div>
       </div>
     </div>
   );

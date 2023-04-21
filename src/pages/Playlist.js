@@ -1,16 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
+import "../styles/Playlist.css";
+import MyPlaylist from "../components/MyPlaylist";
+import AllPlaylist from "../components/AllPlaylist";
 
 function Playlist() {
+  const [all, setAll] = useState(true);
+  const Page = all ? AllPlaylist : MyPlaylist;
+
   return (
-    <div>
-      <hr style={{ border: `0.1px solid rgba(128, 128, 128, 0.356)` }}></hr>
-      <hr
-        style={{
-          width: `80px`,
-          border: `1.6px solid #FF9EB6`,
-          marginLeft: `110px`,
-        }}
-      ></hr>
+    <div className="libraryPlaylist">
+      <div>
+        <div className="horizoneLine"></div>
+        <div className="libraryPlaylistBtn">
+          <button
+            className={all ? "allBtn" : "noneAllBtn"}
+            onClick={() => setAll(true)}
+          >
+            Tất cả
+          </button>
+          <button
+            className={all ? "noneMyBtn" : "myBtn"}
+            onClick={() => setAll(false)}
+          >
+            Của tôi
+          </button>
+        </div>
+      </div>
+      <div className="libraryPlaylistContent">
+        <Page />
+      </div>
     </div>
   );
 }

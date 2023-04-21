@@ -10,6 +10,7 @@ import {
   BarChartRounded,
   TrendingUpRounded,
   NewReleasesRounded,
+  AccessTimeRounded,
 } from "@mui/icons-material";
 
 export const SidebarData = [
@@ -20,7 +21,7 @@ export const SidebarData = [
   },
   {
     title: "Khám phá",
-    path: "/home",
+    path: "/",
     icon: <HomeRounded />,
     iconOpened: <ExpandMore />,
     iconClosed: <ExpandLess />,
@@ -56,5 +57,10 @@ export const SidebarData = [
     title: "Top 100",
     path: "/top100",
     icon: <TrendingUpRounded />,
+  },
+  {
+    title: "Gần đây",
+    path: "/recently?type=song",
+    icon: <AccessTimeRounded />,
   },
 ];

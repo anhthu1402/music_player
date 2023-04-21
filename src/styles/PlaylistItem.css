@@ -1,0 +1,37 @@
+.cardPlaylist {
+  border-radius: 15px;
+  width: 250px;
+  height: 300px;
+  margin: 20px;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid transparent;
+}
+.cardContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.cardPlaylist:hover {
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in;
+}
+.cardPlaylist:hover .playlistMedia {
+  opacity: 65%;
+}
+.playlistMoreDetail {
+  position: absolute;
+  width: 250px;
+  display: none;
+}
+.playlistMoreDetail button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.cardPlaylist:hover .playlistMoreDetail {
+  display: flex;
+  justify-content: space-around;
+}

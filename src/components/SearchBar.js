@@ -1,6 +1,6 @@
 import React from "react";
 import ReactSearchBox from "react-search-box";
-import { SearchBarData } from "./SearchBarData";
+import { SearchBarData } from "./Data/SearchBarData";
 import SearchIcon from "@mui/icons-material/SearchRounded";
 
 export function SearchBar() {
@@ -10,12 +10,11 @@ export function SearchBar() {
         className="searchbox"
         placeholder="Tìm kiếm tên bài hát, nghệ sĩ, ..."
         data={SearchBarData}
-        onSelect={(record: any) => console.log(record)}
+        onSelect={(record) => console.log(record)}
         onFocus={() => {
           console.log("This function is called when is focussed");
         }}
         onChange={(value) => console.log(value)}
-        autoFocus
         leftIcon={
           <>
             <SearchIcon />
