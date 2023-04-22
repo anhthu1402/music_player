@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fredoka&family=Open+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap');
 .sidebar {
   width: 260px;
   flex-shrink: 0;
@@ -26,11 +26,13 @@
   font-size: 1.8em;
   color: #86a7ff;
   font-stretch: 105;
-  text-shadow: white 2px 2px 0px, 2px 0 0 white;
+  -webkit-text-stroke: 2px white;
+  /* text-shadow: white 2px 2px 0px, 2px 0 0 white; */
 }
 
 .sidebar-header img {
   margin-right: 1.2rem;
+  width: 60px;
 }
 
 .sidebar-item {
