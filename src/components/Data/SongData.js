@@ -2,7 +2,16 @@ export const SongData = [
   {
     id: "1",
     title: "Only Love",
-    artist: "Trademark",
+    artist: [
+      {
+        id: 1,
+        name: "Trademark",
+      },
+      {
+        id: 2,
+        name: "Band",
+      },
+    ],
     image: "onlylove.jpg",
     isFavorite: 1,
     time: "4:02",
@@ -10,15 +19,25 @@ export const SongData = [
   {
     id: "2",
     title: "Aloha",
-    artist: "Cool",
+    artist: [
+      {
+        id: 3,
+        name: "Cool",
+      },
+    ],
     image: "onlylove.jpg",
     isFavorite: 0,
     time: "4:02",
   },
   {
     id: "3",
-    title: "Idol",
-    artist: "BTS",
+    title: "IDOL",
+    artist: [
+      {
+        id: 4,
+        name: "BTS",
+      },
+    ],
     image: "idol.png",
     isFavorite: 1,
     time: "4:02",
@@ -27,7 +46,12 @@ export const SongData = [
   {
     id: "4",
     title: "I do",
-    artist: "911",
+    artist: [
+      {
+        id: 5,
+        name: "911",
+      },
+    ],
     image: "onlylove.jpg",
     isFavorite: 0,
     time: "4:02",
@@ -35,7 +59,12 @@ export const SongData = [
   {
     id: "5",
     title: "Only Love",
-    artist: "Trademark",
+    artist: [
+      {
+        id: 1,
+        name: "Trademark",
+      },
+    ],
     image: "onlylove.jpg",
     isFavorite: 1,
     time: "4:02",
@@ -43,15 +72,25 @@ export const SongData = [
   {
     id: "6",
     title: "Aloha",
-    artist: "Cool",
+    artist: [
+      {
+        id: 3,
+        name: "Cool",
+      },
+    ],
     image: "onlylove.jpg",
     isFavorite: 0,
     time: "4:02",
   },
   {
     id: "7",
-    title: "Idol",
-    artist: "BTS",
+    title: "IDOL",
+    artist: [
+      {
+        id: 4,
+        name: "BTS",
+      },
+    ],
     image: "idol.png",
     isFavorite: 1,
     time: "4:02",
@@ -59,7 +98,12 @@ export const SongData = [
   {
     id: "8",
     title: "Only Love",
-    artist: "Trademark",
+    artist: [
+      {
+        id: 1,
+        name: "Trademark",
+      },
+    ],
     image: "onlylove.jpg",
     isFavorite: 1,
     time: "4:02",
@@ -67,15 +111,29 @@ export const SongData = [
   {
     id: "9",
     title: "Aloha",
-    artist: "Cool",
+    artist: [
+      {
+        id: 3,
+        name: "Cool",
+      },
+    ],
     image: "onlylove.jpg",
     isFavorite: 0,
     time: "4:02",
   },
   {
     id: "10",
-    title: "Idol",
-    artist: "BTS",
+    title: "IDOL (Feat. Nicki Minaj)",
+    artist: [
+      {
+        id: 4,
+        name: "BTS",
+      },
+      {
+        id: 6,
+        name: "Nicki Minaj",
+      },
+    ],
     image: "idol.png",
     isFavorite: 1,
     time: "4:02",

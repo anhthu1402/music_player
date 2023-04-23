@@ -68,3 +68,8 @@
 .cardSong:hover .songMedia {
   opacity: 50%;
 }
+.artist:hover {
+  cursor: pointer;
+  color: rgba(134, 0, 132, 0.925);
+  text-decoration: underline;
+}

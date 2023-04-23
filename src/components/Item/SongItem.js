@@ -41,12 +41,27 @@ function SongItem({ item }) {
               variant="body2"
               color="text.secondary"
               className={"songArtist"}
+              sx={{ display: `flex`, flexDirection: `row` }}
             >
-              {item.artist}
+              {item.artist.map((child, index) => {
+                if (index < Object.keys(child).length - 1) {
+                  return (
+                    <div key={index} item={child} className="artist">
+                      {child.name}
+                    </div>
+                  );
+                } else
+                  return (
+                    <div key={index} item={child}>
+                      , <span className="artist">{child.name}</span>
+                    </div>
+                  );
+              })}
             </Typography>
           </div>
           <div className={"songMoreDetail"}>
             <Typography
+              sx={{ cursor: `pointer` }}
               variant="icon"
               component={
                 item.isFavorite ? FavoriteIcon : FavoriteBorderOutlined

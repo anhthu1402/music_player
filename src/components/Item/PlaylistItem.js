@@ -38,7 +38,7 @@ function PlaylistItem({ item }) {
       </div>
       <Typography
         component="header"
-        sx={{ fontSize: `large`, display: `flex` }}
+        sx={{ fontSize: `large`, marginTop: `10px` }}
       >
         {item.playlistName}
       </Typography>
