@@ -1,7 +1,12 @@
 import React from "react";
+import MusicPlayer from "../components/MusicPlayer";
 
 function Home() {
-  return <div>home</div>;
+  return (
+    <div>
+      <MusicPlayer />
+    </div>
+  );
 }
 
 export default Home;
