@@ -1,4 +1,4 @@
-.recentlyListen {
+.artists {
     display: flex;
     column-gap: 25px;
     width: 100%;
@@ -6,25 +6,19 @@
     margin-bottom: 60px;
 }
 
-.playlistItem {
+.artist {
     width: 100%;
-    max-width: 250px;
+    max-width: 300px;
     min-width: 100px;
     justify-content: center;
     align-items: center;
 }
-.imagePlaylist {
-    max-width: 250px;
+.artist img {
+    max-width: 300px;
     min-width: 100px;
     width: 100%;
     aspect-ratio: 1;
     border-radius: 20px;
     object-fit: fill;
-}
-.playlistItem p {
-    font-size: 18px;
-    color: black;
-    margin-top: 10px;
-    text-align: center;
 }
 

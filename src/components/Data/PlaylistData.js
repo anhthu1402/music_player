@@ -64,7 +64,7 @@ export const PlaylistData = [
   },
   {
     id: 3,
-    playlistName: "Yêu thích 2",
+    playlistName: "Yêu thích dữ lắm luôn á trời đấc cơi",
     playlistImg: "idol.png",
     playlistSongs: [
       {
