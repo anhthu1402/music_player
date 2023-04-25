@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Signin from "./pages/SignIn";
 import NewSongs from "./pages/NewSongs";
 import MyRecently from "./pages/MyRecently";
+import Album from "./pages/Album";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path="/signIn" exact Component={Signin} />
             <Route path="/newsongs" exact Component={NewSongs} />
             <Route path="/recently" exact Component={MyRecently} />
+            <Route path="/album/*" exact Component={Album} />
           </Routes>
         </div>
       </Router>
