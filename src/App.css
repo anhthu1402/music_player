@@ -19,3 +19,11 @@ html::-webkit-scrollbar {display:none;}
 .header {
   margin-bottom: 40px;
 }
+.musicPlayer {
+  height: 18vh;
+  bottom: 0;
+  position: fixed;
+  max-width: 100%;
+  left: 260px;
+  padding: 20px;
+}

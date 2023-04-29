@@ -1,10 +1,10 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import BannerPlaylist from "../components/BannerPlaylist";
 import RecentlyPlaylist from "../components/RecentlyPlaylist";
 import TopTrendingArtist from "../components/TopTrendingArtist";
 import MusicPlayer from "../components/MusicPlayer";
-import '../styles/Home.css'
+import "../styles/Home.css";
 import RecentlyListen from "./RecentlyListen";
 
 function Home() {
@@ -12,15 +12,15 @@ function Home() {
     <div className="container">
       <BannerPlaylist />
 
-      <div className='categoryHeader'>
+      <div className="categoryHeader">
         <p className="categoryTitle">Nghe gần đây</p>
-        <Link className='linkToAllPlaylist' to={"/recently?type=song"}>
-            <p>Tất cả &gt;</p>
+        <Link className="linkToAllPlaylist" to={"/recently?type=song"}>
+          <p>Tất cả &gt;</p>
         </Link>
       </div>
       <RecentlyPlaylist />
 
-      <div className='categoryHeader'>
+      <div className="categoryHeader">
         <p className="categoryTitle">Nghệ sỹ thịnh hành</p>
       </div>
       <TopTrendingArtist />
