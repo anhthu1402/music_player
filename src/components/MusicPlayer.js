@@ -14,7 +14,6 @@ import {
   VolumeUpRounded,
 } from "@mui/icons-material";
 import MusicPlayerContext from "../MusicPlayerContext";
-import { useEffect } from "react";
 import { useRef } from "react";
 
 const Widget = styled("div")(({ theme }) => ({
