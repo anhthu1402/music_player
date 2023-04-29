@@ -32,10 +32,6 @@
 .songHeader Typography {
   font-family: "Josefin Sans", sans-serif !important;
 }
-.songArtist,
-.songTitle {
-  font-family: "Ubuntu", sans-serif !important;
-}
 .songTitle {
   font-weight: 200 !important;
 }
@@ -75,4 +71,9 @@
   cursor: pointer;
   color: rgba(134, 0, 132, 0.925);
   text-decoration: underline;
+}
+.artist,
+.songArtist {
+  width: fit-content !important;
+  max-width: fit-content !important;
 }

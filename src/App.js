@@ -11,11 +11,8 @@ import Album from "./pages/Album";
 import MusicPlayer from "./components/MusicPlayer";
 import React from "react";
 import { MusicPlayerProvider } from "./MusicPlayerContext";
-import MusicPlayerContext from "./MusicPlayerContext";
-import { useContext } from "react";
 
 function App() {
-  const musicPlayer = useContext(MusicPlayerContext);
   return (
     <MusicPlayerProvider>
       <div>

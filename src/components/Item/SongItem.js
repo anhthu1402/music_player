@@ -50,7 +50,10 @@ class SongItem extends Component {
                 variant="body2"
                 color="text.secondary"
                 className={"songArtist"}
-                sx={{ display: `flex`, flexDirection: `row` }}
+                sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                }}
               >
                 {this.props.item.artist.map((child, index) => {
                   if (index < Object.keys(child).length - 1) {
