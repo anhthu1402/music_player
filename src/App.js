@@ -11,6 +11,7 @@ import Album from "./pages/Album";
 import MusicPlayer from "./components/MusicPlayer";
 import React from "react";
 import { MusicPlayerProvider } from "./MusicPlayerContext";
+import PlaylistDetail from "./pages/PlaylistDetail";
 
 function App() {
   return (
@@ -38,6 +39,11 @@ function App() {
               <Route path="/newsongs" exact Component={NewSongs} />
               <Route path="/recently" exact Component={MyRecently} />
               <Route path="/album/*" exact Component={Album} />
+              <Route
+                path="/playlistDetail/*"
+                exact
+                Component={PlaylistDetail}
+              />
             </Routes>
             <div
               className="musicPlayer"

@@ -14,7 +14,7 @@ function Home() {
 
       <div className="categoryHeader">
         <p className="categoryTitle">Nghe gần đây</p>
-        <Link className="linkToAllPlaylist" to={"/recently?type=song"}>
+        <Link className="linkToAllPlaylist" to={"/recently?type=playlist"}>
           <p>Tất cả &gt;</p>
         </Link>
       </div>

@@ -6,7 +6,7 @@ function RecentlyPlaylist() {
   return (
     <div className="myPlaylist">
       {PlaylistData.map((item, index) => (
-        <PlaylistItem item={item} key={index} />
+        <PlaylistItem item={item} key={index} index={index} />
       ))}
     </div>
   );

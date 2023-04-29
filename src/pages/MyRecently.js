@@ -5,10 +5,10 @@ import RecentlySong from "./RecentlySong";
 import RecentlyPlaylist from "./RecentlyPlaylist";
 
 function MyRecently() {
-  const [song, setSongPage] = useState(true);
   const { search } = useLocation();
   const match = search.match(/type=(.*)/);
   const type = match?.[1];
+  const [song, setSongPage] = useState(type === "song" ? true : false);
   return (
     <div className="recently">
       <div className="recentlyHeader">
