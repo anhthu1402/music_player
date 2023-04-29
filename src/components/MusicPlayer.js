@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { styled, useTheme } from "@mui/material/styles";
 import { Box } from "@mui/material";
 import Typography from "@mui/material/Typography";
@@ -13,38 +13,9 @@ import {
   VolumeDownRounded,
   VolumeUpRounded,
 } from "@mui/icons-material";
-
-const WallPaper = styled("div")({
-  position: "absolute",
-  width: "100%",
-  height: "30%",
-  bottom: 0,
-  left: 0,
-  overflow: "hidden",
-  background: "linear-gradient(rgb(255, 38, 142) 0%, rgb(255, 105, 79) 100%)",
-  transition: "all 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s",
-  "&:before": {
-    content: '""',
-    width: "140%",
-    height: "140%",
-    position: "absolute",
-    bottom: "-40%",
-    right: "-50%",
-    background:
-      "radial-gradient(at center center, rgb(62, 79, 249) 0%, rgba(62, 79, 249, 0) 64%)",
-  },
-  "&:after": {
-    content: '""',
-    width: "140%",
-    height: "140%",
-    position: "absolute",
-    bottom: "-50%",
-    left: "-30%",
-    background:
-      "radial-gradient(at center center, rgb(247, 237, 225) 0%, rgba(247, 237, 225, 0) 70%)",
-    transform: "rotate(30deg)",
-  },
-});
+import MusicPlayerContext from "../MusicPlayerContext";
+import { useEffect } from "react";
+import { useRef } from "react";
 
 const Widget = styled("div")(({ theme }) => ({
   padding: 16,
@@ -84,33 +55,101 @@ const TinyText = styled(Typography)({
   letterSpacing: 0.2,
 });
 
-function MusicPlayer() {
-  const theme = useTheme();
-  const duration = 200; //seconds
-  const [position, setPosition] = React.useState(32);
-  const [paused, setPaused] = React.useState(false);
+const MusicPlayer = () => {
+  const musicPlayer = useContext(MusicPlayerContext);
+  const tracks = musicPlayer.isUsing ? musicPlayer.tracks : [];
+  const tracksLen = tracks.length;
+  let index = musicPlayer.songIndex;
+  let song = musicPlayer.isUsing ? tracks[index] : null;
+  let title = musicPlayer.isUsing ? tracks[index].title : "";
+  let artist = musicPlayer.isUsing ? song.artist : [];
+  const getAudioSource = (source) => {
+    return require("../assets/audio/" + source);
+  };
+  const getImgUrl = (url) => {
+    return require("../assets/" + url);
+  };
+  const audioRef = useRef();
+  const [duration, setDuration] = useState(0); //seconds
+  const [currentTime, setCurrentTime] = useState(0);
+  const [isPlay, setPlay] = useState(false);
+  const source = musicPlayer.isUsing ? tracks[index].source : "Aloha.mp3";
+  const imgUrl = musicPlayer.isUsing ? tracks[index].image : "Logo.png";
+  const handleLoadedData = () => {
+    setDuration(Math.ceil(audioRef.current.duration));
+    if (isPlay) {
+      audioRef.current.play();
+    }
+  };
+
+  const handlePausePlayClick = () => {
+    if (isPlay) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play();
+    }
+    setPlay(!isPlay);
+  };
+
+  const HandleTimeSliderChange = (x) => {
+    audioRef.current.currentTime = x;
+    setCurrentTime(x);
+    if (!isPlay) {
+      setPlay(true);
+      audioRef.current.play();
+    }
+  };
+
   function formatDuration(value) {
+    value = Math.ceil(value);
     const minute = Math.floor(value / 60);
     const secondLeft = value - minute * 60;
     return `${minute}:${secondLeft < 10 ? `0${secondLeft}` : secondLeft}`;
   }
+  const theme = useTheme();
+
   const mainIconColor = theme.palette.mode === "dark" ? "#fff" : "#000";
   const lightIconColor =
     theme.palette.mode === "dark" ? "rgba(255,255,255,0.4)" : "rgba(0,0,0,0.4)";
-
   return (
-    <Box sx={{ width: `100%`, overflow: `hidden` }}>
+    <Box
+      style={musicPlayer.isUsing ? { display: "flex" } : { display: "none" }}
+    >
+      <audio
+        ref={audioRef}
+        src={getAudioSource(source)}
+        onLoadedData={handleLoadedData}
+        onTimeUpdate={() => setCurrentTime(audioRef.current.currentTime)}
+        onEnded={() => setPlay(false)}
+      />
       <Widget>
         <Box sx={{ display: `flex`, alignItems: "center" }}>
           <CoverImage>
-            <img alt="Only Love" src={require("../assets/onlylove.jpg")}></img>
+            <img alt="Only Love" src={getImgUrl(imgUrl)}></img>
           </CoverImage>
           <Box sx={{ ml: 1.5, minWidth: 0 }}>
             <Typography noWrap>
-              <b>Only Love</b>
+              <b>{title}</b>
             </Typography>
-            <Typography noWrap letterSpacing={-0.25}>
-              Trademark
+            <Typography
+              noWrap
+              letterSpacing={-0.25}
+              sx={{ display: `flex`, flexDirection: `row` }}
+            >
+              {artist.map((child, index) => {
+                if (index < Object.keys(child).length - 1) {
+                  return (
+                    <div key={index} item={child} className="artist">
+                      {child.name}
+                    </div>
+                  );
+                } else
+                  return (
+                    <div key={index} item={child}>
+                      , <span className="artist">{child.name}</span>
+                    </div>
+                  );
+              })}
             </Typography>
           </Box>
         </Box>
@@ -131,14 +170,21 @@ function MusicPlayer() {
               width: "100%",
             }}
           >
-            <IconButton aria-label="previous song">
+            <IconButton
+              aria-label="previous song"
+              onClick={() => {
+                musicPlayer.setSongIndex(
+                  index - 1 < 0 ? tracksLen - 1 : index - 1
+                );
+              }}
+            >
               <FastRewindRounded fontSize="large" htmlColor={mainIconColor} />
             </IconButton>
             <IconButton
-              aria-label={paused ? "play" : "pause"}
-              onClick={() => setPaused(!paused)}
+              aria-label={isPlay ? "play" : "pause"}
+              onClick={handlePausePlayClick}
             >
-              {paused ? (
+              {!isPlay ? (
                 <PlayArrowRounded
                   sx={{ fontSize: "3rem" }}
                   htmlColor={mainIconColor}
@@ -150,7 +196,10 @@ function MusicPlayer() {
                 />
               )}
             </IconButton>
-            <IconButton aria-label="next song">
+            <IconButton
+              aria-label="next song"
+              onClick={() => musicPlayer.setSongIndex((index + 1) % tracksLen)}
+            >
               <FastForwardRounded fontSize="large" htmlColor={mainIconColor} />
             </IconButton>
           </Box>
@@ -162,16 +211,16 @@ function MusicPlayer() {
             }}
           >
             <TinyText>
-              <b>{formatDuration(position)}</b>
+              <b>{formatDuration(currentTime)}</b>
             </TinyText>
             <Slider
               aria-label="time-indicator"
               size="small"
-              value={position}
+              value={currentTime}
               min={0}
               step={1}
               max={duration}
-              onChange={(_, value) => setPosition(value)}
+              onChange={(_, value) => HandleTimeSliderChange(value)}
               sx={{
                 color:
                   theme.palette.mode === "dark" ? "#fff" : "rgba(0,0,0,0.87)",
@@ -204,7 +253,7 @@ function MusicPlayer() {
               }}
             />
             <TinyText>
-              <b>-{formatDuration(position)}</b>
+              <b>-{formatDuration(duration - currentTime)}</b>
             </TinyText>
           </Box>
         </Box>
@@ -241,9 +290,8 @@ function MusicPlayer() {
           <VolumeUpRounded htmlColor={lightIconColor} />
         </Stack>
       </Widget>
-      <WallPaper />
     </Box>
   );
-}
+};
 
 export default MusicPlayer;

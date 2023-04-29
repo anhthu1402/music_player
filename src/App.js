@@ -8,34 +8,52 @@ import Signin from "./pages/SignIn";
 import NewSongs from "./pages/NewSongs";
 import MyRecently from "./pages/MyRecently";
 import Album from "./pages/Album";
+import MusicPlayer from "./components/MusicPlayer";
+import React from "react";
+import { MusicPlayerProvider } from "./MusicPlayerContext";
+import MusicPlayerContext from "./MusicPlayerContext";
+import { useContext } from "react";
 
 function App() {
+  const musicPlayer = useContext(MusicPlayerContext);
   return (
-    <div>
-      <Router>
-        <div style={{ width: `260px`, position: `fixed`, top: `0`, left: 0 }}>
-          <SideBar />
-        </div>
-        <div
-          style={{
-            padding: `20px 50px`,
-            width: `calc(100% - 260px)`,
-            position: `relative`,
-            left: `260px`,
-          }}
-        >
-          <Header className="header" />
-          <Routes>
-            <Route path="/library" exact Component={Library} />
-            <Route path="/" exact Component={Home} />
-            <Route path="/signIn" exact Component={Signin} />
-            <Route path="/newsongs" exact Component={NewSongs} />
-            <Route path="/recently" exact Component={MyRecently} />
-            <Route path="/album/*" exact Component={Album} />
-          </Routes>
-        </div>
-      </Router>
-    </div>
+    <MusicPlayerProvider>
+      <div>
+        <Router>
+          <div style={{ width: `260px`, position: `fixed`, top: `0`, left: 0 }}>
+            <SideBar />
+          </div>
+          <div
+            style={{
+              padding: `20px 50px`,
+              width: `calc(100% - 260px)`,
+              position: `relative`,
+              left: `260px`,
+              height: `calc(100%-18vh)`,
+              marginBottom: `18vh`,
+            }}
+          >
+            <Header className="header" />
+            <Routes>
+              <Route path="/library" exact Component={Library}></Route>
+              <Route path="/" exact Component={Home}></Route>
+              <Route path="/signIn" exact Component={Signin} />
+              <Route path="/newsongs" exact Component={NewSongs} />
+              <Route path="/recently" exact Component={MyRecently} />
+              <Route path="/album/*" exact Component={Album} />
+            </Routes>
+            <div
+              className="musicPlayer"
+              style={{
+                width: `calc(100% - 260px)`,
+              }}
+            >
+              <MusicPlayer />
+            </div>
+          </div>
+        </Router>
+      </div>
+    </MusicPlayerProvider>
   );
 }
 

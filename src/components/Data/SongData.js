@@ -14,20 +14,22 @@ export const SongData = [
     ],
     image: "onlylove.jpg",
     isFavorite: 1,
-    time: "4:02",
+    time: "4:07",
+    source: "OnlyLove.mp3",
   },
   {
     id: "2",
-    title: "Aloha",
+    title: "Tonight",
     artist: [
       {
         id: 3,
-        name: "Cool",
+        name: "Jin",
       },
     ],
     image: "onlylove.jpg",
     isFavorite: 0,
-    time: "4:02",
+    time: "2:59",
+    source: "Tonight.mp3",
   },
   {
     id: "3",
@@ -40,7 +42,8 @@ export const SongData = [
     ],
     image: "idol.png",
     isFavorite: 1,
-    time: "4:02",
+    time: "3:43",
+    source: "IDOL.mp3",
   },
 
   {
@@ -54,7 +57,8 @@ export const SongData = [
     ],
     image: "onlylove.jpg",
     isFavorite: 0,
-    time: "4:02",
+    time: "3:28",
+    source: "IDo.mp3",
   },
   {
     id: "5",
@@ -67,20 +71,22 @@ export const SongData = [
     ],
     image: "onlylove.jpg",
     isFavorite: 1,
-    time: "4:02",
+    time: "4:07",
+    source: "OnlyLove.mp3",
   },
   {
     id: "6",
     title: "Aloha",
     artist: [
       {
-        id: 3,
+        id: 6,
         name: "Cool",
       },
     ],
     image: "onlylove.jpg",
     isFavorite: 0,
     time: "4:02",
+    source: "Aloha.mp3",
   },
   {
     id: "7",
@@ -93,7 +99,8 @@ export const SongData = [
     ],
     image: "idol.png",
     isFavorite: 1,
-    time: "4:02",
+    time: "3:43",
+    source: "IDOL.mp3",
   },
   {
     id: "8",
@@ -106,7 +113,8 @@ export const SongData = [
     ],
     image: "onlylove.jpg",
     isFavorite: 1,
-    time: "4:02",
+    time: "4:07",
+    source: "OnlyLove.mp3",
   },
   {
     id: "9",
@@ -120,6 +128,7 @@ export const SongData = [
     image: "onlylove.jpg",
     isFavorite: 0,
     time: "4:02",
+    source: "Aloha.mp3",
   },
   {
     id: "10",
@@ -136,6 +145,7 @@ export const SongData = [
     ],
     image: "idol.png",
     isFavorite: 1,
-    time: "4:02",
+    time: "4:21",
+    source: "IDOLFeat.mp3",
   },
 ];

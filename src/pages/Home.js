@@ -1,11 +1,9 @@
 import React from "react";
-import MusicPlayer from "../components/MusicPlayer";
 import BannerPlaylist from "../components/BannerPlaylist";
 function Home() {
   return (
-    <div>
+    <div style={{ height: `calc(100%-20vh)`, position: `relative` }}>
       <BannerPlaylist />
-      <MusicPlayer />
     </div>
   );
 }

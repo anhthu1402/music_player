@@ -7,6 +7,9 @@
   flex-direction: row;
   align-items: center;
 }
+.songItem {
+  padding-bottom: 16px !important;
+}
 .cardSong {
   border: 1px solid transparent !important;
   border-radius: 10px !important;
@@ -50,7 +53,7 @@
   border: none;
   display: flex;
   align-items: center;
-  left: 85px;
+  left: 35px;
   display: none;
   cursor: pointer;
 }
