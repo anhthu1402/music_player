@@ -5,9 +5,13 @@
   background-color: #ffdde5;
   height: 100vh;
   overflow: auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;  /* mozilla */
 }
 
-.sidebar::-webkit-scrollbar {display:none;}
+.sidebar::-webkit-scrollbar {
+  display: none; /* Safari and Chrome browsers */
+}
 
 .sidebar-header {
   display: flex;
