@@ -1,0 +1,65 @@
+.playlistDetail {
+  width: 100%;
+}
+.playlistDetail .detail {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  position: fixed;
+  align-items: center;
+  height: 75vh;
+}
+.playlistDetail .detail button {
+  width: fit-content;
+}
+.playlistDetail .songs {
+  width: 50vw;
+  position: relative;
+  left: 380px;
+}
+.playlistDetail .playButton,
+.playlistDetail .moreButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  font-size: large;
+  border: none;
+  cursor: pointer;
+}
+.playlistDetail .playButton {
+  background-color: #fda2b7;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.playlistDetail .moreButton {
+  background-color: #ffdde5;
+  border-radius: 50%;
+  margin: 20px;
+}
+.playlistDetail .detail img {
+  border-radius: 20px;
+}
+.playlistDetail .detail .playlistImg:hover img {
+  opacity: 30%;
+}
+.playlistDetail .detail .playPlaylist {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  display: none;
+  border: none;
+  background-color: transparent;
+  font-size: 50px;
+}
+.playlistDetail .playlistImg {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.playlistDetail .detail .playlistImg:hover .playPlaylist {
+  display: block;
+  cursor: pointer;
+}

@@ -5,12 +5,12 @@ import ClearIcon from "@mui/icons-material/Clear";
 import "../../styles/PlaylistItem.css";
 import { Link } from "react-router-dom";
 
-function PlaylistItem({ item }) {
+function PlaylistItem({ item }, props) {
   function getPlaylistImgUrl(url) {
     return require("../../assets/" + url);
   }
   return (
-    <Link to={`/playlistDetail/${item.id}`} item={item}>
+    <Link to={`/playlistDetail/${item.playlistName}`} state={item}>
       <Card className={"cardPlaylist"}>
         <div className="cardContent">
           <CardMedia
