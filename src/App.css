@@ -11,7 +11,9 @@ body {
   height: 100vh;
   font-family: "Josefin Sans", sans-serif;
 }
-html::-webkit-scrollbar {display:none;}
+html::-webkit-scrollbar {
+  display: none;
+}
 .main {
   display: flex;
   height: 100vh;

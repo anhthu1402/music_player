@@ -1,17 +1,11 @@
 import "./App.css";
 import SideBar from "./components/SideBar";
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import Library from "./pages/Library";
+import { BrowserRouter as Router } from "react-router-dom";
 import Header from "./components/Header";
-import Signin from "./pages/SignIn";
-import NewSongs from "./pages/NewSongs";
-import MyRecently from "./pages/MyRecently";
-import Album from "./pages/Album";
 import MusicPlayer from "./components/MusicPlayer";
 import React from "react";
 import { MusicPlayerProvider } from "./MusicPlayerContext";
-import PlaylistDetail from "./pages/PlaylistDetail";
+import MainScreen from "./pages/MainScreen";
 
 function App() {
   return (
@@ -28,23 +22,14 @@ function App() {
               position: `relative`,
               left: `260px`,
               height: `calc(100%-18vh)`,
-              marginBottom: `18vh`,
             }}
           >
-            <Header className="header" />
-            <Routes>
-              <Route path="/library" exact Component={Library}></Route>
-              <Route path="/" exact Component={Home}></Route>
-              <Route path="/signIn" exact Component={Signin} />
-              <Route path="/newsongs" exact Component={NewSongs} />
-              <Route path="/recently" exact Component={MyRecently} />
-              <Route path="/album/*" exact Component={Album} />
-              <Route
-                path="/playlistDetail/*"
-                exact
-                Component={PlaylistDetail}
-              />
-            </Routes>
+            <div>
+              <Header className="header" />
+            </div>
+            <div className="mainscreen">
+              <MainScreen />
+            </div>
             <div
               className="musicPlayer"
               style={{
