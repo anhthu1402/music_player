@@ -38,6 +38,12 @@
   border-radius: 50%;
   margin: 20px;
 }
+.playlistDetail .moreButton:hover {
+  background-color: #ffcaec7b;
+  cursor: pointer;
+  transition: 0.5s ease-in;
+  transform: scale(1.1);
+}
 .playlistDetail .detail img {
   border-radius: 20px;
 }
@@ -62,4 +68,10 @@
 .playlistDetail .detail .playlistImg:hover .playPlaylist {
   display: block;
   cursor: pointer;
+}
+.playlistDetail.active {
+  margin-bottom: 7em;
+}
+.playlistDetail.inactive {
+  margin-bottom: 0;
 }

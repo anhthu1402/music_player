@@ -12,6 +12,8 @@ import {
   FastRewindRounded,
   VolumeDownRounded,
   VolumeUpRounded,
+  ShuffleRounded,
+  RepeatRounded,
 } from "@mui/icons-material";
 import MusicPlayerContext from "../MusicPlayerContext";
 import { useRef } from "react";
@@ -169,6 +171,9 @@ const MusicPlayer = () => {
               width: "100%",
             }}
           >
+            <IconButton sx={{ margin: "0 0.5em" }}>
+              <ShuffleRounded />
+            </IconButton>
             <IconButton
               aria-label="previous song"
               onClick={() => {
@@ -200,6 +205,9 @@ const MusicPlayer = () => {
               onClick={() => musicPlayer.setSongIndex((index + 1) % tracksLen)}
             >
               <FastForwardRounded fontSize="large" htmlColor={mainIconColor} />
+            </IconButton>
+            <IconButton sx={{ margin: "0 0.5em" }}>
+              <RepeatRounded />
             </IconButton>
           </Box>
           <Box

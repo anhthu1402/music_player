@@ -24,6 +24,7 @@ export function SearchBar() {
         inputBackgroundColor="#FFE1E8"
         inputHeight="2.7rem"
         iconBoxSize="48px"
+        dropdownHoverColor="#FEE9EF"
       />
     </div>
   );

@@ -5,7 +5,6 @@ import RecentlyPlaylist from "../components/RecentlyPlaylist";
 import TopTrendingArtist from "../components/TopTrendingArtist";
 import MusicPlayer from "../components/MusicPlayer";
 import "../styles/Home.css";
-import RecentlyListen from "./RecentlyListen";
 
 function Home() {
   return (

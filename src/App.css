@@ -19,7 +19,7 @@ html::-webkit-scrollbar {
   height: 100vh;
 }
 .header {
-  margin-bottom: 40px;
+  left: 260px;
 }
 .musicPlayer {
   height: 18vh;
@@ -28,4 +28,7 @@ html::-webkit-scrollbar {
   max-width: 100%;
   left: 260px;
   padding: 20px;
+}
+.mainscreen {
+  margin-top: 6em;
 }

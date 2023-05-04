@@ -10,42 +10,42 @@ function PlaylistItem({ item }, props) {
     return require("../../assets/" + url);
   }
   return (
-    <Link to={`/playlistDetail/${item.playlistName}`} state={item}>
-      <Card className={"cardPlaylist"}>
-        <div className="cardContent">
-          <CardMedia
-            className="playlistMedia"
-            component="img"
-            height="100%"
-            style={{
-              width: `250px`,
-              height: `250px`,
-              border: `0.2px solid transparent`,
-              borderRadius: `3px`,
-            }}
-            image={getPlaylistImgUrl(`${item.playlistImg}`)}
-            alt={item.playlistName}
-          />
-          <div className="playlistMoreDetail">
-            <button className="btn">
-              <ClearIcon fontSize="large" />
-            </button>
+    <Card className={"cardPlaylist"}>
+      <div className="cardContent">
+        <CardMedia
+          className="playlistMedia"
+          component="img"
+          height="100%"
+          style={{
+            width: `250px`,
+            height: `250px`,
+            border: `0.2px solid transparent`,
+            borderRadius: `3px`,
+          }}
+          image={getPlaylistImgUrl(`${item.playlistImg}`)}
+          alt={item.playlistName}
+        />
+        <div className="playlistMoreDetail">
+          <button className="btn">
+            <ClearIcon fontSize="large" />
+          </button>
+          <Link to={`/playlistDetail/${item.playlistName}`} state={item}>
             <button>
               <PlayCircleFilled fontSize="large" />
             </button>
-            <button>
-              <MoreHoriz fontSize="large" />
-            </button>
-          </div>
+          </Link>
+          <button>
+            <MoreHoriz fontSize="large" />
+          </button>
         </div>
-        <Typography
-          component="header"
-          sx={{ fontSize: `large`, marginTop: `10px` }}
-        >
-          {item.playlistName}
-        </Typography>
-      </Card>
-    </Link>
+      </div>
+      <Typography
+        component="header"
+        sx={{ fontSize: `large`, marginTop: `10px` }}
+      >
+        {item.playlistName}
+      </Typography>
+    </Card>
   );
 }
 

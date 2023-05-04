@@ -2,8 +2,6 @@ import React, { useContext } from "react";
 import { SongData } from "./Data/SongData";
 import SongItem from "./Item/SongItem";
 import MusicPlayerContext from "../MusicPlayerContext";
-import { useState } from "react";
-import { useEffect } from "react";
 
 function FavoriteSong() {
   const tracks = SongData;
@@ -16,10 +14,9 @@ function FavoriteSong() {
   });
   return (
     <div
+      className={song.isUsing ? "favSong active" : "favSong inactive"}
       style={{
-        height: `calc(100%-18vh)`,
         position: `relative`,
-        marginBottom: `18vh`,
       }}
     >
       {favTracks.map((item, index) => (

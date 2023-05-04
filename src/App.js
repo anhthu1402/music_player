@@ -6,8 +6,19 @@ import MusicPlayer from "./components/MusicPlayer";
 import React from "react";
 import { MusicPlayerProvider } from "./MusicPlayerContext";
 import MainScreen from "./pages/MainScreen";
-
-function App() {
+import AppBar from "./components/AppBar";
+import { CssBaseline, Slide, useScrollTrigger } from "@mui/material";
+function ElevationScroll(props) {
+  const { children } = props;
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0,
+  });
+  return React.cloneElement(children, {
+    elevation: trigger ? 1 : 0,
+  });
+}
+function App(props) {
   return (
     <MusicPlayerProvider>
       <div>
@@ -25,7 +36,19 @@ function App() {
             }}
           >
             <div>
-              <Header className="header" />
+              <CssBaseline />
+              <ElevationScroll {...props}>
+                <AppBar
+                  position="fixed"
+                  style={{
+                    width: `calc(100% - 260px)`,
+                    padding: `20px`,
+                    backgroundColor: "white",
+                  }}
+                >
+                  <Header className="header" />
+                </AppBar>
+              </ElevationScroll>
             </div>
             <div className="mainscreen">
               <MainScreen />

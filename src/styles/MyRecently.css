@@ -28,3 +28,9 @@
 .recentlyContent {
   margin-top: 20px;
 }
+.recently.active {
+  margin-bottom: 7em;
+}
+.recently.inactive {
+  margin-bottom: 0;
+}
