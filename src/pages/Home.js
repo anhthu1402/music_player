@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import BannerPlaylist from "../components/BannerPlaylist";
 import RecentlyPlaylist from "../components/RecentlyPlaylist";
 import TopTrendingArtist from "../components/TopTrendingArtist";
-import MusicPlayer from "../components/MusicPlayer";
 import "../styles/Home.css";
+import MusicPlayerContext from "../MusicPlayerContext";
 
 function Home() {
+  const song = useContext(MusicPlayerContext);
   return (
-    <div className="container">
+    <div className={song.isUsing ? "container active" : "container inactive"}>
       <BannerPlaylist />
 
       <div className="categoryHeader">
@@ -25,7 +26,6 @@ function Home() {
       <TopTrendingArtist />
       {/* RecentlyListen là trang ta dùng để nháp trc khi tạo page ms thoi á. mốt xóa. */}
       {/* <RecentlyListen /> */}
-      <MusicPlayer />
     </div>
   );
 }

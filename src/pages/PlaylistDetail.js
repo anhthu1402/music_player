@@ -43,10 +43,16 @@ const PlaylistDetail = () => {
               />
               <PlayCircle className="playPlaylist" onClick={play} />
             </div>
-            <h1 style={{ margin: "20px" }}>
+            <h1 style={{ marginTop: "20px" }}>
               {playlist.playlistName}
               <EditRounded sx={{ marginLeft: "10px" }} />
             </h1>
+            <p style={{ marginBottom: "10px" }}>
+              Tạo bởi{" "}
+              <span style={{ color: "grey", fontWeight: "bold" }}>
+                {playlist.user}
+              </span>
+            </p>
             <button className="playButton" onClick={play}>
               <PlayArrowRounded sx={{ marginRight: "5px" }} />
               Phát ngẫu nhiên

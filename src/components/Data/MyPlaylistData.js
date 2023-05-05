@@ -1,8 +1,8 @@
-export const PlaylistData = [
+export const MyPlaylistData = [
   {
-    id: 6,
+    id: 1,
     playlistName: "Yêu thích",
-    user: "UIT MP3",
+    user: "Anh Thu",
     playlistImg: "idol.png",
     playlistSongs: [
       {
@@ -54,9 +54,9 @@ export const PlaylistData = [
     ],
   },
   {
-    id: 7,
-    playlistName: "Anh",
-    user: "Milu",
+    id: 2,
+    playlistName: "Anh Thư",
+    user: "Anh Thu",
     playlistImg: "onlylove.jpg",
     playlistSongs: [
       {
@@ -183,9 +183,9 @@ export const PlaylistData = [
     ],
   },
   {
-    id: 8,
+    id: 3,
     playlistName: "Yêu thích 2",
-    user: "Vi",
+    user: "Anh Thu",
     playlistImg: "idol.png",
     playlistSongs: [
       {
@@ -223,9 +223,9 @@ export const PlaylistData = [
     ],
   },
   {
-    id: 9,
-    playlistName: "Kpop",
-    user: "UIT MP3",
+    id: 4,
+    playlistName: "Milu",
+    user: "Anh Thu",
     playlistImg: "onlylove.jpg",
     playlistSongs: [
       {
@@ -260,9 +260,9 @@ export const PlaylistData = [
     ],
   },
   {
-    id: 10,
-    playlistName: "My Playlist",
-    user: "Trinh",
+    id: 5,
+    playlistName: "Playlist",
+    user: "Anh Thu",
     playlistImg: "onlylove.jpg",
     playlistSongs: [
       {

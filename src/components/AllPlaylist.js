@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import { Card, CardContent, Typography } from "@mui/material";
 import PlaylistItem from "./Item/PlaylistItem";
-import { PlaylistData } from "./Data/PlaylistData";
 import { AddCircleRounded } from "@mui/icons-material";
 import "../styles/MyPlaylist.css";
 import MusicPlayerContext from "../MusicPlayerContext";
+import { PlaylistData } from "./Data/PlaylistData";
+import { MyPlaylistData } from "./Data/MyPlaylistData";
 
 function AllPlaylist() {
   const song = useContext(MusicPlayerContext);
@@ -14,8 +15,9 @@ function AllPlaylist() {
         className="createNew"
         sx={{
           width: "250px",
-          height: "300px",
+          height: "320px",
           backgroundColor: "#FEE9EF",
+          borderRadius: "15px",
         }}
       >
         <AddCircleRounded
@@ -26,6 +28,9 @@ function AllPlaylist() {
         </CardContent>
       </Card>
       {PlaylistData.map((item, index) => (
+        <PlaylistItem item={item} key={index} />
+      ))}
+      {MyPlaylistData.map((item, index) => (
         <PlaylistItem item={item} key={index} />
       ))}
     </div>

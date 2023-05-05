@@ -1,24 +1,30 @@
 .container {
-    width: 100%;
-    margin: 0;
-    padding: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .categoryHeader {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
 }
 .categoryTitle {
-    font-size: 20px;
+  font-size: 20px;
 }
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 .linkToAllPlaylist p {
-    text-decoration: none;
-    color: gray;
+  text-decoration: none;
+  color: gray;
+}
+.container.active {
+  margin-bottom: 7em;
+}
+.container.inactive {
+  margin-bottom: 0;
 }

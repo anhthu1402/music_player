@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import PlaylistItem from "./Item/PlaylistItem";
-import { PlaylistData } from "./Data/PlaylistData";
+import { MyPlaylistData } from "./Data/MyPlaylistData";
 import "../styles/MyPlaylist.css";
 import MusicPlayerContext from "../MusicPlayerContext";
 import { Card, CardContent, Typography } from "@mui/material";
@@ -14,8 +14,9 @@ function MyPlaylist() {
         className="createNew"
         sx={{
           width: "250px",
-          height: "300px",
+          height: "320px",
           backgroundColor: "#FEE9EF",
+          borderRadius: "15px",
         }}
       >
         <AddCircleRounded
@@ -25,7 +26,7 @@ function MyPlaylist() {
           <Typography variant="h6">Tạo playlist mới</Typography>
         </CardContent>
       </Card>
-      {PlaylistData.map((item, index) => (
+      {MyPlaylistData.map((item, index) => (
         <PlaylistItem item={item} key={index} />
       ))}
     </div>

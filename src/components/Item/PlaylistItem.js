@@ -10,7 +10,7 @@ function PlaylistItem({ item }, props) {
     return require("../../assets/" + url);
   }
   return (
-    <Card className={"cardPlaylist"}>
+    <Card className={"cardPlaylist"} sx={{ border: "none", boxShadow: "none" }}>
       <div className="cardContent">
         <CardMedia
           className="playlistMedia"
@@ -20,7 +20,7 @@ function PlaylistItem({ item }, props) {
             width: `250px`,
             height: `250px`,
             border: `0.2px solid transparent`,
-            borderRadius: `3px`,
+            borderRadius: `15px`,
           }}
           image={getPlaylistImgUrl(`${item.playlistImg}`)}
           alt={item.playlistName}
@@ -44,6 +44,9 @@ function PlaylistItem({ item }, props) {
         sx={{ fontSize: `large`, marginTop: `10px` }}
       >
         {item.playlistName}
+      </Typography>
+      <Typography component="p" color={"grey"}>
+        {item.user}
       </Typography>
     </Card>
   );
