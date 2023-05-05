@@ -14,6 +14,7 @@ import {
   VolumeUpRounded,
   ShuffleRounded,
   RepeatRounded,
+  RepeatOneRounded,
 } from "@mui/icons-material";
 import MusicPlayerContext from "../MusicPlayerContext";
 import { useRef } from "react";
@@ -59,7 +60,10 @@ const TinyText = styled(Typography)({
 const MusicPlayer = () => {
   const musicPlayer = useContext(MusicPlayerContext);
   const tracks = musicPlayer.isUsing ? musicPlayer.tracks : [];
+  const array = tracks;
   const tracksLen = tracks.length;
+  // 0: Phát theo trình tự , 1: Phát lại 1 bài, 2: Phát lại tất cả (như phát theo trình tự nhưng phát theo trình tự khi hết bài cuối của playlist sẽ chuyển sang playlist khác có liên quan - khó, chưa làm được), 3: Phát ngẫu nhiên
+  const [playMode, setPlayMode] = useState(0);
   let index = musicPlayer.songIndex;
   let song = musicPlayer.isUsing ? tracks[index] : null;
   let title = musicPlayer.isUsing ? tracks[index].title : "";
@@ -74,8 +78,8 @@ const MusicPlayer = () => {
   const [duration, setDuration] = useState(0); //seconds
   const [currentTime, setCurrentTime] = useState(0);
   const [isPlay, setPlay] = useState(false);
-  const source = musicPlayer.isUsing ? tracks[index].source : "Aloha.mp3";
-  const imgUrl = musicPlayer.isUsing ? tracks[index].image : "Logo.png";
+  let source = musicPlayer.isUsing ? tracks[index].source : "Aloha.mp3";
+  let imgUrl = musicPlayer.isUsing ? tracks[index].image : "Logo.png";
   const handleLoadedData = () => {
     setDuration(Math.ceil(audioRef.current.duration));
     if (isPlay) {
@@ -112,6 +116,38 @@ const MusicPlayer = () => {
   const mainIconColor = theme.palette.mode === "dark" ? "#fff" : "#000";
   const lightIconColor =
     theme.palette.mode === "dark" ? "rgba(255,255,255,0.4)" : "rgba(0,0,0,0.4)";
+
+  const shuffleArray = (array) => {
+    for (var i = array.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    return array;
+  };
+  const [repeat, setRepeat] = useState(0);
+  const setNextIdx = () => {
+    if (playMode === 3) {
+      //setRnd(Math.floor(Math.random() * tracksLen));
+      musicPlayer.setSongIndex((index + 1) % tracksLen);
+    } else {
+      // Tạm xem phát lại tất cả như phát theo trình tự
+      musicPlayer.setSongIndex((index + 1) % tracksLen);
+      if (playMode === 1) setRepeat(1);
+    }
+  };
+  const setPrevIdx = () => {
+    if (playMode === 3) {
+      //setRnd(Math.floor(Math.random() * tracksLen));
+      musicPlayer.setSongIndex(index - 1 < 0 ? tracksLen - 1 : index - 1);
+    } else {
+      // Tạm xem phát lại tất cả như phát theo trình tự
+      musicPlayer.setSongIndex(index - 1 < 0 ? tracksLen - 1 : index - 1);
+      if (playMode === 1) setRepeat(1);
+    }
+  };
+
   return (
     <Box
       style={musicPlayer.isUsing ? { display: "flex" } : { display: "none" }}
@@ -121,7 +157,15 @@ const MusicPlayer = () => {
         src={getAudioSource(source)}
         onLoadedData={handleLoadedData}
         onTimeUpdate={() => setCurrentTime(audioRef.current.currentTime)}
-        onEnded={() => setPlay(false)}
+        onEnded={() => {
+          if (repeat) {
+            setPlay(true);
+            audioRef.current.currentTime = 0;
+            setCurrentTime(0);
+            audioRef.current.play();
+          } else setPlay(false);
+        }}
+        loop={repeat ? true : false}
       />
       <Widget>
         <Box sx={{ display: `flex`, alignItems: "center" }}>
@@ -129,9 +173,7 @@ const MusicPlayer = () => {
             <img alt="Only Love" src={getImgUrl(imgUrl)}></img>
           </CoverImage>
           <Box sx={{ ml: 1.5, minWidth: 0 }}>
-            <Typography noWrap>
-              <b>{title}</b>
-            </Typography>
+            <Typography noWrap>{title}</Typography>
             <Typography
               noWrap
               letterSpacing={-0.25}
@@ -172,14 +214,23 @@ const MusicPlayer = () => {
             }}
           >
             <IconButton sx={{ margin: "0 0.5em" }}>
-              <ShuffleRounded />
+              <ShuffleRounded
+                onClick={() => {
+                  if (playMode === 3) {
+                    setPlayMode(0);
+                  } else {
+                    setPlayMode(3);
+                    shuffleArray(array);
+                    if (repeat) setRepeat(0);
+                  }
+                }}
+                sx={playMode === 3 ? { color: "pink" } : { color: "grey" }}
+              />
             </IconButton>
             <IconButton
               aria-label="previous song"
               onClick={() => {
-                musicPlayer.setSongIndex(
-                  index - 1 < 0 ? tracksLen - 1 : index - 1
-                );
+                setPrevIdx();
               }}
             >
               <FastRewindRounded fontSize="large" htmlColor={mainIconColor} />
@@ -202,12 +253,35 @@ const MusicPlayer = () => {
             </IconButton>
             <IconButton
               aria-label="next song"
-              onClick={() => musicPlayer.setSongIndex((index + 1) % tracksLen)}
+              onClick={() => {
+                setNextIdx();
+              }}
             >
               <FastForwardRounded fontSize="large" htmlColor={mainIconColor} />
             </IconButton>
-            <IconButton sx={{ margin: "0 0.5em" }}>
-              <RepeatRounded />
+            <IconButton
+              sx={{ margin: "0 0.5em" }}
+              onClick={() => {
+                if (playMode === 0 || playMode === 3) {
+                  setPlayMode(2);
+                } else if (playMode === 2) {
+                  setPlayMode(1);
+                  setRepeat(1);
+                } else {
+                  setPlayMode(0);
+                  setRepeat(0);
+                }
+              }}
+            >
+              {playMode === 1 ? (
+                <RepeatOneRounded
+                  sx={playMode === 1 ? { color: "pink" } : { color: "grey" }}
+                />
+              ) : (
+                <RepeatRounded
+                  sx={playMode === 2 ? { color: "pink" } : { color: "grey" }}
+                />
+              )}
             </IconButton>
           </Box>
           <Box
@@ -273,7 +347,7 @@ const MusicPlayer = () => {
           <VolumeDownRounded htmlColor={lightIconColor} />
           <Slider
             aria-label="Volume"
-            defaultValue={30}
+            defaultValue={40}
             sx={{
               color:
                 theme.palette.mode === "dark" ? "#fff" : "rgba(0,0,0,0.87)",
@@ -293,6 +367,7 @@ const MusicPlayer = () => {
                 },
               },
             }}
+            onChange={(e) => (audioRef.current.volume = e.target.value / 100)}
           />
           <VolumeUpRounded htmlColor={lightIconColor} />
         </Stack>
