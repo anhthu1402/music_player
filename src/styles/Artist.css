@@ -1,0 +1,24 @@
+.artistDetail .header {
+  max-height: 30em;
+  background-image: linear-gradient(to bottom right, #fce4f2, #f18bcd);
+}
+.artistDetail .headerDetail {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 7em 0 2em 3em;
+}
+.artistDetail .followBtn {
+  border: 1px solid black;
+  color: black;
+  padding: 5px 15px;
+  margin: 10px 10px 10px 0;
+  width: fit-content;
+}
+.artistDetail .buttonPlay {
+  cursor: pointer;
+}
+.artistDetail .buttonPlay:hover {
+  color: white;
+  transition: 0.3s ease-out;
+}
