@@ -7,7 +7,7 @@ import React from "react";
 import { MusicPlayerProvider } from "./MusicPlayerContext";
 import MainScreen from "./pages/MainScreen";
 import AppBar from "./components/AppBar";
-import { CssBaseline, Slide, useScrollTrigger } from "@mui/material";
+import { CssBaseline, useScrollTrigger } from "@mui/material";
 function ElevationScroll(props) {
   const { children } = props;
   const trigger = useScrollTrigger({
@@ -35,10 +35,11 @@ function App(props) {
               height: `calc(100%-18vh)`,
             }}
           >
-            <div>
+            <div className="appBarHeader">
               <CssBaseline />
               <ElevationScroll {...props}>
                 <AppBar
+                  className="appBar"
                   position="fixed"
                   style={{
                     width: `calc(100% - 260px)`,

@@ -7,6 +7,7 @@ import NewSongs from "./NewSongs";
 import MyRecently from "./MyRecently";
 import Album from "./Album";
 import PlaylistDetail from "./PlaylistDetail";
+import Artist from "./Artist";
 
 function MainScreen() {
   return (
@@ -18,6 +19,7 @@ function MainScreen() {
       <Route path="/recently" exact Component={MyRecently} />
       <Route path="/album/*" exact Component={Album} />
       <Route path="/playlistDetail/*" exact Component={PlaylistDetail} />
+      <Route path="/artist/*" exact Component={Artist} />
     </Routes>
   );
 }
