@@ -150,7 +150,7 @@ export const MyPlaylistData = [
       },
       {
         id: "10",
-        title: "IDOL (Feat. Nicki Minaj)",
+        title: "IDOL (Feat. Nicki Minaj) 2",
         artist: [
           {
             id: 4,
@@ -168,7 +168,7 @@ export const MyPlaylistData = [
       },
       {
         id: "9",
-        title: "Aloha",
+        title: "Aloha 2",
         artist: [
           {
             id: 3,
