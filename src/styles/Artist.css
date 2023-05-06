@@ -1,6 +1,6 @@
 .artistDetail .header {
   max-height: 30em;
-  background-image: linear-gradient(to bottom right, #fce4f2, #f18bcd);
+  background-image: linear-gradient(to bottom right, #ffe6ec, #fd95ae);
 }
 .artistDetail .headerDetail {
   display: flex;
