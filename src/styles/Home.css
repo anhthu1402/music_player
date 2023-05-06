@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;700&display=swap");
 .container {
   width: 100%;
   margin: 0;
@@ -13,7 +14,9 @@
   margin-bottom: 15px;
 }
 .categoryTitle {
-  font-size: 20px;
+  font-size: larger;
+  font-weight: bold;
+  font-family: "Josefin Sans", sans-serif;
 }
 a {
   text-decoration: none;
