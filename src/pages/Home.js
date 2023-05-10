@@ -29,19 +29,6 @@ function Home() {
         {PlaylistData.map((item, key) => key < 4 && (
           <div className="listPlaylists">
             <HomePlaylistItem key={key} item={item}/>
-            <div className="artists">
-              {item.playlistSongs.map((item2, key2) => (
-                <span>
-                  {item2.artist.map((child, index) => {
-                    return (
-                      <span key={index} item={child} className="artist">
-                        <Link to={`/artist/${child.name}`} state={child}>{child.name}</Link>
-                      </span>
-                    );
-                  })}
-                </span>
-              ))}
-             </div>
           </div>
         ))}
       </div>
@@ -50,6 +37,28 @@ function Home() {
         <p className="categoryTitle">Nghệ sỹ thịnh hành</p>
       </div>
       <TopTrendingArtist />
+
+      <div className="categoryHeader">
+        <p className="categoryTitle">Album Hot</p>
+      </div>
+      <div className='albumHot'>
+        {PlaylistData.map((item, key) => key < 4 && (
+          <div className="listPlaylists">
+            <HomePlaylistItem key={key} item={item}/>
+          </div>
+        ))}
+      </div>
+
+      <div className="categoryHeader">
+        <p className="categoryTitle">Top 100</p>
+      </div>
+      <div className='top100'>
+        {PlaylistData.map((item, key) => key < 4 && (
+          <div className="listPlaylists">
+            <HomePlaylistItem key={key} item={item}/>
+          </div>
+        ))}
+      </div>
 
     </div>
   );

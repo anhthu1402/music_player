@@ -40,6 +40,19 @@ function PlaylistAtHome({item}) {
                 </div>
             </div>
             <h3 className="playlistName">{item.playlistName}</h3>
+            <div className="artists">
+                {item.playlistSongs.map((item2, key2) => (
+                    <span>
+                    {item2.artist.map((child, index) => {
+                        return (
+                        <span key={index} item={child} className="artist">
+                            <Link to={`/artist/${child.name}`} state={child}>{child.name}</Link>
+                        </span>
+                        );
+                    })}
+                    </span>
+                ))}
+            </div>
         </Link>
     )
 }
