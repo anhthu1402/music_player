@@ -31,3 +31,94 @@ a {
 .container.inactive {
   margin-bottom: 0;
 }
+
+.recommendationPlaylist {
+  display: flex;
+  column-gap: 25px;
+  width: 100%;
+  overflow: hidden;
+}
+.recommendationPlaylist .playlistItem {
+  position: relative;
+  max-width: 300px;
+  min-width: 150px;
+  aspect-ratio: 1;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.recommendationPlaylist .playlistItem img {
+  width: 300px;
+  min-width: 150px;
+  max-width: 100%;
+  aspect-ratio: 1;
+  border-radius: 20px;
+  object-fit: fill;
+  transition: transform 0.5s, filter 0.5s ease-in-out;
+  transform-origin: center center;
+  filter: brightness(100%);
+}
+.recommendationPlaylist .playlistItem .playPlaylist {
+  display: flex;
+  align-items: center;
+  display: none;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+}
+.recommendationPlaylist .playlistItem .playPlaylist .icon {
+  font-size: calc(1rem + 2vw);
+  margin: auto 2px;
+}
+.recommendationPlaylist .playlistItem .playPlaylist .icon:hover {
+  background-color: rgba(255, 255, 255, 0.286);
+  border-radius: 50px;
+  transition: all 0.5 ease;
+  padding: 5px;
+}
+.recommendationPlaylist .playlistItem:hover .playPlaylist{
+    display:block;
+    cursor: pointer;
+}
+.recommendationPlaylist .playlistItem:hover img {
+  transform: scale(1.05);
+  filter: brightness(70%);
+}
+.playlistName {
+  margin-top: 15px;
+  text-align: center;
+  font-weight: normal;
+  color: black;
+  position: relative;
+}
+.listPlaylists {
+  width: 100%;
+  max-width: 300px;
+  min-width: 150px;
+}
+.recommendationPlaylist .artists {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  max-width: 300px;
+  width: 100%;
+  position: relative;
+  
+}
+.recommendationPlaylist .artists a, .recommendationPlaylist .artists a:hover {
+  font-weight: normal;
+  text-decoration: none;
+  color: gray;
+}
+
+.recommendationPlaylist .artists span:not(:last-of-type)::after {
+  content: ', ';
+}
