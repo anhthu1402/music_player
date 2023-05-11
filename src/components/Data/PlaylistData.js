@@ -136,7 +136,7 @@ export const PlaylistData = [
           {
             id: 1,
             name: "Trademark",
-            image: "BTS_image.jpg",
+            image: "ns1.jpg",
           },
         ],
         image: "onlylove.jpg",
@@ -151,7 +151,7 @@ export const PlaylistData = [
           {
             id: 6,
             name: "Cool",
-            image: "BTS_image.jpg",
+            image: "ns3.jpg",
           },
         ],
         image: "onlylove.jpg",

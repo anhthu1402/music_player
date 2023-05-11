@@ -5,6 +5,8 @@ import RecentlyPlaylist from "../components/RecentlyPlaylist";
 import TopTrendingArtist from "../components/TopTrendingArtist";
 import "../styles/Home.css";
 import MusicPlayerContext from "../MusicPlayerContext";
+import {PlaylistData} from '../components/Data/PlaylistData';
+import HomePlaylistItem from "../components/Item/HomePlaylistItem";
 
 function Home() {
   const song = useContext(MusicPlayerContext);
@@ -21,11 +23,43 @@ function Home() {
       <RecentlyPlaylist />
 
       <div className="categoryHeader">
+        <p className="categoryTitle">Đề xuất cho bạn</p>
+      </div>
+      <div className='recommendationPlaylist'>
+        {PlaylistData.map((item, key) => key < 4 && (
+          <div className="listPlaylists">
+            <HomePlaylistItem key={key} item={item}/>
+          </div>
+        ))}
+      </div>
+
+      <div className="categoryHeader">
         <p className="categoryTitle">Nghệ sỹ thịnh hành</p>
       </div>
       <TopTrendingArtist />
-      {/* RecentlyListen là trang ta dùng để nháp trc khi tạo page ms thoi á. mốt xóa. */}
-      {/* <RecentlyListen /> */}
+
+      <div className="categoryHeader">
+        <p className="categoryTitle">Album Hot</p>
+      </div>
+      <div className='albumHot'>
+        {PlaylistData.map((item, key) => key < 4 && (
+          <div className="listPlaylists">
+            <HomePlaylistItem key={key} item={item}/>
+          </div>
+        ))}
+      </div>
+
+      <div className="categoryHeader">
+        <p className="categoryTitle">Top 100</p>
+      </div>
+      <div className='top100'>
+        {PlaylistData.map((item, key) => key < 4 && (
+          <div className="listPlaylists">
+            <HomePlaylistItem key={key} item={item}/>
+          </div>
+        ))}
+      </div>
+
     </div>
   );
 }
