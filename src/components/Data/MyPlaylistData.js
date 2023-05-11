@@ -12,6 +12,7 @@ export const MyPlaylistData = [
           {
             id: 4,
             name: "BTS",
+            image: "BTS_image.jpg",
           },
         ],
         image: "idol.png",
@@ -26,10 +27,12 @@ export const MyPlaylistData = [
           {
             id: 1,
             name: "Trademark",
+            image: "BTS_image.jpg",
           },
           {
             id: 2,
             name: "Band",
+            image: "BTS_image.jpg",
           },
         ],
         image: "onlylove.jpg",
@@ -44,6 +47,7 @@ export const MyPlaylistData = [
           {
             id: 3,
             name: "Jin",
+            image: "BTS_image.jpg",
           },
         ],
         image: "onlylove.jpg",
@@ -66,6 +70,7 @@ export const MyPlaylistData = [
           {
             id: 3,
             name: "Jin",
+            image: "BTS_image.jpg",
           },
         ],
         image: "onlylove.jpg",
@@ -80,6 +85,7 @@ export const MyPlaylistData = [
           {
             id: 4,
             name: "BTS",
+            image: "BTS_image.jpg",
           },
         ],
         image: "idol.png",
@@ -94,6 +100,7 @@ export const MyPlaylistData = [
           {
             id: 5,
             name: "911",
+            image: "BTS_image.jpg",
           },
         ],
         image: "onlylove.jpg",
@@ -109,10 +116,12 @@ export const MyPlaylistData = [
           {
             id: 4,
             name: "BTS",
+            image: "BTS_image.jpg",
           },
           {
             id: 6,
             name: "Nicki Minaj",
+            image: "BTS_image.jpg",
           },
         ],
         image: "idol.png",
@@ -127,6 +136,7 @@ export const MyPlaylistData = [
           {
             id: 1,
             name: "Trademark",
+            image: "BTS_image.jpg",
           },
         ],
         image: "onlylove.jpg",
@@ -141,6 +151,7 @@ export const MyPlaylistData = [
           {
             id: 6,
             name: "Cool",
+            image: "BTS_image.jpg",
           },
         ],
         image: "onlylove.jpg",
@@ -155,10 +166,12 @@ export const MyPlaylistData = [
           {
             id: 4,
             name: "BTS",
+            image: "BTS_image.jpg",
           },
           {
             id: 6,
             name: "Nicki Minaj",
+            image: "BTS_image.jpg",
           },
         ],
         image: "idol.png",
@@ -173,6 +186,7 @@ export const MyPlaylistData = [
           {
             id: 3,
             name: "Cool",
+            image: "BTS_image.jpg",
           },
         ],
         image: "onlylove.jpg",
@@ -195,10 +209,12 @@ export const MyPlaylistData = [
           {
             id: 4,
             name: "BTS",
+            image: "BTS_image.jpg",
           },
           {
             id: 6,
             name: "Nicki Minaj",
+            image: "BTS_image.jpg",
           },
         ],
         image: "idol.png",
@@ -213,6 +229,7 @@ export const MyPlaylistData = [
           {
             id: 3,
             name: "Cool",
+            image: "BTS_image.jpg",
           },
         ],
         image: "onlylove.jpg",
@@ -235,6 +252,7 @@ export const MyPlaylistData = [
           {
             id: 3,
             name: "Cool",
+            image: "BTS_image.jpg",
           },
         ],
         image: "onlylove.jpg",
@@ -250,6 +268,7 @@ export const MyPlaylistData = [
           {
             id: 1,
             name: "Trademark",
+            image: "BTS_image.jpg",
           },
         ],
         image: "onlylove.jpg",
@@ -272,6 +291,7 @@ export const MyPlaylistData = [
           {
             id: 1,
             name: "Trademark",
+            image: "BTS_image.jpg",
           },
         ],
         image: "onlylove.jpg",
@@ -287,6 +307,7 @@ export const MyPlaylistData = [
           {
             id: 6,
             name: "Cool",
+            image: "BTS_image.jpg",
           },
         ],
         image: "onlylove.jpg",
