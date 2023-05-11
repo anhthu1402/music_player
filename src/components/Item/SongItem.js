@@ -47,50 +47,19 @@ class SongItem extends Component {
               <Typography gutterBottom variant="h5" className={"songTitle"}>
                 {this.props.item.title}
               </Typography>
-              <Typography
-                variant="body2"
-                color="text.secondary"
-                className={"songArtist"}
-                sx={{
-                  display: "flex",
-                  flexDirection: "row",
-                }}
-              >
+              <Typography variant="body2" className={"songArtist"}>
                 {this.props.item.artist.map((child, index) => {
-                  if (index < Object.keys(child).length - 1) {
-                    return (
+                  return (
+                    <span key={index} item={child} className="artist">
                       <Link
-                        key={index}
-                        item={child}
-                        className="artist"
                         to={`/artist/${child.name}`}
                         state={child}
+                        color="grey"
                       >
                         {child.name}
                       </Link>
-                    );
-                  } else
-                    return (
-                      <div
-                        key={index}
-                        item={child}
-                        style={{
-                          display: "flex",
-                          flexDirection: "row",
-                          justifyContent: "space-around",
-                        }}
-                      >
-                        ,{" "}
-                        <Link
-                          to={`/artist/${child.name}`}
-                          state={child}
-                          className="artist"
-                        >
-                          {" "}
-                          {child.name}
-                        </Link>
-                      </div>
-                    );
+                    </span>
+                  );
                 })}
               </Typography>
             </div>

@@ -67,13 +67,17 @@
 .cardSong:hover .songMedia {
   opacity: 50%;
 }
+.artist a {
+  font-weight: normal;
+  text-decoration: none;
+  color: gray;
+}
+
 .artist:hover {
   cursor: pointer;
-  color: rgba(134, 0, 132, 0.925);
   text-decoration: underline;
+  color: grey;
 }
-.artist,
-.songArtist {
-  width: fit-content !important;
-  max-width: fit-content !important;
+.songArtist span:not(:last-of-type)::after {
+  content: ", " !important;
 }

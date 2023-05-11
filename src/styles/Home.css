@@ -32,14 +32,16 @@ a {
   margin-bottom: 0;
 }
 
-.recommendationPlaylist, .albumHot, .top100 {
+.recommendationPlaylist,
+.albumHot,
+.top100 {
   display: flex;
   column-gap: 25px;
   width: 100%;
   overflow: hidden;
 }
-.recommendationPlaylist .playlistItem, 
-.albumHot .playlistItem, 
+.recommendationPlaylist .playlistItem,
+.albumHot .playlistItem,
 .top100 .playlistItem {
   position: relative;
   max-width: 300px;
@@ -50,8 +52,8 @@ a {
   overflow: hidden;
   border-radius: 20px;
 }
-.recommendationPlaylist .playlistItem img, 
-.albumHot .playlistItem img, 
+.recommendationPlaylist .playlistItem img,
+.albumHot .playlistItem img,
 .top100 .playlistItem img {
   width: 300px;
   min-width: 150px;
@@ -63,8 +65,8 @@ a {
   transform-origin: center center;
   filter: brightness(100%);
 }
-.recommendationPlaylist .playlistItem .playPlaylist, 
-.albumHot .playlistItem .playPlaylist, 
+.recommendationPlaylist .playlistItem .playPlaylist,
+.albumHot .playlistItem .playPlaylist,
 .top100 .playlistItem .playPlaylist {
   display: flex;
   align-items: center;
@@ -77,35 +79,38 @@ a {
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   text-align: center;
-  width: 100%;
+  width: 70%;
 }
-.recommendationPlaylist .playlistItem .playPlaylist .icon, 
-.albumHot .playlistItem .playPlaylist .icon, 
+.recommendationPlaylist .playlistItem .playPlaylist .icon,
+.albumHot .playlistItem .playPlaylist .icon,
 .top100 .playlistItem .playPlaylist .icon {
   font-size: minmax(calc(1rem + 2vw), 80px);
   margin: auto 2px;
 }
-.recommendationPlaylist .playlistItem .playPlaylist .icon:hover, 
-.albumHot .playlistItem .playPlaylist .icon:hover, 
+.recommendationPlaylist .playlistItem .playPlaylist .icon:hover,
+.albumHot .playlistItem .playPlaylist .icon:hover,
 .top100 .playlistItem .playPlaylist .icon:hover {
   background-color: rgba(255, 255, 255, 0.286);
   border-radius: 50px;
   transition: all 0.5 ease;
   padding: 5px;
 }
-.recommendationPlaylist .playlistItem:hover .playPlaylist, 
-.albumHot .playlistItem:hover .playPlaylist, 
+.recommendationPlaylist .playlistItem:hover .playPlaylist,
+.albumHot .playlistItem:hover .playPlaylist,
 .top100 .playlistItem:hover .playPlaylist {
-    display:block;
-    cursor: pointer;
+  display: flex;
+
+  justify-content: space-between;
+  cursor: pointer;
 }
-.recommendationPlaylist .playlistItem:hover img, 
-.albumHot .playlistItem:hover img, 
+.recommendationPlaylist .playlistItem:hover img,
+.albumHot .playlistItem:hover img,
 .top100 .playlistItem:hover img {
   transform: scale(1.05);
   filter: brightness(70%);
 }
-.top100 .playlistName, .top100 .artists {
+.top100 .playlistName,
+.top100 .artists {
   display: none;
 }
 .playlistName {
@@ -120,19 +125,20 @@ a {
   max-width: 300px;
   min-width: 150px;
 }
-.recommendationPlaylist .artists, 
+.recommendationPlaylist .artists,
 .albumHot .artists {
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; 
+  text-overflow: ellipsis;
   max-width: 300px;
   width: 100%;
   position: relative;
-  
 }
-.recommendationPlaylist .artists a, .recommendationPlaylist .artists a:hover,
-.albumHot .artists a, .albumHot .artists a:hover {
+.recommendationPlaylist .artists a,
+.recommendationPlaylist .artists a:hover,
+.albumHot .artists a,
+.albumHot .artists a:hover {
   font-weight: normal;
   text-decoration: none;
   color: gray;
@@ -140,5 +146,5 @@ a {
 
 .recommendationPlaylist .artists span:not(:last-of-type)::after,
 .albumHot .artists span:not(:last-of-type)::after {
-  content: ', ';
+  content: ", ";
 }
