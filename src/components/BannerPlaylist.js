@@ -39,6 +39,7 @@ function BannerPlaylist() {
               border: 0,
               background: "#dedede",
               margin: "10px 5px",
+              cursor: "pointer"
             },
           },
           activeItemBtnProps: {

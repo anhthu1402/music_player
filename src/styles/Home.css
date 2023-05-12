@@ -32,6 +32,7 @@ a {
   margin-bottom: 0;
 }
 
+
 .recommendationPlaylist, .albumHot, .top100 {
   display: flex;
   column-gap: 25px;
@@ -83,7 +84,7 @@ a {
 .albumHot .playlistItem .playPlaylist .icon, 
 .top100 .playlistItem .playPlaylist .icon {
   font-size: minmax(calc(1rem + 2vw), 80px);
-  margin: auto 2px;
+  margin: auto 5px;
 }
 .recommendationPlaylist .playlistItem .playPlaylist .icon:hover, 
 .albumHot .playlistItem .playPlaylist .icon:hover, 
@@ -142,3 +143,4 @@ a {
 .albumHot .artists span:not(:last-of-type)::after {
   content: ', ';
 }
+

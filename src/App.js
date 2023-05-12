@@ -28,7 +28,7 @@ function App(props) {
           </div>
           <div
             style={{
-              padding: `20px 50px`,
+              padding: `20px 50px 0 50px`,
               width: `calc(100% - 260px)`,
               position: `relative`,
               left: `260px`,

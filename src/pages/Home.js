@@ -7,6 +7,8 @@ import "../styles/Home.css";
 import MusicPlayerContext from "../MusicPlayerContext";
 import {PlaylistData} from '../components/Data/PlaylistData';
 import HomePlaylistItem from "../components/Item/HomePlaylistItem";
+import NewSongs from "../components/NewSongs";
+import SongsChart from "../components/SongsChart";
 
 function Home() {
   const song = useContext(MusicPlayerContext);
@@ -32,6 +34,11 @@ function Home() {
           </div>
         ))}
       </div>
+      
+      <div className="categoryHeader">
+        <p className="categoryTitle">Mới phát hành</p>
+      </div>
+      <NewSongs className="listNewSongs"/>
 
       <div className="categoryHeader">
         <p className="categoryTitle">Nghệ sỹ thịnh hành</p>
@@ -59,7 +66,8 @@ function Home() {
           </div>
         ))}
       </div>
-
+      
+      <div style={{height: `160px`}}></div>
     </div>
   );
 }

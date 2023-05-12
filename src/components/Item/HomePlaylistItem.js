@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-    PlayCircle,
-} from "@mui/icons-material";
-import { MoreHoriz, PlayCircleFilled } from "@mui/icons-material";
-import ClearIcon from "@mui/icons-material/Clear";
+import { FavoriteBorderOutlined, MoreHoriz, PlayCircleFilled } from "@mui/icons-material";
 import { useContext } from "react";
 import MusicPlayerContext from "../../MusicPlayerContext";
 import { useState } from "react";
@@ -34,7 +30,7 @@ function PlaylistAtHome({item}) {
                     title={item.playlistName}
                 />
                 <div className="playPlaylist">
-                    <ClearIcon className='icon' fontSize="large" style={{ color: 'white' }}/>
+                    <FavoriteBorderOutlined className='icon' fontSize="large" style={{ color: 'white' }}/>
                     <PlayCircleFilled className='icon' fontSize="large" onClick={play} style={{ color: 'white' }} />
                     <MoreHoriz className='icon' fontSize="large" style={{ color: 'white' }}/>
                 </div>
