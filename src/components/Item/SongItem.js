@@ -7,6 +7,7 @@ import {
   PlayArrowRounded,
 } from "@mui/icons-material";
 import "../../styles/SongItem.css";
+import { Link } from "react-router-dom";
 
 class SongItem extends Component {
   render() {
@@ -46,28 +47,19 @@ class SongItem extends Component {
               <Typography gutterBottom variant="h5" className={"songTitle"}>
                 {this.props.item.title}
               </Typography>
-              <Typography
-                variant="body2"
-                color="text.secondary"
-                className={"songArtist"}
-                sx={{
-                  display: "flex",
-                  flexDirection: "row",
-                }}
-              >
+              <Typography variant="body2" className={"songArtist"}>
                 {this.props.item.artist.map((child, index) => {
-                  if (index < Object.keys(child).length - 1) {
-                    return (
-                      <div key={index} item={child} className="artist">
+                  return (
+                    <span key={index} item={child} className="artist">
+                      <Link
+                        to={`/artist/${child.name}`}
+                        state={child}
+                        color="grey"
+                      >
                         {child.name}
-                      </div>
-                    );
-                  } else
-                    return (
-                      <div key={index} item={child}>
-                        , <span className="artist">{child.name}</span>
-                      </div>
-                    );
+                      </Link>
+                    </span>
+                  );
                 })}
               </Typography>
             </div>

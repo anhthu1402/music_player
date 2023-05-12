@@ -48,7 +48,7 @@
   border-radius: 20px;
 }
 .playlistDetail .detail .playlistImg:hover img {
-  opacity: 30%;
+  opacity: 60%;
 }
 .playlistDetail .detail .playPlaylist {
   position: absolute;
