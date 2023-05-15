@@ -28,12 +28,12 @@ export const SidebarData = [
     subNav: [
       {
         title: "Nghệ sĩ",
-        path: "/artists",
+        path: "/home/artists",
         icon: <PersonRounded />,
       },
       {
         title: "Playlist",
-        path: "/playlists",
+        path: "/home/playlists",
         icon: <PlaylistPlayRounded />,
       },
     ],

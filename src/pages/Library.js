@@ -4,8 +4,11 @@ import "../styles/Library.css";
 import Song from "./Song";
 import Playlist from "./Playlist";
 import { Link, useLocation } from "react-router-dom";
+import { useContext } from "react";
+import MusicPlayerContext from "../MusicPlayerContext";
 
 function Library() {
+  const musicPlayer = useContext(MusicPlayerContext);
   const { search } = useLocation();
   const match = search.match(/type=(.*)/);
   const type = match?.[1];
@@ -46,6 +49,9 @@ function Library() {
           {type === "song" && <Song />}
           {type === "playlist" && <Playlist />}
         </div>
+        <div
+          style={musicPlayer.isUsing ? { height: "2em" } : { height: "1em" }}
+        ></div>
       </div>
     </div>
   );

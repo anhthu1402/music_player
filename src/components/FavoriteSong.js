@@ -14,7 +14,7 @@ function FavoriteSong() {
   });
   return (
     <div
-      className={song.isUsing ? "favSong active" : "favSong inactive"}
+      className={"favSong"}
       style={{
         position: `relative`,
       }}

@@ -11,7 +11,6 @@ function RecentlySong() {
     <div
       style={{
         position: `relative`,
-        marginBottom: "7em",
       }}
     >
       {SongData.map((item, index) => (
@@ -25,6 +24,7 @@ function RecentlySong() {
           />
         </div>
       ))}
+      <div style={song.isUsing ? { height: "9em" } : { height: "1em" }}></div>
     </div>
   );
 }

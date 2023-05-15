@@ -16,11 +16,7 @@ function Artist() {
   return (
     <div>
       {artist && (
-        <div
-          className={
-            player.isUsing ? "artistDetail active" : "artistDetail inactive"
-          }
-        >
+        <div className="artistDetail">
           <div className="header">
             <div className="headerDetail">
               <Avatar
@@ -58,6 +54,7 @@ function Artist() {
           </div>
         </div>
       )}
+      <div style={player.isUsing ? { height: "2em" } : { height: "1em" }}></div>
     </div>
   );
 }

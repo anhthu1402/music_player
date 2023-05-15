@@ -6,16 +6,13 @@ import { RecentlyPlaylistData } from "../components/Data/RecentlyPlaylistData";
 function RecentlyPlaylist() {
   const song = useContext(MusicPlayerContext);
   return (
-    <div
-      className={
-        song.isUsing
-          ? "myPlaylist recently active"
-          : "myPlaylist recently inactive"
-      }
-    >
-      {RecentlyPlaylistData.map((item, index) => (
-        <PlaylistItem item={item} key={index} />
-      ))}
+    <div>
+      <div className="myPlaylist recently">
+        {RecentlyPlaylistData.map((item, index) => (
+          <PlaylistItem item={item} key={index} />
+        ))}
+      </div>
+      <div style={song.isUsing ? { height: "8em" } : { height: "1em" }}></div>
     </div>
   );
 }

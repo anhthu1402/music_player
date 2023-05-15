@@ -5,7 +5,7 @@ import RecentlyPlaylist from "../components/RecentlyPlaylist";
 import TopTrendingArtist from "../components/TopTrendingArtist";
 import "../styles/Home.css";
 import MusicPlayerContext from "../MusicPlayerContext";
-import {PlaylistData} from '../components/Data/PlaylistData';
+import { PlaylistData } from "../components/Data/PlaylistData";
 import HomePlaylistItem from "../components/Item/HomePlaylistItem";
 import NewSongs from "../components/NewSongs";
 import SongsChart from "../components/SongsChart";
@@ -13,7 +13,7 @@ import SongsChart from "../components/SongsChart";
 function Home() {
   const song = useContext(MusicPlayerContext);
   return (
-    <div className={song.isUsing ? "container active" : "container inactive"}>
+    <div className="container">
       <BannerPlaylist />
 
       <div className="categoryHeader">
@@ -27,18 +27,21 @@ function Home() {
       <div className="categoryHeader">
         <p className="categoryTitle">Đề xuất cho bạn</p>
       </div>
-      <div className='recommendationPlaylist'>
-        {PlaylistData.map((item, key) => key < 4 && (
-          <div className="listPlaylists">
-            <HomePlaylistItem key={key} item={item}/>
-          </div>
-        ))}
+      <div className="recommendationPlaylist">
+        {PlaylistData.map(
+          (item, key) =>
+            key < 4 && (
+              <div className="listPlaylists">
+                <HomePlaylistItem key={key} item={item} />
+              </div>
+            )
+        )}
       </div>
-      
+
       <div className="categoryHeader">
         <p className="categoryTitle">Mới phát hành</p>
       </div>
-      <NewSongs className="listNewSongs"/>
+      <NewSongs className="listNewSongs" />
 
       <div className="categoryHeader">
         <p className="categoryTitle">Nghệ sỹ thịnh hành</p>
@@ -48,26 +51,32 @@ function Home() {
       <div className="categoryHeader">
         <p className="categoryTitle">Album Hot</p>
       </div>
-      <div className='albumHot'>
-        {PlaylistData.map((item, key) => key < 4 && (
-          <div className="listPlaylists">
-            <HomePlaylistItem key={key} item={item}/>
-          </div>
-        ))}
+      <div className="albumHot">
+        {PlaylistData.map(
+          (item, key) =>
+            key < 4 && (
+              <div className="listPlaylists">
+                <HomePlaylistItem key={key} item={item} />
+              </div>
+            )
+        )}
       </div>
 
       <div className="categoryHeader">
         <p className="categoryTitle">Top 100</p>
       </div>
-      <div className='top100'>
-        {PlaylistData.map((item, key) => key < 4 && (
-          <div className="listPlaylists">
-            <HomePlaylistItem key={key} item={item}/>
-          </div>
-        ))}
+      <div className="top100">
+        {PlaylistData.map(
+          (item, key) =>
+            key < 4 && (
+              <div className="listPlaylists">
+                <HomePlaylistItem key={key} item={item} />
+              </div>
+            )
+        )}
       </div>
-      
-      <div style={{height: `160px`}}></div>
+
+      <div style={song.isUsing ? { height: "10em" } : { height: "3em" }}></div>
     </div>
   );
 }
