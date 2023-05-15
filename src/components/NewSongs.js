@@ -1,23 +1,26 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { useContext } from "react";
 import MusicPlayerContext from "../MusicPlayerContext";
 import { FavoriteBorderOutlined, MoreHoriz, PlayCircleFilled } from "@mui/icons-material";
-import { useState } from "react";
 import TrackItem from './Item/TrackItem';
 import {SongData} from './Data/SongData';
 import '../styles/NewSongs.css';
 function NewSongs() {
   const tracks = SongData;
   const song = useContext(MusicPlayerContext);
-  
+  const [params, setParams] = useState(false);
+
+  const handleChangeTab = () => {
+    setParams(!params);
+  };
   return (
     <div className='listSongContainer'>
       <div className='listSongHeader'>
-        <div className='active'>Tất cả</div>
-        <div>Việt Nam</div>
-        <div>US-UK</div>
-        <div>Châu Á</div>
-        <div>Khác</div>
+        <div className='nation active'>Tất cả</div>
+        <div className='nation'>Việt Nam</div>
+        <div className='nation'>US-UK</div>
+        <div className='nation'>Châu Á</div>
+        <div className='nation'>Khác</div>
       </div>
       <div className="listSongBody">
         {SongData.map((item, key) => key < 9 && 

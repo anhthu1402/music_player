@@ -1,7 +1,14 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
+import { isEqualDate } from '@progress/kendo-date-math';
 
-function TrackItem({item, key}) {
+function TrackItem({item}) {
+    const current = new Date();
+    const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+    const endDate = new Date(2023, 4, 13);
+    // const releaseDate = new Date(item.releaseDate);
+    // const endDate = new Date(date);
+    const calcDate = isEqualDate(endDate, current);
     return (
         <div className='item'>
             <div className='songImg'>
@@ -17,7 +24,7 @@ function TrackItem({item, key}) {
                         </span>
                     ))}
                 </div>
-                <div>Hôm nay</div>
+                <div>{ calcDate ? `Hôm nay` : item.releaseDate }</div>
             </div>
         </div>
     )
