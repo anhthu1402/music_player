@@ -21,24 +21,19 @@ export const SidebarData = [
   },
   {
     title: "Khám phá",
-    path: "/",
+    path: "/home",
     icon: <HomeRounded />,
     iconOpened: <ExpandMore />,
     iconClosed: <ExpandLess />,
     subNav: [
       {
-        title: "Bài hát",
-        path: "/home/songs",
-        icon: <MusicNoteRounded />,
-      },
-      {
         title: "Nghệ sĩ",
-        path: "/home/artists",
+        path: "/artists",
         icon: <PersonRounded />,
       },
       {
         title: "Playlist",
-        path: "/home/playlists",
+        path: "/playlists",
         icon: <PlaylistPlayRounded />,
       },
     ],

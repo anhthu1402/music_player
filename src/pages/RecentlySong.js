@@ -9,9 +9,9 @@ function RecentlySong() {
   const song = useContext(MusicPlayerContext);
   return (
     <div
-      className={song.isUsing ? "recently active" : "recently inactive"}
       style={{
         position: `relative`,
+        marginBottom: "7em",
       }}
     >
       {SongData.map((item, index) => (

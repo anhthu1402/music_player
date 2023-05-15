@@ -1,70 +1,65 @@
 import "./App.css";
-import SideBar from "./components/SideBar";
-import { BrowserRouter as Router } from "react-router-dom";
-import Header from "./components/Header";
-import MusicPlayer from "./components/MusicPlayer";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import React from "react";
 import { MusicPlayerProvider } from "./MusicPlayerContext";
-import MainScreen from "./pages/MainScreen";
-import AppBar from "./components/AppBar";
-import { CssBaseline, useScrollTrigger } from "@mui/material";
-function ElevationScroll(props) {
-  const { children } = props;
-  const trigger = useScrollTrigger({
-    disableHysteresis: true,
-    threshold: 0,
-  });
-  return React.cloneElement(children, {
-    elevation: trigger ? 1 : 0,
-  });
-}
-function App(props) {
+import AppRoot from "./components/AppRoot";
+import Home from "./pages/Home";
+import Library from "./pages/Library";
+import SignIn from "./pages/SignIn";
+import NewSongs from "./pages/NewSongs";
+import MyRecently from "./pages/MyRecently";
+import Album from "./pages/Album";
+import PlaylistDetail from "./pages/PlaylistDetail";
+import Artist from "./pages/Artist";
+
+function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <AppRoot />,
+      children: [
+        {
+          index: true,
+          element: <Home />,
+        },
+        {
+          path: "library",
+          element: <Library />,
+        },
+        {
+          path: "home",
+          element: <Home />,
+        },
+        {
+          path: "signIn",
+          element: <SignIn />,
+        },
+        {
+          path: "newsongs",
+          element: <NewSongs />,
+        },
+        {
+          path: "recently",
+          element: <MyRecently />,
+        },
+        {
+          path: "album/*",
+          element: <Album />,
+        },
+        {
+          path: "playlistDetail/*",
+          element: <PlaylistDetail />,
+        },
+        {
+          path: "artist/*",
+          element: <Artist />,
+        },
+      ],
+    },
+  ]);
   return (
     <MusicPlayerProvider>
-      <div>
-        <Router>
-          <div style={{ width: `260px`, position: `fixed`, top: `0`, left: 0 }}>
-            <SideBar />
-          </div>
-          <div
-            style={{
-              padding: `20px 50px 0 50px`,
-              width: `calc(100% - 260px)`,
-              position: `relative`,
-              left: `260px`,
-              height: `calc(100%-18vh)`,
-            }}
-          >
-            <div className="appBarHeader">
-              <CssBaseline />
-              <ElevationScroll {...props}>
-                <AppBar
-                  className="appBar"
-                  position="fixed"
-                  style={{
-                    width: `calc(100% - 260px)`,
-                    padding: `20px`,
-                    backgroundColor: "white",
-                  }}
-                >
-                  <Header className="header" />
-                </AppBar>
-              </ElevationScroll>
-            </div>
-            <div className="mainscreen">
-              <MainScreen />
-            </div>
-            <div
-              className="musicPlayer"
-              style={{
-                width: `calc(100% - 260px)`,
-              }}
-            >
-              <MusicPlayer />
-            </div>
-          </div>
-        </Router>
-      </div>
+      <RouterProvider router={router} />
     </MusicPlayerProvider>
   );
 }
