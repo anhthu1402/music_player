@@ -15,6 +15,7 @@ import HomeArtists from "./pages/HomeArtists";
 import HomePlaylists from "./pages/HomePlaylists";
 import TopRank from "./pages/TopRank";
 import Chart from "./pages/Chart";
+import AllArtistSongs from "./components/AllArtistSongs";
 
 function App() {
   const router = createBrowserRouter([
@@ -57,6 +58,10 @@ function App() {
         {
           path: "artist/*",
           element: <Artist />,
+        },
+        {
+          path: ":name/*",
+          element: <AllArtistSongs />,
         },
         {
           path: "home/artists",

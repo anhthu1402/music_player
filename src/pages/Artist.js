@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useContext } from "react";
 import MusicPlayerContext from "../MusicPlayerContext";
 import "../styles/Artist.css";
@@ -8,11 +8,23 @@ import {
   PlayCircleFilledRounded,
   PersonAddAltRounded,
 } from "@mui/icons-material";
+import { SongData } from "../components/Data/SongData";
+import SongItem from "../components/Item/SongItem";
+import { Grid, Box } from "@mui/material";
 
 function Artist() {
   const player = useContext(MusicPlayerContext);
   const location = useLocation();
   const artist = location.state;
+  const tracks = SongData;
+  const artistSongs = [];
+  tracks.map((item, index) => {
+    item.artist.map((child, key) => {
+      if (child.id === artist.id) {
+        artistSongs.push(item);
+      }
+    });
+  });
   return (
     <div>
       {artist && (
@@ -45,16 +57,60 @@ function Artist() {
                     sx={{ fontSize: "4em" }}
                   />
                 </div>
-                <h4>927.713 người theo dõi</h4>
+                <h4>{artist.followers} người theo dõi</h4>
                 <Button className="followBtn">
                   <PersonAddAltRounded sx={{ marginRight: "10px" }} /> Theo dõi
                 </Button>
               </div>
             </div>
           </div>
+          <div className="content">
+            <div className="songs">
+              <div className="artistSongsHeader">
+                <h2>Bài hát nổi bật</h2>
+                <Link
+                  className="link"
+                  to={`/${artist.name}/bai-hat`}
+                  state={artist}
+                >
+                  <p>Tất cả &gt;</p>
+                </Link>
+              </div>
+              <Box
+                className="artistSongs"
+                sx={{ width: "100%", position: "relative" }}
+              >
+                <Grid container rowSpacing={1} columnSpacing={{ sm: 1, md: 2 }}>
+                  {artistSongs.map((item, index) => (
+                    <Grid item xs={6}>
+                      <SongItem
+                        key={index}
+                        item={item}
+                        tracks={artistSongs}
+                        song={player}
+                        index={0}
+                      />
+                    </Grid>
+                  ))}
+                </Grid>
+              </Box>
+            </div>
+            <div className="album">
+              <div className="artistSongsHeader">
+                <h2>Album</h2>
+                <Link
+                  className="link"
+                  to={`/${artist.name}/album`}
+                  state={artist}
+                >
+                  <p>Tất cả &gt;</p>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       )}
-      <div style={player.isUsing ? { height: "2em" } : { height: "1em" }}></div>
+      <div style={player.isUsing ? { height: "9em" } : { height: "1em" }}></div>
     </div>
   );
 }

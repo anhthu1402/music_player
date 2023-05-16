@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { SongData } from "./Data/SongData";
-import SongItem from "./Item/SongItem";
 
 class NewSongsCountry extends Component {
   render() {

@@ -26,9 +26,6 @@
   font-size: 20px !important;
   margin-left: 20px !important;
 }
-.songFavorite {
-  color: #ff4672;
-}
 .songHeader Typography {
   font-family: "Josefin Sans", sans-serif !important;
 }
@@ -56,7 +53,6 @@
 .cardSong:hover {
   background-color: #c2c2c3 !important;
 }
-.cardSong:hover .songFavorite,
 .cardSong:hover .time {
   display: none;
 }

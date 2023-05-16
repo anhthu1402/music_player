@@ -31,7 +31,7 @@ export const SongData = [
     title: "Tonight",
     artist: [
       {
-        id: 3,
+        id: 6,
         name: "Jin",
         image: "BTS_image.jpg",
       },
@@ -120,7 +120,7 @@ export const SongData = [
     title: "Aloha",
     artist: [
       {
-        id: 6,
+        id: 3,
         name: "Cool",
         image: "ns3.jpg",
       },
@@ -213,7 +213,7 @@ export const SongData = [
         image: "BTS_image.jpg",
       },
       {
-        id: 6,
+        id: 7,
         name: "Nicki Minaj",
         image: "ns4.jpg",
       },

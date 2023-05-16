@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "../styles/Song.css";
 import FavoriteSong from "../components/FavoriteSong";
 import UploadedSong from "../components/UploadedSong";
+import MusicPlayerContext from "../MusicPlayerContext";
 
 function Song() {
+  const player = useContext(MusicPlayerContext);
   const [favorite, setFavorite] = useState(true);
   const Page = favorite ? FavoriteSong : UploadedSong;
   return (
@@ -28,6 +30,7 @@ function Song() {
       <div className="librarySongContent">
         <Page />
       </div>
+      <div style={player.isUsing ? { height: "7em" } : { height: 0 }}></div>
     </div>
   );
 }
