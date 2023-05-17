@@ -18,6 +18,7 @@
     border: 0.1px groove #ebebeb;
     border-radius: 50px;
     display: inline-block;
+    cursor: pointer;
 }
 .listSongContainer .listSongHeader div.active {
     background-color: #ff7394;
