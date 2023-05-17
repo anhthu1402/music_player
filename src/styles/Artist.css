@@ -1,6 +1,7 @@
 .artistDetail .header {
   max-height: 30em;
   background-image: linear-gradient(to bottom right, #ffe6ec, #fd95ae);
+  margin-bottom: 1.5em;
 }
 .artistDetail .headerDetail {
   display: flex;
@@ -22,4 +23,10 @@
   color: white;
   transition: 0.3s ease-out;
 }
- 
+.artistSongsHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}

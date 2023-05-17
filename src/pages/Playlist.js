@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import "../styles/Playlist.css";
 import MyPlaylist from "../components/MyPlaylist";
 import AllPlaylist from "../components/AllPlaylist";
+import { useContext } from "react";
+import MusicPlayerContext from "../MusicPlayerContext";
 
 function Playlist() {
   const [all, setAll] = useState(true);
   const Page = all ? AllPlaylist : MyPlaylist;
+  const musicPlayer = useContext(MusicPlayerContext);
 
   return (
     <div className="libraryPlaylist">
@@ -29,6 +32,9 @@ function Playlist() {
       <div className="libraryPlaylistContent">
         <Page />
       </div>
+      <div
+        style={musicPlayer.isUsing ? { height: "6em" } : { height: "1em" }}
+      ></div>
     </div>
   );
 }

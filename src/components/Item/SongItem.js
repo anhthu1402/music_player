@@ -72,6 +72,7 @@ class SongItem extends Component {
                     ? FavoriteIcon
                     : FavoriteBorderOutlined
                 }
+                color={this.props.item.isFavorite ? "#ff4672" : ""}
                 className={
                   this.props.item.isFavorite ? "songFavorite" : "noneFavorite"
                 }

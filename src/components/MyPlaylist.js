@@ -1,15 +1,13 @@
-import React, { useContext } from "react";
+import React from "react";
 import PlaylistItem from "./Item/PlaylistItem";
 import { MyPlaylistData } from "./Data/MyPlaylistData";
 import "../styles/MyPlaylist.css";
-import MusicPlayerContext from "../MusicPlayerContext";
 import { Card, CardContent, Typography } from "@mui/material";
 import { AddCircleRounded } from "@mui/icons-material";
 
 function MyPlaylist() {
-  const song = useContext(MusicPlayerContext);
   return (
-    <div className={song.isUsing ? "myPlaylist active" : "myPlaylist inactive"}>
+    <div className="myPlaylist">
       <Card
         className="createNew"
         sx={{

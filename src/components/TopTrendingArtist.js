@@ -9,17 +9,20 @@ function TopTrendingArtist() {
   }
   return (
     <div className="artists" style={{ width: `100%` }}>
-      {ArtistsData.map((item, index) => (
-        <Link to={`/artist/${item.name}`} state={item}>
-          <div key={index} className="artist">
-            <img
-              src={getPlaylistImgUrl(`${item.image}`)}
-              title={item.name}
-              alt={item.name}
-            />
-          </div>
-        </Link>
-      ))}
+      {ArtistsData.map(
+        (item, index) =>
+          index < 5 && (
+            <Link to={`/artist/${item.name}`} state={item}>
+              <div key={index} className="artist">
+                <img
+                  src={getPlaylistImgUrl(`${item.image}`)}
+                  title={item.name}
+                  alt={item.name}
+                />
+              </div>
+            </Link>
+          )
+      )}
     </div>
   );
 }

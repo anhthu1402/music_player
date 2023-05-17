@@ -11,6 +11,11 @@ import MyRecently from "./pages/MyRecently";
 import Album from "./pages/Album";
 import PlaylistDetail from "./pages/PlaylistDetail";
 import Artist from "./pages/Artist";
+import HomeArtists from "./pages/HomeArtists";
+import HomePlaylists from "./pages/HomePlaylists";
+import TopRank from "./pages/TopRank";
+import Chart from "./pages/Chart";
+import AllArtistSongs from "./components/AllArtistSongs";
 
 function App() {
   const router = createBrowserRouter([
@@ -35,7 +40,7 @@ function App() {
           element: <SignIn />,
         },
         {
-          path: "newsongs",
+          path: "newSongs",
           element: <NewSongs />,
         },
         {
@@ -53,6 +58,26 @@ function App() {
         {
           path: "artist/*",
           element: <Artist />,
+        },
+        {
+          path: ":name/*",
+          element: <AllArtistSongs />,
+        },
+        {
+          path: "home/artists",
+          element: <HomeArtists />,
+        },
+        {
+          path: "home/playlists",
+          element: <HomePlaylists />,
+        },
+        {
+          path: "charts",
+          element: <Chart />,
+        },
+        {
+          path: "top100",
+          element: <TopRank />,
         },
       ],
     },

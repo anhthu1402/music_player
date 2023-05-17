@@ -19,14 +19,19 @@ export const SongData = [
     time: "4:07",
     source: "OnlyLove.mp3",
     releaseDate: "2023-05-12",
-    countryId: 1
+    country: [
+      {
+        id: "1",
+        countryName: "Việt Nam",
+      },
+    ],
   },
   {
     id: "2",
     title: "Tonight",
     artist: [
       {
-        id: 3,
+        id: 6,
         name: "Jin",
         image: "BTS_image.jpg",
       },
@@ -36,7 +41,12 @@ export const SongData = [
     time: "2:59",
     source: "Tonight.mp3",
     releaseDate: "2023-05-12",
-    countryId: 1
+    country: [
+      {
+        id: "2",
+        countryName: "Hàn Quốc",
+      },
+    ],
   },
   {
     id: "3",
@@ -53,7 +63,12 @@ export const SongData = [
     time: "3:43",
     source: "IDOL.mp3",
     releaseDate: "2022-12-12",
-    countryId: 3
+    country: [
+      {
+        id: "2",
+        countryName: "Hàn Quốc",
+      },
+    ],
   },
 
   {
@@ -71,7 +86,12 @@ export const SongData = [
     time: "3:28",
     source: "IDo.mp3",
     releaseDate: "2003-01-31",
-    countryId: 2
+    country: [
+      {
+        id: "3",
+        countryName: "Mỹ",
+      },
+    ],
   },
   {
     id: "5",
@@ -88,14 +108,19 @@ export const SongData = [
     time: "4:07",
     source: "OnlyLove.mp3",
     releaseDate: "2023-05-13",
-    countryId: 2
+    country: [
+      {
+        id: "4",
+        countryName: "Anh",
+      },
+    ],
   },
   {
     id: "6",
     title: "Aloha",
     artist: [
       {
-        id: 6,
+        id: 3,
         name: "Cool",
         image: "ns3.jpg",
       },
@@ -105,7 +130,12 @@ export const SongData = [
     time: "4:02",
     source: "Aloha.mp3",
     releaseDate: "2023-05-12",
-    countryId: 3
+    country: [
+      {
+        id: "1",
+        countryName: "Việt Nam",
+      },
+    ],
   },
   {
     id: "7",
@@ -122,7 +152,12 @@ export const SongData = [
     time: "3:43",
     source: "IDOL.mp3",
     releaseDate: "2020-05-12",
-    countryId: 3
+    country: [
+      {
+        id: "2",
+        countryName: "Hàn Quốc",
+      },
+    ],
   },
   {
     id: "8",
@@ -139,7 +174,12 @@ export const SongData = [
     time: "4:07",
     source: "OnlyLove.mp3",
     releaseDate: "2003-01-01",
-    countryId: 2
+    country: [
+      {
+        id: "2",
+        countryName: "Hàn Quốc",
+      },
+    ],
   },
   {
     id: "9",
@@ -156,7 +196,12 @@ export const SongData = [
     time: "4:02",
     source: "Aloha.mp3",
     releaseDate: "2018-12-24",
-    countryId: 2
+    country: [
+      {
+        id: "2",
+        countryName: "Hàn Quốc",
+      },
+    ],
   },
   {
     id: "10",
@@ -168,7 +213,7 @@ export const SongData = [
         image: "BTS_image.jpg",
       },
       {
-        id: 6,
+        id: 7,
         name: "Nicki Minaj",
         image: "ns4.jpg",
       },
@@ -178,6 +223,11 @@ export const SongData = [
     time: "4:21",
     source: "IDOLFeat.mp3",
     releaseDate: "2023-05-13",
-    countryId: 3
+    country: [
+      {
+        id: "2",
+        countryName: "Hàn Quốc",
+      },
+    ],
   },
 ];

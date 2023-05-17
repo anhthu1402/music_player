@@ -64,7 +64,6 @@ function NewSongs() {
           </div>
         )}
       </div>
-      
     </div>
     // <div>
     //   {loading ? "Loading..." : (
@@ -78,4 +77,4 @@ function NewSongs() {
   )
 }
 
-export default NewSongs
+export default NewSongs;

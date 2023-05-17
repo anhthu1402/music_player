@@ -1,0 +1,36 @@
+.newSongsHeader {
+  margin-bottom: 15px;
+}
+.newSongsBtn {
+  margin-bottom: 20px;
+}
+.active {
+  border: none;
+  background-color: #e77373;
+  color: rgb(255, 255, 255);
+}
+.active,
+.inactive {
+  border-radius: 25px;
+  cursor: pointer;
+  justify-content: center;
+  height: 30px;
+  width: 100px;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: "Rubik", sans-serif;
+  margin-right: 25px;
+}
+.inactive {
+  background-color: transparent;
+  border: 2px solid #e77373;
+  color: black;
+}
+.active:hover,
+.inactive:hover {
+  background-color: #fba1b6;
+  cursor: pointer;
+  transition: 0.3s ease;
+  color: #373b3e;
+  border: none;
+}

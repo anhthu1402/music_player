@@ -29,11 +29,7 @@ const PlaylistDetail = () => {
   return (
     <div>
       {playlist && (
-        <div
-          className={
-            song.isUsing ? "playlistDetail active" : "playlistDetail inactive"
-          }
-        >
+        <div className="playlistDetail">
           <div className="detail">
             <div className="playlistImg">
               <img
@@ -74,6 +70,7 @@ const PlaylistDetail = () => {
           </div>
         </div>
       )}
+      <div style={song.isUsing ? { height: "9em" } : { height: "1em" }}></div>
     </div>
   );
 };

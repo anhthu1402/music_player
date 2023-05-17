@@ -10,7 +10,7 @@ import { MyPlaylistData } from "./Data/MyPlaylistData";
 function AllPlaylist() {
   const song = useContext(MusicPlayerContext);
   return (
-    <div className={song.isUsing ? "myPlaylist active" : "myPlaylist inactive"}>
+    <div className="myPlaylist">
       <Card
         className="createNew"
         sx={{
