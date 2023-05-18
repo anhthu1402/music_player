@@ -183,13 +183,13 @@ const MusicPlayer = () => {
                 if (index < Object.keys(child).length - 1) {
                   return (
                     <div key={index} item={child} className="artist">
-                      {child.name}
+                      {child.artistName}
                     </div>
                   );
                 } else
                   return (
                     <div key={index} item={child}>
-                      , <span className="artist">{child.name}</span>
+                      , <span className="artist">{child.artistName}</span>
                     </div>
                   );
               })}

@@ -20,7 +20,7 @@ function AllArtistSongs() {
   return (
     <div>
       <div className="aasHeader" style={{ marginBottom: 10 }}>
-        <h2>{artist.name} - Tất cả bài hát</h2>
+        <h2>{artist.artistName} - Tất cả bài hát</h2>
       </div>
       <div style={{ position: "relative" }}>
         {artistSongs.map((item, index) => (

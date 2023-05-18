@@ -1,0 +1,173 @@
+.newAlbumReleaseContainer {
+    width: 100%;
+    overflow: hidden;
+}
+.newAlbumReleaseContainer .newAlbumsBtn {
+    margin-top: 20px;
+}
+.newAlbumReleaseContainer .newAlbumsBtn .active {
+    border: none;
+    background-color: #ff7394;
+    color: rgb(255, 255, 255);
+}
+.newAlbumReleaseContainer .newAlbumsBtn .active,
+.newAlbumReleaseContainer .newAlbumsBtn .inactive {
+    border-radius: 25px;
+    cursor: pointer;
+    justify-content: center;
+    height: 30px;
+    width: 120px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: "Rubik", sans-serif;
+    margin-right: 25px;
+    margin-bottom: 20px;
+}
+.newAlbumReleaseContainer .newAlbumsBtn .inactive {
+    background-color: transparent;
+    border: 1px solid #ff7394;
+    color: black;
+}
+.newAlbumReleaseContainer .newAlbumsBtn .inactive:hover {
+    transition: 0.3s ease;
+    background-color: #ffdde5;
+    border-color: #ffdde5 ;
+}
+.newAlbumReleaseContainer .newAlbumsBodyHeading {
+    display: flex;
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: large;
+}
+.newAlbumReleaseContainer .newAlbumsBodyHeading .releaseDate {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    @media (max-width: 1200px) {
+      position: relative;
+      display: none;
+    }
+}
+.newAlbumReleaseContainer .newAlbumsBody {
+    width: 100%;
+    position: relative;
+}
+.newAlbumReleaseContainer .newAlbumsBody .item {
+    display: flex;
+    padding: 10px;
+    width: 100%;
+    height: fit-content;
+    align-items: center;
+    border-radius: 15px;
+    margin-bottom: 3px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 2px;
+}
+.newAlbumReleaseContainer .newAlbumsBody .albumContainer:hover .item {
+    background-color: #ffdde5;
+}
+.newAlbumReleaseContainer .newAlbumsBody .albumContainer .albumImg {
+    max-width: 110px;
+    min-width: 70px;
+    border-radius: 10px;
+    aspect-ratio: 1;
+    margin-right: 10px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.newAlbumReleaseContainer .newAlbumsBody .item img {
+    width: 100%;
+    max-width: 110px;
+    min-width: 70px;
+    border-radius: 10px;
+    aspect-ratio: 1;
+    transition: transform 0.5s, filter 0.5s ease-in-out;
+    transform-origin: center center;
+    filter: brightness(100%);
+}
+.newAlbumReleaseContainer .newAlbumsBody .albumContainer:hover img {
+    transform: scale(1.05);
+    filter: brightness(70%);
+}
+.newAlbumReleaseContainer .newAlbumsBody .artist span a, 
+.newAlbumReleaseContainer .newAlbumsBody .albumDetail div:not(:first-of-type) {
+    color: gray;
+    font-weight: normal;
+    margin-top: 10px;
+}
+.newAlbumReleaseContainer .newAlbumsBody .albumDetail .albumReleaseDate {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @media (max-width: 1200px) {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: translate(0,0);
+    }
+}
+.newAlbumReleaseContainer .newAlbumsBody .artist span:not(:last-of-type)::after {
+    content: ', ';
+}
+.newAlbumReleaseContainer .newAlbumsBody .albumContainer {
+    position: relative;
+    width: 100%;
+}
+.newAlbumReleaseContainer .newAlbumsBody .albumContainer .fauxImg {
+    width: 100%;
+    max-width: 110px;
+    min-width: 70px;
+    border-radius: 10px;
+    aspect-ratio: 1;
+    margin-left: 10px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0 , -50%);
+    -ms-transform: translate(0, -50%);
+}
+.newAlbumReleaseContainer .newAlbumsBody .albumContainer>.rightIcon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    padding: 0;
+    margin-right: 10px;
+    background-color: #ffdde5;
+}
+.newAlbumReleaseContainer .favOutlineIcon,
+.newAlbumReleaseContainer .moreHoriz {
+    display: none;
+    background-color: transparent;
+    border-radius: 25px;
+    padding: 5px;
+    transition: all .5 ease;
+    margin-right: 5px;
+    cursor: pointer;
+}
+.newAlbumReleaseContainer .favOutlineIcon:hover,
+.newAlbumReleaseContainer .moreHoriz:hover {
+    background-color: #ffffffbb;
+}
+.newAlbumReleaseContainer .newAlbumsBody .albumContainer .icon {
+    align-items: center;
+    border: none;
+    display: none;
+    background-color: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    cursor: pointer;
+}
+.newAlbumReleaseContainer .newAlbumsBody .albumContainer:hover .icon,
+.newAlbumReleaseContainer .newAlbumsBody .albumContainer:hover .favOutlineIcon,
+.newAlbumReleaseContainer .newAlbumsBody .albumContainer:hover .moreHoriz {
+    display: inline-block;
+}

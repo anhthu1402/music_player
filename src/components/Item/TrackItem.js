@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
-import { isEqualDate } from '@progress/kendo-date-math';
 
-function TrackItem({ item, key }) {
+function TrackItem({ item }) {
   // const releaseDate = new Date(item.releaseDate);
   // const endDate = new Date(date);
   function printReleaseDate(dateParam) {
@@ -48,8 +47,8 @@ function TrackItem({ item, key }) {
         <div className="artist">
           {item.artist.map((child, index) => (
             <span key={index} item={child}>
-              <Link to={`/artist/${child.name}`} state={child}>
-                {child.name}
+              <Link to={`/artist/${child.artistName}`} state={child}>
+                {child.artistName}
               </Link>
             </span>
           ))}

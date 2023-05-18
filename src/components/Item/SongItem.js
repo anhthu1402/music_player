@@ -52,7 +52,7 @@ class SongItem extends Component {
                   return (
                     <span key={index} item={child} className="artist">
                       <Link
-                        to={`/artist/${child.name}`}
+                        to={`/artist/${child.artistName}`}
                         state={child}
                         color="grey"
                       >

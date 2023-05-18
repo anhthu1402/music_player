@@ -11,8 +11,9 @@ export const PlaylistData = [
         artist: [
           {
             id: 4,
-            name: "BTS",
-            image: "BTS_image.jpg",
+            artistName: "BTS",
+            artistImage: "BTS_image.jpg",
+            followers: "927.713",
           },
         ],
         image: "idol.png",
@@ -26,13 +27,15 @@ export const PlaylistData = [
         artist: [
           {
             id: 1,
-            name: "Trademark",
-            image: "BTS_image.jpg",
+            artistName: "Trademark",
+            artistImage: "ns1.jpg",
+            followers: "97.713",
           },
           {
             id: 2,
-            name: "Band",
-            image: "BTS_image.jpg",
+            artistName: "Band",
+            followers: "927.713",
+            artistImage: "ns2.png",
           },
         ],
         image: "onlylove.jpg",
@@ -45,9 +48,10 @@ export const PlaylistData = [
         title: "Tonight",
         artist: [
           {
-            id: 3,
-            name: "Jin",
-            image: "BTS_image.jpg",
+            id: 6,
+            artistName: "Jin",
+            artistImage: "BTS_image.jpg",
+            followers: "927.713",
           },
         ],
         image: "onlylove.jpg",
@@ -68,9 +72,10 @@ export const PlaylistData = [
         title: "Tonight",
         artist: [
           {
-            id: 3,
-            name: "Jin",
-            image: "BTS_image.jpg",
+            id: 6,
+            artistName: "Jin",
+            artistImage: "BTS_image.jpg",
+            followers: "927.713",
           },
         ],
         image: "onlylove.jpg",
@@ -84,8 +89,9 @@ export const PlaylistData = [
         artist: [
           {
             id: 4,
-            name: "BTS",
-            image: "BTS_image.jpg",
+            artistName: "BTS",
+            artistImage: "BTS_image.jpg",
+            followers: "927.713",
           },
         ],
         image: "idol.png",
@@ -99,8 +105,9 @@ export const PlaylistData = [
         artist: [
           {
             id: 5,
-            name: "911",
-            image: "BTS_image.jpg",
+            artistName: "911",
+            artistImage: "ns6.jpg",
+            followers: "907.713",
           },
         ],
         image: "onlylove.jpg",
@@ -115,13 +122,15 @@ export const PlaylistData = [
         artist: [
           {
             id: 4,
-            name: "BTS",
-            image: "BTS_image.jpg",
+            artistName: "BTS",
+            artistImage: "BTS_image.jpg",
+            followers: "927.713",
           },
           {
-            id: 6,
-            name: "Nicki Minaj",
-            image: "BTS_image.jpg",
+            id: 7,
+            artistName: "Nicki Minaj",
+            artistImage: "BTS_image.jpg",
+            followers: "927.713",
           },
         ],
         image: "idol.png",
@@ -135,8 +144,9 @@ export const PlaylistData = [
         artist: [
           {
             id: 1,
-            name: "Trademark",
-            image: "ns1.jpg",
+            artistName: "Trademark",
+            artistImage: "ns1.jpg",
+            followers: "97.713",
           },
         ],
         image: "onlylove.jpg",
@@ -149,9 +159,10 @@ export const PlaylistData = [
         title: "Aloha",
         artist: [
           {
-            id: 6,
-            name: "Cool",
-            image: "ns3.jpg",
+            id: 3,
+            artistName: "Cool",
+            artistImage: "ns3.jpg",
+            followers: "27.713",
           },
         ],
         image: "onlylove.jpg",
@@ -165,13 +176,15 @@ export const PlaylistData = [
         artist: [
           {
             id: 4,
-            name: "BTS",
-            image: "BTS_image.jpg",
+            artistName: "BTS",
+            artistImage: "BTS_image.jpg",
+            followers: "927.713",
           },
           {
-            id: 6,
-            name: "Nicki Minaj",
-            image: "BTS_image.jpg",
+            id: 7,
+            artistName: "Nicki Minaj",
+            artistImage: "BTS_image.jpg",
+            followers: "927.713",
           },
         ],
         image: "idol.png",
@@ -185,8 +198,9 @@ export const PlaylistData = [
         artist: [
           {
             id: 3,
-            name: "Cool",
-            image: "BTS_image.jpg",
+            artistName: "Cool",
+            artistImage: "ns3.jpg",
+            followers: "27.713",
           },
         ],
         image: "onlylove.jpg",
@@ -208,13 +222,15 @@ export const PlaylistData = [
         artist: [
           {
             id: 4,
-            name: "BTS",
-            image: "BTS_image.jpg",
+            artistName: "BTS",
+            artistImage: "BTS_image.jpg",
+            followers: "927.713",
           },
           {
-            id: 6,
-            name: "Nicki Minaj",
-            image: "BTS_image.jpg",
+            id: 7,
+            artistName: "Nicki Minaj",
+            artistImage: "BTS_image.jpg",
+            followers: "927.713",
           },
         ],
         image: "idol.png",
@@ -228,8 +244,9 @@ export const PlaylistData = [
         artist: [
           {
             id: 3,
-            name: "Cool",
-            image: "BTS_image.jpg",
+            artistName: "Cool",
+            artistImage: "ns3.jpg",
+            followers: "27.713",
           },
         ],
         image: "onlylove.jpg",
@@ -251,8 +268,9 @@ export const PlaylistData = [
         artist: [
           {
             id: 3,
-            name: "Cool",
-            image: "BTS_image.jpg",
+            artistName: "Cool",
+            artistImage: "ns3.jpg",
+            followers: "27.713",
           },
         ],
         image: "onlylove.jpg",
@@ -267,8 +285,9 @@ export const PlaylistData = [
         artist: [
           {
             id: 1,
-            name: "Trademark",
-            image: "BTS_image.jpg",
+            artistName: "Trademark",
+            artistImage: "ns1.jpg",
+            followers: "97.713",
           },
         ],
         image: "onlylove.jpg",
@@ -290,8 +309,9 @@ export const PlaylistData = [
         artist: [
           {
             id: 1,
-            name: "Trademark",
-            image: "BTS_image.jpg",
+            artistName: "Trademark",
+            artistImage: "ns1.jpg",
+            followers: "97.713",
           },
         ],
         image: "onlylove.jpg",
@@ -305,9 +325,10 @@ export const PlaylistData = [
         title: "Aloha",
         artist: [
           {
-            id: 6,
-            name: "Cool",
-            image: "BTS_image.jpg",
+            id: 7,
+            artistName: "Nicki Minaj",
+            artistImage: "BTS_image.jpg",
+            followers: "927.713",
           },
         ],
         image: "onlylove.jpg",

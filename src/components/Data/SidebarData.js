@@ -39,8 +39,8 @@ export const SidebarData = [
     ],
   },
   {
-    title: "Bài hát mới",
-    path: "/newSongs",
+    title: "Mới phát hành",
+    path: "/newRelease?type=song",
     icon: <NewReleasesRounded />,
   },
   {

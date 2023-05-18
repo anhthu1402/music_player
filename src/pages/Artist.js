@@ -32,8 +32,8 @@ function Artist() {
           <div className="header">
             <div className="headerDetail">
               <Avatar
-                alt={artist.name}
-                src={require(`../assets/${artist.image}`)}
+                alt={artist.artistName}
+                src={require(`../assets/${artist.artistImage}`)}
                 sx={{ width: "9em", height: "9em", marginRight: "2em" }}
               />
               <div
@@ -50,7 +50,7 @@ function Artist() {
                   }}
                 >
                   <h1 style={{ fontSize: "3.5em", marginRight: "20px" }}>
-                    {artist.name}
+                    {artist.artistName}
                   </h1>
                   <PlayCircleFilledRounded
                     className="buttonPlay"
@@ -70,7 +70,7 @@ function Artist() {
                 <h2>Bài hát nổi bật</h2>
                 <Link
                   className="link"
-                  to={`/${artist.name}/bai-hat`}
+                  to={`/${artist.artistName}/bai-hat`}
                   state={artist}
                 >
                   <p>Tất cả &gt;</p>
@@ -100,7 +100,7 @@ function Artist() {
                 <h2>Album</h2>
                 <Link
                   className="link"
-                  to={`/${artist.name}/album`}
+                  to={`/${artist.artistName}/album`}
                   state={artist}
                 >
                   <p>Tất cả &gt;</p>

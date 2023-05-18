@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react";
 import MusicPlayerContext from "../MusicPlayerContext";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import { FavoriteBorderOutlined, MoreHoriz, PlayCircleFilledRounded } from "@mui/icons-material";
 import TrackItem from "../components/Item/TrackItem";
 import "../styles/PageNewSongs.css";
-import NewSongsCountry from "../components/NewSongsCountry";
 import {SongData} from '../components/Data/SongData';
 
 function NewSongs() {
@@ -44,7 +44,6 @@ function NewSongs() {
   const song = useContext(MusicPlayerContext);
   return (
     <div className="newSongReleaseContainer">
-      <h1 className="newSongsHeader">Mới phát hành</h1>
       <div className="newSongsBtn">
         {/* <button
           className={country === "all" ? "active" : "inactive"}
@@ -92,16 +91,17 @@ function NewSongs() {
                 }} />
             </div>
             <div className="rightIcon">
-              <FavoriteBorderOutlined fontSize='large' className="favOutlineIcon" />
+              {
+                item.isFavorite === 1 
+                ? <FavoriteBorderOutlined fontSize='large' className="favOutlineIcon" /> 
+                : <FavoriteIcon fontSize="large" className="favIcon" />
+              }
+              
               <MoreHoriz fontSize='large' className="moreHoriz" />
             </div>
-            
           </div>
         )}
       </div>
-      <div
-          style={song.isUsing ? { height: "150px" } : { height: "10px" }}
-        ></div>
     </div>
   );
 }

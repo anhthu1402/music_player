@@ -2,16 +2,16 @@
   width: 100%;
   overflow: hidden;
 }
-.newSongsHeader {
-  margin-bottom: 15px;
+.newSongReleaseContainer .newSongsBtn {
+  margin-top: 20px;
 }
-.newSongsBtn .active {
+.newSongReleaseContainer .newSongsBtn .active {
   border: none;
   background-color: #ff7394;
   color: rgb(255, 255, 255);
 }
-.newSongsBtn .active,
-.newSongsBtn .inactive {
+.newSongReleaseContainer .newSongsBtn .active,
+.newSongReleaseContainer .newSongsBtn .inactive {
   border-radius: 25px;
   cursor: pointer;
   justify-content: center;
@@ -23,17 +23,17 @@
   margin-right: 25px;
   margin-bottom: 20px;
 }
-.newSongsBtn .inactive {
+.newSongReleaseContainer .newSongsBtn .inactive {
   background-color: transparent;
   border: 1px solid #ff7394;
   color: black;
 }
-.newSongsBtn .inactive:hover {
+.newSongReleaseContainer .newSongsBtn .inactive:hover {
   transition: 0.3s ease;
   background-color: #ffdde5;
   border-color: #ffdde5 ;
 }
-.newSongsBodyHeading {
+.newSongReleaseContainer .newSongsBodyHeading {
   display: flex;
   margin-left: 20px;
   font-weight: bold;
@@ -159,21 +159,32 @@
   -ms-transform: translate(0, -50%);
   padding: 0;
   margin-right: 10px;
+}
+.newSongReleaseContainer .newSongsBody .track:hover .rightIcon {
   background-color: #ffdde5;
 }
+.newSongReleaseContainer .favIcon,
 .newSongReleaseContainer .favOutlineIcon,
 .newSongReleaseContainer .moreHoriz {
-  display: none;
   background-color: transparent;
   border-radius: 25px;
   padding: 5px;
   transition: all .5 ease;
   margin-right: 5px;
   cursor: pointer;
+  color: #ff7394;
 }
+.newSongReleaseContainer .moreHoriz {
+  color: transparent;
+}
+.newSongReleaseContainer .favOutlineIcon {
+  display: none;
+}
+.newSongReleaseContainer .favIcon:hover,
 .newSongReleaseContainer .favOutlineIcon:hover,
 .newSongReleaseContainer .moreHoriz:hover {
   background-color: #ffffffbb;
+  color: #ff7394;
 }
 .newSongReleaseContainer .newSongsBody .track .icon {
   align-items: center;
@@ -194,4 +205,8 @@
 .newSongReleaseContainer .newSongsBody .track:hover .favOutlineIcon,
 .newSongReleaseContainer .newSongsBody .track:hover .moreHoriz {
   display: inline-block;
+}
+.newSongReleaseContainer .newSongsBody .track:hover .favOutlineIcon,
+.newSongReleaseContainer .newSongsBody .track:hover .moreHoriz {
+  color: black;
 }

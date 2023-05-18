@@ -60,8 +60,8 @@ function PlaylistAtHome({ item }) {
             {item2.artist.map((child, index) => {
               return (
                 <span key={index} item={child} className="artist">
-                  <Link to={`/artist/${child.name}`} state={child}>
-                    {child.name}
+                  <Link to={`/artist/${child.artistName}`} state={child}>
+                    {child.artistName}
                   </Link>
                 </span>
               );

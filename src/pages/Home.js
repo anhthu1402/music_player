@@ -40,7 +40,7 @@ function Home() {
 
       <div className="categoryHeader">
         <p className="categoryTitle">Mới phát hành</p>
-        <Link className="linkToAllPlaylist" to={"/newsongs"}>
+        <Link className="linkToAllPlaylist" to={"/newrelease?type=song"}>
           <p>Tất cả &gt;</p>
         </Link>
       </div>

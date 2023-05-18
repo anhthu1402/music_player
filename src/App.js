@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Library from "./pages/Library";
 import SignIn from "./pages/SignIn";
 import NewSongs from "./pages/NewSongs";
+import NewRelease from "./pages/NewRelease";
 import MyRecently from "./pages/MyRecently";
 import Album from "./pages/Album";
 import PlaylistDetail from "./pages/PlaylistDetail";
@@ -40,8 +41,8 @@ function App() {
           element: <SignIn />,
         },
         {
-          path: "newSongs",
-          element: <NewSongs />,
+          path: "newRelease",
+          element: <NewRelease />,
         },
         {
           path: "recently",

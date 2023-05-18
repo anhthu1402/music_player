@@ -12,12 +12,12 @@ function TopTrendingArtist() {
       {ArtistsData.map(
         (item, index) =>
           index < 5 && (
-            <Link to={`/artist/${item.name}`} state={item}>
+            <Link to={`/artist/${item.artistName}`} state={item}>
               <div key={index} className="artist">
                 <img
-                  src={getPlaylistImgUrl(`${item.image}`)}
-                  title={item.name}
-                  alt={item.name}
+                  src={getPlaylistImgUrl(`${item.artistImage}`)}
+                  title={item.artistName}
+                  alt={item.artistName}
                 />
               </div>
             </Link>

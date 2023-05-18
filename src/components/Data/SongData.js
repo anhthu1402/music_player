@@ -5,13 +5,17 @@ export const SongData = [
     artist: [
       {
         id: 1,
-        name: "Trademark",
-        image: "ns1.jpg",
+        artistName: "Trademark",
+        followers: "97.713",
+        introduce: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
+        artistImage: "ns1.jpg"
       },
       {
         id: 2,
-        name: "Band",
-        image: "ns2.png",
+        artistName: "Band",
+        followers: "927.713",
+        introduce: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
+        artistImage: "ns2.png",
       },
     ],
     image: "onlylove.jpg",
@@ -32,8 +36,10 @@ export const SongData = [
     artist: [
       {
         id: 6,
-        name: "Jin",
-        image: "BTS_image.jpg",
+        artistName: "Jin",
+        artistImage: "BTS_image.jpg",
+        introduce: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
+        followers: "927.713",
       },
     ],
     image: "onlylove.jpg",
@@ -54,8 +60,10 @@ export const SongData = [
     artist: [
       {
         id: 4,
-        name: "BTS",
-        image: "BTS_image.jpg",
+        artistName: "BTS",
+        artistImage: "BTS_image.jpg",
+        introduce: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
+        followers: "927.713",
       },
     ],
     image: "idol.png",
@@ -77,8 +85,10 @@ export const SongData = [
     artist: [
       {
         id: 5,
-        name: "911",
-        image: "ns4.jpg",
+        artistName: "911",
+        introduce: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
+        artistImage: "ns6.jpg",
+        followers: "907.713",
       },
     ],
     image: "onlylove.jpg",
@@ -99,8 +109,10 @@ export const SongData = [
     artist: [
       {
         id: 1,
-        name: "Trademark",
-        image: "ns1.jpg",
+        artistName: "Trademark",
+        followers: "97.713",
+        introduce: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
+        artistImage: "ns1.jpg"
       },
     ],
     image: "onlylove.jpg",
@@ -121,8 +133,10 @@ export const SongData = [
     artist: [
       {
         id: 3,
-        name: "Cool",
-        image: "ns3.jpg",
+        artistName: "Cool",
+        artistImage: "ns3.jpg",
+        introduce: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
+        followers: "27.713",
       },
     ],
     image: "onlylove.jpg",
@@ -143,8 +157,10 @@ export const SongData = [
     artist: [
       {
         id: 4,
-        name: "BTS",
-        image: "BTS_image.jpg",
+        artistName: "BTS",
+        introduce: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
+        artistImage: "BTS_image.jpg",
+        followers: "927.713",
       },
     ],
     image: "idol.png",
@@ -165,8 +181,10 @@ export const SongData = [
     artist: [
       {
         id: 1,
-        name: "Trademark",
-        image: "ns1.jpg",
+        artistName: "Trademark",
+        followers: "97.713",
+        introduce: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
+        artistImage: "ns1.jpg"
       },
     ],
     image: "onlylove.jpg",
@@ -187,8 +205,10 @@ export const SongData = [
     artist: [
       {
         id: 3,
-        name: "Cool",
-        image: "ns3.jpg",
+        artistName: "Cool",
+        artistImage: "ns3.jpg",
+        introduce: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
+        followers: "27.713",
       },
     ],
     image: "onlylove.jpg",
@@ -209,13 +229,17 @@ export const SongData = [
     artist: [
       {
         id: 4,
-        name: "BTS",
-        image: "BTS_image.jpg",
+        artistName: "BTS",
+        artistImage: "BTS_image.jpg",
+        introduce: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
+        followers: "927.713",
       },
       {
         id: 7,
-        name: "Nicki Minaj",
-        image: "ns4.jpg",
+        artistName: "Nicki Minaj",
+        artistImage: "BTS_image.jpg",
+        introduce: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
+        followers: "927.713",
       },
     ],
     image: "idol.png",
