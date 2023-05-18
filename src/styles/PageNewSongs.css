@@ -1,36 +1,197 @@
+.newSongReleaseContainer {
+  width: 100%;
+  overflow: hidden;
+}
 .newSongsHeader {
   margin-bottom: 15px;
 }
-.newSongsBtn {
-  margin-bottom: 20px;
-}
-.active {
+.newSongsBtn .active {
   border: none;
-  background-color: #e77373;
+  background-color: #ff7394;
   color: rgb(255, 255, 255);
 }
-.active,
-.inactive {
+.newSongsBtn .active,
+.newSongsBtn .inactive {
   border-radius: 25px;
   cursor: pointer;
   justify-content: center;
   height: 30px;
-  width: 100px;
+  width: 120px;
   text-decoration: none;
   font-size: 15px;
   font-family: "Rubik", sans-serif;
   margin-right: 25px;
+  margin-bottom: 20px;
 }
-.inactive {
+.newSongsBtn .inactive {
   background-color: transparent;
-  border: 2px solid #e77373;
+  border: 1px solid #ff7394;
   color: black;
 }
-.active:hover,
-.inactive:hover {
-  background-color: #fba1b6;
-  cursor: pointer;
+.newSongsBtn .inactive:hover {
   transition: 0.3s ease;
-  color: #373b3e;
+  background-color: #ffdde5;
+  border-color: #ffdde5 ;
+}
+.newSongsBodyHeading {
+  display: flex;
+  margin-left: 20px;
+  font-weight: bold;
+  font-size: large;
+}
+.newSongReleaseContainer .newSongsBodyHeading .releaseDate {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  @media (max-width: 1200px) {
+    position: relative;
+    display: none;
+  }
+}
+.newSongReleaseContainer .newSongsBodyHeading div:last-of-type {
+  position: absolute;
+  right: 0;
+  transform: translateX(0);
+  margin-right: 50px;
+  @media (max-width: 700px) {
+    position: relative;
+    display: none;
+  }
+}
+.newSongReleaseContainer .newSongsBody {
+  width: 100%;
+  position: relative;
+}
+.newSongReleaseContainer .newSongsBody .item {
+  display: flex;
+  padding: 10px;
+  width: 100%;
+  height: fit-content;
+  align-items: center;
+  border-radius: 15px;
+  margin-bottom: 3px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 2px;
+}
+.newSongReleaseContainer .newSongsBody .track:hover .item {
+  background-color: #ffdde5;
+}
+.newSongReleaseContainer .newSongsBody .track .songImg {
+  max-width: 110px;
+  min-width: 70px;
+  border-radius: 10px;
+  aspect-ratio: 1;
+  margin-right: 10px;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.newSongReleaseContainer .newSongsBody .item img {
+  width: 100%;
+  max-width: 110px;
+  min-width: 70px;
+  border-radius: 10px;
+  aspect-ratio: 1;
+  transition: transform 0.5s, filter 0.5s ease-in-out;
+  transform-origin: center center;
+  filter: brightness(100%);
+}
+.newSongReleaseContainer .newSongsBody .track:hover img {
+  transform: scale(1.05);
+  filter: brightness(70%);
+}
+.newSongReleaseContainer .newSongsBody .artist span a, 
+.newSongReleaseContainer .newSongsBody .songDetail div:not(:first-of-type) {
+  color: gray;
+  font-weight: normal;
+  margin-top: 10px;
+}
+.newSongReleaseContainer .newSongsBody .songDetail .trackReleaseDate {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @media (max-width: 1200px) {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translate(0,0);
+  }
+}
+.newSongReleaseContainer .newSongsBody .songDetail div:last-of-type {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  margin-right: 20px;
+  @media (max-width: 700px) {
+    position: relative;
+    display: none
+  }
+}
+.newSongReleaseContainer .newSongsBody .track:hover .songDetail div:last-of-type {
+  display: none;
+}
+.newSongReleaseContainer .newSongsBody .artist span:not(:last-of-type)::after {
+  content: ', ';
+}
+.newSongReleaseContainer .newSongsBody .track {
+  position: relative;
+  width: 100%;
+}
+.newSongReleaseContainer .newSongsBody .track .fauxImg {
+  width: 100%;
+  max-width: 110px;
+  min-width: 70px;
+  border-radius: 10px;
+  aspect-ratio: 1;
+  margin-left: 10px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0 , -50%);
+  -ms-transform: translate(0, -50%);
+}
+.newSongReleaseContainer .newSongsBody .track>.rightIcon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  padding: 0;
+  margin-right: 10px;
+  background-color: #ffdde5;
+}
+.newSongReleaseContainer .favOutlineIcon,
+.newSongReleaseContainer .moreHoriz {
+  display: none;
+  background-color: transparent;
+  border-radius: 25px;
+  padding: 5px;
+  transition: all .5 ease;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.newSongReleaseContainer .favOutlineIcon:hover,
+.newSongReleaseContainer .moreHoriz:hover {
+  background-color: #ffffffbb;
+}
+.newSongReleaseContainer .newSongsBody .track .icon {
+  align-items: center;
   border: none;
+  display: none;
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  color: #fff;
+  cursor: pointer;
+}
+.newSongReleaseContainer .newSongsBody .track:hover .icon,
+.newSongReleaseContainer .newSongsBody .track:hover .favOutlineIcon,
+.newSongReleaseContainer .newSongsBody .track:hover .moreHoriz {
+  display: inline-block;
 }

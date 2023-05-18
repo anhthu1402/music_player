@@ -1,7 +1,11 @@
 * {
     box-sizing: border-box;
-}.listSongContainer {
+}
+.listSongContainer {
     width: 100%;
+}
+.listSongContainer .trackDuration {
+    display: none;
 }
 .listSongContainer .listSongHeader {
     display: grid;
@@ -10,23 +14,28 @@
     width: 100%;
     align-items: center;
 }
-.listSongContainer .listSongHeader div {
+.listSongContainer .listSongHeader button {
     width: 120px;
-    padding: 5px auto;
-    text-align: center;
-    align-items: center;
-    border: 0.1px groove #ebebeb;
-    border-radius: 50px;
-    display: inline-block;
+    border: 1px solid #ebebeb;
+    border-radius: 30px;
     cursor: pointer;
+    height: 30px;
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    background-color: transparent;
 }
-.listSongContainer .listSongHeader div.active {
+.listSongContainer .listSongHeader button.active {
     background-color: #ff7394;
     border-color: #ff7394;
     color: white;
     box-shadow: rgba(0, 0, 0, 0.476) 0px 0 12px;
 }
-
+.listSongContainer .listSongHeader button:not(.active):hover {
+    transform: all .5 ease;
+    background-color: #ffdde5;
+    border-color: #ffdde5 ;
+}
 .listSongContainer .listSongBody  {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, calc(100%/4)));
@@ -106,6 +115,22 @@
     transform: translate(0 , -50%);
     -ms-transform: translate(0, -50%);
 }
+.listSongContainer .listSongBody .track .moreHoriz {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-right: 15px;
+    transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    background-color: transparent;
+    padding: 5px;
+    border-radius: 25px;
+    display: none;
+    cursor: pointer;
+}
+.listSongContainer .listSongBody .track .moreHoriz:hover {
+    background-color: #ffffffbb;
+}
 .listSongContainer .listSongBody .track .icon {
     align-items: center;
     border: none;
@@ -121,6 +146,7 @@
     color: #fff;
     cursor: pointer;
 }
-.listSongContainer .listSongBody .track:hover .icon {
+.listSongContainer .listSongBody .track:hover .icon,
+.listSongContainer .listSongBody .track:hover .moreHoriz {
     display: block;
 }

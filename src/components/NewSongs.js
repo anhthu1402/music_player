@@ -6,21 +6,39 @@ import TrackItem from './Item/TrackItem';
 import {SongData} from './Data/SongData';
 import '../styles/NewSongs.css';
 function NewSongs() {
-  const tracks = SongData;
-  const song = useContext(MusicPlayerContext);
-
   const [toggleState, setToggleState] = useState(1);
-  const datas = [];
+  const tracksByCountry = [];
+  SongData.map((item, index) => {
+    if (toggleState === 1) {
+      tracksByCountry.push(item);
+    } 
+    else if (toggleState === 2) {
+      item.country.map((child) => {
+        if (child.id === "1") {
+          tracksByCountry.push(item);
+        }
+      });
+    } 
+    else if (toggleState === 3) {
+      item.country.map((child) => {
+        if (child.id === "3" || child.id === "4") {
+          tracksByCountry.push(item);
+        }
+      });
+    }
+    else {
+      item.country.map((child) => {
+        if (child.id !== "1" && child.id !== "3" && child.id !== "4") {
+          tracksByCountry.push(item);
+        }
+      });
+    }
+  });
   const toggleTab = (index) => {
     setToggleState(index);
-    if (index === 1) {
-      datas = SongData.map();
-    }
-    if (index === 2) {
-
-    }
   };
-
+  const tracks = tracksByCountry;
+  const song = useContext(MusicPlayerContext);
   // const [loading, setLoading] = useState(true);
   // const [records, setRecords] = useState([]);
 
@@ -36,19 +54,17 @@ function NewSongs() {
   return (
     <div className='listSongContainer'>
       <div className='listSongHeader'>
-        <div className={toggleState === 1 ? 'nation active' : "nation"}
-          onClick={() => toggleTab(1)}>Tất cả</div>
-        <div className={toggleState === 2 ? 'nation active' : "nation"}
-          onClick={() => toggleTab(2)}>Việt Nam</div>
-        <div className={toggleState === 3 ? 'nation active' : "nation"}
-          onClick={() => toggleTab(3)}>US-UK</div>
-        <div className={toggleState === 4 ? 'nation active' : "nation"}
-          onClick={() => toggleTab(4)}>Châu Á</div>
-        <div className={toggleState === 5 ? 'nation active' : "nation"}
-          onClick={() => toggleTab(5)}>Khác</div>
+        <button className={toggleState === 1 ? 'nation active' : "nation"}
+          onClick={() => toggleTab(1)}>Tất cả</button>
+        <button className={toggleState === 2 ? 'nation active' : "nation"}
+          onClick={() => toggleTab(2)}>Việt Nam</button>
+        <button className={toggleState === 3 ? 'nation active' : "nation"}
+          onClick={() => toggleTab(3)}>US-UK</button>
+        <button className={toggleState === 4 ? 'nation active' : "nation"}
+          onClick={() => toggleTab(4)}>Khác</button>
       </div>
       <div className="listSongBody">
-        {SongData.map((item, key) => item.countryId === 1 && key < 9 && 
+        {tracksByCountry.map((item, key) => key < 9 && 
           <div class='track'>
             <TrackItem item={item} key={key} className='trackItem' />
             <div className='fauxImg'>
@@ -60,7 +76,7 @@ function NewSongs() {
                   song.setSong(tracks[key]);
                 }} />
             </div>
-            
+            <MoreHoriz fontSize='large' className="moreHoriz" />
           </div>
         )}
       </div>
