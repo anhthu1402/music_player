@@ -1,19 +1,18 @@
-.artists {
+.topTrendingArtists {
   display: flex;
   column-gap: 25px;
   width: 100%;
   overflow: hidden;
-  margin-bottom: 60px;
 }
 
-.artists .artist {
+.topTrendingArtists .artist {
   width: 100%;
   max-width: 300px;
   min-width: 100px;
   justify-content: center;
   align-items: center;
 }
-.artist img {
+.topTrendingArtists img {
   max-width: 300px;
   min-width: 100px;
   width: 100%;

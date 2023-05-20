@@ -43,7 +43,7 @@
     width: 100%;
     max-width: 1400px;
     overflow: hidden;
-    margin: 20px 0 60px 0;
+    margin: 20px 0 0;
     grid-template-rows: 1fr 1fr 1fr;
     grid-auto-rows: 0;
     position: relative;

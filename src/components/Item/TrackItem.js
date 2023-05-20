@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
 
 function TrackItem({ item }) {
-  // const releaseDate = new Date(item.releaseDate);
-  // const endDate = new Date(date);
   function printReleaseDate(dateParam) {
     const date = new Date(dateParam);
     const DAY_IN_MS = 86400000;
@@ -53,7 +51,7 @@ function TrackItem({ item }) {
             </span>
           ))}
         </div>
-        <div className='trackReleaseDate'>{ printReleaseDate(item.releaseDate) }</div>
+        <div className='trackReleaseDate'>{ item.releaseDate === undefined ? "" : printReleaseDate(item.releaseDate) }</div>
         <div className='trackDuration'>{item.time}</div>
       </div>
     </div>

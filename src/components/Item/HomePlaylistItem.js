@@ -1,5 +1,4 @@
 import React from "react";
-
 import {
   FavoriteBorderOutlined,
   MoreHoriz,
@@ -11,7 +10,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function PlaylistAtHome({ item }) {
-  const tracks = item.playlistSongs;
+  const tracks = item.playlistSongs !== undefined ? item.playlistSongs : item.albumTracks;
   const song = useContext(MusicPlayerContext);
   const length = tracks.length;
   const [rnd, setRnd] = useState(0);
@@ -25,14 +24,33 @@ function PlaylistAtHome({ item }) {
   function getPlaylistImgUrl(url) {
     return require("../../assets/" + url);
   }
+  const artists = [], uniqueArtist = [];
+    tracks.map((item2) => (
+      item2.artist.map((child) => {
+          artists.push(child);
+      })
+  ));
+  uniqueArtist.push(artists[0]);
+  for (let i = 1; i < artists.length; i++) {
+      let dup = 0;
+      for (let j = 0; j < i; j++)
+          if (artists[i].artistName === artists[j].artistName) {
+              dup = 1;
+              break;
+          }
+      if (dup === 0) {
+          uniqueArtist.push(artists[i]);
+      }
+  }
   return (
-    <Link to={`/playlistDetail/${item.playlistName}`} state={item}>
+    <Link to={item.playlistName !== undefined ? `/playlistDetail/${item.playlistName}` : `/album/${item.albumName}`} 
+          state={item.playlistName !== undefined ? item : {item: item, artists: uniqueArtist}}>
       <div className="playlistItem">
         <img
-          src={getPlaylistImgUrl(`${item.playlistImg}`)}
+          src={item.playlistImg !== undefined ? getPlaylistImgUrl(`${item.playlistImg}`) : item.albumImage}
           className="imagePlaylist"
-          alt={item.playlistName}
-          title={item.playlistName}
+          alt={item.playlistName !== undefined ? item.playlistName : item.albumName}
+          title={item.playlistName !== undefined ? item.playlistName : item.albumName}
         />
         <div className="playPlaylist">
           <FavoriteBorderOutlined
@@ -53,11 +71,10 @@ function PlaylistAtHome({ item }) {
           />
         </div>
       </div>
-      <h3 className="playlistName">{item.playlistName}</h3>
+      <h3 className="playlistName">{item.playlistName !== undefined ? item.playlistName : item.albumName}</h3>
       <div className="artists">
-        {item.playlistSongs.map((item2, key2) => (
           <span>
-            {item2.artist.map((child, index) => {
+            {uniqueArtist.map((child, index) => {
               return (
                 <span key={index} item={child} className="artist">
                   <Link to={`/artist/${child.artistName}`} state={child}>
@@ -67,7 +84,6 @@ function PlaylistAtHome({ item }) {
               );
             })}
           </span>
-        ))}
       </div>
     </Link>
   );

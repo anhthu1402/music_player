@@ -6,6 +6,7 @@ import TopTrendingArtist from "../components/TopTrendingArtist";
 import "../styles/Home.css";
 import MusicPlayerContext from "../MusicPlayerContext";
 import { PlaylistData } from "../components/Data/PlaylistData";
+import { AlbumData } from "../components/Data/AlbumData";
 import HomePlaylistItem from "../components/Item/HomePlaylistItem";
 import NewSongs from "../components/NewSongs";
 import SongsChart from "../components/SongsChart";
@@ -55,7 +56,7 @@ function Home() {
         <p className="categoryTitle">Album Hot</p>
       </div>
       <div className="albumHot">
-        {PlaylistData.map(
+        {AlbumData.map(
           (item, key) =>
             key < 4 && (
               <div className="listPlaylists">

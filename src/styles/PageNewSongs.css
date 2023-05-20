@@ -107,9 +107,9 @@
 }
 .newSongReleaseContainer .newSongsBody .songDetail .trackReleaseDate {
   position: absolute;
-  top: 50%;
+  top: 42%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -58%);
   @media (max-width: 1200px) {
     position: relative;
     top: 0;
@@ -120,8 +120,8 @@
 .newSongReleaseContainer .newSongsBody .songDetail div:last-of-type {
   position: absolute;
   right: 0;
-  top: 50%;
-  transform: translate(0, -50%);
+  top: 42%;
+  transform: translate(0, -58%);
   margin-right: 20px;
   @media (max-width: 700px) {
     position: relative;

@@ -1,0 +1,248 @@
+.albumDetailContainer {
+    width: 100%;
+    overflow: hidden;
+}
+.albumDetailContainer .albumDetail {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 35px;
+    @media (max-width: 849px) {
+        display: block;
+    }
+}
+.albumDetailContainer .albumDetail .detail {
+    text-align: center;
+    align-items: center;
+    @media (min-width: 740px) and (max-width: 849px) {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 20px;
+    }
+}
+.albumDetailContainer .albumDetail .detail .trackImg {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 1;
+}
+.albumDetailContainer .albumDetail .detail .trackImg img {
+    width: 100%;
+    border-radius: 20px;
+    transition: transform 0.5s, filter 0.5s ease-in-out;
+    transform-origin: center center;
+    filter: brightness(100%);
+    object-fit: cover;
+}
+.albumDetailContainer .albumDetail .detail .trackImg:hover img {
+    transform: scale(1.05);
+    filter: brightness(70%);
+}
+.albumDetailContainer .albumDetail .detail .trackImg .playIcon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 40px;
+    display: none;
+    cursor: pointer;
+}
+.albumDetailContainer .albumDetail .detail .trackImg:hover .playIcon {
+    display: block;
+}
+.albumDetailContainer .albumDetail .detail .albumInfo {
+    padding: 10px;
+    >h1 {
+        font-size: 23px;
+    }
+}
+.albumDetailContainer .albumDetail .detail .albumInfo .artists span a {
+    color: black;
+}
+.albumDetailContainer .albumDetail .detail .albumInfo .artists span:not(:last-of-type)::after {
+    content: ', ';
+}
+.albumDetailContainer .albumDetail .detail .albumInfo .artists span a:hover {
+    color: #ff7394;
+}
+.albumDetailContainer .albumDetail .detail .albumInfo .playButton {
+    border-radius: 25px;
+    background-color: #ff7394;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    margin: 10px auto;
+    cursor: pointer;
+    transition: .1s ease-in-out;
+}
+.albumDetailContainer .albumDetail .detail .albumInfo .playButton:hover {
+    background-color: #ffa4b4;
+    color: white;
+}
+.albumDetailContainer .albumDetail .detail .albumInfo .favIcon,
+.albumDetailContainer .albumDetail .detail .albumInfo .moreIcon {
+    background-color: #e9e9e9;
+    padding: 5px;
+    border-radius: 20px;
+    border: none;
+    margin: 0 5px;
+    font-size: 35px;
+    cursor: pointer;
+}
+.albumDetailContainer .albumDetail .detail .albumInfo .favIcon:hover,
+.albumDetailContainer .albumDetail .detail .albumInfo .moreIcon:hover {
+    background-color: #ffa4b4;
+    color: white;
+}
+.albumDetailContainer .albumTracksBody .heading {
+    align-items: center;
+    display: flex;
+    padding: 5px;
+}
+.albumDetailContainer .albumTracksBody .heading div {
+    margin-left: 5px;
+}
+.albumDetailContainer .albumTracksBody .track {
+    position: relative;
+}
+.albumDetailContainer .albumTracksBody .item {
+    display: flex;
+    padding: 10px;
+    width: 100%;
+    height: fit-content;
+    align-items: center;
+    border-radius: 15px;
+    margin-bottom: 3px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 2px;
+    position: relative;
+}
+.albumDetailContainer .albumTracksBody .track:hover .item {
+    background-color: #ffdde5;
+}
+.albumDetailContainer .albumTracksBody .item .songImg {
+    max-width: 70px;
+    min-width: 50px;
+    border-radius: 10px;
+    aspect-ratio: 1;
+    margin-right: 10px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.albumDetailContainer .albumTracksBody .item .songImg img {
+    width: 100%;
+    max-width: 70px;
+    min-width: 50px;
+    border-radius: 10px;
+    aspect-ratio: 1;
+    transition: transform 0.5s, filter 0.5s ease-in-out;
+    transform-origin: center center;
+    filter: brightness(100%);
+}
+.albumDetailContainer .albumTracksBody .track:hover .songImg img {
+    transform: scale(1.05);
+    filter: brightness(70%);
+}
+.albumDetailContainer .songDetail .artist span:hover a {
+    text-decoration: none;
+    color: #ff7394;
+}
+.albumDetailContainer .songDetail .artist span:not(:last-of-type)::after {
+    content: ', ';
+}
+.albumDetailContainer .songDetail .trackReleaseDate {
+    display: none;
+}
+.albumDetailContainer .songDetail .trackDuration {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    margin-right: 10px;
+    @media (max-width: 680px) {
+        position: relative;
+        top: 0;
+        right: 0;
+        transform: translate(0, 0);
+    }
+}
+.albumDetailContainer .albumTracksBody .track:hover .trackDuration {
+    display: none;
+}
+.albumDetailContainer .albumTracksBody .track .fauxImg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(0 , 0);
+    -ms-transform: translate(0, 0);
+    max-width: 70px;
+    width: 100%;
+    min-width: 50px;
+    border-radius: 10px;
+    aspect-ratio: 1;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+.albumDetailContainer .albumTracksBody .track .fauxImg .playIcon {
+    align-items: center;
+    border: none;
+    display: none;
+    background-color: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    cursor: pointer;
+}
+.albumDetailContainer .albumTracksBody .track .rightIcon {
+    position: absolute;
+    top: 53%;
+    right: 0;
+    transform:  translate(0, -47%);
+    font-size: 20px;
+    margin-right: 10px;
+}
+.albumDetailContainer .albumTracksBody .track .rightIcon .favIcon {
+    color: #ff7394;
+}
+.albumDetailContainer .albumTracksBody .track .rightIcon .favIcon,
+.albumDetailContainer .albumTracksBody .track .rightIcon .favOutlineIcon,
+.albumDetailContainer .albumTracksBody .track .rightIcon .moreIcon {
+    font-size: 27px;
+    padding: 5px;
+    border-radius: 20px;
+    border: none;
+    margin-right: 2px;
+    cursor: pointer;
+}
+.albumDetailContainer .albumTracksBody .track .rightIcon .favOutlineIcon,
+.albumDetailContainer .albumTracksBody .track .rightIcon .moreIcon {
+    color: transparent;
+}
+.albumDetailContainer .albumTracksBody .track:hover .playIcon,
+.albumDetailContainer .albumTracksBody .track:hover .favOutlineIcon,
+.albumDetailContainer .albumTracksBody .track:hover .moreIcon {
+  display: inline-block;
+}
+.albumDetailContainer .albumTracksBody .track:hover .favOutlineIcon,
+.albumDetailContainer .albumTracksBody .track:hover .moreIcon {
+  color: black;
+}
+.albumDetailContainer .albumTracksBody .track .favIcon:hover,
+.albumDetailContainer .albumTracksBody .track .favOutlineIcon:hover,
+.albumDetailContainer .albumTracksBody .track .moreIcon:hover {
+  background-color: #fff;
+}
+.albumDetailContainer .artist {
+    text-decoration: none;
+}

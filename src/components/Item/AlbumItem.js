@@ -12,11 +12,11 @@ function AlbumItem({item}) {
     for (let i = 1; i < artists.length; i++) {
         let dup = 0;
         for (let j = 0; j < i; j++)
-            if (artists[i].artistName == artists[j].artistName) {
+            if (artists[i].artistName === artists[j].artistName) {
                 dup = 1;
                 break;
             }
-        if (dup == 0) {
+        if (dup === 0) {
             uniqueArtist.push(artists[i]);
         }
     }
@@ -61,7 +61,8 @@ function AlbumItem({item}) {
             </div>
             
             <div className="albumDetail">
-                <div>{item.albumName}</div>
+                <div><Link to={`/album/${item.albumName}`} 
+                      state={{item: item, artists: uniqueArtist}}>{item.albumName}</Link></div>
                 <div className="artist">
                     {uniqueArtist.map((child, index) => (
                             <span key={index} item={child}>

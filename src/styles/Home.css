@@ -12,6 +12,10 @@
   align-items: center;
   width: 100%;
   margin-bottom: 15px;
+  margin-top: 60px;
+}
+.container .categoryHeader:not(.categoryHeader ~ .categoryHeader) {
+  margin-top: 10px;
 }
 .categoryTitle {
   font-size: 25px;

@@ -95,6 +95,12 @@
     font-weight: normal;
     margin-top: 10px;
 }
+.newAlbumReleaseContainer .newAlbumsBody .albumDetail div:first-of-type a {
+    color: black;
+}
+.newAlbumReleaseContainer .newAlbumsBody .albumDetail div:first-of-type a:hover {
+    color: #ff7394;
+}
 .newAlbumReleaseContainer .newAlbumsBody .albumDetail .albumReleaseDate {
     position: absolute;
     top: 50%;

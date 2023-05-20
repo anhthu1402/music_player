@@ -56,7 +56,7 @@ class SongItem extends Component {
                         state={child}
                         color="grey"
                       >
-                        {child.name}
+                        {child.artistName}
                       </Link>
                     </span>
                   );

@@ -8,7 +8,7 @@ function TopTrendingArtist() {
     return require("../assets/" + url);
   }
   return (
-    <div className="artists" style={{ width: `100%` }}>
+    <div className="topTrendingArtists" style={{ width: `100%` }}>
       {ArtistsData.map(
         (item, index) =>
           index < 5 && (
