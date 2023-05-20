@@ -11,6 +11,8 @@ import {
 import { SongData } from "../components/Data/SongData";
 import SongItem from "../components/Item/SongItem";
 import { Grid, Box } from "@mui/material";
+import { AlbumData } from "../components/Data/AlbumData";
+import ArtistAlbumItem from "../components/Item/ArtistAlbumItem";
 
 function Artist() {
   const player = useContext(MusicPlayerContext);
@@ -22,6 +24,14 @@ function Artist() {
     item.artist.map((child, key) => {
       if (child.id === artist.id) {
         artistSongs.push(item);
+      }
+    });
+  });
+  const artistAlbums = [];
+  AlbumData.map((item, index) => {
+    item.artist.map((child, key) => {
+      if (child.id === artist.id) {
+        artistAlbums.push(item);
       }
     });
   });
@@ -70,10 +80,10 @@ function Artist() {
                 <h2>Bài hát nổi bật</h2>
                 <Link
                   className="link"
-                  to={`/${artist.artistName}/bai-hat`}
-                  state={artist}
+                  to={`/${artist.artistName}/songs`}
+                  state={{ artist: artist, songs: artistSongs }}
                 >
-                  <p>Tất cả &gt;</p>
+                  <p style={{ color: "black" }}>Tất cả &gt;</p>
                 </Link>
               </div>
               <Box
@@ -81,31 +91,55 @@ function Artist() {
                 sx={{ width: "100%", position: "relative" }}
               >
                 <Grid container rowSpacing={1} columnSpacing={{ sm: 1, md: 2 }}>
-                  {artistSongs.map((item, index) => (
-                    <Grid item xs={6}>
-                      <SongItem
-                        key={index}
-                        item={item}
-                        tracks={artistSongs}
-                        song={player}
-                        index={0}
-                      />
-                    </Grid>
-                  ))}
+                  {artistSongs.map(
+                    (item, index) =>
+                      index < 6 && (
+                        <Grid item xs={6}>
+                          <SongItem
+                            key={index}
+                            item={item}
+                            tracks={artistSongs}
+                            song={player}
+                            index={0}
+                          />
+                        </Grid>
+                      )
+                  )}
                 </Grid>
               </Box>
             </div>
             <div className="album">
-              <div className="artistSongsHeader">
+              <div className="artistAlbumsHeader">
                 <h2>Album</h2>
                 <Link
                   className="link"
-                  to={`/${artist.artistName}/album`}
-                  state={artist}
+                  to={`/${artist.artistName}/albums`}
+                  state={{ artist: artist, albums: artistAlbums }}
                 >
-                  <p>Tất cả &gt;</p>
+                  <p style={{ color: "black" }}>Tất cả &gt;</p>
                 </Link>
               </div>
+              <Box
+                className="artistAlbums"
+                sx={{ width: "100%", position: "relative" }}
+              >
+                <Grid
+                  container
+                  rowSpacing={1}
+                  columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+                >
+                  {artistAlbums.map(
+                    (item, index) =>
+                      index < 4 && (
+                        <Grid item xs={3}>
+                          <Link to={"/album/" + item.albumName} state={item}>
+                            <ArtistAlbumItem key={index} item={item} />
+                          </Link>
+                        </Grid>
+                      )
+                  )}
+                </Grid>
+              </Box>
             </div>
           </div>
         </div>
