@@ -27,31 +27,13 @@ function FavoriteSong() {
       }}
     >
       {favTracks.map((item, index) => (
-        <div class='track'>
-          <TrackItem  key={index}
-                      item={item}
-                      // tracks={favTracks}
-                      // song={song}
-                      index={index}
-                      className='trackItem' />
-          <div className='fauxImg'>
-            <PlayCircleFilledRounded fontSize='large' className='icon' 
-              onClick={() => {
-                song.setUsing(true);
-                song.setTracks(favTracks);
-                song.setSongIndex(index);
-                song.setSong(favTracks[index]);
-              }} />
-          </div>
-          <div className="rightIcon">
-            {
-              item.isFavorite === 0 
-              ? <FavoriteBorderOutlined fontSize='large' className="favOutlineIcon" /> 
-              : <FavoriteIcon fontSize="large" className="favIcon" />
-            }
-            <MoreHoriz fontSize='large' className="moreHoriz" />
-            </div>
-        </div>
+        <SongItem
+          key={index}
+          item={item}
+          tracks={favTracks}
+          song={song}
+          index={index}
+        />
       ))}
     </div>
   );

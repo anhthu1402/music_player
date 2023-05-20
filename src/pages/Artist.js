@@ -100,7 +100,7 @@ function Artist() {
                             item={item}
                             tracks={artistSongs}
                             song={player}
-                            index={0}
+                            index={index}
                           />
                         </Grid>
                       )

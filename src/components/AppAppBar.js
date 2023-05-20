@@ -15,15 +15,15 @@ function ElevationScroll(props) {
 
 function AppAppBar(props) {
   return (
-    <div className="appBarHeader" style={{ marginBottom: "5.5em" }}>
+    <div className="appBarHeader" style={{ marginBottom: "4.7vw" }}>
       <CssBaseline />
       <ElevationScroll {...props}>
         <AppBar
           className="appBar"
           position="fixed"
           style={{
-            width: `calc(100% - 260px)`,
-            padding: `20px`,
+            width: `calc(100% - 17vw)`,
+            padding: `1.2vw`,
             backgroundColor: "white",
           }}
         >

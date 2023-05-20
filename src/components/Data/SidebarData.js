@@ -4,7 +4,6 @@ import {
   ExpandLess,
   LibraryMusic,
   HomeRounded,
-  MusicNoteRounded,
   PersonRounded,
   PlaylistPlayRounded,
   BarChartRounded,
@@ -17,45 +16,45 @@ export const SidebarData = [
   {
     title: "Thư viện",
     path: "/library?type=song",
-    icon: <LibraryMusic />,
+    icon: <LibraryMusic sx={{ fontSize: "1.7vw" }} />,
   },
   {
     title: "Khám phá",
     path: "/home",
-    icon: <HomeRounded />,
-    iconOpened: <ExpandMore />,
-    iconClosed: <ExpandLess />,
+    icon: <HomeRounded sx={{ fontSize: "1.7vw" }} />,
+    iconOpened: <ExpandMore sx={{ fontSize: "1.7vw" }} />,
+    iconClosed: <ExpandLess sx={{ fontSize: "1.7vw" }} />,
     subNav: [
       {
         title: "Nghệ sĩ",
         path: "/home/artists",
-        icon: <PersonRounded />,
+        icon: <PersonRounded sx={{ fontSize: "1.7vw" }} />,
       },
       {
         title: "Playlist",
         path: "/home/playlists",
-        icon: <PlaylistPlayRounded />,
+        icon: <PlaylistPlayRounded sx={{ fontSize: "1.7vw" }} />,
       },
     ],
   },
   {
     title: "Mới phát hành",
     path: "/newRelease?type=song",
-    icon: <NewReleasesRounded />,
+    icon: <NewReleasesRounded sx={{ fontSize: "1.7vw" }} />,
   },
   {
     title: "BXH",
     path: "/charts",
-    icon: <BarChartRounded />,
+    icon: <BarChartRounded sx={{ fontSize: "1.7vw" }} />,
   },
   {
     title: "Top 100",
     path: "/top100",
-    icon: <TrendingUpRounded />,
+    icon: <TrendingUpRounded sx={{ fontSize: "1.7vw" }} />,
   },
   {
     title: "Gần đây",
     path: "/recently?type=song",
-    icon: <AccessTimeRounded />,
+    icon: <AccessTimeRounded sx={{ fontSize: "1.7vw" }} />,
   },
 ];

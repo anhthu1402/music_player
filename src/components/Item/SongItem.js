@@ -44,10 +44,28 @@ class SongItem extends Component {
           </button>
           <div className={"Detail"}>
             <div className={"songHeader"}>
-              <Typography gutterBottom variant="h5" className={"songTitle"}>
+              <Typography
+                gutterBottom
+                variant="h5"
+                sx={{
+                  fontSize: "1.6vw",
+                  "@media (max-width: 1163px)": {
+                    fontSize: "1.8vw",
+                  },
+                }}
+              >
                 {this.props.item.title}
               </Typography>
-              <Typography variant="body2" className={"songArtist"}>
+              <Typography
+                variant="body2"
+                className={"songArtist"}
+                sx={{
+                  fontSize: "1vw",
+                  "@media (max-width: 1163px)": {
+                    fontSize: "1.4vw",
+                  },
+                }}
+              >
                 {this.props.item.artist.map((child, index) => {
                   return (
                     <span key={index} item={child} className="artist">
@@ -77,7 +95,16 @@ class SongItem extends Component {
                   this.props.item.isFavorite ? "songFavorite" : "noneFavorite"
                 }
               />
-              <Typography className={"time"}>{this.props.item.time}</Typography>
+              <Typography
+                className={"time"}
+                sx={{
+                  "@media (max-width: 969px)": {
+                    fontSize: "1.6vw !important",
+                  },
+                }}
+              >
+                {this.props.item.time}
+              </Typography>
               <button className="moreOption">
                 <MoreHoriz />
               </button>

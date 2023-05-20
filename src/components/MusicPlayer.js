@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { styled, useTheme } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import { Box } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Slider from "@mui/material/Slider";
@@ -18,17 +18,18 @@ import {
 } from "@mui/icons-material";
 import MusicPlayerContext from "../MusicPlayerContext";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
+import "../styles/MusicPlayer.css";
 
-const Widget = styled("div")(({ theme }) => ({
-  padding: 16,
+const Widget = styled("div")(() => ({
+  padding: 10,
   borderRadius: 16,
   width: "100%",
   maxWidth: "100%",
   margin: "auto",
   position: "relative",
   zIndex: 1,
-  backgroundColor:
-    theme.palette.mode === "dark" ? "rgba(0,0,0,0.6)" : "rgba(255,255,255,0.4)",
+  backgroundColor: "rgba(255,255,255,0.4)",
   backdropFilter: "blur(40px)",
   display: "flex",
   flexDirection: "row",
@@ -51,7 +52,7 @@ const CoverImage = styled("div")({
 });
 
 const TinyText = styled(Typography)({
-  fontSize: "0.75rem",
+  fontSize: "1vw",
   opacity: 0.38,
   fontWeight: 500,
   letterSpacing: 0.2,
@@ -111,12 +112,6 @@ const MusicPlayer = () => {
     const secondLeft = value - minute * 60;
     return `${minute}:${secondLeft < 10 ? `0${secondLeft}` : secondLeft}`;
   }
-  const theme = useTheme();
-
-  const mainIconColor = theme.palette.mode === "dark" ? "#fff" : "#000";
-  const lightIconColor =
-    theme.palette.mode === "dark" ? "rgba(255,255,255,0.4)" : "rgba(0,0,0,0.4)";
-
   const shuffleArray = (array) => {
     for (var i = array.length - 1; i > 0; i--) {
       var j = Math.floor(Math.random() * (i + 1));
@@ -169,29 +164,43 @@ const MusicPlayer = () => {
       />
       <Widget>
         <Box sx={{ display: `flex`, alignItems: "center" }}>
-          <CoverImage>
-            <img alt="Only Love" src={getImgUrl(imgUrl)}></img>
+          <CoverImage
+            sx={{
+              width: "6vw",
+              backgroundColor: "transparent",
+            }}
+          >
+            <img
+              alt={title}
+              src={getImgUrl(imgUrl)}
+              style={{ borderRadius: "10px" }}
+            ></img>
           </CoverImage>
           <Box sx={{ ml: 1.5, minWidth: 0 }}>
-            <Typography noWrap>{title}</Typography>
             <Typography
               noWrap
+              sx={{ fontSize: "1.6vw", width: "13vw", marginBottom: "5px" }}
+            >
+              {title}
+            </Typography>
+            <Typography
+              className="songArtist"
+              noWrap
               letterSpacing={-0.25}
-              sx={{ display: `flex`, flexDirection: `row` }}
+              sx={{ display: `flex`, flexDirection: `row`, fontSize: "1vw" }}
             >
               {artist.map((child, index) => {
-                if (index < Object.keys(child).length - 1) {
-                  return (
-                    <div key={index} item={child} className="artist">
+                return (
+                  <span key={index} item={child} className="artist">
+                    <Link
+                      to={`/artist/${child.artistName}`}
+                      state={child}
+                      color="grey"
+                    >
                       {child.artistName}
-                    </div>
-                  );
-                } else
-                  return (
-                    <div key={index} item={child}>
-                      , <span className="artist">{child.artistName}</span>
-                    </div>
-                  );
+                    </Link>
+                  </span>
+                );
               })}
             </Typography>
           </Box>
@@ -202,6 +211,7 @@ const MusicPlayer = () => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "space-between",
+            width: "15vw",
           }}
         >
           <Box
@@ -210,7 +220,7 @@ const MusicPlayer = () => {
               flexDirection: "row",
               alignItems: "center",
               justifyContent: "center",
-              width: "100%",
+              maxWidth: "100%",
             }}
           >
             <IconButton sx={{ margin: "0 0.5em" }}>
@@ -224,7 +234,11 @@ const MusicPlayer = () => {
                     if (repeat) setRepeat(0);
                   }
                 }}
-                sx={playMode === 3 ? { color: "pink" } : { color: "grey" }}
+                sx={
+                  playMode === 3
+                    ? { color: "pink", fontSize: "1.5vw" }
+                    : { color: "grey", fontSize: "1.5vw" }
+                }
               />
             </IconButton>
             <IconButton
@@ -233,22 +247,16 @@ const MusicPlayer = () => {
                 setPrevIdx();
               }}
             >
-              <FastRewindRounded fontSize="large" htmlColor={mainIconColor} />
+              <FastRewindRounded sx={{ fontSize: "2.4vw" }} />
             </IconButton>
             <IconButton
               aria-label={isPlay ? "play" : "pause"}
               onClick={handlePausePlayClick}
             >
               {!isPlay ? (
-                <PlayArrowRounded
-                  sx={{ fontSize: "3rem" }}
-                  htmlColor={mainIconColor}
-                />
+                <PlayArrowRounded sx={{ fontSize: "3vw" }} />
               ) : (
-                <PauseRounded
-                  sx={{ fontSize: "3rem" }}
-                  htmlColor={mainIconColor}
-                />
+                <PauseRounded sx={{ fontSize: "3vw" }} />
               )}
             </IconButton>
             <IconButton
@@ -257,7 +265,7 @@ const MusicPlayer = () => {
                 setNextIdx();
               }}
             >
-              <FastForwardRounded fontSize="large" htmlColor={mainIconColor} />
+              <FastForwardRounded sx={{ fontSize: "2.4vw" }} />
             </IconButton>
             <IconButton
               sx={{ margin: "0 0.5em" }}
@@ -303,10 +311,9 @@ const MusicPlayer = () => {
               max={duration}
               onChange={(_, value) => HandleTimeSliderChange(value)}
               sx={{
-                color:
-                  theme.palette.mode === "dark" ? "#fff" : "rgba(0,0,0,0.87)",
+                color: "rgba(0,0,0,0.87)",
                 height: 4,
-                width: 450,
+                width: "28vw",
                 maxWidth: "100%",
                 margin: "0 10px",
                 "& .MuiSlider-thumb": {
@@ -317,11 +324,7 @@ const MusicPlayer = () => {
                     boxShadow: "0 2px 12px 0 rgba(0,0,0,0.4)",
                   },
                   "&:hover, &.Mui-focusVisible": {
-                    boxShadow: `0px 0px 0px 8px ${
-                      theme.palette.mode === "dark"
-                        ? "rgb(255 255 255 / 16%)"
-                        : "rgb(0 0 0 / 16%)"
-                    }`,
+                    boxShadow: `0px 0px 0px 8px ${"rgb(0 0 0 / 16%)"}`,
                   },
                   "&.Mui-active": {
                     width: 20,
@@ -341,16 +344,15 @@ const MusicPlayer = () => {
         <Stack
           spacing={2}
           direction="row"
-          sx={{ mb: 1, px: 1, width: "fit-content" }}
+          sx={{ mb: 1, px: 1, width: "13vw" }}
           alignItems="center"
         >
-          <VolumeDownRounded htmlColor={lightIconColor} />
+          <VolumeDownRounded />
           <Slider
             aria-label="Volume"
             defaultValue={40}
             sx={{
-              color:
-                theme.palette.mode === "dark" ? "#fff" : "rgba(0,0,0,0.87)",
+              color: "rgba(0,0,0,0.87)",
               width: 100,
               "& .MuiSlider-track": {
                 border: "none",
@@ -369,7 +371,7 @@ const MusicPlayer = () => {
             }}
             onChange={(e) => (audioRef.current.volume = e.target.value / 100)}
           />
-          <VolumeUpRounded htmlColor={lightIconColor} />
+          <VolumeUpRounded />
         </Stack>
       </Widget>
     </Box>

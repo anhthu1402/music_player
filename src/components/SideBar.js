@@ -10,7 +10,7 @@ function SideBar() {
     <div className="sidebar">
       <div>
         <Link className="sidebar-header" to={"/home"}>
-          <img src={Logo} alt="" />
+          <img src={Logo} alt="Logo" />
           <h2>UIT MP3</h2>
         </Link>
       </div>

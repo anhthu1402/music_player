@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap");
 .sidebar {
-  width: 260px;
+  width: 17vw;
   flex-shrink: 0;
   background-color: #ffdde5;
   height: 100vh;
@@ -16,11 +16,12 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-left: 1rem;
+  margin-left: 1vw;
   text-decoration: none;
   color: #86a7ff;
   margin-bottom: 2rem;
   margin-top: 0.5rem;
+  font-size: 1.2vw;
 }
 
 .sidebar-header h2 {
@@ -28,15 +29,15 @@
   font-style: normal;
   font-weight: 642;
   line-height: 39px;
-  font-size: 1.8em;
+  font-size: 2vw;
   color: #86a7ff;
   font-stretch: 105;
-  -webkit-text-stroke: 2px white;
+  -webkit-text-stroke: 0.1vw white;
 }
 
 .sidebar-header img {
   margin-right: 1.2rem;
-  width: 60px;
+  width: 4vw;
 }
 
 .sidebar-item {
@@ -60,7 +61,7 @@
 .sidebar-link,
 .sidebar-item.plain span {
   display: flex;
-  font-size: 1.2rem;
+  font-size: 1.2vw;
   align-items: center;
   flex-direction: row;
   text-decoration: none;
