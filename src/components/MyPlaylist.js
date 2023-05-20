@@ -2,32 +2,47 @@ import React from "react";
 import PlaylistItem from "./Item/PlaylistItem";
 import { MyPlaylistData } from "./Data/MyPlaylistData";
 import "../styles/MyPlaylist.css";
-import { Card, CardContent, Typography } from "@mui/material";
+import { Card, Typography, Grid } from "@mui/material";
 import { AddCircleRounded } from "@mui/icons-material";
 
 function MyPlaylist() {
   return (
-    <div className="myPlaylist">
-      <Card
-        className="createNew"
-        sx={{
-          width: "250px",
-          height: "320px",
-          backgroundColor: "#FEE9EF",
-          borderRadius: "15px",
-        }}
-      >
-        <AddCircleRounded
-          sx={{ fontSize: "5em", color: "#FF9EB6", cursor: "pointer" }}
-        />
-        <CardContent>
-          <Typography variant="h6">Tạo playlist mới</Typography>
-        </CardContent>
-      </Card>
+    <Grid
+      container
+      className="myPlaylist"
+      rowSpacing={1}
+      columnSpacing={{ sm: 2, xs: 1 }}
+    >
+      <Grid item sm={3} xs={4}>
+        <Card
+          className="createNew"
+          sx={{
+            width: "19vw",
+            height: "21vw",
+            backgroundColor: "#FEE9EF",
+            borderRadius: "15px",
+            marginRight: 0,
+          }}
+        >
+          <AddCircleRounded
+            sx={{
+              fontSize: "5vw",
+              color: "#FF9EB6",
+              cursor: "pointer",
+              marginBottom: "10px",
+            }}
+          />
+          <Typography variant="h6" sx={{ fontSize: "1.4vw" }}>
+            Tạo playlist mới
+          </Typography>
+        </Card>
+      </Grid>
       {MyPlaylistData.map((item, index) => (
-        <PlaylistItem item={item} key={index} />
+        <Grid item sm={3} xs={4}>
+          <PlaylistItem item={item} key={index} />
+        </Grid>
       ))}
-    </div>
+    </Grid>
   );
 }
 

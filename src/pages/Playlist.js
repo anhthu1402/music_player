@@ -16,13 +16,13 @@ function Playlist() {
         <div className="horizoneLine"></div>
         <div className="libraryPlaylistBtn">
           <button
-            className={all ? "allBtn" : "noneAllBtn"}
+            className={all ? "playlistActiveBtn" : "playlistInactiveBtn"}
             onClick={() => setAll(true)}
           >
             Tất cả
           </button>
           <button
-            className={all ? "noneMyBtn" : "myBtn"}
+            className={all ? "playlistInactiveBtn" : "playlistActiveBtn"}
             onClick={() => setAll(false)}
           >
             Của tôi

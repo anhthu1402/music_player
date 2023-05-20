@@ -1,20 +1,21 @@
 .artistDetail .header {
-  max-height: 30em;
+  max-height: 25vw;
   background-image: linear-gradient(to bottom right, #ffe6ec, #fd95ae);
-  margin-bottom: 1.5em;
+  margin-bottom: 1.7vw;
 }
 .artistDetail .headerDetail {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  padding: 7em 0 2em 3em;
+  padding: 7vw 0 2vw 3vw;
 }
 .artistDetail .followBtn {
   border: 1px solid black;
   color: black;
-  padding: 5px 15px;
-  margin: 10px 10px 10px 0;
-  width: fit-content;
+  padding: 0.2vw 1vw;
+  margin: 1vw 1vw 1vw 0;
+  width: 10vw;
+  font-size: 1vw;
 }
 .artistDetail .buttonPlay {
   cursor: pointer;
@@ -29,5 +30,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1em;
+  margin-bottom: 1.2vw;
+  font-size: 1.2vw;
 }

@@ -15,7 +15,7 @@ function ElevationScroll(props) {
 
 function AppAppBar(props) {
   return (
-    <div className="appBarHeader" style={{ marginBottom: "4.7vw" }}>
+    <div className="appBarHeader" style={{ marginBottom: "70px" }}>
       <CssBaseline />
       <ElevationScroll {...props}>
         <AppBar

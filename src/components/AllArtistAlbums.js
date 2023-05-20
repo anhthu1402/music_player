@@ -18,7 +18,7 @@ function AllArtistAlbums() {
       >
         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
           {albums.map((item, index) => (
-            <Grid item xs={3}>
+            <Grid item sm={3} xs={4}>
               <Link to={"/album/" + item.albumName} state={item}>
                 <ArtistAlbumItem key={index} item={item} />
               </Link>

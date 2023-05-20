@@ -15,10 +15,9 @@ function PlaylistItem({ item }, props) {
         <CardMedia
           className="playlistMedia"
           component="img"
-          height="100%"
           style={{
-            width: `250px`,
-            height: `250px`,
+            width: `18vw`,
+            height: `17vw`,
             border: `0.2px solid transparent`,
             borderRadius: `15px`,
           }}
@@ -27,25 +26,25 @@ function PlaylistItem({ item }, props) {
         />
         <div className="playlistMoreDetail">
           <button className="btn">
-            <ClearIcon fontSize="large" />
+            <ClearIcon sx={{ fontSize: "2.1vw" }} />
           </button>
           <Link to={`/playlistDetail/${item.playlistName}`} state={item}>
             <button>
-              <PlayCircleFilled fontSize="large" />
+              <PlayCircleFilled sx={{ fontSize: "2.1vw" }} />
             </button>
           </Link>
           <button>
-            <MoreHoriz fontSize="large" />
+            <MoreHoriz sx={{ fontSize: "2.1vw" }} />
           </button>
         </div>
       </div>
       <Typography
         component="header"
-        sx={{ fontSize: `large`, marginTop: `10px` }}
+        sx={{ fontSize: `1.35vw`, marginTop: `0.4vw` }}
       >
         {item.playlistName}
       </Typography>
-      <Typography component="p" color={"grey"}>
+      <Typography component="p" color={"grey"} sx={{ fontSize: "1vw" }}>
         {item.user}
       </Typography>
     </Card>

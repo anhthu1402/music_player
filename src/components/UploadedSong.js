@@ -5,7 +5,7 @@ function UploadedSong() {
   return (
     <div>
       <div className="empty">
-        <img src={UploadPicture} alt="" width="150px" height="150px" />
+        <img src={UploadPicture} alt="" />
         <label>Chưa có bài hát tải lên trong thư viện</label>
         <button>Tải lên ngay</button>
       </div>

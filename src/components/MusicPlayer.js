@@ -78,7 +78,7 @@ const MusicPlayer = () => {
   const audioRef = useRef();
   const [duration, setDuration] = useState(0); //seconds
   const [currentTime, setCurrentTime] = useState(0);
-  const [isPlay, setPlay] = useState(false);
+  const [isPlay, setPlay] = useState(true);
   let source = musicPlayer.isUsing ? tracks[index].source : "Aloha.mp3";
   let imgUrl = musicPlayer.isUsing ? tracks[index].image : "Logo.png";
   const handleLoadedData = () => {
