@@ -1,0 +1,56 @@
+.artistAblumDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.albumImage {
+  max-width: 15em;
+  min-width: 70px;
+  border-radius: 10px;
+  aspect-ratio: 1;
+  margin-right: 10px;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 0.5em;
+  position: relative;
+}
+.albumImage img {
+  width: 100%;
+  max-width: 15em;
+  min-width: 70px;
+  border-radius: 10px;
+  aspect-ratio: 1;
+  transition: transform 0.5s, filter 0.5s ease-in-out;
+  transform-origin: center center;
+  filter: brightness(100%);
+}
+.artistAlbum:hover .albumImage {
+  transform: scale(1.05);
+  opacity: 40%;
+  cursor: pointer;
+}
+
+.albumMoreDetail {
+  position: absolute;
+  width: 12em;
+  display: none;
+}
+.albumMoreDetail button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.artistAlbum:hover .albumMoreDetail {
+  display: flex;
+  justify-content: space-between;
+}
+.artistAlbum {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.albumTitle {
+  color: black;
+}
