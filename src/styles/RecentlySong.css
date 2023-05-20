@@ -1,0 +1,152 @@
+.recentlySongContainer {
+    width: 100%;
+    overflow: hidden;
+}
+.recentlySongContainer .item {
+    display: flex;
+    padding: 10px;
+    width: 100%;
+    height: fit-content;
+    align-items: center;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 2px;
+}
+.recentlySongContainer .track:hover .item {
+    background-color: #ffdde5;
+}
+.recentlySongContainer .track .songImg {
+    max-width: 110px;
+    min-width: 70px;
+    border-radius: 10px;
+    aspect-ratio: 1;
+    margin-right: 10px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.recentlySongContainer .item img {
+    width: 100%;
+    max-width: 110px;
+    min-width: 70px;
+    border-radius: 10px;
+    aspect-ratio: 1;
+    transition: transform 0.5s, filter 0.5s ease-in-out;
+    transform-origin: center center;
+    filter: brightness(100%);
+}
+.recentlySongContainer .track:hover img {
+    transform: scale(1.05);
+    filter: brightness(70%);
+}
+.recentlySongContainer .artist {
+    text-decoration: none;
+}
+.recentlySongContainer .songDetail div:first-of-type {
+    font-size: 25px;
+}
+.recentlySongContainer .artist span a, 
+.recentlySongContainer .songDetail div:not(:first-of-type) {
+    color: gray;
+    font-weight: normal;
+    margin-top: 10px;
+}
+.recentlySongContainer .songDetail .trackReleaseDate {
+    display: none;
+}
+.recentlySongContainer .songDetail div:last-of-type {
+    position: absolute;
+    right: 0;
+    top: 42%;
+    transform: translate(0, -58%);
+    margin-right: 20px;
+    @media (max-width: 700px) {
+    position: relative;
+    display: none
+    }
+}
+.recentlySongContainer .track:hover .songDetail div:last-of-type {
+    display: none;
+}
+.recentlySongContainer .artist span:not(:last-of-type)::after {
+    content: ', ';
+}
+.recentlySongContainer .artist span:hover a {
+    color: #ff7394;
+}
+.recentlySongContainer .track {
+    position: relative;
+    width: 100%;
+}
+.recentlySongContainer .track .fauxImg {
+    width: 100%;
+    max-width: 110px;
+    min-width: 70px;
+    border-radius: 10px;
+    aspect-ratio: 1;
+    margin-left: 10px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0 , -50%);
+    -ms-transform: translate(0, -50%);
+}
+.recentlySongContainer .track>.rightIcon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    padding: 0;
+    margin-right: 10px;
+}
+.recentlySongContainer .track:hover .rightIcon {
+    background-color: #ffdde5;
+}
+.recentlySongContainer .favIcon,
+.recentlySongContainer .favOutlineIcon,
+.recentlySongContainer .moreHoriz {
+    background-color: transparent;
+    border-radius: 25px;
+    padding: 5px;
+    transition: all .5 ease;
+    margin-right: 5px;
+    cursor: pointer;
+    color: #ff7394;
+}
+.recentlySongContainer .moreHoriz {
+    color: transparent;
+}
+.recentlySongContainer .favOutlineIcon {
+    display: none;
+}
+.recentlySongContainer .favIcon:hover,
+.recentlySongContainer .favOutlineIcon:hover,
+.recentlySongContainer .moreHoriz:hover {
+    background-color: #ffffffbb;
+    color: #ff7394;
+}
+.recentlySongContainer .track .icon {
+    align-items: center;
+    border: none;
+    display: none;
+    background-color: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    cursor: pointer;
+}
+.recentlySongContainer .track:hover .icon,
+.recentlySongContainer .track:hover .favOutlineIcon,
+.recentlySongContainer .track:hover .moreHoriz {
+    display: inline-block;
+}
+.recentlySongContainer .track:hover .favOutlineIcon,
+.recentlySongContainer .track:hover .moreHoriz {
+    color: black;
+}

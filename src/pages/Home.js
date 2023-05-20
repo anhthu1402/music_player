@@ -9,6 +9,7 @@ import { PlaylistData } from "../components/Data/PlaylistData";
 import { AlbumData } from "../components/Data/AlbumData";
 import HomePlaylistItem from "../components/Item/HomePlaylistItem";
 import NewSongs from "../components/NewSongs";
+import NewSongRank from "../components/NewSongRank";
 import SongsChart from "../components/SongsChart";
 
 function Home() {
@@ -65,6 +66,14 @@ function Home() {
             )
         )}
       </div>
+
+      <div className="categoryHeader">
+        <p className="categoryTitle">Bảng xếp hạng nhạc mới</p>
+        <Link className="linkToAllPlaylist" to={"/charts"}>
+          <p>Tất cả &gt;</p>
+        </Link>
+      </div>
+      <NewSongRank className='newSongChart' />
 
       <div className="categoryHeader">
         <p className="categoryTitle">Top 100</p>

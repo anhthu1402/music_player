@@ -92,7 +92,7 @@ function NewSongs() {
             </div>
             <div className="rightIcon">
               {
-                item.isFavorite === 1 
+                item.isFavorite === 0
                 ? <FavoriteBorderOutlined fontSize='large' className="favOutlineIcon" /> 
                 : <FavoriteIcon fontSize="large" className="favIcon" />
               }

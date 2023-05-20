@@ -44,7 +44,7 @@ function NewRelease() {
           <button className={song ? "" : "selected" }>Album</button>
         </Link>
       </div>
-      <hr style={{ border: `0.1px solid rgba(128, 128, 128, 0.356)`, marginTop: `-3px` }}></hr>
+      <hr style={{ border: `0.1px solid rgba(128, 128, 128, 0.356)`, marginTop: `-1px` }}></hr>
       <div className={song ? "Song" : "Album"}>
         <div className="newReleaseContent">
           {type === "song" && <NewSongs />}

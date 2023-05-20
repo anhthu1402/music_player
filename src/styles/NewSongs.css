@@ -89,6 +89,9 @@
     transform: scale(1.05);
     filter: brightness(70%);
 }
+.songDetail div:first-of-type {
+    font-size: 25px;
+}
 .listSongContainer .listSongBody .artist span a, 
 .listSongContainer .listSongBody .songDetail div:not(:first-of-type) {
     color: gray;

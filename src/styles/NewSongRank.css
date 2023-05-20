@@ -1,0 +1,149 @@
+.newSongRankContainer {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+.newSongRankContainer .btnBack, .newSongRankContainer .btnForw {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #eee;
+    border-radius: 50%;
+    border: none;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    color: #ff7394;
+    cursor: pointer;
+}
+.newSongRankContainer .btnBack:hover, .newSongRankContainer .btnForw:hover {
+    background-color: #d2d2d2;
+    font-size: 25px;
+}
+.newSongRankContainer .btnForw {
+    right: 0;
+    transform: translate(0, -50%);
+}
+.newSongRankContainer .trackList {
+    display: flex;
+    column-gap: 25px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1425px;
+    padding: 10px;
+}
+.newSongRankContainer .trackList>.track {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+}
+.newSongRankContainer .trackList .track .item {
+    background-color: white;
+    display: flex;
+    border-radius: 20px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    align-items: center;
+    width: 450px;
+    padding: 10px;
+    max-width: 100%;
+}
+.newSongRankContainer .trackList .item .songImg {
+    max-width: 110px;
+    min-width: 70px;
+    border-radius: 10px;
+    aspect-ratio: 1;
+    margin-right: 10px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+.newSongRankContainer .trackList .item .songImg img {
+    width: 100%;
+    max-width: 110px;
+    min-width: 70px;
+    aspect-ratio: 1;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.5s, filter 0.5s ease-in-out;
+    transform-origin: center center;
+    filter: brightness(100%);
+}
+.newSongRankContainer .trackList .track:hover img {
+    transform: scale(1.05);
+    filter: brightness(70%);
+}
+.newSongRankContainer .trackList .track:hover .item {
+    background-color: #f6f6f6;
+}
+.newSongRankContainer .trackList .track>.fauxImg {
+    width: 100%;
+    max-width: 110px;
+    min-width: 70px;
+    border-radius: 10px;
+    aspect-ratio: 1;
+    margin-left: 10px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0 , -50%);
+    -ms-transform: translate(0, -50%);
+}
+.newSongRankContainer .trackList .track>.fauxImg .icon {
+    align-items: center;
+    border: none;
+    /* display: none; */
+    background-color: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    cursor: pointer;
+}
+.newSongRankContainer .trackList .artist {
+    text-decoration: none;
+  }
+.newSongRankContainer .trackList .artist span a, 
+.newSongRankContainer .trackList .songDetail div:not(:first-of-type) {
+  color: gray;
+  font-weight: normal;
+  margin-top: 10px;
+}
+.newSongRankContainer .trackList .artist span:hover a {
+    color: #ff7394;
+}
+.newSongRankContainer .trackList .artist span:not(:last-of-type)::after {
+    content: ', ';
+}
+.newSongRankContainer .trackList .songDetail .trackDuration {
+    display: none;
+}
+.newSongRankContainer .trackList .songDetail .trackReleaseDate {
+    position: absolute;
+    right: 0;
+    margin-right: 15px;
+    transform: translateX(0);
+}
+.newSongRankContainer .trackList .track .ordinalNum {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(0, 0);
+    font-size: 45px;
+    margin: 10px;
+}
+.newSongRankContainer .trackList .track:nth-child(1) .ordinalNum {
+    color: #ff7394;
+}
+.newSongRankContainer .trackList .track:nth-child(2) .ordinalNum {
+    color: cornflowerblue;
+}
+.newSongRankContainer .trackList .track:nth-child(3) .ordinalNum {
+    color: #98cc3c;
+}
