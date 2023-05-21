@@ -19,7 +19,7 @@ function NewRelease() {
     <div className="newReleaseContainer">
       <div className="newReleaseHeader">
         <h1>Mới phát hành</h1>
-        <button style={{ display: song ? 'inline-block' : 'none' }}>
+        <button style={{ display: type === "song" ? 'inline-block' : 'none' }}>
           <PlayCircleOutlineIcon className="playIcon"
             style={{ fontSize: `xx-large` }}
             onClick={() => {
@@ -38,10 +38,10 @@ function NewRelease() {
           to={"/newrelease?type=song"}
           onClick={() => setSongPage(true)}
         >
-          <button className={song ? "selected" : "" }>Bài hát</button>
+          <button className={type === "song" ? "selected" : "" }>Bài hát</button>
         </Link>
         <Link to={"/newrelease?type=album"} onClick={() => setSongPage(false)}>
-          <button className={song ? "" : "selected" }>Album</button>
+          <button className={type === "song" ? "" : "selected" }>Album</button>
         </Link>
       </div>
       <hr style={{ border: `0.1px solid rgba(128, 128, 128, 0.356)`, marginTop: `-1px` }}></hr>

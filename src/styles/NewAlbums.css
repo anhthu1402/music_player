@@ -97,6 +97,7 @@
 }
 .newAlbumReleaseContainer .newAlbumsBody .albumDetail div:first-of-type a {
     color: black;
+    font-size: 25px;
 }
 .newAlbumReleaseContainer .newAlbumsBody .albumDetail div:first-of-type a:hover {
     color: #ff7394;
