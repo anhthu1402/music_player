@@ -8,7 +8,7 @@ import { Box, Toolbar } from "@mui/material";
 function Header() {
   return (
     <div className="header">
-      <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+      <Toolbar>
         <Box
           sx={{
             flex: 1,
@@ -24,12 +24,12 @@ function Header() {
             <button className="settingsBtn">
               <SettingsIcon
                 className="icon"
-                style={{
+                sx={{
                   backgroundColor: `#FFE1E8`,
                   fontSize: `large`,
-                  width: `40px`,
+                  width: `2.8vw`,
                   padding: `3px`,
-                  height: `40px`,
+                  height: `2.8vw`,
                   border: `1px solid transparent`,
                   borderRadius: `20px`,
                 }}

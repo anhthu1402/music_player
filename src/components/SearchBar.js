@@ -17,13 +17,14 @@ export function SearchBar() {
         onChange={(value) => console.log(value)}
         leftIcon={
           <>
-            <SearchIcon />
+            <SearchIcon sx={{ fontSize: "1.5vw" }} />
           </>
         }
+        inputFontSize="1vw"
         inputBorderColor="transparent"
         inputBackgroundColor="#FFE1E8"
-        inputHeight="2.7rem"
-        iconBoxSize="48px"
+        inputHeight="2.7vw"
+        iconBoxSize="50px"
         dropdownHoverColor="#FEE9EF"
       />
     </div>

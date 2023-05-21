@@ -10,6 +10,15 @@
 .songItem {
   padding-bottom: 16px !important;
 }
+.songMedia {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  cursor: pointer;
+}
 .cardSong {
   border: 1px solid transparent !important;
   border-radius: 10px !important;
@@ -23,22 +32,19 @@
 }
 .time {
   font-family: "Josefin Sans", sans-serif !important;
-  font-size: 20px !important;
+  font-size: 1.3vw !important;
   margin-left: 20px !important;
 }
 .songHeader Typography {
   font-family: "Josefin Sans", sans-serif !important;
-}
-.songTitle {
-  font-weight: 200 !important;
 }
 .moreOption {
   background-color: transparent;
   border: none;
   display: none;
   cursor: pointer;
-  margin-left: 25px;
-  margin-right: 10px;
+  margin-left: 1vw;
+  margin-right: 0.5vw;
 }
 .playBtn {
   position: absolute;
@@ -46,7 +52,6 @@
   border: none;
   display: flex;
   align-items: center;
-  left: 35px;
   display: none;
   cursor: pointer;
 }

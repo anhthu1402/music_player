@@ -12,6 +12,7 @@ import LibraryMusicIcon from "@mui/icons-material/LibraryMusic";
 import "../styles/Album.css";
 import TrackItem from "../components/Item/TrackItem";
 import MusicPlayerContext from "../MusicPlayerContext";
+import SongItem from "../components/Item/SongItem";
 
 function Album() {
   const location = useLocation();
@@ -66,31 +67,40 @@ function Album() {
               <div>Bài hát</div>
             </div>
             {tracks.map((item, key) => (
-              <div class="track">
-                <TrackItem item={item} key={key} className="trackItem" />
-                <div className="fauxImg">
-                  <PlayCircleFilledRounded
-                    fontSize="large"
-                    className="playIcon"
-                    onClick={() => {
-                      song.setUsing(true);
-                      song.setTracks(tracks);
-                      song.setSongIndex(key);
-                      song.setSong(tracks[key]);
-                    }}
-                  />
-                </div>
-                <div className="rightIcon">
-                  {item.isFavorite === 1 ? (
-                    <FavoriteBorderOutlined
-                      fontSize="large"
-                      className="favOutlineIcon"
-                    />
-                  ) : (
-                    <FavoriteIcon fontSize="large" className="favIcon" />
-                  )}
-                  <MoreHoriz fontSize="large" className="moreIcon" />
-                </div>
+              // <div class="track">
+              //   <TrackItem item={item} key={key} className="trackItem" />
+              //   <div className="fauxImg">
+              //     <PlayCircleFilledRounded
+              //       fontSize="large"
+              //       className="playIcon"
+              //       onClick={() => {
+              //         song.setUsing(true);
+              //         song.setTracks(tracks);
+              //         song.setSongIndex(key);
+              //         song.setSong(tracks[key]);
+              //       }}
+              //     />
+              //   </div>
+              //   <div className="rightIcon">
+              //     {item.isFavorite === 1 ? (
+              //       <FavoriteBorderOutlined
+              //         fontSize="large"
+              //         className="favOutlineIcon"
+              //       />
+              //     ) : (
+              //       <FavoriteIcon fontSize="large" className="favIcon" />
+              //     )}
+              //     <MoreHoriz fontSize="large" className="moreIcon" />
+              //   </div>
+              // </div>
+              <div className="track">
+                <SongItem
+                  key={key}
+                  item={item}
+                  tracks={tracks}
+                  song={song}
+                  index={key}
+                />
               </div>
             ))}
           </div>

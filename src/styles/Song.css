@@ -2,44 +2,33 @@
 .horizoneLine {
   margin-bottom: 30px;
 }
-
 .librarySongBtn {
   margin-bottom: 20px;
 }
-
-.favBtn,
-.upBtn {
+.songActiveBtn {
   border: none;
   background-color: #e77373;
   color: rgb(255, 255, 255);
 }
-
-.favBtn,
-.upBtn,
-.noneFavBtn,
-.noneUpBtn {
+.songInactiveBtn,
+.songActiveBtn {
   border-radius: 25px;
   cursor: pointer;
   justify-content: center;
-  height: 30px;
-  width: 100px;
+  height: 2vw;
+  width: 7vw;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 1vw;
   font-family: "Rubik", sans-serif;
   margin-right: 25px;
 }
-
-.noneFavBtn,
-.noneUpBtn {
+.songInactiveBtn {
   background-color: transparent;
   border: 2px solid #e77373;
   color: black;
 }
-
-.favBtn:hover,
-.upBtn:hover,
-.noneFavBtn:hover,
-.noneUpBtn:hover {
+.songActiveBtn:hover,
+.songInactiveBtn:hover {
   background-color: #fba1b6;
   cursor: pointer;
   transition: 0.3s ease;

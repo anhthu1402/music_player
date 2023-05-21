@@ -20,21 +20,21 @@ function ArtistAlbumItem({ item }) {
         </div>
         <div className="albumMoreDetail">
           <button className="btn">
-            <FavoriteBorderRounded fontSize="large" />
+            <FavoriteBorderRounded sx={{ fontSize: "2.4vw" }} />
           </button>
           <Link>
             <button>
-              <PlayCircleFilled fontSize="large" />
+              <PlayCircleFilled sx={{ fontSize: "2.4vw" }} />
             </button>
           </Link>
           <button>
-            <MoreHoriz fontSize="large" />
+            <MoreHoriz sx={{ fontSize: "2.4vw" }} />
           </button>
         </div>
       </div>
       <div className="albumTitle">
-        <h3>{item.albumName}</h3>
-        <h4 style={{ fontWeight: "normal" }}>
+        <h3 style={{ fontSize: "1.2vw" }}>{item.albumName}</h3>
+        <h4 style={{ fontWeight: "normal", fontSize: "1vw" }}>
           {getReleaseYear(item.releaseDate)}
         </h4>
       </div>

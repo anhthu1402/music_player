@@ -17,11 +17,9 @@ function Library() {
   return (
     <div className="library">
       <div className="libraryHeader">
-        <h1>Thư viện</h1>
+        <h1 style={{ fontSize: "2.1vw" }}>Thư viện</h1>
         <button>
-          <PlayCircleOutlineIcon
-            style={{ fontSize: `xx-large`, color: `pink` }}
-          />
+          <PlayCircleOutlineIcon style={{ fontSize: `2.3vw`, color: `pink` }} />
         </button>
       </div>
       <div className="librarySubHeader">

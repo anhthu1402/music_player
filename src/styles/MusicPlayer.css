@@ -1,0 +1,14 @@
+.songArtist span:not(:last-of-type)::after {
+  content: ", " !important;
+}
+.artist a {
+  font-weight: normal;
+  text-decoration: none;
+  color: gray;
+}
+
+.artist:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: grey;
+}

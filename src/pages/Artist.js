@@ -44,7 +44,7 @@ function Artist() {
               <Avatar
                 alt={artist.artistName}
                 src={require(`../assets/${artist.artistImage}`)}
-                sx={{ width: "9em", height: "9em", marginRight: "2em" }}
+                sx={{ width: "12.5vw", height: "12.5vw", marginRight: "2.3vw" }}
               />
               <div
                 style={{
@@ -59,17 +59,22 @@ function Artist() {
                     alignItems: "center",
                   }}
                 >
-                  <h1 style={{ fontSize: "3.5em", marginRight: "20px" }}>
+                  <h1 style={{ fontSize: "3.5vw", marginRight: "1.2vw" }}>
                     {artist.artistName}
                   </h1>
                   <PlayCircleFilledRounded
                     className="buttonPlay"
-                    sx={{ fontSize: "4em" }}
+                    sx={{ fontSize: "4.2vw" }}
                   />
                 </div>
-                <h4>{artist.followers} người theo dõi</h4>
+                <h4 style={{ fontSize: "1.2vw" }}>
+                  {artist.followers} người theo dõi
+                </h4>
                 <Button className="followBtn">
-                  <PersonAddAltRounded sx={{ marginRight: "10px" }} /> Theo dõi
+                  <PersonAddAltRounded
+                    sx={{ marginRight: "1vw", fontSize: "1.5vw" }}
+                  />{" "}
+                  Theo dõi
                 </Button>
               </div>
             </div>
@@ -94,13 +99,13 @@ function Artist() {
                   {artistSongs.map(
                     (item, index) =>
                       index < 6 && (
-                        <Grid item xs={6}>
+                        <Grid item md={6} xs={12}>
                           <SongItem
                             key={index}
                             item={item}
                             tracks={artistSongs}
                             song={player}
-                            index={0}
+                            index={index}
                           />
                         </Grid>
                       )
@@ -123,11 +128,7 @@ function Artist() {
                 className="artistAlbums"
                 sx={{ width: "100%", position: "relative" }}
               >
-                <Grid
-                  container
-                  rowSpacing={1}
-                  columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-                >
+                <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2 }}>
                   {artistAlbums.map(
                     (item, index) =>
                       index < 4 && (

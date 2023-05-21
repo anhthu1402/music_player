@@ -1,19 +1,12 @@
-/* .header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 75vw;
-} */
 .searchBar {
-  width: 600px;
+  width: 35vw;
   height: 2.7rem;
 }
 .settingsBtn {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  margin-right: 50px;
+  margin-right: 3vw;
 }
 .signInBtn {
   border: none;
@@ -21,11 +14,11 @@
   cursor: pointer;
   justify-content: center;
   background-color: #ff7394;
-  height: 45px;
-  width: 140px;
+  height: 3vw;
+  width: 10vw;
   color: rgb(255, 255, 255);
   text-decoration: none;
-  font-size: 20px;
+  font-size: 1.4vw;
 }
 
 .signInBtn:hover {
@@ -38,5 +31,5 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-end;
 }

@@ -6,24 +6,26 @@
   margin-bottom: 15px;
 }
 .recentlyHeader h1 {
-  margin-right: 60px;
+  margin-right: 4vw;
   font-family: "Josefin Sans", sans-serif;
+  font-size: 2vw;
+  margin-top: 2px;
 }
 .indexRecentlyBtn button {
   background-color: transparent;
   margin: 0 40px 0 0;
-  font-size: 1.3rem;
+  font-size: 1.3vw;
   font-family: "Josefin Sans", sans-serif;
   border: none;
   cursor: pointer;
 }
 .recentlyPlaylist {
-  width: 80px;
-  margin-left: 293px;
+  width: 5.5vw;
+  margin-left: 18.8vw;
 }
 .recentlySong {
-  width: 80px;
-  margin-left: 185px;
+  width: 5.5vw;
+  margin-left: 12vw;
 }
 .recentlyContent {
   margin-top: 20px;

@@ -7,10 +7,10 @@ import {
   PlayCircle,
 } from "@mui/icons-material";
 import "../styles/PlaylistDetail.css";
-import SongItem from "../components/Item/SongItem";
 import { useContext } from "react";
 import MusicPlayerContext from "../MusicPlayerContext";
 import { useState } from "react";
+import SongItem from "../components/Item/SongItem";
 
 const PlaylistDetail = () => {
   const location = useLocation();
@@ -27,7 +27,7 @@ const PlaylistDetail = () => {
     song.setSong(tracks[rnd]);
   };
   return (
-    <div>
+    <div className="playlistDetailContainer">
       {playlist && (
         <div className="playlistDetail">
           <div className="detail">
@@ -35,27 +35,40 @@ const PlaylistDetail = () => {
               <img
                 src={require(`../assets/${playlist.playlistImg}`)}
                 alt={playlist.playlistName}
-                width="350px"
               />
               <PlayCircle className="playPlaylist" onClick={play} />
             </div>
-            <h1 style={{ marginTop: "20px" }}>
-              {playlist.playlistName}
-              <EditRounded sx={{ marginLeft: "10px" }} />
-            </h1>
-            <p style={{ marginBottom: "10px" }}>
-              Tạo bởi{" "}
-              <span style={{ color: "grey", fontWeight: "bold" }}>
-                {playlist.user}
-              </span>
-            </p>
-            <button className="playButton" onClick={play}>
-              <PlayArrowRounded sx={{ marginRight: "5px" }} />
-              Phát ngẫu nhiên
-            </button>
-            <button className="moreButton">
-              <MoreHoriz />
-            </button>
+            <div>
+              <h1
+                style={{
+                  marginTop: "20px",
+                  fontSize: "2.2vw",
+                }}
+              >
+                {playlist.playlistName}
+                <EditRounded sx={{ marginLeft: "10px" }} />
+              </h1>
+              <p
+                style={{
+                  marginBottom: "10px",
+                  fontSize: "1.2vw",
+                }}
+              >
+                Tạo bởi{" "}
+                <span style={{ color: "grey", fontWeight: "bold" }}>
+                  {playlist.user}
+                </span>
+              </p>
+              <div className="detailButton">
+                <button className="playButton" onClick={play}>
+                  <PlayArrowRounded sx={{ marginRight: "5px" }} />
+                  Phát ngẫu nhiên
+                </button>
+                <button className="moreButton">
+                  <MoreHoriz />
+                </button>
+              </div>
+            </div>
           </div>
           <div className="songs">
             {playlist.playlistSongs.map((item, index) => (

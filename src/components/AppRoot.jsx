@@ -7,15 +7,15 @@ import AppAppBar from "./AppAppBar";
 function AppRoot() {
   return (
     <>
-      <div style={{ width: `260px`, position: `fixed`, top: `0`, left: 0 }}>
+      <div style={{ position: `fixed`, top: `0`, left: 0 }}>
         <SideBar />
       </div>
       <div
         style={{
-          padding: `20px 50px 0 50px`,
-          width: `calc(100% - 260px)`,
+          padding: `2vw 3vw 0 3vw`,
+          width: `calc(100% - 17vw)`,
           position: `relative`,
-          left: `260px`,
+          left: `17vw`,
           height: `calc(100%-18vh)`,
         }}
       >
@@ -26,7 +26,7 @@ function AppRoot() {
         <div
           className="musicPlayer"
           style={{
-            width: `calc(100% - 260px)`,
+            width: `calc(100% - 17vw)`,
           }}
         >
           <MusicPlayer />

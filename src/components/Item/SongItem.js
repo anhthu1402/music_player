@@ -17,22 +17,8 @@ class SongItem extends Component {
     return (
       <Card className={"cardSong"}>
         <CardContent className={"songItem"}>
-          <CardMedia
+          <div
             className="songMedia"
-            component="img"
-            height="100%"
-            style={{
-              width: `60px`,
-              height: `60px`,
-              marginRight: `20px`,
-              border: `0.2px solid transparent`,
-              borderRadius: `3px`,
-            }}
-            image={getImgUrl(`${this.props.item.image}`)}
-            alt={this.props.item.title}
-          />
-          <button
-            className="playBtn"
             onClick={() => {
               this.props.song.setUsing(true);
               this.props.song.setSong(this.props.item);
@@ -40,14 +26,46 @@ class SongItem extends Component {
               this.props.song.setSongIndex(this.props.index);
             }}
           >
-            <PlayArrowRounded />
-          </button>
+            <img
+              style={{
+                width: `4vw`,
+                height: `4vw`,
+                border: `0.2px solid transparent`,
+                borderRadius: `3px`,
+                position: "relative",
+              }}
+              src={getImgUrl(`${this.props.item.image}`)}
+              alt={this.props.item.title}
+            />
+            <button className="playBtn">
+              <PlayArrowRounded />
+            </button>
+          </div>
+
           <div className={"Detail"}>
             <div className={"songHeader"}>
-              <Typography gutterBottom variant="h5" className={"songTitle"}>
+              <Typography
+                gutterBottom
+                variant="h5"
+                sx={{
+                  fontSize: "1.6vw",
+                  "@media (max-width: 1163px)": {
+                    fontSize: "1.8vw",
+                  },
+                }}
+              >
                 {this.props.item.title}
               </Typography>
-              <Typography variant="body2" className={"songArtist"}>
+              <Typography
+                variant="body2"
+                className={"songArtist"}
+                sx={{
+                  fontSize: "1vw",
+                  "@media (max-width: 1163px)": {
+                    fontSize: "1.4vw",
+                  },
+                }}
+              >
                 {this.props.item.artist.map((child, index) => {
                   return (
                     <span key={index} item={child} className="artist">
@@ -65,7 +83,7 @@ class SongItem extends Component {
             </div>
             <div className={"songMoreDetail"}>
               <Typography
-                sx={{ cursor: `pointer` }}
+                sx={{ cursor: `pointer`, fontSize: "1.3vw" }}
                 variant="icon"
                 component={
                   this.props.item.isFavorite
@@ -77,9 +95,18 @@ class SongItem extends Component {
                   this.props.item.isFavorite ? "songFavorite" : "noneFavorite"
                 }
               />
-              <Typography className={"time"}>{this.props.item.time}</Typography>
+              <Typography
+                className={"time"}
+                sx={{
+                  "@media (max-width: 969px)": {
+                    fontSize: "1.6vw !important",
+                  },
+                }}
+              >
+                {this.props.item.time}
+              </Typography>
               <button className="moreOption">
-                <MoreHoriz />
+                <MoreHoriz sx={{ cursor: `pointer`, fontSize: "1.3vw" }} />
               </button>
             </div>
           </div>

@@ -14,13 +14,13 @@ function Song() {
         <div className="horizoneLine"></div>
         <div className="librarySongBtn">
           <button
-            className={favorite ? "favBtn" : "noneFavBtn"}
+            className={favorite ? "songActiveBtn" : "songInactiveBtn"}
             onClick={() => setFavorite(true)}
           >
             Yêu thích
           </button>
           <button
-            className={favorite ? "noneUpBtn" : "upBtn"}
+            className={favorite ? "songInactiveBtn" : "songActiveBtn"}
             onClick={() => setFavorite(false)}
           >
             Đã tải lên

@@ -1,111 +1,116 @@
 .albumDetailContainer {
-    width: 100%;
-    overflow: hidden;
+  width: 100%;
+  overflow: hidden;
 }
 .albumDetailContainer .albumDetail {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 35px;
-    @media (max-width: 849px) {
-        display: block;
-    }
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 35px;
+  @media (max-width: 849px) {
+    display: block;
+  }
 }
 .albumDetailContainer .albumDetail .detail {
-    text-align: center;
-    align-items: center;
-    @media (min-width: 740px) and (max-width: 849px) {
-        display: grid;
-        grid-template-columns: auto auto;
-        gap: 20px;
-    }
+  text-align: center;
+  align-items: center;
+  @media (min-width: 740px) and (max-width: 849px) {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+  }
 }
 .albumDetailContainer .albumDetail .detail .trackImg {
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    aspect-ratio: 1;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 1;
 }
 .albumDetailContainer .albumDetail .detail .trackImg img {
-    width: 100%;
-    border-radius: 20px;
-    transition: transform 0.5s, filter 0.5s ease-in-out;
-    transform-origin: center center;
-    filter: brightness(100%);
-    object-fit: cover;
+  width: 100%;
+  border-radius: 20px;
+  transition: transform 0.5s, filter 0.5s ease-in-out;
+  transform-origin: center center;
+  filter: brightness(100%);
+  object-fit: cover;
 }
 .albumDetailContainer .albumDetail .detail .trackImg:hover img {
-    transform: scale(1.05);
-    filter: brightness(70%);
+  transform: scale(1.05);
+  filter: brightness(70%);
 }
 .albumDetailContainer .albumDetail .detail .trackImg .playIcon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 40px;
-    display: none;
-    cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 40px;
+  display: none;
+  cursor: pointer;
 }
 .albumDetailContainer .albumDetail .detail .trackImg:hover .playIcon {
-    display: block;
+  display: block;
 }
 .albumDetailContainer .albumDetail .detail .albumInfo {
-    padding: 10px;
-    >h1 {
-        font-size: 23px;
-    }
+  padding: 10px;
+  > h1 {
+    font-size: 23px;
+  }
 }
 .albumDetailContainer .albumDetail .detail .albumInfo .artists span a {
-    color: black;
+  color: black;
 }
-.albumDetailContainer .albumDetail .detail .albumInfo .artists span:not(:last-of-type)::after {
-    content: ', ';
+.albumDetailContainer
+  .albumDetail
+  .detail
+  .albumInfo
+  .artists
+  span:not(:last-of-type)::after {
+  content: ", ";
 }
 .albumDetailContainer .albumDetail .detail .albumInfo .artists span a:hover {
-    color: #ff7394;
+  color: #ff7394;
 }
 .albumDetailContainer .albumDetail .detail .albumInfo .playButton {
-    border-radius: 25px;
-    background-color: #ff7394;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    align-items: center;
-    text-align: center;
-    display: flex;
-    margin: 10px auto;
-    cursor: pointer;
-    transition: .1s ease-in-out;
+  border-radius: 25px;
+  background-color: #ff7394;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  margin: 10px auto;
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
 }
 .albumDetailContainer .albumDetail .detail .albumInfo .playButton:hover {
-    background-color: #ffa4b4;
-    color: white;
+  background-color: #ffa4b4;
+  color: white;
 }
 .albumDetailContainer .albumDetail .detail .albumInfo .favIcon,
 .albumDetailContainer .albumDetail .detail .albumInfo .moreIcon {
-    background-color: #e9e9e9;
-    padding: 5px;
-    border-radius: 20px;
-    border: none;
-    margin: 0 5px;
-    font-size: 35px;
-    cursor: pointer;
+  background-color: #e9e9e9;
+  padding: 5px;
+  border-radius: 20px;
+  border: none;
+  margin: 0 5px;
+  font-size: 35px;
+  cursor: pointer;
 }
 .albumDetailContainer .albumDetail .detail .albumInfo .favIcon:hover,
 .albumDetailContainer .albumDetail .detail .albumInfo .moreIcon:hover {
-    background-color: #ffa4b4;
-    color: white;
+  background-color: #ffa4b4;
+  color: white;
 }
 .albumDetailContainer .albumTracksBody .heading {
-    align-items: center;
-    display: flex;
-    padding: 5px;
+  align-items: center;
+  display: flex;
+  padding: 5px;
 }
 .albumDetailContainer .albumTracksBody .heading div {
-    margin-left: 5px;
+  margin-left: 5px;
 }
-.albumDetailContainer .albumTracksBody .track {
+/* .albumDetailContainer .albumTracksBody .track {
     position: relative;
 }
 .albumDetailContainer .albumTracksBody .item {
@@ -245,4 +250,4 @@
 }
 .albumDetailContainer .artist {
     text-decoration: none;
-}
+} */

@@ -23,20 +23,21 @@
   font-family: "Josefin Sans", sans-serif;
   border: none;
   cursor: pointer;
+  font-size: 1.3vw;
 }
 .librarySubHeader {
-  width: 180px;
+  width: 11.5vw;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
 .indexPlaylist {
-  width: 80px;
-  margin-left: 110px;
+  width: 6vw;
+  margin-left: 6.5vw;
 }
 .indexSong {
-  width: 67px;
+  width: 5vw;
 }
 .empty {
   display: flex;
@@ -44,17 +45,21 @@
   align-items: center;
   vertical-align: middle;
 }
+.empty img {
+  width: 9vw;
+  height: 9vw;
+}
 .empty button {
   border: none;
   border-radius: 10px;
   cursor: pointer;
   justify-content: center;
   background-color: #ff5f85;
-  height: 40px;
-  width: 140px;
+  height: 2.8vw;
+  width: 10vw;
   color: white;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 1.3vw;
 }
 
 .empty button:hover {
@@ -65,7 +70,7 @@
 }
 .empty label {
   margin: 20px;
-  font-size: large;
+  font-size: 1.3vw;
 }
 .favSong.active {
   margin-bottom: 7em;

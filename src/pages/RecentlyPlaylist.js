@@ -2,16 +2,24 @@ import React, { useContext } from "react";
 import PlaylistItem from "../components/Item/PlaylistItem";
 import MusicPlayerContext from "../MusicPlayerContext";
 import { RecentlyPlaylistData } from "../components/Data/RecentlyPlaylistData";
+import { Grid } from "@mui/material";
 
 function RecentlyPlaylist() {
   const song = useContext(MusicPlayerContext);
   return (
     <div>
-      <div className="myPlaylist recently">
+      <Grid
+        container
+        className="myPlaylist recently"
+        rowSpacing={1}
+        columnSpacing={{ sm: 2, xs: 1 }}
+      >
         {RecentlyPlaylistData.map((item, index) => (
-          <PlaylistItem item={item} key={index} />
+          <Grid item sm={3} xs={4}>
+            <PlaylistItem item={item} key={index} />
+          </Grid>
         ))}
-      </div>
+      </Grid>
       <div style={song.isUsing ? { height: "8em" } : { height: "1em" }}></div>
     </div>
   );
