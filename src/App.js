@@ -20,6 +20,7 @@ import AllArtistSongs from "./components/AllArtistSongs";
 import AllArtistAlbums from "./components/AllArtistAlbums";
 
 function App() {
+  window.onbeforeunload = localStorage.setItem("play", JSON.stringify(false));
   const router = createBrowserRouter([
     {
       path: "/",

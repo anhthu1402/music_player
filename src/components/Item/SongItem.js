@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, CardMedia, CardContent, Typography } from "@mui/material";
+import { Card, CardContent, Typography } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import {
   FavoriteBorderOutlined,
@@ -20,10 +20,26 @@ class SongItem extends Component {
           <div
             className="songMedia"
             onClick={() => {
-              this.props.song.setUsing(true);
+              if (this.props.song.isUsing !== true) {
+                this.props.song.setUsing(true);
+              }
+              // if (this.props.song.play !== true) {
+              //   this.props.song.setPlay(true);
+              // }
+              this.props.song.setPlay(true);
               this.props.song.setSong(this.props.item);
               this.props.song.setTracks(this.props.tracks);
+              this.props.song.setPlaylist(this.props.tracks);
               this.props.song.setSongIndex(this.props.index);
+              localStorage.setItem("song", JSON.stringify(this.props.item));
+              localStorage.setItem("tracks", JSON.stringify(this.props.tracks));
+              localStorage.setItem("index", JSON.stringify(this.props.index));
+              localStorage.setItem("play", JSON.stringify(true));
+              localStorage.setItem(
+                "playlist",
+                JSON.stringify(this.props.tracks)
+              );
+              console.log(this.props.song.play);
             }}
           >
             <img

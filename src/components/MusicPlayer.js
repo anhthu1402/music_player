@@ -20,6 +20,7 @@ import MusicPlayerContext from "../MusicPlayerContext";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import "../styles/MusicPlayer.css";
+import { useEffect } from "react";
 
 const Widget = styled("div")(() => ({
   padding: 10,
@@ -61,7 +62,7 @@ const TinyText = styled(Typography)({
 const MusicPlayer = () => {
   const musicPlayer = useContext(MusicPlayerContext);
   const tracks = musicPlayer.isUsing ? musicPlayer.tracks : [];
-  const array = tracks;
+  const array = JSON.parse(localStorage.getItem("playlist"));
   const tracksLen = tracks.length;
   // 0: Phát theo trình tự , 1: Phát lại 1 bài, 2: Phát lại tất cả (như phát theo trình tự nhưng phát theo trình tự khi hết bài cuối của playlist sẽ chuyển sang playlist khác có liên quan - khó, chưa làm được), 3: Phát ngẫu nhiên
   const [playMode, setPlayMode] = useState(0);
@@ -77,35 +78,36 @@ const MusicPlayer = () => {
   };
   const audioRef = useRef();
   const [duration, setDuration] = useState(0); //seconds
-  const [currentTime, setCurrentTime] = useState(0);
-  const [isPlay, setPlay] = useState(true);
+  const [currentTime, setCurrentTime] = useState(musicPlayer.currentTime);
+  const [play, setPlay] = useState(false);
   let source = musicPlayer.isUsing ? tracks[index].source : "Aloha.mp3";
   let imgUrl = musicPlayer.isUsing ? tracks[index].image : "Logo.png";
   const handleLoadedData = () => {
     setDuration(Math.ceil(audioRef.current.duration));
-    if (isPlay) {
+    handleSetLocalStorage(song, index);
+    if (musicPlayer.play) {
+      if (!play) {
+        setPlay(true);
+      }
       audioRef.current.play();
     }
   };
-
   const handlePausePlayClick = () => {
-    if (isPlay) {
+    if (play) {
       audioRef.current.pause();
     } else {
       audioRef.current.play();
     }
-    setPlay(!isPlay);
+    setPlay(!play);
   };
-
   const HandleTimeSliderChange = (x) => {
     audioRef.current.currentTime = x;
     setCurrentTime(x);
-    if (!isPlay) {
+    if (!play) {
       setPlay(true);
       audioRef.current.play();
     }
   };
-
   function formatDuration(value) {
     value = Math.ceil(value);
     const minute = Math.floor(value / 60);
@@ -122,27 +124,42 @@ const MusicPlayer = () => {
     return array;
   };
   const [repeat, setRepeat] = useState(0);
+  const handleSetLocalStorage = (song, index) => {
+    localStorage.setItem("song", JSON.stringify(song));
+    localStorage.setItem("index", JSON.stringify(index));
+  };
   const setNextIdx = () => {
     if (playMode === 3) {
       //setRnd(Math.floor(Math.random() * tracksLen));
       musicPlayer.setSongIndex((index + 1) % tracksLen);
+      musicPlayer.setSong(song);
     } else {
       // Tạm xem phát lại tất cả như phát theo trình tự
       musicPlayer.setSongIndex((index + 1) % tracksLen);
+      musicPlayer.setSong(song);
       if (playMode === 1) setRepeat(1);
+    }
+    if (!play) {
+      setPlay(true);
+      audioRef.current.play();
     }
   };
   const setPrevIdx = () => {
     if (playMode === 3) {
       //setRnd(Math.floor(Math.random() * tracksLen));
       musicPlayer.setSongIndex(index - 1 < 0 ? tracksLen - 1 : index - 1);
+      musicPlayer.setSong(song);
     } else {
       // Tạm xem phát lại tất cả như phát theo trình tự
       musicPlayer.setSongIndex(index - 1 < 0 ? tracksLen - 1 : index - 1);
+      musicPlayer.setSong(song);
       if (playMode === 1) setRepeat(1);
     }
+    if (!play) {
+      setPlay(true);
+      audioRef.current.play();
+    }
   };
-
   return (
     <Box
       style={musicPlayer.isUsing ? { display: "flex" } : { display: "none" }}
@@ -151,7 +168,14 @@ const MusicPlayer = () => {
         ref={audioRef}
         src={getAudioSource(source)}
         onLoadedData={handleLoadedData}
-        onTimeUpdate={() => setCurrentTime(audioRef.current.currentTime)}
+        onTimeUpdate={() => {
+          setCurrentTime(audioRef.current.currentTime);
+          localStorage.setItem(
+            "currentTime",
+            JSON.stringify(audioRef.current.currentTime)
+          );
+          musicPlayer.setCurrentTime(audioRef.current.currentTime);
+        }}
         onEnded={() => {
           if (repeat) {
             setPlay(true);
@@ -250,10 +274,10 @@ const MusicPlayer = () => {
               <FastRewindRounded sx={{ fontSize: "2.4vw" }} />
             </IconButton>
             <IconButton
-              aria-label={isPlay ? "play" : "pause"}
+              aria-label={play ? "play" : "pause"}
               onClick={handlePausePlayClick}
             >
-              {!isPlay ? (
+              {!play ? (
                 <PlayArrowRounded sx={{ fontSize: "3vw" }} />
               ) : (
                 <PauseRounded sx={{ fontSize: "3vw" }} />
