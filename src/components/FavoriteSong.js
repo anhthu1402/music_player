@@ -3,12 +3,6 @@ import { SongData } from "./Data/SongData";
 import SongItem from "./Item/SongItem";
 import TrackItem from "./Item/TrackItem";
 import MusicPlayerContext from "../MusicPlayerContext";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import {
-  FavoriteBorderOutlined,
-  MoreHoriz,
-  PlayCircleFilledRounded,
-} from "@mui/icons-material";
 import "../styles/FavoriteSong.css";
 function FavoriteSong() {
   const tracks = SongData;
@@ -27,13 +21,15 @@ function FavoriteSong() {
       }}
     >
       {favTracks.map((item, index) => (
-        <SongItem
-          key={index}
-          item={item}
-          tracks={favTracks}
-          song={song}
-          index={index}
-        />
+        <div className="song shadowDiv">
+          <TrackItem
+            key={index}
+            item={item}
+            tracks={favTracks}
+            song={song}
+            index={index}
+          />
+        </div>
       ))}
     </div>
   );

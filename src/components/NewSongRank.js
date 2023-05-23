@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import TrackItem from './Item/TrackItem';
 import { SongData } from './Data/SongData';
-import { DisplaySettings, PlayCircleFilled } from "@mui/icons-material";
 import MusicPlayerContext from '../MusicPlayerContext';
 import "../styles/NewSongRank.css";
 import { Link } from 'react-router-dom'
@@ -15,15 +14,15 @@ function NewSongRank() {
         let width = box.clientWidth;
         if(width > 970){
             for (let i = 0; i < item.length; i++) 
-                item[i].style.width = (width-40)/3 - 16.6 + "px";
+                item[i].style.width = (width-30)/3 - 20 + "px";
         }
         else if(width <= 970 && width > 645){
             for (let i = 0; i < item.length; i++) 
-                item[i].style.width = (width-40)/2 - 12.5 + "px";
+                item[i].style.width = (width-30)/2 - 15 + "px";
         }
         else if (width <= 645 && width >= 300) {
             for (let i = 0; i < item.length; i++) 
-                item[i].style.width = width - 40 + "px";
+                item[i].style.width = width - 30 + "px";
         }
         else {
             for (let i = 0; i < item.length; i++) 
@@ -41,9 +40,9 @@ function NewSongRank() {
         let width = box.clientWidth;
 
         if (width >= 300) {
-            box.scrollLeft = box.scrollLeft + width-17.5;
+            box.scrollLeft = box.scrollLeft + width;
         }
-        else box.scrollLeft = box.scrollLeft + 320;
+        else box.scrollLeft = box.scrollLeft + 330;
         count += 1;
         if(width > 970){
             if (count > 4) {
@@ -83,9 +82,6 @@ function NewSongRank() {
         carousel.addEventListener('mouseleave', slideInterval);
         slideInterval();
     }, []);
-    
-
-    // setInterval(btnNext, 1500);
 
     return (
         <div className='newSongRankContainer'>
@@ -93,21 +89,17 @@ function NewSongRank() {
             <button className='btnForw' onClick={btnNext}>{`>`}</button>
             <div class='trackList'>
                 {SongData.map((item, key) => key < 8 && 
-                    <div className='track'>
-                        <TrackItem item={item} key={key} className='trackItem' />
-                        <div className='fauxImg'>
-                            <PlayCircleFilled fontSize='large' className='icon' 
-                                onClick={() => {
-                                song.setUsing(true);
-                                song.setTracks(tracks);
-                                song.setSongIndex(key);
-                                song.setSong(tracks[key]);
-                                }} />
-                        </div>
+                    <div className='song shadowDiv'>
+                        <TrackItem 
+                            item={item} 
+                            key={key} 
+                            tracks={tracks}
+                            song={song}
+                            index={key}/>
                         <div className='ordinalNum'>#{key+1}</div>
                     </div>
                 )}
-                <div className='track'>
+                <div className='song shadowDiv'>
                     <div className='item'>
                         <div className='center'>
                             <p><Link to={'/charts'}>Xem tất cả »</Link></p>
