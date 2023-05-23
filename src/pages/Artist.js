@@ -10,6 +10,7 @@ import {
 } from "@mui/icons-material";
 import { SongData } from "../components/Data/SongData";
 import SongItem from "../components/Item/SongItem";
+import TrackItem from "../components/Item/TrackItem";
 import { Grid, Box } from "@mui/material";
 import { AlbumData } from "../components/Data/AlbumData";
 import ArtistAlbumItem from "../components/Item/ArtistAlbumItem";
@@ -35,6 +36,16 @@ function Artist() {
       }
     });
   });
+  const artistSongCss = {
+    listSongs: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gap: '20px',
+      // @media (max-width: 1200px) {
+      //     display: block;
+      // }
+    }
+  }
   return (
     <div>
       {artist && (
@@ -91,7 +102,7 @@ function Artist() {
                   <p style={{ color: "black" }}>Tất cả &gt;</p>
                 </Link>
               </div>
-              <Box
+              {/* <Box
                 className="artistSongs"
                 sx={{ width: "100%", position: "relative" }}
               >
@@ -111,7 +122,20 @@ function Artist() {
                       )
                   )}
                 </Grid>
-              </Box>
+              </Box> */}
+              <div className="listSongs" style={artistSongCss.listSongs}>
+                {artistSongs.map((item, index) => index < 6 && (
+                  <div className="song">
+                    <TrackItem
+                      key={index}
+                      item={item}
+                      tracks={artistSongs}
+                      song={player}
+                      index={index}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="album">
               <div className="artistAlbumsHeader">
