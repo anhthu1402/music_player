@@ -1,0 +1,56 @@
+.chartContainer {
+    width: calc(100%-20px);
+    overflow: hidden;
+    padding: 10px 10px 0;
+}
+.chartContainer .chartHeading {
+    display: flex;
+    column-gap: 1vw;
+    align-items: center;
+}
+.chartContainer .chartHeading button {
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: transparent;
+    align-items: center;
+    cursor: pointer;
+}
+.chartContainer .chartHeading button .playIcon {
+    color: #ff7394;
+}
+.chartContainer .chartHeading button:hover {
+    background-color: rgb(240, 240, 240);
+}
+.chartContainer .chartBody .song {
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 5px; 
+    border-radius: 15px;
+}
+.chartContainer .chartBody .song .ordinalNum {
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    -webkit-text-stroke: 1px #000;
+    text-align: center;
+    width: 5%;
+    min-width: 35px;
+    background-color: transparent;
+    @media (max-width: 700px) {
+        font-size: 18px;
+        min-width: 30px;
+    }
+}
+.song {
+    background-color: #fff;
+}
+.song:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+.song:hover {
+    background-color: #ffdde5;
+}

@@ -1,4 +1,5 @@
 .recentlySongContainer {
-  width: 100%;
+  width: calc(100%-20px);
   overflow: hidden;
+  padding: 0 10px;
 }

@@ -34,10 +34,10 @@ function Library() {
           <button>Playlist</button>
         </Link>
       </div>
-      <div className={song ? "Song" : "Playlist"}>
+      <div className={type === "song" ? "Song" : "Playlist"}>
         <hr style={{ border: `0.1px solid rgba(128, 128, 128, 0.356)` }}></hr>
         <hr
-          className={song ? "indexSong" : "indexPlaylist"}
+          className={type === "song" ? "indexSong" : "indexPlaylist"}
           style={{
             border: `1.6px solid #FF9EB6`,
             marginTop: `-3px`,

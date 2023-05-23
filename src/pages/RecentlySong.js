@@ -1,23 +1,19 @@
 import React, { useContext } from "react";
 import { SongData } from "../components/Data/SongData";
 import SongItem from "../components/Item/SongItem";
+import TrackItem from "../components/Item/TrackItem";
 import MusicPlayerContext from "../MusicPlayerContext";
-import "../styles/MyRecently.css";
+// import "../styles/MyRecently.css";
 import "../styles/RecentlySong.css";
 
 function RecentlySong() {
   const tracks = SongData;
   const song = useContext(MusicPlayerContext);
   return (
-    <div
-      style={{
-        position: `relative`,
-      }}
-      className="recentlySongContainer"
-    >
+    <div className="recentlySongContainer" >
       {SongData.map((item, index) => (
-        <div>
-          <SongItem
+        <div className="song shadowDiv">
+          <TrackItem
             key={index}
             item={item}
             tracks={tracks}

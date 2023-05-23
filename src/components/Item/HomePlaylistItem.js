@@ -8,6 +8,7 @@ import { useContext } from "react";
 import MusicPlayerContext from "../../MusicPlayerContext";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import '../../styles/PlaylistAlbum.css'
 
 function PlaylistAtHome({ item }) {
   const tracks =

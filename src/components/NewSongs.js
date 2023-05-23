@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useContext } from "react";
 import MusicPlayerContext from "../MusicPlayerContext";
-import {
-  FavoriteBorderOutlined,
-  MoreHoriz,
-  PlayCircleFilled,
-} from "@mui/icons-material";
 import TrackItem from "./Item/TrackItem";
 import { SongData } from "./Data/SongData";
 import "../styles/NewSongs.css";
+
 function NewSongs() {
   const [toggleState, setToggleState] = useState(1);
   const tracksByCountry = [];
@@ -73,21 +69,12 @@ function NewSongs() {
         {tracksByCountry.map(
           (item, key) =>
             key < 9 && (
-              <div class="track">
-                <TrackItem item={item} key={key} className="trackItem" />
-                <div className="fauxImg">
-                  <PlayCircleFilled
-                    fontSize="large"
-                    className="icon"
-                    onClick={() => {
-                      song.setUsing(true);
-                      song.setTracks(tracks);
-                      song.setSongIndex(key);
-                      song.setSong(tracks[key]);
-                    }}
-                  />
-                </div>
-                <MoreHoriz fontSize="large" className="moreHoriz" />
+              <div className='song'>
+                <TrackItem key={key}
+                      item={item}
+                      tracks={tracks}
+                      song={song}
+                      index={key} />
               </div>
             )
         )}

@@ -33,3 +33,10 @@
   margin-bottom: 1.2vw;
   font-size: 1.2vw;
 }
+.artistSongs .song {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-bottom: 5px; 
+  border-radius: 15px; 
+  padding-left: 10px;
+  background-color: white !important;
+}

@@ -32,3 +32,24 @@ html::-webkit-scrollbar {
 .mainscreen {
   margin-top: 6em;
 }
+::-moz-selection { /* Code for Firefox */
+  background: #ffbccc;
+  color: white;
+}
+
+::selection {
+  background: #ffbccc;
+  color: white;
+}
+/* @media screen and (max-width: 900px) {
+  * p, html p, body p {
+      font-size: 15px;
+  }
+  * h1, html h1, body h1,
+  * h2, html h2, body h2 {
+    font-size: 16px;
+  }
+  * div, html div, body div {
+    font-size: 15px;
+  }
+} */

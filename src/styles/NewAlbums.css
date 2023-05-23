@@ -10,18 +10,20 @@
     background-color: #ff7394;
     color: rgb(255, 255, 255);
 }
-.newAlbumReleaseContainer .newAlbumsBtn .active,
-.newAlbumReleaseContainer .newAlbumsBtn .inactive {
-    border-radius: 25px;
-    cursor: pointer;
-    justify-content: center;
-    height: 30px;
-    width: 120px;
-    text-decoration: none;
-    font-size: 15px;
-    font-family: "Rubik", sans-serif;
-    margin-right: 25px;
-    margin-bottom: 20px;
+.newAlbumReleaseContainer .newAlbumsBtn {
+    .active,
+    .inactive {
+        border-radius: 25px;
+        cursor: pointer;
+        justify-content: center;
+        height: 30px;
+        width: 120px;
+        text-decoration: none;
+        font-size: 15px;
+        font-family: "Rubik", sans-serif;
+        margin-right: 25px;
+        margin-bottom: 20px;
+    }
 }
 .newAlbumReleaseContainer .newAlbumsBtn .inactive {
     background-color: transparent;
@@ -49,7 +51,7 @@
     }
 }
 .newAlbumReleaseContainer .newAlbumsBody {
-    width: 100%;
+    padding: 0 10px;
     position: relative;
 }
 .newAlbumReleaseContainer .newAlbumsBody .item {
@@ -59,15 +61,20 @@
     height: fit-content;
     align-items: center;
     border-radius: 15px;
-    margin-bottom: 3px;
+    margin-bottom: 5px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 2px;
+    background-color: transparent;
 }
+.newAlbumReleaseContainer .albumContainer:nth-child(odd) {
+    background-color: #f2f2f2 !important;
+}
+
 .newAlbumReleaseContainer .newAlbumsBody .albumContainer:hover .item {
     background-color: #ffdde5;
 }
 .newAlbumReleaseContainer .newAlbumsBody .albumContainer .albumImg {
-    max-width: 110px;
-    min-width: 70px;
+    max-width: 60px;
+    min-width: 40px;
     border-radius: 10px;
     aspect-ratio: 1;
     margin-right: 10px;
@@ -77,8 +84,8 @@
 }
 .newAlbumReleaseContainer .newAlbumsBody .item img {
     width: 100%;
-    max-width: 110px;
-    min-width: 70px;
+    max-width: 60px;
+    min-width: 40px;
     border-radius: 10px;
     aspect-ratio: 1;
     transition: transform 0.5s, filter 0.5s ease-in-out;
@@ -89,24 +96,26 @@
     transform: scale(1.05);
     filter: brightness(70%);
 }
-.newAlbumReleaseContainer .newAlbumsBody .artist span a, 
-.newAlbumReleaseContainer .newAlbumsBody .albumDetail div:not(:first-of-type) {
-    color: gray;
-    font-weight: normal;
-    margin-top: 10px;
+.newAlbumReleaseContainer .newAlbumsBody {
+    .artist span a, 
+    .albumDetail div:not(:first-of-type) {
+        color: gray;
+        font-weight: normal;
+        margin-top: 10px;
+    }
 }
 .newAlbumReleaseContainer .newAlbumsBody .albumDetail div:first-of-type a {
     color: black;
-    font-size: 25px;
+    font-size: 20px;
 }
 .newAlbumReleaseContainer .newAlbumsBody .albumDetail div:first-of-type a:hover {
     color: #ff7394;
 }
 .newAlbumReleaseContainer .newAlbumsBody .albumDetail .albumReleaseDate {
     position: absolute;
-    top: 50%;
+    top: 42%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -58%);
     @media (max-width: 1200px) {
       position: relative;
       top: 0;
@@ -117,14 +126,21 @@
 .newAlbumReleaseContainer .newAlbumsBody .artist span:not(:last-of-type)::after {
     content: ', ';
 }
+.newAlbumReleaseContainer .artist {
+    text-decoration: none;
+    >span:hover a {
+        color: #ff7394;
+    }
+}
 .newAlbumReleaseContainer .newAlbumsBody .albumContainer {
     position: relative;
     width: 100%;
+    border-radius: 15px;
 }
 .newAlbumReleaseContainer .newAlbumsBody .albumContainer .fauxImg {
     width: 100%;
-    max-width: 110px;
-    min-width: 70px;
+    max-width: 60px;
+    min-width: 40px;
     border-radius: 10px;
     aspect-ratio: 1;
     margin-left: 10px;
@@ -144,19 +160,23 @@
     margin-right: 10px;
     background-color: #ffdde5;
 }
-.newAlbumReleaseContainer .favOutlineIcon,
-.newAlbumReleaseContainer .moreHoriz {
-    display: none;
-    background-color: transparent;
-    border-radius: 25px;
-    padding: 5px;
-    transition: all .5 ease;
-    margin-right: 5px;
-    cursor: pointer;
+.newAlbumReleaseContainer {
+    .favOutlineIcon,
+    .moreHoriz {
+        display: none;
+        background-color: transparent;
+        border-radius: 25px;
+        padding: 5px;
+        transition: all .5 ease;
+        margin-right: 5px;
+        cursor: pointer;
+    }
 }
-.newAlbumReleaseContainer .favOutlineIcon:hover,
-.newAlbumReleaseContainer .moreHoriz:hover {
-    background-color: #ffffffbb;
+.newAlbumReleaseContainer {
+    .favOutlineIcon:hover,
+    .moreHoriz:hover {
+        background-color: #ffffffbb;
+    }
 }
 .newAlbumReleaseContainer .newAlbumsBody .albumContainer .icon {
     align-items: center;
@@ -173,8 +193,10 @@
     color: #fff;
     cursor: pointer;
 }
-.newAlbumReleaseContainer .newAlbumsBody .albumContainer:hover .icon,
-.newAlbumReleaseContainer .newAlbumsBody .albumContainer:hover .favOutlineIcon,
-.newAlbumReleaseContainer .newAlbumsBody .albumContainer:hover .moreHoriz {
-    display: inline-block;
+.newAlbumReleaseContainer .newAlbumsBody {
+    .albumContainer:hover {
+        .icon, .favOutlineIcon, .moreHoriz {
+            display: inline-block;
+        }
+    }
 }

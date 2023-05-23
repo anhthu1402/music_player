@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 import BannerPlaylist from "../components/BannerPlaylist";
 import RecentlyPlaylist from "../components/RecentlyPlaylist";
 import TopTrendingArtist from "../components/TopTrendingArtist";
-import "../styles/Home.css";
 import MusicPlayerContext from "../MusicPlayerContext";
-import { PlaylistData } from "../components/Data/PlaylistData";
-import { AlbumData } from "../components/Data/AlbumData";
 import HomePlaylistItem from "../components/Item/HomePlaylistItem";
 import NewSongs from "../components/NewSongs";
 import NewSongRank from "../components/NewSongRank";
-import SongsChart from "../components/SongsChart";
+import { PlaylistData } from "../components/Data/PlaylistData";
+import { AlbumData } from "../components/Data/AlbumData";
+import '../styles/PlaylistAlbum.css'
+import "../styles/Home.css";
 
 function Home() {
   const song = useContext(MusicPlayerContext);
@@ -24,7 +24,16 @@ function Home() {
           <p>Tất cả &gt;</p>
         </Link>
       </div>
-      <RecentlyPlaylist />
+      <div className="homeRecentlyPlaylist">
+        {PlaylistData.map(
+          (item, key) =>
+            key < 4 && (
+              <div className="listPlaylists">
+                <HomePlaylistItem key={key} item={item} />
+              </div>
+            )
+        )}
+      </div>
 
       <div className="categoryHeader">
         <p className="categoryTitle">Đề xuất cho bạn</p>

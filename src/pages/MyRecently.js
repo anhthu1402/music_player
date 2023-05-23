@@ -22,10 +22,10 @@ function MyRecently() {
           </Link>
         </div>
       </div>
-      <div className={song ? "Song" : "Playlist"}>
+      <div className={type === "song" ? "Song" : "Playlist"}>
         <hr style={{ border: `0.1px solid rgba(128, 128, 128, 0.356)` }}></hr>
         <hr
-          className={song ? "recentlySong" : "recentlyPlaylist"}
+          className={type === "song" ? "recentlySong" : "recentlyPlaylist"}
           style={{
             border: `1.6px solid #FF9EB6`,
             marginTop: `-2.5px`,

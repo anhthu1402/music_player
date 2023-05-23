@@ -110,6 +110,15 @@
 .albumDetailContainer .albumTracksBody .heading div {
   margin-left: 5px;
 }
+.albumDetailContainer .albumTracksBody {
+  padding: 10px;
+  .song {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 5px; 
+    border-radius: 15px; 
+    padding-left: 10px;
+  }
+}
 /* .albumDetailContainer .albumTracksBody .track {
     position: relative;
 }
