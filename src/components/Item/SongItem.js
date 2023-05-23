@@ -23,9 +23,6 @@ class SongItem extends Component {
               if (this.props.song.isUsing !== true) {
                 this.props.song.setUsing(true);
               }
-              // if (this.props.song.play !== true) {
-              //   this.props.song.setPlay(true);
-              // }
               this.props.song.setPlay(true);
               this.props.song.setSong(this.props.item);
               this.props.song.setTracks(this.props.tracks);
