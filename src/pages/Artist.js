@@ -22,7 +22,7 @@ function Artist() {
   const tracks = SongData;
   const artistSongs = [];
   tracks.map((item, index) => {
-    item.artist.map((child, key) => {
+    item.representation.map((child, key) => {
       if (child.id === artist.id) {
         artistSongs.push(item);
       }

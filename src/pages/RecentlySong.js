@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { SongData } from "../components/Data/SongData";
-import SongItem from "../components/Item/SongItem";
 import TrackItem from "../components/Item/TrackItem";
 import MusicPlayerContext from "../MusicPlayerContext";
 // import "../styles/MyRecently.css";
@@ -10,7 +9,7 @@ function RecentlySong() {
   const tracks = SongData;
   const song = useContext(MusicPlayerContext);
   return (
-    <div className="recentlySongContainer" >
+    <div className="recentlySongContainer">
       {SongData.map((item, index) => (
         <div className="song shadowDiv">
           <TrackItem

@@ -1,57 +1,30 @@
-import { useState } from "react";
+import { useContext } from "react";
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../styles/Sidebar.css";
+import SidebarContext from "../../SidebarContext";
 
 export default function SidebarItem({ item }) {
-  const [open, setOpen] = useState(false);
-
-  if (item.subNav) {
-    return (
-      <div
-        className={open ? "sidebar-item open" : "sidebar-item"}
-        id={
-          window.location.href === item.path && open === false
-            ? "active"
-            : "inactive"
-        }
-      >
-        <div className="sidebar-title">
-          <span onClick={() => {}}>
-            <Link
-              className="sidebar-link"
-              to={item.path}
-              style={{ textDecoration: `none`, color: `black` }}
-            >
-              {item.icon}
-              {item.title}
-            </Link>
-          </span>
-          <i
-            className="toogle-button"
-            style={{ cursor: `pointer` }}
-            onClick={() => setOpen(!open)}
-          >
-            {!open ? item.iconOpened : item.iconClosed}
-          </i>
-        </div>
-        <div className="sidebar-content">
-          {item.subNav.map((child, index) => (
-            <SidebarItem key={index} item={child} />
-          ))}
-        </div>
-      </div>
-    );
-  } else {
-    return (
-      <div className="sidebar-item plain">
-        <Link to={item.path} style={{ color: "black" }}>
-          <span>
-            {item.icon}
-            {item.title}
-          </span>
-        </Link>
-      </div>
-    );
-  }
+  const sidebar = useContext(SidebarContext);
+  return (
+    <div
+      className="sidebar-item plain"
+      style={
+        sidebar.pathName === item.title
+          ? { backgroundColor: "#FFF0F4" }
+          : { backgroundColor: "transparent" }
+      }
+      onClick={() => {
+        localStorage.setItem("sidebarPath", JSON.stringify(item.title));
+        sidebar.setPathName(item.title);
+      }}
+    >
+      <Link to={item.path} style={{ color: "black" }}>
+        <span>
+          {item.icon}
+          {item.title}
+        </span>
+      </Link>
+    </div>
+  );
 }

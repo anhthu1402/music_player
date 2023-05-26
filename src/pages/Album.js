@@ -14,7 +14,7 @@ import TrackItem from "../components/Item/TrackItem";
 function Album() {
   const location = useLocation();
   const tracklist = location.state;
-  const tracks = tracklist.albumTracks;
+  const tracks = tracklist.songs;
   const song = useContext(MusicPlayerContext);
   const length = tracks.length;
   const [rnd, setRnd] = useState(0);
@@ -24,6 +24,11 @@ function Album() {
     song.setTracks(tracks);
     song.setSongIndex(rnd);
     song.setSong(tracks[rnd]);
+    song.setPlay(true);
+    localStorage.setItem("song", JSON.stringify(tracks[rnd]));
+    localStorage.setItem("tracks", JSON.stringify(tracks));
+    localStorage.setItem("index", JSON.stringify(rnd));
+    localStorage.setItem("play", JSON.stringify(true));
   };
   function dateFormat(strDate) {
     const date = new Date(strDate);
@@ -65,12 +70,13 @@ function Album() {
             </div>
             {tracks.map((item, key) => (
               <div class="song shadowDiv">
-                <TrackItem 
+                <TrackItem
                   key={key}
                   item={item}
                   tracks={tracks}
                   song={song}
-                  index={key} />
+                  index={key}
+                />
               </div>
             ))}
           </div>

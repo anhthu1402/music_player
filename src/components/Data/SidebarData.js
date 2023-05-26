@@ -22,20 +22,6 @@ export const SidebarData = [
     title: "Khám phá",
     path: "/home",
     icon: <HomeRounded sx={{ fontSize: "1.7vw" }} />,
-    iconOpened: <ExpandMore sx={{ fontSize: "1.7vw" }} />,
-    iconClosed: <ExpandLess sx={{ fontSize: "1.7vw" }} />,
-    subNav: [
-      {
-        title: "Nghệ sĩ",
-        path: "/home/artists",
-        icon: <PersonRounded sx={{ fontSize: "1.7vw" }} />,
-      },
-      {
-        title: "Playlist",
-        path: "/home/playlists",
-        icon: <PlaylistPlayRounded sx={{ fontSize: "1.7vw" }} />,
-      },
-    ],
   },
   {
     title: "Mới phát hành",

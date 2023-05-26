@@ -1,22 +1,34 @@
 import React, { createContext, useState } from "react";
 const MusicPlayerContext = createContext();
 export const MusicPlayerProvider = ({ children }) => {
-  const [isUsing, setUsing] = useState(localStorage.getItem("song") !== null);
+  const [isUsing, setUsing] = useState(
+    localStorage.getItem("song") === null ? false : true
+  );
   const [tracks, setTracks] = useState(
-    JSON.parse(localStorage.getItem("tracks")) || []
+    localStorage.getItem("tracks") !== null
+      ? JSON.parse(localStorage.getItem("tracks"))
+      : []
   );
   const [song, setSong] = useState(
-    JSON.parse(localStorage.getItem("song")) || ""
+    localStorage.getItem("song") !== null
+      ? JSON.parse(localStorage.getItem("song"))
+      : ""
   );
   const [songIndex, setSongIndex] = useState(
-    JSON.parse(localStorage.getItem("index")) || 0
+    localStorage.getItem("index") !== null
+      ? JSON.parse(localStorage.getItem("index"))
+      : 0
   );
   const [playlist, setPlaylist] = useState(
-    JSON.parse(localStorage.getItem("tracks")) || []
+    localStorage.getItem("tracks") !== null
+      ? JSON.parse(localStorage.getItem("tracks"))
+      : []
   );
   const [play, setPlay] = useState(false);
   const [currentTime, setCurrentTime] = useState(
-    JSON.parse(localStorage.getItem("currentTime")) || 0
+    localStorage.getItem("currentTime") !== null
+      ? JSON.parse(localStorage.getItem("currentTime"))
+      : 0
   );
   return (
     <MusicPlayerContext.Provider
