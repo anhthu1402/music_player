@@ -13,11 +13,15 @@
 }
 .indexRecentlyBtn button {
   background-color: transparent;
-  margin: 0 40px 0 0;
+  margin-right: 40px;
   font-size: 1.3vw;
-  font-family: "Josefin Sans", sans-serif;
-  border: none;
+  border: 2px solid transparent;
   cursor: pointer;
+  padding: 10px 2px;
+}
+.indexRecentlyBtn button.selected,
+.indexRecentlyBtn button:hover {
+    border-bottom: 2px solid #ff7394;
 }
 .recentlyPlaylist {
   width: 5.5vw;
