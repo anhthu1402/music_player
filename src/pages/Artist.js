@@ -36,16 +36,6 @@ function Artist() {
       }
     });
   });
-  const artistSongCss = {
-    listSongs: {
-      display: 'grid',
-      gridTemplateColumns: '1fr 1fr',
-      gap: '20px',
-      // @media (max-width: 1200px) {
-      //     display: block;
-      // }
-    }
-  }
   return (
     <div>
       {artist && (
@@ -102,30 +92,9 @@ function Artist() {
                   <p style={{ color: "black" }}>Tất cả &gt;</p>
                 </Link>
               </div>
-              {/* <Box
-                className="artistSongs"
-                sx={{ width: "100%", position: "relative" }}
-              >
-                <Grid container rowSpacing={1} columnSpacing={{ sm: 1, md: 2 }}>
-                  {artistSongs.map(
-                    (item, index) =>
-                      index < 6 && (
-                        <Grid item md={6} xs={12}>
-                          <SongItem
-                            key={index}
-                            item={item}
-                            tracks={artistSongs}
-                            song={player}
-                            index={index}
-                          />
-                        </Grid>
-                      )
-                  )}
-                </Grid>
-              </Box> */}
-              <div className="listSongs" style={artistSongCss.listSongs}>
+              <div className="listSongs">
                 {artistSongs.map((item, index) => index < 6 && (
-                  <div className="song">
+                  <div className="song shadowDiv">
                     <TrackItem
                       key={index}
                       item={item}

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useLocation } from "react-router-dom";
 import { SongData } from "./Data/SongData";
-import SongItem from "./Item/SongItem";
+import TrackItem from "./Item/TrackItem";
 import MusicPlayerContext from "../MusicPlayerContext";
 
 function AllArtistSongs() {
@@ -14,15 +14,17 @@ function AllArtistSongs() {
       <div className="aasHeader" style={{ marginBottom: 10 }}>
         <h2>{artist.artistName} - Tất cả bài hát</h2>
       </div>
-      <div style={{ position: "relative" }}>
+      <div>
         {songs.map((item, index) => (
-          <SongItem
-            key={index}
-            item={item}
-            tracks={songs}
-            song={player}
-            index={0}
-          />
+          <div className="song shadowDiv">
+            <TrackItem
+              key={index}
+              item={item}
+              tracks={songs}
+              song={player}
+              index={0}
+            />
+          </div>
         ))}
       </div>
     </div>

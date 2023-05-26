@@ -64,7 +64,7 @@ function Album() {
               <div>Bài hát</div>
             </div>
             {tracks.map((item, key) => (
-              <div class="song">
+              <div class="song shadowDiv">
                 <TrackItem 
                   key={key}
                   item={item}

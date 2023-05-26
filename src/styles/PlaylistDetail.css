@@ -63,7 +63,7 @@
   width: fit-content;
 }
 .playlistDetail .songs {
-  position: relative;
+  margin-top: 10px;
 }
 .detailButton {
   display: flex;
@@ -97,7 +97,6 @@
   transition: 0.5s ease-in;
   transform: scale(1.1);
 }
-
 .playlistDetail.active {
   margin-bottom: 7em;
 }

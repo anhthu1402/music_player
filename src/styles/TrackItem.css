@@ -3,7 +3,7 @@
     padding-left: 10px;
 }
 .song {
-    margin-bottom: 5px; 
+    margin-bottom: 10px; 
     border-radius: 10px; 
 }
 .song .item {
@@ -121,8 +121,8 @@
 /* .listSongs {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    @media (max-width: 1200px) {
+    gap: 5px 20px;
+    @media (max-width: 850px) {
         display: block;
     }
 } */

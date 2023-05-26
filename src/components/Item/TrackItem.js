@@ -42,12 +42,13 @@ class TrackItem extends Component {
       }
       return date.toJSON().slice(0, 10).split("-").reverse().join("/");
     }
+    const artists = this.props.item.artist === undefined ? this.props.item.composing : this.props.item.artist;
     return (
       <div className="item">
         <div className="songImg">
           <img
-            src={require(`../../assets/${this.props.item.image}`)}
-            alt={this.props.item.name}
+            src={require(`../../assets/${this.props.item.image === undefined ? this.props.item.songImage : this.props.item.image}`)}
+            alt={this.props.item.name === undefined ? this.props.item.songName : this.props.item.name}
           />
           <PlayCircleFilled
             className="playSongIcon"
@@ -71,7 +72,7 @@ class TrackItem extends Component {
         <div className="songDetail">
           <div>{this.props.item.title}</div>
           <div className="artist">
-            {this.props.item.artist.map((child, index) => (
+            {artists.map((child, index) => (
               <span key={index} item={child}>
                 <Link to={`/artist/${child.artistName}`} state={child}>
                   {child.artistName}
@@ -84,7 +85,7 @@ class TrackItem extends Component {
               ? ""
               : printReleaseDate(this.props.item.releaseDate)}
           </div>
-          <div className="trackDuration">{this.props.item.time}</div>
+          <div className="trackDuration">{this.props.item.time === undefined ? this.props.item.timeLimit : this.props.item.time}</div>
         </div>
         <div className="rightIcon">
           {this.props.item.isFavorite === 0 ? (

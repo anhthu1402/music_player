@@ -10,7 +10,7 @@ import "../styles/PlaylistDetail.css";
 import { useContext } from "react";
 import MusicPlayerContext from "../MusicPlayerContext";
 import { useState } from "react";
-import SongItem from "../components/Item/SongItem";
+import TrackItem from "../components/Item/TrackItem";
 
 const PlaylistDetail = () => {
   const location = useLocation();
@@ -72,13 +72,15 @@ const PlaylistDetail = () => {
           </div>
           <div className="songs">
             {playlist.playlistSongs.map((item, index) => (
-              <SongItem
-                key={index}
-                item={item}
-                tracks={tracks}
-                song={song}
-                index={index}
-              />
+              <div className="song shadowDiv">
+                <TrackItem
+                  key={index}
+                  item={item}
+                  tracks={tracks}
+                  song={song}
+                  index={index}
+                />
+              </div>
             ))}
           </div>
         </div>
