@@ -5,7 +5,7 @@ import ClearIcon from "@mui/icons-material/Clear";
 import "../../styles/PlaylistItem.css";
 import { Link } from "react-router-dom";
 
-function PlaylistItem({ item }, props) {
+function PlaylistItem({ item }) {
   function getPlaylistImgUrl(url) {
     return require("../../assets/" + url);
   }

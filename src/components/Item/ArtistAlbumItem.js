@@ -22,11 +22,9 @@ function ArtistAlbumItem({ item }) {
           <button className="btn">
             <FavoriteBorderRounded sx={{ fontSize: "2.4vw" }} />
           </button>
-          <Link>
-            <button>
-              <PlayCircleFilled sx={{ fontSize: "2.4vw" }} />
-            </button>
-          </Link>
+          <button>
+            <PlayCircleFilled sx={{ fontSize: "2.4vw" }} />
+          </button>
           <button>
             <MoreHoriz sx={{ fontSize: "2.4vw" }} />
           </button>

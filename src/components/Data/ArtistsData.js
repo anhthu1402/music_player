@@ -8,37 +8,37 @@ export const ArtistsData = [
   {
     id: 2,
     artistName: "Band",
-    followers: "927.713",
+    numberOfFollower: "927.713",
     artistImage: "ns2.png",
   },
   {
     id: 3,
     artistName: "Cool",
     artistImage: "ns3.jpg",
-    followers: "27.713",
+    numberOfFollower: "27.713",
   },
   {
     id: 4,
     artistName: "BTS",
     artistImage: "BTS_image.jpg",
-    followers: "927.713",
+    numberOfFollower: "927.713",
   },
   {
     id: 5,
     artistName: "911",
     artistImage: "ns6.jpg",
-    followers: "907.713",
+    numberOfFollower: "907.713",
   },
   {
     id: 6,
     artistName: "Jin",
     artistImage: "BTS_image.jpg",
-    followers: "927.713",
+    numberOfFollower: "927.713",
   },
   {
     id: 7,
     artistName: "Nicki Minaj",
     artistImage: "BTS_image.jpg",
-    followers: "927.713",
+    numberOfFollower: "927.713",
   },
 ];

@@ -69,26 +69,19 @@ function NewSongs() {
         {tracksByCountry.map(
           (item, key) =>
             key < 9 && (
-              <div className='song'>
-                <TrackItem key={key}
-                      item={item}
-                      tracks={tracks}
-                      song={song}
-                      index={key} />
+              <div className="song">
+                <TrackItem
+                  key={key}
+                  item={item}
+                  tracks={tracks}
+                  song={song}
+                  index={key}
+                />
               </div>
             )
         )}
       </div>
     </div>
-    // <div>
-    //   {loading ? "Loading..." : (
-    //     <div>
-    //       {records && records.map((item, key) => (
-    //         <p>{item.title}</p>
-    //       ))}
-    //     </div>
-    //   )}
-    // </div>
   );
 }
 

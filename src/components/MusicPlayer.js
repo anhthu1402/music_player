@@ -20,7 +20,6 @@ import MusicPlayerContext from "../MusicPlayerContext";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import "../styles/MusicPlayer.css";
-import { useEffect } from "react";
 
 const Widget = styled("div")(() => ({
   padding: 10,
@@ -67,9 +66,9 @@ const MusicPlayer = () => {
   // 0: Phát theo trình tự , 1: Phát lại 1 bài, 2: Phát lại tất cả (như phát theo trình tự nhưng phát theo trình tự khi hết bài cuối của playlist sẽ chuyển sang playlist khác có liên quan - khó, chưa làm được), 3: Phát ngẫu nhiên
   const [playMode, setPlayMode] = useState(0);
   let index = musicPlayer.songIndex;
-  let song = musicPlayer.isUsing ? tracks[index] : null;
-  let title = musicPlayer.isUsing ? tracks[index].title : "";
-  let artist = musicPlayer.isUsing ? song.artist : [];
+  let song = musicPlayer.isUsing ? array[index] : "";
+  let songName = musicPlayer.isUsing ? array[index].songName : "";
+  let representation = musicPlayer.isUsing ? array[index].representation : [];
   const getAudioSource = (source) => {
     return require("../assets/audio/" + source);
   };
@@ -79,9 +78,9 @@ const MusicPlayer = () => {
   const audioRef = useRef();
   const [duration, setDuration] = useState(0); //seconds
   const [currentTime, setCurrentTime] = useState(musicPlayer.currentTime);
-  const [play, setPlay] = useState(false);
-  let source = musicPlayer.isUsing ? tracks[index].source : "Aloha.mp3";
-  let imgUrl = musicPlayer.isUsing ? tracks[index].image : "Logo.png";
+  const [play, setPlay] = useState(musicPlayer.play);
+  let source = musicPlayer.isUsing ? array[index].songLink : "Aloha.mp3";
+  let imgUrl = musicPlayer.isUsing ? array[index].songImage : "Logo.png";
   const handleLoadedData = () => {
     setDuration(Math.ceil(audioRef.current.duration));
     handleSetLocalStorage(song, index);
@@ -161,244 +160,246 @@ const MusicPlayer = () => {
     }
   };
   return (
-    <Box
-      style={musicPlayer.isUsing ? { display: "flex" } : { display: "none" }}
-    >
-      <audio
-        ref={audioRef}
-        src={getAudioSource(source)}
-        onLoadedData={handleLoadedData}
-        onTimeUpdate={() => {
-          setCurrentTime(audioRef.current.currentTime);
-          localStorage.setItem(
-            "currentTime",
-            JSON.stringify(audioRef.current.currentTime)
-          );
-          musicPlayer.setCurrentTime(audioRef.current.currentTime);
-        }}
-        onEnded={() => {
-          if (repeat) {
-            setPlay(true);
-            audioRef.current.currentTime = 0;
-            setCurrentTime(0);
-            audioRef.current.play();
-          } else setPlay(false);
-        }}
-        loop={repeat ? true : false}
-      />
-      <Widget>
-        <Box sx={{ display: `flex`, alignItems: "center" }}>
-          <CoverImage
-            sx={{
-              width: "6vw",
-              backgroundColor: "transparent",
-            }}
-          >
-            <img
-              alt={title}
-              src={getImgUrl(imgUrl)}
-              style={{ borderRadius: "10px" }}
-            ></img>
-          </CoverImage>
-          <Box sx={{ ml: 1.5, minWidth: 0 }}>
-            <Typography
-              noWrap
-              sx={{ fontSize: "1.6vw", width: "13vw", marginBottom: "5px" }}
-            >
-              {title}
-            </Typography>
-            <Typography
-              className="songArtist"
-              noWrap
-              letterSpacing={-0.25}
-              sx={{ display: `flex`, flexDirection: `row`, fontSize: "1vw" }}
-            >
-              {artist.map((child, index) => {
-                return (
-                  <span key={index} item={child} className="artist">
-                    <Link
-                      to={`/artist/${child.artistName}`}
-                      state={child}
-                      color="grey"
-                    >
-                      {child.artistName}
-                    </Link>
-                  </span>
-                );
-              })}
-            </Typography>
-          </Box>
-        </Box>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "space-between",
-            width: "15vw",
+    musicPlayer.isUsing && (
+      <Box
+        style={musicPlayer.isUsing ? { display: "flex" } : { display: "none" }}
+      >
+        <audio
+          ref={audioRef}
+          src={getAudioSource(source)}
+          onLoadedData={handleLoadedData}
+          onTimeUpdate={() => {
+            setCurrentTime(audioRef.current.currentTime);
+            localStorage.setItem(
+              "currentTime",
+              JSON.stringify(audioRef.current.currentTime)
+            );
+            musicPlayer.setCurrentTime(audioRef.current.currentTime);
           }}
-        >
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "center",
-              maxWidth: "100%",
-            }}
-          >
-            <IconButton sx={{ margin: "0 0.5em" }}>
-              <ShuffleRounded
-                onClick={() => {
-                  if (playMode === 3) {
-                    setPlayMode(0);
-                  } else {
-                    setPlayMode(3);
-                    shuffleArray(array);
-                    if (repeat) setRepeat(0);
-                  }
-                }}
-                sx={
-                  playMode === 3
-                    ? { color: "pink", fontSize: "1.5vw" }
-                    : { color: "grey", fontSize: "1.5vw" }
-                }
-              />
-            </IconButton>
-            <IconButton
-              aria-label="previous song"
-              onClick={() => {
-                setPrevIdx();
+          onEnded={() => {
+            if (repeat) {
+              setPlay(true);
+              audioRef.current.currentTime = 0;
+              setCurrentTime(0);
+              audioRef.current.play();
+            } else setPlay(false);
+          }}
+          loop={repeat ? true : false}
+        />
+        <Widget>
+          <Box sx={{ display: `flex`, alignItems: "center" }}>
+            <CoverImage
+              sx={{
+                width: "6vw",
+                backgroundColor: "transparent",
               }}
             >
-              <FastRewindRounded sx={{ fontSize: "2.4vw" }} />
-            </IconButton>
-            <IconButton
-              aria-label={play ? "play" : "pause"}
-              onClick={handlePausePlayClick}
-            >
-              {!play ? (
-                <PlayArrowRounded sx={{ fontSize: "3vw" }} />
-              ) : (
-                <PauseRounded sx={{ fontSize: "3vw" }} />
-              )}
-            </IconButton>
-            <IconButton
-              aria-label="next song"
-              onClick={() => {
-                setNextIdx();
-              }}
-            >
-              <FastForwardRounded sx={{ fontSize: "2.4vw" }} />
-            </IconButton>
-            <IconButton
-              sx={{ margin: "0 0.5em" }}
-              onClick={() => {
-                if (playMode === 0 || playMode === 3) {
-                  setPlayMode(2);
-                } else if (playMode === 2) {
-                  setPlayMode(1);
-                  setRepeat(1);
-                } else {
-                  setPlayMode(0);
-                  setRepeat(0);
-                }
-              }}
-            >
-              {playMode === 1 ? (
-                <RepeatOneRounded
-                  sx={playMode === 1 ? { color: "pink" } : { color: "grey" }}
-                />
-              ) : (
-                <RepeatRounded
-                  sx={playMode === 2 ? { color: "pink" } : { color: "grey" }}
-                />
-              )}
-            </IconButton>
+              <img
+                alt={songName}
+                src={getImgUrl(imgUrl)}
+                style={{ borderRadius: "10px" }}
+              ></img>
+            </CoverImage>
+            <Box sx={{ ml: 1.5, minWidth: 0 }}>
+              <Typography
+                noWrap
+                sx={{ fontSize: "1.6vw", width: "13vw", marginBottom: "5px" }}
+              >
+                {songName}
+              </Typography>
+              <Typography
+                className="songArtist"
+                noWrap
+                letterSpacing={-0.25}
+                sx={{ display: `flex`, flexDirection: `row`, fontSize: "1vw" }}
+              >
+                {representation.map((child, index) => {
+                  return (
+                    <span key={index} item={child} className="artist">
+                      <Link
+                        to={`/artist/${child.artistName}`}
+                        state={child}
+                        color="grey"
+                      >
+                        {child.artistName}
+                      </Link>
+                    </span>
+                  );
+                })}
+              </Typography>
+            </Box>
           </Box>
           <Box
             sx={{
               display: "flex",
+              flexDirection: "column",
               alignItems: "center",
               justifyContent: "space-between",
+              width: "15vw",
             }}
           >
-            <TinyText>
-              <b>{formatDuration(currentTime)}</b>
-            </TinyText>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "center",
+                maxWidth: "100%",
+              }}
+            >
+              <IconButton sx={{ margin: "0 0.5em" }}>
+                <ShuffleRounded
+                  onClick={() => {
+                    if (playMode === 3) {
+                      setPlayMode(0);
+                    } else {
+                      setPlayMode(3);
+                      shuffleArray(array);
+                      if (repeat) setRepeat(0);
+                    }
+                  }}
+                  sx={
+                    playMode === 3
+                      ? { color: "pink", fontSize: "1.5vw" }
+                      : { color: "grey", fontSize: "1.5vw" }
+                  }
+                />
+              </IconButton>
+              <IconButton
+                aria-label="previous song"
+                onClick={() => {
+                  setPrevIdx();
+                }}
+              >
+                <FastRewindRounded sx={{ fontSize: "2.4vw" }} />
+              </IconButton>
+              <IconButton
+                aria-label={play ? "play" : "pause"}
+                onClick={handlePausePlayClick}
+              >
+                {!play ? (
+                  <PlayArrowRounded sx={{ fontSize: "3vw" }} />
+                ) : (
+                  <PauseRounded sx={{ fontSize: "3vw" }} />
+                )}
+              </IconButton>
+              <IconButton
+                aria-label="next song"
+                onClick={() => {
+                  setNextIdx();
+                }}
+              >
+                <FastForwardRounded sx={{ fontSize: "2.4vw" }} />
+              </IconButton>
+              <IconButton
+                sx={{ margin: "0 0.5em" }}
+                onClick={() => {
+                  if (playMode === 0 || playMode === 3) {
+                    setPlayMode(2);
+                  } else if (playMode === 2) {
+                    setPlayMode(1);
+                    setRepeat(1);
+                  } else {
+                    setPlayMode(0);
+                    setRepeat(0);
+                  }
+                }}
+              >
+                {playMode === 1 ? (
+                  <RepeatOneRounded
+                    sx={playMode === 1 ? { color: "pink" } : { color: "grey" }}
+                  />
+                ) : (
+                  <RepeatRounded
+                    sx={playMode === 2 ? { color: "pink" } : { color: "grey" }}
+                  />
+                )}
+              </IconButton>
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}
+            >
+              <TinyText>
+                <b>{formatDuration(currentTime)}</b>
+              </TinyText>
+              <Slider
+                aria-label="time-indicator"
+                size="small"
+                value={currentTime}
+                min={0}
+                step={1}
+                max={duration}
+                onChange={(_, value) => HandleTimeSliderChange(value)}
+                sx={{
+                  color: "rgba(0,0,0,0.87)",
+                  height: 4,
+                  width: "28vw",
+                  maxWidth: "100%",
+                  margin: "0 10px",
+                  "& .MuiSlider-thumb": {
+                    width: 8,
+                    height: 8,
+                    transition: "0.3s cubic-bezier(.47,1.64,.41,.8)",
+                    "&:before": {
+                      boxShadow: "0 2px 12px 0 rgba(0,0,0,0.4)",
+                    },
+                    "&:hover, &.Mui-focusVisible": {
+                      boxShadow: `0px 0px 0px 8px ${"rgb(0 0 0 / 16%)"}`,
+                    },
+                    "&.Mui-active": {
+                      width: 20,
+                      height: 20,
+                    },
+                  },
+                  "& .MuiSlider-rail": {
+                    opacity: 0.28,
+                  },
+                }}
+              />
+              <TinyText>
+                <b>-{formatDuration(duration - currentTime)}</b>
+              </TinyText>
+            </Box>
+          </Box>
+          <Stack
+            spacing={2}
+            direction="row"
+            sx={{ mb: 1, px: 1, width: "13vw" }}
+            alignItems="center"
+          >
+            <VolumeDownRounded />
             <Slider
-              aria-label="time-indicator"
-              size="small"
-              value={currentTime}
-              min={0}
-              step={1}
-              max={duration}
-              onChange={(_, value) => HandleTimeSliderChange(value)}
+              aria-label="Volume"
+              defaultValue={40}
               sx={{
                 color: "rgba(0,0,0,0.87)",
-                height: 4,
-                width: "28vw",
-                maxWidth: "100%",
-                margin: "0 10px",
-                "& .MuiSlider-thumb": {
-                  width: 8,
-                  height: 8,
-                  transition: "0.3s cubic-bezier(.47,1.64,.41,.8)",
-                  "&:before": {
-                    boxShadow: "0 2px 12px 0 rgba(0,0,0,0.4)",
-                  },
-                  "&:hover, &.Mui-focusVisible": {
-                    boxShadow: `0px 0px 0px 8px ${"rgb(0 0 0 / 16%)"}`,
-                  },
-                  "&.Mui-active": {
-                    width: 20,
-                    height: 20,
-                  },
+                width: 100,
+                "& .MuiSlider-track": {
+                  border: "none",
                 },
-                "& .MuiSlider-rail": {
-                  opacity: 0.28,
+                "& .MuiSlider-thumb": {
+                  width: 13,
+                  height: 13,
+                  backgroundColor: "#fff",
+                  "&:before": {
+                    boxShadow: "0 4px 8px rgba(0,0,0,0.4)",
+                  },
+                  "&:hover, &.Mui-focusVisible, &.Mui-active": {
+                    boxShadow: "none",
+                  },
                 },
               }}
+              onChange={(e) => (audioRef.current.volume = e.target.value / 100)}
             />
-            <TinyText>
-              <b>-{formatDuration(duration - currentTime)}</b>
-            </TinyText>
-          </Box>
-        </Box>
-        <Stack
-          spacing={2}
-          direction="row"
-          sx={{ mb: 1, px: 1, width: "13vw" }}
-          alignItems="center"
-        >
-          <VolumeDownRounded />
-          <Slider
-            aria-label="Volume"
-            defaultValue={40}
-            sx={{
-              color: "rgba(0,0,0,0.87)",
-              width: 100,
-              "& .MuiSlider-track": {
-                border: "none",
-              },
-              "& .MuiSlider-thumb": {
-                width: 13,
-                height: 13,
-                backgroundColor: "#fff",
-                "&:before": {
-                  boxShadow: "0 4px 8px rgba(0,0,0,0.4)",
-                },
-                "&:hover, &.Mui-focusVisible, &.Mui-active": {
-                  boxShadow: "none",
-                },
-              },
-            }}
-            onChange={(e) => (audioRef.current.volume = e.target.value / 100)}
-          />
-          <VolumeUpRounded />
-        </Stack>
-      </Widget>
-    </Box>
+            <VolumeUpRounded />
+          </Stack>
+        </Widget>
+      </Box>
+    )
   );
 };
 

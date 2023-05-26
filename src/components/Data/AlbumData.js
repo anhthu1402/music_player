@@ -16,7 +16,7 @@ export const AlbumData = [
       {
         id: 2,
         artistName: "Band",
-        followers: "927.713",
+        numberOfFollower: "927.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
         artistImage: "ns2.png",
@@ -24,25 +24,25 @@ export const AlbumData = [
       {
         id: 1,
         artistName: "Trademark",
-        followers: "97.713",
+        numberOfFollower: "97.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
         artistImage: "ns1.jpg",
       },
     ],
-    albumTracks: [
+    songs: [
       {
         id: 7,
-        title: "IDOL",
-        image: "idol.png",
+        songName: "IDOL",
+        songImage: "idol.png",
         isFavorite: 1,
-        time: "3:43",
-        source: "IDOL.mp3",
-        artist: [
+        timeLimit: "3:43",
+        songLink: "IDOL.mp3",
+        representation: [
           {
             id: 2,
             artistName: "Band",
-            followers: "927.713",
+            numberOfFollower: "927.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
             artistImage: "ns2.png",
@@ -51,16 +51,16 @@ export const AlbumData = [
       },
       {
         id: 1,
-        title: "Only Love",
-        image: "onlylove.jpg",
+        songName: "Only Love",
+        songImage: "onlylove.jpg",
         isFavorite: 1,
-        time: "4:07",
-        source: "OnlyLove.mp3",
-        artist: [
+        timeLimit: "4:07",
+        songLink: "OnlyLove.mp3",
+        representation: [
           {
             id: 2,
             artistName: "Band",
-            followers: "927.713",
+            numberOfFollower: "927.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
             artistImage: "ns2.png",
@@ -68,7 +68,7 @@ export const AlbumData = [
           {
             id: 1,
             artistName: "Trademark",
-            followers: "97.713",
+            numberOfFollower: "97.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
             artistImage: "ns1.jpg",
@@ -77,16 +77,16 @@ export const AlbumData = [
       },
       {
         id: 2,
-        title: "Tonight",
-        image: "onlylove.jpg",
+        songName: "Tonight",
+        songImage: "onlylove.jpg",
         isFavorite: 0,
-        time: "2:59",
-        source: "Tonight.mp3",
-        artist: [
+        timeLimit: "2:59",
+        songLink: "Tonight.mp3",
+        representation: [
           {
             id: 2,
             artistName: "Band",
-            followers: "927.713",
+            numberOfFollower: "927.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
             artistImage: "ns2.png",
@@ -112,25 +112,25 @@ export const AlbumData = [
       {
         id: 4,
         artistName: "BTS",
-        followers: "927.713",
+        numberOfFollower: "927.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
         artistImage: "BTS_image.jpg",
       },
     ],
-    albumTracks: [
+    songs: [
       {
         id: 7,
-        title: "IDOL",
-        image: "idol.png",
+        songName: "IDOL",
+        songImage: "idol.png",
         isFavorite: 1,
-        time: "3:43",
-        source: "IDOL.mp3",
-        artist: [
+        timeLimit: "3:43",
+        songLink: "IDOL.mp3",
+        representation: [
           {
             id: 4,
             artistName: "BTS",
-            followers: "927.713",
+            numberOfFollower: "927.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
             artistImage: "BTS_image.jpg",
@@ -139,16 +139,16 @@ export const AlbumData = [
       },
       {
         id: 1,
-        title: "Only Love",
-        image: "onlylove.jpg",
+        songName: "Only Love",
+        songImage: "onlylove.jpg",
         isFavorite: 1,
-        time: "4:07",
-        source: "OnlyLove.mp3",
-        artist: [
+        timeLimit: "4:07",
+        songLink: "OnlyLove.mp3",
+        representation: [
           {
             id: 4,
             artistName: "BTS",
-            followers: "927.713",
+            numberOfFollower: "927.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
             artistImage: "BTS_image.jpg",
@@ -157,16 +157,16 @@ export const AlbumData = [
       },
       {
         id: 2,
-        title: "Tonight",
-        image: "onlylove.jpg",
+        songName: "Tonight",
+        songImage: "onlylove.jpg",
         isFavorite: 0,
-        time: "2:59",
-        source: "Tonight.mp3",
-        artist: [
+        timeLimit: "2:59",
+        songLink: "Tonight.mp3",
+        representation: [
           {
             id: 4,
             artistName: "BTS",
-            followers: "927.713",
+            numberOfFollower: "927.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
             artistImage: "BTS_image.jpg",
@@ -181,7 +181,7 @@ export const AlbumData = [
     interestTimes: 3,
     releaseDate: "2023-04-23T15:16:00.269+07:00",
     albumImage:
-      "https://res.heraldm.com/content/image/2020/07/17/20200717000500_0.jpg",
+      "https://res.heraldm.com/content/songImage/2020/07/17/20200717000500_0.jpg",
 
     country: [
       {
@@ -193,25 +193,25 @@ export const AlbumData = [
       {
         id: 4,
         artistName: "BTS",
-        followers: "927.713",
+        numberOfFollower: "927.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
         artistImage: "BTS_image.jpg",
       },
     ],
-    albumTracks: [
+    songs: [
       {
         id: 7,
-        title: "IDOL",
-        image: "idol.png",
+        songName: "IDOL",
+        songImage: "idol.png",
         isFavorite: 1,
-        time: "3:43",
-        source: "IDOL.mp3",
-        artist: [
+        timeLimit: "3:43",
+        songLink: "IDOL.mp3",
+        representation: [
           {
             id: 4,
             artistName: "BTS",
-            followers: "927.713",
+            numberOfFollower: "927.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
             artistImage: "BTS_image.jpg",
@@ -220,16 +220,16 @@ export const AlbumData = [
       },
       {
         id: 1,
-        title: "Only Love",
-        image: "onlylove.jpg",
+        songName: "Only Love",
+        songImage: "onlylove.jpg",
         isFavorite: 1,
-        time: "4:07",
-        source: "OnlyLove.mp3",
-        artist: [
+        timeLimit: "4:07",
+        songLink: "OnlyLove.mp3",
+        representation: [
           {
             id: 4,
             artistName: "BTS",
-            followers: "927.713",
+            numberOfFollower: "927.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
             artistImage: "BTS_image.jpg",
@@ -238,16 +238,16 @@ export const AlbumData = [
       },
       {
         id: 2,
-        title: "Tonight",
-        image: "onlylove.jpg",
+        songName: "Tonight",
+        songImage: "onlylove.jpg",
         isFavorite: 0,
-        time: "2:59",
-        source: "Tonight.mp3",
-        artist: [
+        timeLimit: "2:59",
+        songLink: "Tonight.mp3",
+        representation: [
           {
             id: 4,
             artistName: "BTS",
-            followers: "927.713",
+            numberOfFollower: "927.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
             artistImage: "BTS_image.jpg",
@@ -262,7 +262,7 @@ export const AlbumData = [
     interestTimes: 4,
     releaseDate: "2023-05-17T00:00:00.269+07:00",
     albumImage:
-      "https://i.scdn.co/image/ab67616d0000b2733613e1e0d35867a0814005a9",
+      "https://i.scdn.co/songImage/ab67616d0000b2733613e1e0d35867a0814005a9",
 
     country: [
       {
@@ -274,7 +274,7 @@ export const AlbumData = [
       {
         id: 1,
         artistName: "Trademark",
-        followers: "97.713",
+        numberOfFollower: "97.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
         artistImage: "ns2.png",
@@ -282,25 +282,25 @@ export const AlbumData = [
       {
         id: 4,
         artistName: "BTS",
-        followers: "927.713",
+        numberOfFollower: "927.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
         artistImage: "BTS_image.jpg",
       },
     ],
-    albumTracks: [
+    songs: [
       {
         id: 1,
-        title: "Only Love",
-        image: "onlylove.jpg",
+        songName: "Only Love",
+        songImage: "onlylove.jpg",
         isFavorite: 1,
-        time: "4:07",
-        source: "OnlyLove.mp3",
-        artist: [
+        timeLimit: "4:07",
+        songLink: "OnlyLove.mp3",
+        representation: [
           {
             id: 1,
             artistName: "Trademark",
-            followers: "97.713",
+            numberOfFollower: "97.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
             artistImage: "ns2.png",
@@ -309,16 +309,16 @@ export const AlbumData = [
       },
       {
         id: 2,
-        title: "Tonight",
-        image: "onlylove.jpg",
+        songName: "Tonight",
+        songImage: "onlylove.jpg",
         isFavorite: 0,
-        time: "2:59",
-        source: "Tonight.mp3",
-        artist: [
+        timeLimit: "2:59",
+        songLink: "Tonight.mp3",
+        representation: [
           {
             id: 4,
             artistName: "BTS",
-            followers: "927.713",
+            numberOfFollower: "927.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
             artistImage: "BTS_image.jpg",
@@ -326,7 +326,7 @@ export const AlbumData = [
           {
             id: 1,
             artistName: "Trademark",
-            followers: "97.713",
+            numberOfFollower: "97.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
             artistImage: "ns2.png",
@@ -353,7 +353,7 @@ export const AlbumData = [
       {
         id: 4,
         artistName: "BTS",
-        followers: "927.713",
+        numberOfFollower: "927.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
         artistImage: "BTS_image.jpg",
@@ -361,25 +361,25 @@ export const AlbumData = [
       {
         id: 1,
         artistName: "Trademark",
-        followers: "97.713",
+        numberOfFollower: "97.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
         artistImage: "ns1.jpg",
       },
     ],
-    albumTracks: [
+    songs: [
       {
         id: 7,
-        title: "IDOL",
-        image: "idol.png",
+        songName: "IDOL",
+        songImage: "idol.png",
         isFavorite: 1,
-        time: "3:43",
-        source: "IDOL.mp3",
-        artist: [
+        timeLimit: "3:43",
+        songLink: "IDOL.mp3",
+        representation: [
           {
             id: 4,
             artistName: "BTS",
-            followers: "927.713",
+            numberOfFollower: "927.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
             artistImage: "BTS_image.jpg",
@@ -387,7 +387,7 @@ export const AlbumData = [
           {
             id: 1,
             artistName: "Trademark",
-            followers: "97.713",
+            numberOfFollower: "97.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
             artistImage: "ns1.jpg",
@@ -396,16 +396,16 @@ export const AlbumData = [
       },
       {
         id: 2,
-        title: "Tonight",
-        image: "onlylove.jpg",
+        songName: "Tonight",
+        songImage: "onlylove.jpg",
         isFavorite: 0,
-        time: "2:59",
-        source: "Tonight.mp3",
-        artist: [
+        timeLimit: "2:59",
+        songLink: "Tonight.mp3",
+        representation: [
           {
             id: 1,
             artistName: "Trademark",
-            followers: "97.713",
+            numberOfFollower: "97.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
             artistImage: "ns1.jpg",
@@ -420,7 +420,7 @@ export const AlbumData = [
     interestTimes: 2,
     releaseDate: "2022-08-01T15:16:32.269+07:00",
     albumImage:
-      "https://i.scdn.co/image/ab67616d00001e028d64ee7e356e13a96062bd0b",
+      "https://i.scdn.co/songImage/ab67616d00001e028d64ee7e356e13a96062bd0b",
 
     country: [
       {
@@ -432,7 +432,7 @@ export const AlbumData = [
       {
         id: 3,
         artistName: "Cool",
-        followers: "27.713",
+        numberOfFollower: "27.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
         artistImage: "ns3.jpg",
@@ -440,25 +440,25 @@ export const AlbumData = [
       {
         id: 4,
         artistName: "BTS",
-        followers: "927.713",
+        numberOfFollower: "927.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
         artistImage: "BTS_image.jpg",
       },
     ],
-    albumTracks: [
+    songs: [
       {
         id: 7,
-        title: "IDOL",
-        image: "idol.png",
+        songName: "IDOL",
+        songImage: "idol.png",
         isFavorite: 1,
-        time: "3:43",
-        source: "IDOL.mp3",
-        artist: [
+        timeLimit: "3:43",
+        songLink: "IDOL.mp3",
+        representation: [
           {
             id: 3,
             artistName: "Cool",
-            followers: "27.713",
+            numberOfFollower: "27.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
             artistImage: "ns3.jpg",
@@ -467,16 +467,16 @@ export const AlbumData = [
       },
       {
         id: 1,
-        title: "Only Love",
-        image: "onlylove.jpg",
+        songName: "Only Love",
+        songImage: "onlylove.jpg",
         isFavorite: 1,
-        time: "4:07",
-        source: "OnlyLove.mp3",
-        artist: [
+        timeLimit: "4:07",
+        songLink: "OnlyLove.mp3",
+        representation: [
           {
             id: 4,
             artistName: "BTS",
-            followers: "927.713",
+            numberOfFollower: "927.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
             artistImage: "BTS_image.jpg",
@@ -484,7 +484,7 @@ export const AlbumData = [
           {
             id: 3,
             artistName: "Cool",
-            followers: "27.713",
+            numberOfFollower: "27.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
             artistImage: "ns3.jpg",
@@ -493,16 +493,16 @@ export const AlbumData = [
       },
       {
         id: 2,
-        title: "Tonight",
-        image: "onlylove.jpg",
+        songName: "Tonight",
+        songImage: "onlylove.jpg",
         isFavorite: 0,
-        time: "2:59",
-        source: "Tonight.mp3",
-        artist: [
+        timeLimit: "2:59",
+        songLink: "Tonight.mp3",
+        representation: [
           {
             id: 3,
             artistName: "Cool",
-            followers: "27.713",
+            numberOfFollower: "27.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
             artistImage: "ns3.jpg",
@@ -529,7 +529,7 @@ export const AlbumData = [
       {
         id: 7,
         artistName: "Nicki Minaj",
-        followers: "927.713",
+        numberOfFollower: "927.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
         artistImage: "ns5.jpg",
@@ -537,25 +537,25 @@ export const AlbumData = [
       {
         id: 4,
         artistName: "BTS",
-        followers: "927.713",
+        numberOfFollower: "927.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
         artistImage: "BTS_image.jpg",
       },
     ],
-    albumTracks: [
+    songs: [
       {
         id: 7,
-        title: "IDOL",
-        image: "idol.png",
+        songName: "IDOL",
+        songImage: "idol.png",
         isFavorite: 1,
-        time: "3:43",
-        source: "IDOL.mp3",
-        artist: [
+        timeLimit: "3:43",
+        songLink: "IDOL.mp3",
+        representation: [
           {
             id: 7,
             artistName: "Nicki Minaj",
-            followers: "927.713",
+            numberOfFollower: "927.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
             artistImage: "ns5.jpg",
@@ -563,7 +563,7 @@ export const AlbumData = [
           {
             id: 4,
             artistName: "BTS",
-            followers: "927.713",
+            numberOfFollower: "927.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
             artistImage: "BTS_image.jpg",
@@ -572,16 +572,16 @@ export const AlbumData = [
       },
       {
         id: 1,
-        title: "Only Love",
-        image: "onlylove.jpg",
+        songName: "Only Love",
+        songImage: "onlylove.jpg",
         isFavorite: 1,
-        time: "4:07",
-        source: "OnlyLove.mp3",
-        artist: [
+        timeLimit: "4:07",
+        songLink: "OnlyLove.mp3",
+        representation: [
           {
             id: 7,
             artistName: "Nicki Minaj",
-            followers: "927.713",
+            numberOfFollower: "927.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
             artistImage: "ns5.jpg",

@@ -8,11 +8,11 @@ import { useContext } from "react";
 import MusicPlayerContext from "../../MusicPlayerContext";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import '../../styles/PlaylistAlbum.css'
+import "../../styles/PlaylistAlbum.css";
 
 function PlaylistAtHome({ item }) {
   const tracks =
-    item.playlistSongs !== undefined ? item.playlistSongs : item.albumTracks;
+    item.songPlaylist !== undefined ? item.songPlaylist : item.songs;
   const song = useContext(MusicPlayerContext);
   const length = tracks.length;
   const [rnd, setRnd] = useState(0);
@@ -22,6 +22,11 @@ function PlaylistAtHome({ item }) {
     song.setTracks(tracks);
     song.setSongIndex(rnd);
     song.setSong(tracks[rnd]);
+    song.setPlay(true);
+    localStorage.setItem("song", JSON.stringify(tracks[rnd]));
+    localStorage.setItem("tracks", JSON.stringify(tracks));
+    localStorage.setItem("index", JSON.stringify(rnd));
+    localStorage.setItem("play", JSON.stringify(true));
   };
   function getPlaylistImgUrl(url) {
     return require("../../assets/" + url);
@@ -29,7 +34,7 @@ function PlaylistAtHome({ item }) {
   const artists = [],
     uniqueArtist = [];
   tracks.map((item2) =>
-    item2.artist.map((child) => {
+    item2.representation.map((child) => {
       artists.push(child);
     })
   );

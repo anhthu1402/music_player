@@ -15,7 +15,7 @@ import SongItem from "../components/Item/SongItem";
 const PlaylistDetail = () => {
   const location = useLocation();
   const playlist = location.state;
-  const tracks = playlist.playlistSongs;
+  const tracks = playlist.songPlaylist;
   const song = useContext(MusicPlayerContext);
   const length = tracks.length;
   const [rnd, setRnd] = useState(0);
@@ -71,7 +71,7 @@ const PlaylistDetail = () => {
             </div>
           </div>
           <div className="songs">
-            {playlist.playlistSongs.map((item, index) => (
+            {playlist.songPlaylist.map((item, index) => (
               <SongItem
                 key={index}
                 item={item}

@@ -6,18 +6,16 @@ import AppRoot from "./components/AppRoot";
 import Home from "./pages/Home";
 import Library from "./pages/Library";
 import SignIn from "./pages/SignIn";
-import NewSongs from "./pages/NewSongs";
 import NewRelease from "./pages/NewRelease";
 import MyRecently from "./pages/MyRecently";
 import Album from "./pages/Album";
 import PlaylistDetail from "./pages/PlaylistDetail";
 import Artist from "./pages/Artist";
-import HomeArtists from "./pages/HomeArtists";
-import HomePlaylists from "./pages/HomePlaylists";
 import TopRank from "./pages/TopRank";
 import Chart from "./pages/Chart";
 import AllArtistSongs from "./components/AllArtistSongs";
 import AllArtistAlbums from "./components/AllArtistAlbums";
+import { SidebarProvider } from "./SidebarContext";
 
 function App() {
   window.onbeforeunload = localStorage.setItem("play", JSON.stringify(false));
@@ -71,14 +69,6 @@ function App() {
           element: <AllArtistAlbums />,
         },
         {
-          path: "home/artists",
-          element: <HomeArtists />,
-        },
-        {
-          path: "home/playlists",
-          element: <HomePlaylists />,
-        },
-        {
           path: "charts",
           element: <Chart />,
         },
@@ -90,9 +80,11 @@ function App() {
     },
   ]);
   return (
-    <MusicPlayerProvider>
-      <RouterProvider router={router} />
-    </MusicPlayerProvider>
+    <SidebarProvider>
+      <MusicPlayerProvider>
+        <RouterProvider router={router} />
+      </MusicPlayerProvider>
+    </SidebarProvider>
   );
 }
 

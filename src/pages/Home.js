@@ -9,18 +9,27 @@ import NewSongs from "../components/NewSongs";
 import NewSongRank from "../components/NewSongRank";
 import { PlaylistData } from "../components/Data/PlaylistData";
 import { AlbumData } from "../components/Data/AlbumData";
-import '../styles/PlaylistAlbum.css'
+import "../styles/PlaylistAlbum.css";
 import "../styles/Home.css";
+import SidebarContext from "../SidebarContext";
 
 function Home() {
   const song = useContext(MusicPlayerContext);
+  const sidebar = useContext(SidebarContext);
   return (
     <div className="container">
       <BannerPlaylist />
 
       <div className="categoryHeader">
         <p className="categoryTitle">Nghe gần đây</p>
-        <Link className="linkToAllPlaylist" to={"/recently?type=playlist"}>
+        <Link
+          className="linkToAllPlaylist"
+          to={"/recently?type=playlist"}
+          onClick={() => {
+            localStorage.setItem("sidebarPath", JSON.stringify("Gần đây"));
+            sidebar.setPathName("Gần đây");
+          }}
+        >
           <p>Tất cả &gt;</p>
         </Link>
       </div>
@@ -51,7 +60,17 @@ function Home() {
 
       <div className="categoryHeader">
         <p className="categoryTitle">Mới phát hành</p>
-        <Link className="linkToAllPlaylist" to={"/newrelease?type=song"}>
+        <Link
+          className="linkToAllPlaylist"
+          to={"/newrelease?type=song"}
+          onClick={() => {
+            localStorage.setItem(
+              "sidebarPath",
+              JSON.stringify("Mới phát hành")
+            );
+            sidebar.setPathName("Mới phát hành");
+          }}
+        >
           <p>Tất cả &gt;</p>
         </Link>
       </div>
@@ -78,11 +97,18 @@ function Home() {
 
       <div className="categoryHeader">
         <p className="categoryTitle">Bảng xếp hạng nhạc mới</p>
-        <Link className="linkToAllPlaylist" to={"/charts"}>
+        <Link
+          className="linkToAllPlaylist"
+          to={"/charts"}
+          onClick={() => {
+            localStorage.setItem("sidebarPath", JSON.stringify("BXH"));
+            sidebar.setPathName("BXH");
+          }}
+        >
           <p>Tất cả &gt;</p>
         </Link>
       </div>
-      <NewSongRank className='newSongChart' />
+      <NewSongRank className="newSongChart" />
 
       <div className="categoryHeader">
         <p className="categoryTitle">Top 100</p>

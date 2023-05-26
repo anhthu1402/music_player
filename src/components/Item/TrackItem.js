@@ -46,8 +46,8 @@ class TrackItem extends Component {
       <div className="item">
         <div className="songImg">
           <img
-            src={require(`../../assets/${this.props.item.image}`)}
-            alt={this.props.item.name}
+            src={require(`../../assets/${this.props.item.songImage}`)}
+            alt={this.props.item.songName}
           />
           <PlayCircleFilled
             className="playSongIcon"
@@ -62,6 +62,10 @@ class TrackItem extends Component {
               this.props.song.setSongIndex(this.props.index);
               localStorage.setItem("song", JSON.stringify(this.props.item));
               localStorage.setItem("tracks", JSON.stringify(this.props.tracks));
+              localStorage.setItem(
+                "playlist",
+                JSON.stringify(this.props.tracks)
+              );
               localStorage.setItem("index", JSON.stringify(this.props.index));
               localStorage.setItem("play", JSON.stringify(true));
             }}
@@ -69,9 +73,9 @@ class TrackItem extends Component {
         </div>
 
         <div className="songDetail">
-          <div>{this.props.item.title}</div>
+          <div>{this.props.item.songName}</div>
           <div className="artist">
-            {this.props.item.artist.map((child, index) => (
+            {this.props.item.representation.map((child, index) => (
               <span key={index} item={child}>
                 <Link to={`/artist/${child.artistName}`} state={child}>
                   {child.artistName}
@@ -84,7 +88,7 @@ class TrackItem extends Component {
               ? ""
               : printReleaseDate(this.props.item.releaseDate)}
           </div>
-          <div className="trackDuration">{this.props.item.time}</div>
+          <div className="trackDuration">{this.props.item.timeLimit}</div>
         </div>
         <div className="rightIcon">
           {this.props.item.isFavorite === 0 ? (

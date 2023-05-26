@@ -44,7 +44,6 @@
   padding: 1em 1em;
   display: block;
   transition: background-color 0.15s;
-  border-radius: 5px;
 }
 
 .sidebar-item:hover {

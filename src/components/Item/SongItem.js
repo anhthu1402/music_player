@@ -47,8 +47,8 @@ class SongItem extends Component {
                 borderRadius: `3px`,
                 position: "relative",
               }}
-              src={getImgUrl(`${this.props.item.image}`)}
-              alt={this.props.item.title}
+              src={getImgUrl(`${this.props.item.songImage}`)}
+              alt={this.props.item.songName}
             />
             <button className="playBtn">
               <PlayArrowRounded />
@@ -67,7 +67,7 @@ class SongItem extends Component {
                   },
                 }}
               >
-                {this.props.item.title}
+                {this.props.item.songName}
               </Typography>
               <Typography
                 variant="body2"
@@ -79,7 +79,7 @@ class SongItem extends Component {
                   },
                 }}
               >
-                {this.props.item.artist.map((child, index) => {
+                {this.props.item.representation.map((child, index) => {
                   return (
                     <span key={index} item={child} className="artist">
                       <Link
@@ -116,7 +116,7 @@ class SongItem extends Component {
                   },
                 }}
               >
-                {this.props.item.time}
+                {this.props.item.timeLimit}
               </Typography>
               <button className="moreOption">
                 <MoreHoriz sx={{ cursor: `pointer`, fontSize: "1.3vw" }} />

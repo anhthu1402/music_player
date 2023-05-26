@@ -4,26 +4,26 @@ export const MyPlaylistData = [
     playlistName: "Yêu thích",
     user: "Anh Thu",
     playlistImg: "idol.png",
-    playlistSongs: [
+    songPlaylist: [
       {
         id: "7",
-        title: "IDOL",
-        artist: [
+        songName: "IDOL",
+        representation: [
           {
             id: 4,
             artistName: "BTS",
             artistImage: "BTS_image.jpg",
           },
         ],
-        image: "idol.png",
+        songImage: "idol.png",
         isFavorite: 1,
-        time: "3:43",
-        source: "IDOL.mp3",
+        timeLimit: "3:43",
+        songLink: "IDOL.mp3",
       },
       {
         id: "1",
-        title: "Only Love",
-        artist: [
+        songName: "Only Love",
+        representation: [
           {
             id: 1,
             artistName: "Trademark",
@@ -35,25 +35,25 @@ export const MyPlaylistData = [
             artistImage: "BTS_image.jpg",
           },
         ],
-        image: "onlylove.jpg",
+        songImage: "onlylove.jpg",
         isFavorite: 1,
-        time: "4:07",
-        source: "OnlyLove.mp3",
+        timeLimit: "4:07",
+        songLink: "OnlyLove.mp3",
       },
       {
         id: "2",
-        title: "Tonight",
-        artist: [
+        songName: "Tonight",
+        representation: [
           {
             id: 3,
             artistName: "Jin",
             artistImage: "BTS_image.jpg",
           },
         ],
-        image: "onlylove.jpg",
+        songImage: "onlylove.jpg",
         isFavorite: 0,
-        time: "2:59",
-        source: "Tonight.mp3",
+        timeLimit: "2:59",
+        songLink: "Tonight.mp3",
       },
     ],
   },
@@ -62,57 +62,57 @@ export const MyPlaylistData = [
     playlistName: "Anh Thư",
     user: "Anh Thu",
     playlistImg: "onlylove.jpg",
-    playlistSongs: [
+    songPlaylist: [
       {
         id: "2",
-        title: "Tonight",
-        artist: [
+        songName: "Tonight",
+        representation: [
           {
             id: 3,
             artistName: "Jin",
             artistImage: "BTS_image.jpg",
           },
         ],
-        image: "onlylove.jpg",
+        songImage: "onlylove.jpg",
         isFavorite: 0,
-        time: "2:59",
-        source: "Tonight.mp3",
+        timeLimit: "2:59",
+        songLink: "Tonight.mp3",
       },
       {
         id: "3",
-        title: "IDOL",
-        artist: [
+        songName: "IDOL",
+        representation: [
           {
             id: 4,
             artistName: "BTS",
             artistImage: "BTS_image.jpg",
           },
         ],
-        image: "idol.png",
+        songImage: "idol.png",
         isFavorite: 1,
-        time: "3:43",
-        source: "IDOL.mp3",
+        timeLimit: "3:43",
+        songLink: "IDOL.mp3",
       },
       {
         id: "4",
-        title: "I do",
-        artist: [
+        songName: "I do",
+        representation: [
           {
             id: 5,
             artistName: "911",
             artistImage: "BTS_image.jpg",
           },
         ],
-        image: "onlylove.jpg",
+        songImage: "onlylove.jpg",
         isFavorite: 0,
-        time: "3:28",
-        source: "IDo.mp3",
+        timeLimit: "3:28",
+        songLink: "IDo.mp3",
       },
 
       {
         id: "10",
-        title: "IDOL (Feat. Nicki Minaj)",
-        artist: [
+        songName: "IDOL (Feat. Nicki Minaj)",
+        representation: [
           {
             id: 4,
             artistName: "BTS",
@@ -124,45 +124,45 @@ export const MyPlaylistData = [
             artistImage: "BTS_image.jpg",
           },
         ],
-        image: "idol.png",
+        songImage: "idol.png",
         isFavorite: 1,
-        time: "4:21",
-        source: "IDOLFeat.mp3",
+        timeLimit: "4:21",
+        songLink: "IDOLFeat.mp3",
       },
       {
         id: "8",
-        title: "Only Love",
-        artist: [
+        songName: "Only Love",
+        representation: [
           {
             id: 1,
             artistName: "Trademark",
             artistImage: "BTS_image.jpg",
           },
         ],
-        image: "onlylove.jpg",
+        songImage: "onlylove.jpg",
         isFavorite: 1,
-        time: "4:07",
-        source: "OnlyLove.mp3",
+        timeLimit: "4:07",
+        songLink: "OnlyLove.mp3",
       },
       {
         id: "6",
-        title: "Aloha",
-        artist: [
+        songName: "Aloha",
+        representation: [
           {
             id: 6,
             artistName: "Cool",
             artistImage: "BTS_image.jpg",
           },
         ],
-        image: "onlylove.jpg",
+        songImage: "onlylove.jpg",
         isFavorite: 0,
-        time: "4:02",
-        source: "Aloha.mp3",
+        timeLimit: "4:02",
+        songLink: "Aloha.mp3",
       },
       {
         id: "10",
-        title: "IDOL (Feat. Nicki Minaj) 2",
-        artist: [
+        songName: "IDOL (Feat. Nicki Minaj) 2",
+        representation: [
           {
             id: 4,
             artistName: "BTS",
@@ -174,25 +174,25 @@ export const MyPlaylistData = [
             artistImage: "BTS_image.jpg",
           },
         ],
-        image: "idol.png",
+        songImage: "idol.png",
         isFavorite: 1,
-        time: "4:21",
-        source: "IDOLFeat.mp3",
+        timeLimit: "4:21",
+        songLink: "IDOLFeat.mp3",
       },
       {
         id: "9",
-        title: "Aloha 2",
-        artist: [
+        songName: "Aloha 2",
+        representation: [
           {
             id: 3,
             artistName: "Cool",
             artistImage: "BTS_image.jpg",
           },
         ],
-        image: "onlylove.jpg",
+        songImage: "onlylove.jpg",
         isFavorite: 0,
-        time: "4:02",
-        source: "Aloha.mp3",
+        timeLimit: "4:02",
+        songLink: "Aloha.mp3",
       },
     ],
   },
@@ -201,11 +201,11 @@ export const MyPlaylistData = [
     playlistName: "Yêu thích 2",
     user: "Anh Thu",
     playlistImg: "idol.png",
-    playlistSongs: [
+    songPlaylist: [
       {
         id: "10",
-        title: "IDOL (Feat. Nicki Minaj)",
-        artist: [
+        songName: "IDOL (Feat. Nicki Minaj)",
+        representation: [
           {
             id: 4,
             artistName: "BTS",
@@ -217,25 +217,25 @@ export const MyPlaylistData = [
             artistImage: "BTS_image.jpg",
           },
         ],
-        image: "idol.png",
+        songImage: "idol.png",
         isFavorite: 1,
-        time: "4:21",
-        source: "IDOLFeat.mp3",
+        timeLimit: "4:21",
+        songLink: "IDOLFeat.mp3",
       },
       {
         id: "9",
-        title: "Aloha",
-        artist: [
+        songName: "Aloha",
+        representation: [
           {
             id: 3,
             artistName: "Cool",
             artistImage: "BTS_image.jpg",
           },
         ],
-        image: "onlylove.jpg",
+        songImage: "onlylove.jpg",
         isFavorite: 0,
-        time: "4:02",
-        source: "Aloha.mp3",
+        timeLimit: "4:02",
+        songLink: "Aloha.mp3",
       },
     ],
   },
@@ -244,37 +244,37 @@ export const MyPlaylistData = [
     playlistName: "Milu",
     user: "Anh Thu",
     playlistImg: "onlylove.jpg",
-    playlistSongs: [
+    songPlaylist: [
       {
         id: "9",
-        title: "Aloha",
-        artist: [
+        songName: "Aloha",
+        representation: [
           {
             id: 3,
             artistName: "Cool",
             artistImage: "BTS_image.jpg",
           },
         ],
-        image: "onlylove.jpg",
+        songImage: "onlylove.jpg",
         isFavorite: 0,
-        time: "4:02",
-        source: "Aloha.mp3",
+        timeLimit: "4:02",
+        songLink: "Aloha.mp3",
       },
 
       {
         id: "8",
-        title: "Only Love",
-        artist: [
+        songName: "Only Love",
+        representation: [
           {
             id: 1,
             artistName: "Trademark",
             artistImage: "BTS_image.jpg",
           },
         ],
-        image: "onlylove.jpg",
+        songImage: "onlylove.jpg",
         isFavorite: 1,
-        time: "4:07",
-        source: "OnlyLove.mp3",
+        timeLimit: "4:07",
+        songLink: "OnlyLove.mp3",
       },
     ],
   },
@@ -283,37 +283,37 @@ export const MyPlaylistData = [
     playlistName: "Playlist",
     user: "Anh Thu",
     playlistImg: "onlylove.jpg",
-    playlistSongs: [
+    songPlaylist: [
       {
         id: "8",
-        title: "Only Love",
-        artist: [
+        songName: "Only Love",
+        representation: [
           {
             id: 1,
             artistName: "Trademark",
             artistImage: "BTS_image.jpg",
           },
         ],
-        image: "onlylove.jpg",
+        songImage: "onlylove.jpg",
         isFavorite: 1,
-        time: "4:07",
-        source: "OnlyLove.mp3",
+        timeLimit: "4:07",
+        songLink: "OnlyLove.mp3",
       },
 
       {
         id: "6",
-        title: "Aloha",
-        artist: [
+        songName: "Aloha",
+        representation: [
           {
             id: 6,
             artistName: "Cool",
             artistImage: "BTS_image.jpg",
           },
         ],
-        image: "onlylove.jpg",
+        songImage: "onlylove.jpg",
         isFavorite: 0,
-        time: "4:02",
-        source: "Aloha.mp3",
+        timeLimit: "4:02",
+        songLink: "Aloha.mp3",
       },
     ],
   },

@@ -1,27 +1,29 @@
 export const SongData = [
   {
     id: "1",
-    title: "Only Love",
-    artist: [
+    songName: "Only Love",
+    representation: [
       {
         id: 1,
         artistName: "Trademark",
         followers: "97.713",
-        introduce: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-        artistImage: "ns1.jpg"
+        introduce:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
+        artistImage: "ns1.jpg",
       },
       {
         id: 2,
         artistName: "Band",
         followers: "927.713",
-        introduce: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
+        introduce:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
         artistImage: "ns2.png",
       },
     ],
-    image: "onlylove.jpg",
+    songImage: "onlylove.jpg",
     isFavorite: 1,
-    time: "4:07",
-    source: "OnlyLove.mp3",
+    timeLimit: "4:07",
+    songLink: "OnlyLove.mp3",
     releaseDate: "2023-05-12",
     country: [
       {
@@ -32,20 +34,21 @@ export const SongData = [
   },
   {
     id: "2",
-    title: "Tonight",
-    artist: [
+    songName: "Tonight",
+    representation: [
       {
         id: 6,
         artistName: "Jin",
         artistImage: "BTS_image.jpg",
-        introduce: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
+        introduce:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
         followers: "927.713",
       },
     ],
-    image: "onlylove.jpg",
+    songImage: "onlylove.jpg",
     isFavorite: 0,
-    time: "2:59",
-    source: "Tonight.mp3",
+    timeLimit: "2:59",
+    songLink: "Tonight.mp3",
     releaseDate: "2023-05-22",
     country: [
       {
@@ -56,20 +59,21 @@ export const SongData = [
   },
   {
     id: "3",
-    title: "IDOL",
-    artist: [
+    songName: "IDOL",
+    representation: [
       {
         id: 4,
         artistName: "BTS",
         artistImage: "BTS_image.jpg",
-        introduce: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
+        introduce:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
         followers: "927.713",
       },
     ],
-    image: "idol.png",
+    songImage: "idol.png",
     isFavorite: 1,
-    time: "3:43",
-    source: "IDOL.mp3",
+    timeLimit: "3:43",
+    songLink: "IDOL.mp3",
     releaseDate: "2022-12-12",
     country: [
       {
@@ -81,20 +85,21 @@ export const SongData = [
 
   {
     id: "4",
-    title: "I do",
-    artist: [
+    songName: "I do",
+    representation: [
       {
         id: 5,
         artistName: "911",
-        introduce: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
+        introduce:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
         artistImage: "ns6.jpg",
         followers: "907.713",
       },
     ],
-    image: "onlylove.jpg",
+    songImage: "onlylove.jpg",
     isFavorite: 0,
-    time: "3:28",
-    source: "IDo.mp3",
+    timeLimit: "3:28",
+    songLink: "IDo.mp3",
     releaseDate: "2003-01-31",
     country: [
       {
@@ -105,20 +110,21 @@ export const SongData = [
   },
   {
     id: "5",
-    title: "Only Love",
-    artist: [
+    songName: "Only Love",
+    representation: [
       {
         id: 1,
         artistName: "Trademark",
         followers: "97.713",
-        introduce: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-        artistImage: "ns1.jpg"
+        introduce:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
+        artistImage: "ns1.jpg",
       },
     ],
-    image: "onlylove.jpg",
+    songImage: "onlylove.jpg",
     isFavorite: 1,
-    time: "4:07",
-    source: "OnlyLove.mp3",
+    timeLimit: "4:07",
+    songLink: "OnlyLove.mp3",
     releaseDate: "2023-05-13",
     country: [
       {
@@ -129,20 +135,21 @@ export const SongData = [
   },
   {
     id: "6",
-    title: "Aloha",
-    artist: [
+    songName: "Aloha",
+    representation: [
       {
         id: 3,
         artistName: "Cool",
         artistImage: "ns3.jpg",
-        introduce: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
+        introduce:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
         followers: "27.713",
       },
     ],
-    image: "onlylove.jpg",
+    songImage: "onlylove.jpg",
     isFavorite: 0,
-    time: "4:02",
-    source: "Aloha.mp3",
+    timeLimit: "4:02",
+    songLink: "Aloha.mp3",
     releaseDate: "2023-05-12",
     country: [
       {
@@ -153,20 +160,21 @@ export const SongData = [
   },
   {
     id: "7",
-    title: "IDOL",
-    artist: [
+    songName: "IDOL",
+    representation: [
       {
         id: 4,
         artistName: "BTS",
-        introduce: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
+        introduce:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
         artistImage: "BTS_image.jpg",
         followers: "927.713",
       },
     ],
-    image: "idol.png",
+    songImage: "idol.png",
     isFavorite: 1,
-    time: "3:43",
-    source: "IDOL.mp3",
+    timeLimit: "3:43",
+    songLink: "IDOL.mp3",
     releaseDate: "2020-05-12",
     country: [
       {
@@ -177,20 +185,21 @@ export const SongData = [
   },
   {
     id: "8",
-    title: "Only Love",
-    artist: [
+    songName: "Only Love",
+    representation: [
       {
         id: 1,
         artistName: "Trademark",
         followers: "97.713",
-        introduce: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-        artistImage: "ns1.jpg"
+        introduce:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
+        artistImage: "ns1.jpg",
       },
     ],
-    image: "onlylove.jpg",
+    songImage: "onlylove.jpg",
     isFavorite: 1,
-    time: "4:07",
-    source: "OnlyLove.mp3",
+    timeLimit: "4:07",
+    songLink: "OnlyLove.mp3",
     releaseDate: "2003-01-01",
     country: [
       {
@@ -201,20 +210,21 @@ export const SongData = [
   },
   {
     id: "9",
-    title: "Aloha",
-    artist: [
+    songName: "Aloha",
+    representation: [
       {
         id: 3,
         artistName: "Cool",
         artistImage: "ns3.jpg",
-        introduce: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
+        introduce:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
         followers: "27.713",
       },
     ],
-    image: "onlylove.jpg",
+    songImage: "onlylove.jpg",
     isFavorite: 0,
-    time: "4:02",
-    source: "Aloha.mp3",
+    timeLimit: "4:02",
+    songLink: "Aloha.mp3",
     releaseDate: "2018-12-24",
     country: [
       {
@@ -225,27 +235,29 @@ export const SongData = [
   },
   {
     id: "10",
-    title: "IDOL (Feat. Nicki Minaj)",
-    artist: [
+    songName: "IDOL (Feat. Nicki Minaj)",
+    representation: [
       {
         id: 4,
         artistName: "BTS",
         artistImage: "BTS_image.jpg",
-        introduce: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
+        introduce:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
         followers: "927.713",
       },
       {
         id: 7,
         artistName: "Nicki Minaj",
         artistImage: "BTS_image.jpg",
-        introduce: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
+        introduce:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
         followers: "927.713",
       },
     ],
-    image: "idol.png",
+    songImage: "idol.png",
     isFavorite: 1,
-    time: "4:21",
-    source: "IDOLFeat.mp3",
+    timeLimit: "4:21",
+    songLink: "IDOLFeat.mp3",
     releaseDate: "2023-05-18T12:48:00+07:00",
     country: [
       {
