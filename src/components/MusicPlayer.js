@@ -182,7 +182,16 @@ const MusicPlayer = () => {
               audioRef.current.currentTime = 0;
               setCurrentTime(0);
               audioRef.current.play();
-            } else setPlay(false);
+            } else {
+              musicPlayer.setSongIndex(index + 1);
+              musicPlayer.setSong(array[musicPlayer.songIndex]);
+              localStorage.setItem("song", JSON.stringify(musicPlayer.song));
+              localStorage.setItem(
+                "index",
+                JSON.stringify(musicPlayer.songIndex)
+              );
+              localStorage.setItem("currentTime", 0);
+            }
           }}
           loop={repeat ? true : false}
         />
