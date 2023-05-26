@@ -26,6 +26,7 @@ function Chart() {
               musicPlayer.setPlay(true);
               localStorage.setItem("song", JSON.stringify(SongData[rnd]));
               localStorage.setItem("tracks", JSON.stringify(SongData));
+              localStorage.setItem("playlist", JSON.stringify(SongData));
               localStorage.setItem("index", JSON.stringify(rnd));
               localStorage.setItem("play", JSON.stringify(true));
             }}
