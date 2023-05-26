@@ -31,11 +31,19 @@
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     text-align: center;
-    width: 70%;
+    width: 100%;
+    height: 100%;
+}
+.playlistItem .playPlaylist:hover {
+    background-color: rgba(0, 0, 0, 0.392);
+    transition: transform 0.5s, filter 0.5s ease-in-out;
 }
 .playlistItem .playPlaylist .icon {
     font-size: minmax(calc(1rem + 2vw), 80px);
-    margin: auto auto;
+    margin: auto;
+    background-color: transparent;
+    border-radius: 50px;
+    padding: 5px;
 }
 .playlistItem .playPlaylist .icon:hover {
     background-color: rgba(255, 255, 255, 0.286);
@@ -73,11 +81,15 @@
     width: 100%;
     position: relative;
 }
-.artists a,
-.artists a:hover {
-    font-weight: normal;
+.artists .artist:hover {
     text-decoration: none;
+}
+.artists a {
+    font-weight: normal;
     color: gray;
+}
+.artists a:hover {
+    color: #ff7394;
 }
 .artists span:not(:last-of-type)::after {
     content: ", ";

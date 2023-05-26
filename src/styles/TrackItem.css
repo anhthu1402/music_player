@@ -118,11 +118,3 @@
         background-color: #ffffffbb;
     }
 }
-/* .listSongs {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5px 20px;
-    @media (max-width: 850px) {
-        display: block;
-    }
-} */

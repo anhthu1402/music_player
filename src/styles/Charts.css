@@ -7,6 +7,7 @@
     display: flex;
     column-gap: 1vw;
     align-items: center;
+    margin-bottom: 10px;
 }
 .chartContainer .chartHeading button {
     border: none;
@@ -26,10 +27,8 @@
 .chartContainer .chartBody .song {
     display: flex;
     align-items: center;
-    height: fit-content;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    margin-bottom: 5px; 
-    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 2px;
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
 }
 .chartContainer .chartBody .song .ordinalNum {
     font-size: 30px;

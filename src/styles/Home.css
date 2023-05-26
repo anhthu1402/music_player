@@ -5,7 +5,6 @@
   padding: 0;
   max-width: 1920px;
 }
-
 .categoryHeader {
   display: flex;
   flex-direction: row;
@@ -29,9 +28,10 @@ a {
 .linkToAllPlaylist p {
   text-decoration: none;
   color: gray;
-  :hover {
-    color: #ff7394;
-  }
+  
+}
+.linkToAllPlaylist p:hover {
+  color: #ff7394;
 }
 .container.active {
   margin-bottom: 7em;

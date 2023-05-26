@@ -24,6 +24,9 @@
   border-radius: 20px;
   overflow: hidden;
   aspect-ratio: 1;
+  max-width: 300px;
+  margin: auto;
+  background-color: #fff4f4;
 }
 .albumDetailContainer .albumDetail .detail .trackImg img {
   width: 100%;
@@ -70,46 +73,50 @@
 .albumDetailContainer .albumDetail .detail .albumInfo .artists span a:hover {
   color: #ff7394;
 }
-.albumDetailContainer .albumDetail .detail .albumInfo .playButton {
-  border-radius: 25px;
-  background-color: #ff7394;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  align-items: center;
-  text-align: center;
-  display: flex;
-  margin: 10px auto;
-  cursor: pointer;
-  transition: 0.1s ease-in-out;
+.albumDetailContainer .albumDetail .detail .albumInfo {
+  .playButton {
+    border-radius: 25px;
+    background-color: #ff7394;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    margin: 10px auto;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+  }
+  .playButton:hover {
+    background-color: #ffa4b4;
+    color: white;
+  }
 }
-.albumDetailContainer .albumDetail .detail .albumInfo .playButton:hover {
-  background-color: #ffa4b4;
-  color: white;
-}
-.albumDetailContainer .albumDetail .detail .albumInfo .favIcon,
-.albumDetailContainer .albumDetail .detail .albumInfo .moreIcon {
-  background-color: #e9e9e9;
-  padding: 5px;
-  border-radius: 20px;
-  border: none;
-  margin: 0 5px;
-  font-size: 35px;
-  cursor: pointer;
-}
-.albumDetailContainer .albumDetail .detail .albumInfo .favIcon:hover,
-.albumDetailContainer .albumDetail .detail .albumInfo .moreIcon:hover {
-  background-color: #ffa4b4;
-  color: white;
-}
-.albumDetailContainer .albumTracksBody .heading {
-  align-items: center;
-  display: flex;
-  padding: 5px;
-}
-.albumDetailContainer .albumTracksBody .heading div {
-  margin-left: 5px;
+.albumDetailContainer .albumDetail .detail .albumInfo {
+  .favIcon,
+  .moreIcon {
+    background-color: #e9e9e9;
+    padding: 5px;
+    border-radius: 20px;
+    border: none;
+    margin: 0 5px;
+    font-size: 35px;
+    cursor: pointer;
+  }
+  .favIcon:hover,
+  .moreIcon:hover {
+    background-color: #ffa4b4;
+    color: white;
+  }
 }
 .albumDetailContainer .albumTracksBody {
   padding: 10px;
+  .heading {
+    align-items: center;
+    display: flex;
+    padding: 5px;
+  }
+  .heading div {
+    margin-left: 5px;
+  }
 }
