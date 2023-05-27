@@ -29,7 +29,7 @@ function PlaylistAtHome({ item }) {
     localStorage.setItem("play", JSON.stringify(true));
     localStorage.setItem("playlist", JSON.stringify(tracks));
     localStorage.setItem("currentTime", 0);
-    this.props.song.setCurrentTime(0);
+    song.setCurrentTime(0);
     song.setPlaylist(tracks);
   };
   function getPlaylistImgUrl(url) {

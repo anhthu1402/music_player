@@ -30,7 +30,7 @@ function Chart() {
               localStorage.setItem("index", JSON.stringify(rnd));
               localStorage.setItem("play", JSON.stringify(true));
               localStorage.setItem("currentTime", 0);
-              this.props.song.setCurrentTime(0);
+              musicPlayer.setCurrentTime(0);
               musicPlayer.setPlaylist(SongData);
             }}
           />
