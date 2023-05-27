@@ -25,6 +25,15 @@ const PlaylistDetail = () => {
     song.setTracks(tracks);
     song.setSongIndex(rnd);
     song.setSong(tracks[rnd]);
+    localStorage.setItem("currentTime", 0);
+    song.setCurrentTime(0);
+    song.setPlaylist(tracks);
+    song.setPlay(true);
+    localStorage.setItem("song", JSON.stringify(tracks[rnd]));
+    localStorage.setItem("tracks", JSON.stringify(tracks));
+    localStorage.setItem("index", JSON.stringify(rnd));
+    localStorage.setItem("play", JSON.stringify(true));
+    localStorage.setItem("playlist", JSON.stringify(tracks));
   };
   return (
     <div className="playlistDetailContainer">
@@ -73,14 +82,14 @@ const PlaylistDetail = () => {
           <div className="songs">
             {playlist.songPlaylist.map((item, index) => (
               <div className="song shadowDiv">
-              <TrackItem
-                key={index}
-                item={item}
-                tracks={tracks}
-                song={song}
-                index={index}
-              />
-            </div>
+                <TrackItem
+                  key={index}
+                  item={item}
+                  tracks={tracks}
+                  song={song}
+                  index={index}
+                />
+              </div>
             ))}
           </div>
         </div>

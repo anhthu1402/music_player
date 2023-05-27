@@ -42,7 +42,7 @@ class TrackItem extends Component {
       }
       return date.toJSON().slice(0, 10).split("-").reverse().join("/");
     }
-    
+
     return (
       <div className="item">
         <div className="songImg">
@@ -69,6 +69,8 @@ class TrackItem extends Component {
               );
               localStorage.setItem("index", JSON.stringify(this.props.index));
               localStorage.setItem("play", JSON.stringify(true));
+              localStorage.setItem("currentTime", 0);
+              this.props.song.setCurrentTime(0);
             }}
           />
         </div>

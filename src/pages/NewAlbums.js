@@ -90,8 +90,12 @@ function NewAlbums() {
                   song.setPlay(true);
                   localStorage.setItem("song", JSON.stringify(item.songs[rnd]));
                   localStorage.setItem("tracks", JSON.stringify(item.songs));
+                  localStorage.setItem("playlist", JSON.stringify(item.songs));
                   localStorage.setItem("index", JSON.stringify(rnd));
                   localStorage.setItem("play", JSON.stringify(true));
+                  localStorage.setItem("currentTime", 0);
+                  this.props.song.setCurrentTime(0);
+                  song.setPlaylist(item.songs);
                 }}
               />
             </div>

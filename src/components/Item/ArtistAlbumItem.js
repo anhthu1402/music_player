@@ -5,7 +5,6 @@ import {
   PlayCircleFilled,
   FavoriteBorderRounded,
 } from "@mui/icons-material";
-import { Link } from "react-router-dom";
 
 function ArtistAlbumItem({ item }) {
   function getReleaseYear(dateParam) {
