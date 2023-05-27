@@ -261,9 +261,16 @@ const MusicPlayer = () => {
                   onClick={() => {
                     if (playMode === 3) {
                       setPlayMode(0);
+                      localStorage.setItem(
+                        "playlist",
+                        localStorage.getItem("tracks")
+                      );
                     } else {
                       setPlayMode(3);
-                      shuffleArray(array);
+                      localStorage.setItem(
+                        "playlist",
+                        JSON.stringify(shuffleArray(array))
+                      );
                       if (repeat) setRepeat(0);
                     }
                   }}
