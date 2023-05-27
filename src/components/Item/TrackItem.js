@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import React, { useState, Component } from "react";
+import React, { Component } from "react";
 import {
   MoreHoriz,
   FavoriteBorderOutlined,
@@ -47,7 +47,7 @@ class TrackItem extends Component {
       <div className="item">
         <div className="songImg">
           <img
-            src={require(`../../assets/${this.props.item.songImage}`)}
+            src={require(`${this.props.item.songImage}`)}
             alt={this.props.item.songName}
           />
           <PlayCircleFilled

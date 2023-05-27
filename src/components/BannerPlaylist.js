@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 function BannerPlaylist() {
   const [activeSlide, setActiveSlide] = useState(0);
   function getPlaylistImgUrl(url) {
-    return require("../assets/" + url);
+    return require(url);
   }
   return (
     <div className="slider_wrapper">
@@ -39,7 +39,7 @@ function BannerPlaylist() {
               border: 0,
               background: "#dedede",
               margin: "10px 5px",
-              cursor: "pointer"
+              cursor: "pointer",
             },
           },
           activeItemBtnProps: {

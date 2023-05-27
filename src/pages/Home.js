@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import BannerPlaylist from "../components/BannerPlaylist";
-import RecentlyPlaylist from "../components/RecentlyPlaylist";
 import TopTrendingArtist from "../components/TopTrendingArtist";
 import MusicPlayerContext from "../MusicPlayerContext";
 import HomePlaylistItem from "../components/Item/HomePlaylistItem";
