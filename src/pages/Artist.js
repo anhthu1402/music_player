@@ -9,7 +9,6 @@ import {
   PersonAddAltRounded,
 } from "@mui/icons-material";
 import { SongData } from "../components/Data/SongData";
-import SongItem from "../components/Item/SongItem";
 import TrackItem from "../components/Item/TrackItem";
 import { Grid, Box } from "@mui/material";
 import { AlbumData } from "../components/Data/AlbumData";
@@ -44,7 +43,7 @@ function Artist() {
             <div className="headerDetail">
               <Avatar
                 alt={artist.artistName}
-                src={require(`../assets/${artist.artistImage}`)}
+                src={require(`${artist.artistImage}`)}
                 sx={{ width: "12.5vw", height: "12.5vw", marginRight: "2.3vw" }}
               />
               <div
@@ -93,17 +92,20 @@ function Artist() {
                 </Link>
               </div>
               <div className="listSongs">
-                {artistSongs.map((item, index) => index < 6 && (
-                  <div className="song shadowDiv">
-                    <TrackItem
-                      key={index}
-                      item={item}
-                      tracks={artistSongs}
-                      song={player}
-                      index={index}
-                    />
-                  </div>
-                ))}
+                {artistSongs.map(
+                  (item, index) =>
+                    index < 6 && (
+                      <div className="song shadowDiv">
+                        <TrackItem
+                          key={index}
+                          item={item}
+                          tracks={artistSongs}
+                          song={player}
+                          index={index}
+                        />
+                      </div>
+                    )
+                )}
               </div>
             </div>
             <div className="album">

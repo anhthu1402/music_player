@@ -5,7 +5,7 @@ import { MyPlaylistData } from "./Data/MyPlaylistData";
 
 function RecentlyPlaylist() {
   function getPlaylistImgUrl(url) {
-    return require("../assets/" + url);
+    return require(url);
   }
   return (
     <div className="recentlyListen" style={{ width: `100%` }}>

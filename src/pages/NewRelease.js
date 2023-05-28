@@ -35,6 +35,9 @@ function NewRelease() {
               localStorage.setItem("index", JSON.stringify(rnd));
               localStorage.setItem("play", JSON.stringify(true));
               localStorage.setItem("playlist", JSON.stringify(SongData));
+              localStorage.setItem("currentTime", 0);
+              song.setCurrentTime(0);
+              song.setPlaylist(SongData);
             }}
           />
         </button>

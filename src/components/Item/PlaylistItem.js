@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 function PlaylistItem({ item }) {
   function getPlaylistImgUrl(url) {
-    return require("../../assets/" + url);
+    return require(url);
   }
   return (
     <Card className={"cardPlaylist"} sx={{ border: "none", boxShadow: "none" }}>

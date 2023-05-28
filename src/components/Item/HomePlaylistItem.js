@@ -28,9 +28,12 @@ function PlaylistAtHome({ item }) {
     localStorage.setItem("index", JSON.stringify(rnd));
     localStorage.setItem("play", JSON.stringify(true));
     localStorage.setItem("playlist", JSON.stringify(tracks));
+    localStorage.setItem("currentTime", 0);
+    song.setCurrentTime(0);
+    song.setPlaylist(tracks);
   };
   function getPlaylistImgUrl(url) {
-    return require("../../assets/" + url);
+    return require(url);
   }
   const artists = [],
     uniqueArtist = [];

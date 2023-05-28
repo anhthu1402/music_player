@@ -70,10 +70,10 @@ const MusicPlayer = () => {
   let songName = musicPlayer.isUsing ? array[index].songName : "";
   let representation = musicPlayer.isUsing ? array[index].representation : [];
   const getAudioSource = (source) => {
-    return require("../assets/audio/" + source);
+    return require(source);
   };
   const getImgUrl = (url) => {
-    return require("../assets/" + url);
+    return require(url);
   };
   const audioRef = useRef();
   const [duration, setDuration] = useState(0); //seconds
@@ -83,7 +83,9 @@ const MusicPlayer = () => {
   let imgUrl = musicPlayer.isUsing ? array[index].songImage : "Logo.png";
   const handleLoadedData = () => {
     setDuration(Math.ceil(audioRef.current.duration));
-    handleSetLocalStorage(song, index);
+    if (!musicPlayer.play) {
+      audioRef.current.currentTime = musicPlayer.currentTime;
+    }
     if (musicPlayer.play) {
       if (!play) {
         setPlay(true);
@@ -96,6 +98,10 @@ const MusicPlayer = () => {
       audioRef.current.pause();
     } else {
       audioRef.current.play();
+      if (!musicPlayer.play) {
+        musicPlayer.setPlay(true);
+        localStorage.setItem("play", true);
+      }
     }
     setPlay(!play);
   };
@@ -123,10 +129,6 @@ const MusicPlayer = () => {
     return array;
   };
   const [repeat, setRepeat] = useState(0);
-  const handleSetLocalStorage = (song, index) => {
-    localStorage.setItem("song", JSON.stringify(song));
-    localStorage.setItem("index", JSON.stringify(index));
-  };
   const setNextIdx = () => {
     if (playMode === 3) {
       //setRnd(Math.floor(Math.random() * tracksLen));
@@ -158,6 +160,8 @@ const MusicPlayer = () => {
       setPlay(true);
       audioRef.current.play();
     }
+    localStorage.setItem("currentTime", 0);
+    musicPlayer.setCurrentTime(0);
   };
   return (
     musicPlayer.isUsing && (
@@ -170,18 +174,16 @@ const MusicPlayer = () => {
           onLoadedData={handleLoadedData}
           onTimeUpdate={() => {
             setCurrentTime(audioRef.current.currentTime);
-            localStorage.setItem(
-              "currentTime",
-              JSON.stringify(audioRef.current.currentTime)
-            );
-            musicPlayer.setCurrentTime(audioRef.current.currentTime);
+            localStorage.setItem("currentTime", JSON.stringify(currentTime));
+            musicPlayer.setCurrentTime(currentTime);
           }}
           onEnded={() => {
             if (repeat) {
               setPlay(true);
               audioRef.current.currentTime = 0;
-              setCurrentTime(0);
               audioRef.current.play();
+              localStorage.setItem("currentTime", 0);
+              setCurrentTime(0);
             } else {
               musicPlayer.setSongIndex(index + 1);
               musicPlayer.setSong(array[musicPlayer.songIndex]);
@@ -190,10 +192,8 @@ const MusicPlayer = () => {
                 "index",
                 JSON.stringify(musicPlayer.songIndex)
               );
-              localStorage.setItem("currentTime", 0);
             }
           }}
-          loop={repeat ? true : false}
         />
         <Widget>
           <Box sx={{ display: `flex`, alignItems: "center" }}>
@@ -261,9 +261,16 @@ const MusicPlayer = () => {
                   onClick={() => {
                     if (playMode === 3) {
                       setPlayMode(0);
+                      localStorage.setItem(
+                        "playlist",
+                        localStorage.getItem("tracks")
+                      );
                     } else {
                       setPlayMode(3);
-                      shuffleArray(array);
+                      localStorage.setItem(
+                        "playlist",
+                        JSON.stringify(shuffleArray(array))
+                      );
                       if (repeat) setRepeat(0);
                     }
                   }}

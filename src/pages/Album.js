@@ -25,10 +25,15 @@ function Album() {
     song.setSongIndex(rnd);
     song.setSong(tracks[rnd]);
     song.setPlay(true);
+    song.setPlaylist(tracks[rnd]);
     localStorage.setItem("song", JSON.stringify(tracks[rnd]));
     localStorage.setItem("tracks", JSON.stringify(tracks));
+    localStorage.setItem("playlist", JSON.stringify(tracks));
     localStorage.setItem("index", JSON.stringify(rnd));
     localStorage.setItem("play", JSON.stringify(true));
+    localStorage.setItem("currentTime", 0);
+    song.setCurrentTime(0);
+    song.setPlaylist(tracks);
   };
   function dateFormat(strDate) {
     const date = new Date(strDate);

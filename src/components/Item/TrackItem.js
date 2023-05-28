@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import React, { useState, Component } from "react";
+import React, { Component } from "react";
 import {
   MoreHoriz,
   FavoriteBorderOutlined,
@@ -42,12 +42,12 @@ class TrackItem extends Component {
       }
       return date.toJSON().slice(0, 10).split("-").reverse().join("/");
     }
-    
+
     return (
       <div className="item">
         <div className="songImg">
           <img
-            src={require(`../../assets/${this.props.item.songImage}`)}
+            src={require(`${this.props.item.songImage}`)}
             alt={this.props.item.songName}
           />
           <PlayCircleFilled
@@ -69,6 +69,8 @@ class TrackItem extends Component {
               );
               localStorage.setItem("index", JSON.stringify(this.props.index));
               localStorage.setItem("play", JSON.stringify(true));
+              localStorage.setItem("currentTime", 0);
+              this.props.song.setCurrentTime(0);
             }}
           />
         </div>
