@@ -11,6 +11,9 @@ import { AlbumData } from "../components/Data/AlbumData";
 import "../styles/PlaylistAlbum.css";
 import "../styles/Home.css";
 import SidebarContext from "../SidebarContext";
+import { getAllPlaylists } from "../components/API/getAllPlaylists";
+import HomeAlbumItem from "../components/Item/HomeAlbumItem";
+import { getAllAlbum } from "../components/API/getAllAlbums";
 
 function Home() {
   const song = useContext(MusicPlayerContext);
@@ -33,11 +36,11 @@ function Home() {
         </Link>
       </div>
       <div className="homeRecentlyPlaylist">
-        {PlaylistData.map(
+        {getAllPlaylists.map(
           (item, key) =>
             key < 4 && (
               <div className="listPlaylists">
-                <HomePlaylistItem key={key} item={item} />
+                <HomePlaylistItem key={key} id={item.id} />
               </div>
             )
         )}
@@ -51,7 +54,7 @@ function Home() {
           (item, key) =>
             key < 4 && (
               <div className="listPlaylists">
-                <HomePlaylistItem key={key} item={item} />
+                <HomePlaylistItem key={key} id={item.id} />
               </div>
             )
         )}
@@ -84,11 +87,11 @@ function Home() {
         <p className="categoryTitle">Album Hot</p>
       </div>
       <div className="albumHot">
-        {AlbumData.map(
+        {getAllAlbum.map(
           (item, key) =>
             key < 4 && (
               <div className="listPlaylists">
-                <HomePlaylistItem key={key} item={item} />
+                <HomeAlbumItem key={key} item={item} />
               </div>
             )
         )}
@@ -113,11 +116,11 @@ function Home() {
         <p className="categoryTitle">Top 100</p>
       </div>
       <div className="top100">
-        {PlaylistData.map(
+        {getAllPlaylists.map(
           (item, key) =>
             key < 4 && (
               <div className="listPlaylists">
-                <HomePlaylistItem key={key} item={item} />
+                <HomePlaylistItem key={key} id={item.id} />
               </div>
             )
         )}

@@ -5,6 +5,8 @@ import { AddCircleRounded } from "@mui/icons-material";
 import "../styles/MyPlaylist.css";
 import { PlaylistData } from "./Data/PlaylistData";
 import { MyPlaylistData } from "./Data/MyPlaylistData";
+import { getAllPlaylists } from "./API/getAllPlaylists";
+import { getMyPlaylists } from "./API/getMyPlaylists";
 
 function AllPlaylist() {
   return (
@@ -38,12 +40,7 @@ function AllPlaylist() {
           </Typography>
         </Card>
       </Grid>
-      {PlaylistData.map((item, index) => (
-        <Grid item sm={3} xs={4}>
-          <PlaylistItem item={item} key={index} />
-        </Grid>
-      ))}
-      {MyPlaylistData.map((item, index) => (
+      {getAllPlaylists.map((item, index) => (
         <Grid item sm={3} xs={4}>
           <PlaylistItem item={item} key={index} />
         </Grid>

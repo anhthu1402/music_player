@@ -13,6 +13,8 @@ import TrackItem from "../components/Item/TrackItem";
 import { Grid, Box } from "@mui/material";
 import { AlbumData } from "../components/Data/AlbumData";
 import ArtistAlbumItem from "../components/Item/ArtistAlbumItem";
+import { getAlbumDetail } from "../service";
+import { getAllAlbum } from "../components/API/getAllAlbums";
 
 function Artist() {
   const player = useContext(MusicPlayerContext);
@@ -28,7 +30,7 @@ function Artist() {
     });
   });
   const artistAlbums = [];
-  AlbumData.map((item, index) => {
+  getAllAlbum.map((item, index) => {
     item.artist.map((child, key) => {
       if (child.id === artist.id) {
         artistAlbums.push(item);
@@ -43,7 +45,7 @@ function Artist() {
             <div className="headerDetail">
               <Avatar
                 alt={artist.artistName}
-                src={require(`${artist.artistImage}`)}
+                src={require(`../assets/${artist.artistImage}`)}
                 sx={{ width: "12.5vw", height: "12.5vw", marginRight: "2.3vw" }}
               />
               <div
@@ -128,7 +130,7 @@ function Artist() {
                     (item, index) =>
                       index < 4 && (
                         <Grid item xs={3}>
-                          <Link to={"/album/" + item.albumName} state={item}>
+                          <Link to={"/album/" + item.albumName} state={item.id}>
                             <ArtistAlbumItem key={index} item={item} />
                           </Link>
                         </Grid>

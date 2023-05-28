@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 function PlaylistItem({ item }) {
   function getPlaylistImgUrl(url) {
-    return require(url);
+    return require("../../assets/" + url);
   }
   return (
     <Card className={"cardPlaylist"} sx={{ border: "none", boxShadow: "none" }}>
@@ -28,7 +28,7 @@ function PlaylistItem({ item }) {
           <button className="btn">
             <ClearIcon sx={{ fontSize: "2.1vw" }} />
           </button>
-          <Link to={`/playlistDetail/${item.playlistName}`} state={item}>
+          <Link to={`/playlistDetail/${item.playlistName}`} state={item.id}>
             <button>
               <PlayCircleFilled sx={{ fontSize: "2.1vw" }} />
             </button>

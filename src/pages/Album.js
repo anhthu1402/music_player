@@ -10,11 +10,13 @@ import LibraryMusicIcon from "@mui/icons-material/LibraryMusic";
 import "../styles/Album.css";
 import MusicPlayerContext from "../MusicPlayerContext";
 import TrackItem from "../components/Item/TrackItem";
+import { getAlbumDetail } from "../service";
 
 function Album() {
   const location = useLocation();
-  const tracklist = location.state;
-  const tracks = tracklist.songs;
+  const id = location.state;
+  const albumDetail = getAlbumDetail(id);
+  const tracks = albumDetail.songs;
   const song = useContext(MusicPlayerContext);
   const length = tracks.length;
   const [rnd, setRnd] = useState(0);
@@ -41,18 +43,18 @@ function Album() {
   }
   return (
     <div className="albumDetailContainer">
-      {tracklist && (
+      {albumDetail && (
         <div className="albumDetail">
           <div className="detail">
             <div className="trackImg">
-              <img src={tracklist.albumImage} alt={tracklist.albumName} />
+              <img src={albumDetail.albumImage} alt={albumDetail.albumName} />
               <PlayCircle className="playIcon" onClick={randomPlay} />
             </div>
             <div className="albumInfo">
-              <h1>{tracklist.albumName}</h1>
-              <p>Ngày phát hành: {dateFormat(tracklist.releaseDate)}</p>
+              <h1>{albumDetail.albumName}</h1>
+              <p>Ngày phát hành: {dateFormat(albumDetail.releaseDate)}</p>
               <div className="artists">
-                {tracklist.artist.map((child, index) => (
+                {albumDetail.artist.map((child, index) => (
                   <span key={index} item={child}>
                     <Link to={`/artist/${child.artistName}`} state={child}>
                       {child.artistName}
@@ -60,7 +62,7 @@ function Album() {
                   </span>
                 ))}
               </div>
-              <p>{tracklist.interestTimes} người yêu thích</p>
+              <p>{albumDetail.interestTimes} người yêu thích</p>
               <button className="playButton" onClick={randomPlay}>
                 <PlayArrowRounded /> Phát ngẫu nhiên
               </button>
