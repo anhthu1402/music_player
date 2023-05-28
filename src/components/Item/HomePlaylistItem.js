@@ -52,65 +52,47 @@ function PlaylistAtHome({ item }) {
     }
   }
   return (
-    <Link
-      to={
-        item.playlistName !== undefined
-          ? `/playlistDetail/${item.playlistName}`
-          : `/album/${item.albumName}`
-      }
-      state={item.playlistName !== undefined ? item : item}
-    >
-      <div className="playlistItem">
-        <img
-          src={
-            item.playlistImg !== undefined
-              ? getPlaylistImgUrl(`${item.playlistImg}`)
-              : item.albumImage
-          }
-          className="imagePlaylist"
-          alt={
-            item.playlistName !== undefined ? item.playlistName : item.albumName
-          }
-          title={
-            item.playlistName !== undefined ? item.playlistName : item.albumName
-          }
-        />
-        <div className="playPlaylist">
-          <FavoriteBorderOutlined
-            className="icon"
-            fontSize="large"
-            style={{ color: "white" }}
-          />
-          <PlayCircleFilled
-            className="icon"
-            fontSize="large"
-            onClick={play}
-            style={{ color: "white" }}
-          />
-          <MoreHoriz
-            className="icon"
-            fontSize="large"
-            style={{ color: "white" }}
-          />
+      <>
+        <div className="playlistItem">
+            <img
+              src={
+                item.playlistImg !== undefined
+                  ? getPlaylistImgUrl(`${item.playlistImg}`)
+                  : item.albumImage
+              }
+              className="imagePlaylist"
+              alt={ item.playlistName !== undefined ? item.playlistName : item.albumName }
+              title={ item.playlistName !== undefined ? item.playlistName : item.albumName }
+            />
+          <div className="playPlaylist">
+            <FavoriteBorderOutlined className="icon" fontSize="large" style={{ color: "white" }} />
+            <Link to={ item.playlistName !== undefined ? `/playlistDetail/${item.playlistName}` : `/album/${item.albumName}` }
+                  state={item.playlistName !== undefined ? item : item} >
+              <PlayCircleFilled className="icon" fontSize="large" onClick={play} style={{ color: "white" }} />
+            </Link>
+            <MoreHoriz className="icon" fontSize="large" style={{ color: "white" }} />
+          </div>
         </div>
-      </div>
-      <h3 className="playlistName">
-        {item.playlistName !== undefined ? item.playlistName : item.albumName}
-      </h3>
-      <div className="artists">
-        <span>
-          {uniqueArtist.map((child, index) => {
-            return (
-              <span key={index} item={child} className="artist">
-                <Link to={`/artist/${child.artistName}`} state={child}>
-                  {child.artistName}
-                </Link>
-              </span>
-            );
-          })}
-        </span>
-      </div>
-    </Link>
+        <Link to={ item.playlistName !== undefined ? `/playlistDetail/${item.playlistName}` : `/album/${item.albumName}` }
+              state={item.playlistName !== undefined ? item : item} >
+          <h3 className="playlistName">
+            {item.playlistName !== undefined ? item.playlistName : item.albumName}
+          </h3>
+        </Link>
+        <div className="artists">
+          <span>
+            {uniqueArtist.map((child, index) => {
+              return (
+                <span key={index} item={child} className="artist">
+                  <Link to={`/artist/${child.artistName}`} state={child}>
+                    {child.artistName}
+                  </Link>
+                </span>
+              );
+            })}
+          </span>
+        </div>
+      </>
   );
 }
 

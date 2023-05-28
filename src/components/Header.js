@@ -1,5 +1,6 @@
 import React from "react";
 import { SearchBar } from "./SearchBar";
+import InputSearch from "./InputSearch"
 import SettingsIcon from "@mui/icons-material/Settings";
 import "../styles/Header.css";
 import { Link } from "react-router-dom";
@@ -18,7 +19,8 @@ function Header() {
           }}
         >
           <div className="searchBar">
-            <SearchBar />
+            {/* <SearchBar /> */}
+            <InputSearch />
           </div>
           <div className="personal">
             <button className="settingsBtn">

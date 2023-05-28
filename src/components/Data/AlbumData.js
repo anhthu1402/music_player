@@ -181,7 +181,7 @@ export const AlbumData = [
     interestTimes: 3,
     releaseDate: "2023-04-23T15:16:00.269+07:00",
     albumImage:
-      "https://res.heraldm.com/content/songImage/2020/07/17/20200717000500_0.jpg",
+      "https://upload.wikimedia.org/wikipedia/vi/d/d6/Map_of_the_Soul_-_7_-_The_Journey.jpg",
 
     country: [
       {
@@ -262,7 +262,7 @@ export const AlbumData = [
     interestTimes: 4,
     releaseDate: "2023-05-17T00:00:00.269+07:00",
     albumImage:
-      "https://i.scdn.co/songImage/ab67616d0000b2733613e1e0d35867a0814005a9",
+      "https://linkstorage.linkfire.com/medialinks/images/a9cf3581-a476-4177-86b5-ba800ccfd0c5/artwork-440x440.jpg",
 
     country: [
       {
@@ -420,7 +420,7 @@ export const AlbumData = [
     interestTimes: 2,
     releaseDate: "2022-08-01T15:16:32.269+07:00",
     albumImage:
-      "https://i.scdn.co/songImage/ab67616d00001e028d64ee7e356e13a96062bd0b",
+      "https://static.wikia.nocookie.net/nmixx/images/0/01/NMIXX_Ad_Mare_digital_album_cover.png",
 
     country: [
       {
