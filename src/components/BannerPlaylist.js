@@ -7,9 +7,9 @@ import { getAllPlaylists } from "./API/getAllPlaylists";
 
 function BannerPlaylist() {
   const [activeSlide, setActiveSlide] = useState(0);
-  function getPlaylistImgUrl(url) {
-    return require(`../assets/` + url);
-  }
+  // function getPlaylistImgUrl(url) {
+  //   return require(`../assets/` + url);
+  // }
   return (
     <div className="slider_wrapper">
       <Carousel
@@ -83,7 +83,7 @@ function BannerPlaylist() {
               <img
                 key={index}
                 title={item.playlistName}
-                src={getPlaylistImgUrl(`${item.playlistImg}`)}
+                src={item.playlistImg}
                 className="image"
                 alt={item.playlistName}
               />

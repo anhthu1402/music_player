@@ -3,60 +3,70 @@ export const getAllPlaylists = [
     id: 1,
     playlistName: "Yêu thích",
     user: "Anh Thu",
-    playlistImg: "idol.png",
+    playlistImg:
+      "https://cdn.shopify.com/s/files/1/0090/5258/6081/products/grupo-erik-gpe5360-bts-blue-poster-91-5x61cm_500x.jpg?v=1678202019",
   },
   {
     id: 2,
     playlistName: "Anh Thư",
     user: "Anh Thu",
-    playlistImg: "onlylove.jpg",
+    playlistImg:
+      "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQQBiRMWQlGXhL2kXESEBNFL6d1BzuzmkZPkStrvoYJWAywjp4R",
   },
   {
     id: 3,
     playlistName: "Yêu thích 2",
     user: "Anh Thu",
-    playlistImg: "idol.png",
+    playlistImg:
+      "https://cdn.shopify.com/s/files/1/0090/5258/6081/products/grupo-erik-gpe5360-bts-blue-poster-91-5x61cm_500x.jpg?v=1678202019",
   },
   {
     id: 4,
     playlistName: "Milu",
     user: "Anh Thu",
-    playlistImg: "onlylove.jpg",
+    playlistImg:
+      "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQQBiRMWQlGXhL2kXESEBNFL6d1BzuzmkZPkStrvoYJWAywjp4R",
   },
   {
     id: 5,
     playlistName: "Playlist",
     user: "Anh Thu",
-    playlistImg: "onlylove.jpg",
+    playlistImg:
+      "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQQBiRMWQlGXhL2kXESEBNFL6d1BzuzmkZPkStrvoYJWAywjp4R",
   },
   {
     id: 6,
     playlistName: "Yêu thích",
     user: "UIT MP3",
-    playlistImg: "idol.png",
+    playlistImg:
+      "https://cdn.shopify.com/s/files/1/0090/5258/6081/products/grupo-erik-gpe5360-bts-blue-poster-91-5x61cm_500x.jpg?v=1678202019",
   },
   {
     id: 7,
     playlistName: "Anh",
     user: "Milu",
-    playlistImg: "onlylove.jpg",
+    playlistImg:
+      "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQQBiRMWQlGXhL2kXESEBNFL6d1BzuzmkZPkStrvoYJWAywjp4R",
   },
   {
     id: 8,
     playlistName: "Yêu thích 2",
     user: "Vi",
-    playlistImg: "idol.png",
+    playlistImg:
+      "https://cdn.shopify.com/s/files/1/0090/5258/6081/products/grupo-erik-gpe5360-bts-blue-poster-91-5x61cm_500x.jpg?v=1678202019",
   },
   {
     id: 9,
     playlistName: "Kpop",
     user: "UIT MP3",
-    playlistImg: "onlylove.jpg",
+    playlistImg:
+      "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQQBiRMWQlGXhL2kXESEBNFL6d1BzuzmkZPkStrvoYJWAywjp4R",
   },
   {
     id: 10,
     playlistName: "My Playlist",
     user: "Trinh",
-    playlistImg: "onlylove.jpg",
+    playlistImg:
+      "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQQBiRMWQlGXhL2kXESEBNFL6d1BzuzmkZPkStrvoYJWAywjp4R",
   },
 ];

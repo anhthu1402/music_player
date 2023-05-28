@@ -46,7 +46,7 @@ class TrackItem extends Component {
       <div className="item">
         <div className="songImg">
           <img
-            src={require(`../../assets/${this.props.item.songImage}`)}
+            src={`${this.props.item.songImage}`}
             alt={this.props.item.songName}
           />
           <PlayCircleFilled

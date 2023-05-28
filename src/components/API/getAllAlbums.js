@@ -19,7 +19,8 @@ export const getAllAlbum = [
         numberOfFollower: "927.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-        artistImage: "ns2.png",
+        artistImage:
+          "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSQSyUgtbtwz_jjQW9HdgngLzR5eyIZAErOKbpXwdgHsT8WOae4",
       },
       {
         id: 1,
@@ -27,7 +28,8 @@ export const getAllAlbum = [
         numberOfFollower: "97.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-        artistImage: "ns1.jpg",
+        artistImage:
+          "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTirgJDvMLhQK3nUI2LaUVY9vqGxBBZHLduUQZdf2n1L6Bmw-Xq",
       },
     ],
   },
@@ -51,7 +53,8 @@ export const getAllAlbum = [
         numberOfFollower: "927.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-        artistImage: "BTS_image.jpg",
+        artistImage:
+          "https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/02/21/10/bts.jpg?quality=75&width=990&crop=4%3A3%2Csmart&auto=webp",
       },
     ],
   },
@@ -76,7 +79,8 @@ export const getAllAlbum = [
         numberOfFollower: "927.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-        artistImage: "BTS_image.jpg",
+        artistImage:
+          "https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/02/21/10/bts.jpg?quality=75&width=990&crop=4%3A3%2Csmart&auto=webp",
       },
     ],
   },
@@ -101,7 +105,8 @@ export const getAllAlbum = [
         numberOfFollower: "97.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-        artistImage: "ns2.png",
+        artistImage:
+          "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSQSyUgtbtwz_jjQW9HdgngLzR5eyIZAErOKbpXwdgHsT8WOae4",
       },
       {
         id: 4,
@@ -109,7 +114,8 @@ export const getAllAlbum = [
         numberOfFollower: "927.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-        artistImage: "BTS_image.jpg",
+        artistImage:
+          "https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/02/21/10/bts.jpg?quality=75&width=990&crop=4%3A3%2Csmart&auto=webp",
       },
     ],
   },
@@ -134,7 +140,8 @@ export const getAllAlbum = [
         numberOfFollower: "927.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-        artistImage: "BTS_image.jpg",
+        artistImage:
+          "https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/02/21/10/bts.jpg?quality=75&width=990&crop=4%3A3%2Csmart&auto=webp",
       },
       {
         id: 1,
@@ -142,7 +149,8 @@ export const getAllAlbum = [
         numberOfFollower: "97.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-        artistImage: "ns1.jpg",
+        artistImage:
+          "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTirgJDvMLhQK3nUI2LaUVY9vqGxBBZHLduUQZdf2n1L6Bmw-Xq",
       },
     ],
   },
@@ -167,7 +175,8 @@ export const getAllAlbum = [
         numberOfFollower: "27.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-        artistImage: "ns3.jpg",
+        artistImage:
+          "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS577cuhYFeSCYDO6fyzkSbk5FSa505r5pSpmvJmzDLX3f2ybEs",
       },
       {
         id: 4,
@@ -175,7 +184,8 @@ export const getAllAlbum = [
         numberOfFollower: "927.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-        artistImage: "BTS_image.jpg",
+        artistImage:
+          "https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/02/21/10/bts.jpg?quality=75&width=990&crop=4%3A3%2Csmart&auto=webp",
       },
     ],
   },
@@ -200,7 +210,8 @@ export const getAllAlbum = [
         numberOfFollower: "927.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-        artistImage: "ns5.jpg",
+        artistImage:
+          "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTQmsoi9PPIK8QFU9X9F4GitRhVsWhz4sooOvoausr15K8mawB_",
       },
       {
         id: 4,
@@ -208,7 +219,8 @@ export const getAllAlbum = [
         numberOfFollower: "927.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-        artistImage: "BTS_image.jpg",
+        artistImage:
+          "https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/02/21/10/bts.jpg?quality=75&width=990&crop=4%3A3%2Csmart&auto=webp",
       },
     ],
   },

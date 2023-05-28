@@ -19,7 +19,8 @@ export const AlbumData = [
         numberOfFollower: "927.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-        artistImage: "ns2.png",
+        artistImage:
+          "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSQSyUgtbtwz_jjQW9HdgngLzR5eyIZAErOKbpXwdgHsT8WOae4",
       },
       {
         id: 1,
@@ -27,14 +28,16 @@ export const AlbumData = [
         numberOfFollower: "97.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-        artistImage: "ns1.jpg",
+        artistImage:
+          "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTirgJDvMLhQK3nUI2LaUVY9vqGxBBZHLduUQZdf2n1L6Bmw-Xq",
       },
     ],
     songs: [
       {
         id: 7,
         songName: "IDOL",
-        songImage: "idol.png",
+        songImage:
+          "https://cdn.shopify.com/s/files/1/0090/5258/6081/products/grupo-erik-gpe5360-bts-blue-poster-91-5x61cm_500x.jpg?v=1678202019",
         isFavorite: 1,
         timeLimit: "3:43",
         songLink: "IDOL.mp3",
@@ -45,14 +48,16 @@ export const AlbumData = [
             numberOfFollower: "927.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-            artistImage: "ns2.png",
+            artistImage:
+              "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSQSyUgtbtwz_jjQW9HdgngLzR5eyIZAErOKbpXwdgHsT8WOae4",
           },
         ],
       },
       {
         id: 1,
         songName: "Only Love",
-        songImage: "onlylove.jpg",
+        songImage:
+          "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQQBiRMWQlGXhL2kXESEBNFL6d1BzuzmkZPkStrvoYJWAywjp4R",
         isFavorite: 1,
         timeLimit: "4:07",
         songLink: "OnlyLove.mp3",
@@ -63,7 +68,8 @@ export const AlbumData = [
             numberOfFollower: "927.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-            artistImage: "ns2.png",
+            artistImage:
+              "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSQSyUgtbtwz_jjQW9HdgngLzR5eyIZAErOKbpXwdgHsT8WOae4",
           },
           {
             id: 1,
@@ -71,14 +77,16 @@ export const AlbumData = [
             numberOfFollower: "97.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-            artistImage: "ns1.jpg",
+            artistImage:
+              "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTirgJDvMLhQK3nUI2LaUVY9vqGxBBZHLduUQZdf2n1L6Bmw-Xq",
           },
         ],
       },
       {
         id: 2,
         songName: "Tonight",
-        songImage: "onlylove.jpg",
+        songImage:
+          "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQQBiRMWQlGXhL2kXESEBNFL6d1BzuzmkZPkStrvoYJWAywjp4R",
         isFavorite: 0,
         timeLimit: "2:59",
         songLink: "Tonight.mp3",
@@ -89,7 +97,8 @@ export const AlbumData = [
             numberOfFollower: "927.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-            artistImage: "ns2.png",
+            artistImage:
+              "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSQSyUgtbtwz_jjQW9HdgngLzR5eyIZAErOKbpXwdgHsT8WOae4",
           },
         ],
       },
@@ -115,14 +124,16 @@ export const AlbumData = [
         numberOfFollower: "927.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-        artistImage: "BTS_image.jpg",
+        artistImage:
+          "https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/02/21/10/bts.jpg?quality=75&width=990&crop=4%3A3%2Csmart&auto=webp",
       },
     ],
     songs: [
       {
         id: 7,
         songName: "IDOL",
-        songImage: "idol.png",
+        songImage:
+          "https://cdn.shopify.com/s/files/1/0090/5258/6081/products/grupo-erik-gpe5360-bts-blue-poster-91-5x61cm_500x.jpg?v=1678202019",
         isFavorite: 1,
         timeLimit: "3:43",
         songLink: "IDOL.mp3",
@@ -133,14 +144,16 @@ export const AlbumData = [
             numberOfFollower: "927.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-            artistImage: "BTS_image.jpg",
+            artistImage:
+              "https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/02/21/10/bts.jpg?quality=75&width=990&crop=4%3A3%2Csmart&auto=webp",
           },
         ],
       },
       {
         id: 1,
         songName: "Only Love",
-        songImage: "onlylove.jpg",
+        songImage:
+          "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQQBiRMWQlGXhL2kXESEBNFL6d1BzuzmkZPkStrvoYJWAywjp4R",
         isFavorite: 1,
         timeLimit: "4:07",
         songLink: "OnlyLove.mp3",
@@ -151,14 +164,16 @@ export const AlbumData = [
             numberOfFollower: "927.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-            artistImage: "BTS_image.jpg",
+            artistImage:
+              "https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/02/21/10/bts.jpg?quality=75&width=990&crop=4%3A3%2Csmart&auto=webp",
           },
         ],
       },
       {
         id: 2,
         songName: "Tonight",
-        songImage: "onlylove.jpg",
+        songImage:
+          "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQQBiRMWQlGXhL2kXESEBNFL6d1BzuzmkZPkStrvoYJWAywjp4R",
         isFavorite: 0,
         timeLimit: "2:59",
         songLink: "Tonight.mp3",
@@ -169,7 +184,8 @@ export const AlbumData = [
             numberOfFollower: "927.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-            artistImage: "BTS_image.jpg",
+            artistImage:
+              "https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/02/21/10/bts.jpg?quality=75&width=990&crop=4%3A3%2Csmart&auto=webp",
           },
         ],
       },
@@ -196,14 +212,16 @@ export const AlbumData = [
         numberOfFollower: "927.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-        artistImage: "BTS_image.jpg",
+        artistImage:
+          "https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/02/21/10/bts.jpg?quality=75&width=990&crop=4%3A3%2Csmart&auto=webp",
       },
     ],
     songs: [
       {
         id: 7,
         songName: "IDOL",
-        songImage: "idol.png",
+        songImage:
+          "https://cdn.shopify.com/s/files/1/0090/5258/6081/products/grupo-erik-gpe5360-bts-blue-poster-91-5x61cm_500x.jpg?v=1678202019",
         isFavorite: 1,
         timeLimit: "3:43",
         songLink: "IDOL.mp3",
@@ -214,14 +232,16 @@ export const AlbumData = [
             numberOfFollower: "927.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-            artistImage: "BTS_image.jpg",
+            artistImage:
+              "https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/02/21/10/bts.jpg?quality=75&width=990&crop=4%3A3%2Csmart&auto=webp",
           },
         ],
       },
       {
         id: 1,
         songName: "Only Love",
-        songImage: "onlylove.jpg",
+        songImage:
+          "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQQBiRMWQlGXhL2kXESEBNFL6d1BzuzmkZPkStrvoYJWAywjp4R",
         isFavorite: 1,
         timeLimit: "4:07",
         songLink: "OnlyLove.mp3",
@@ -232,14 +252,16 @@ export const AlbumData = [
             numberOfFollower: "927.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-            artistImage: "BTS_image.jpg",
+            artistImage:
+              "https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/02/21/10/bts.jpg?quality=75&width=990&crop=4%3A3%2Csmart&auto=webp",
           },
         ],
       },
       {
         id: 2,
         songName: "Tonight",
-        songImage: "onlylove.jpg",
+        songImage:
+          "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQQBiRMWQlGXhL2kXESEBNFL6d1BzuzmkZPkStrvoYJWAywjp4R",
         isFavorite: 0,
         timeLimit: "2:59",
         songLink: "Tonight.mp3",
@@ -250,7 +272,8 @@ export const AlbumData = [
             numberOfFollower: "927.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-            artistImage: "BTS_image.jpg",
+            artistImage:
+              "https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/02/21/10/bts.jpg?quality=75&width=990&crop=4%3A3%2Csmart&auto=webp",
           },
         ],
       },
@@ -277,7 +300,8 @@ export const AlbumData = [
         numberOfFollower: "97.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-        artistImage: "ns2.png",
+        artistImage:
+          "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSQSyUgtbtwz_jjQW9HdgngLzR5eyIZAErOKbpXwdgHsT8WOae4",
       },
       {
         id: 4,
@@ -285,14 +309,16 @@ export const AlbumData = [
         numberOfFollower: "927.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-        artistImage: "BTS_image.jpg",
+        artistImage:
+          "https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/02/21/10/bts.jpg?quality=75&width=990&crop=4%3A3%2Csmart&auto=webp",
       },
     ],
     songs: [
       {
         id: 1,
         songName: "Only Love",
-        songImage: "onlylove.jpg",
+        songImage:
+          "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQQBiRMWQlGXhL2kXESEBNFL6d1BzuzmkZPkStrvoYJWAywjp4R",
         isFavorite: 1,
         timeLimit: "4:07",
         songLink: "OnlyLove.mp3",
@@ -303,14 +329,16 @@ export const AlbumData = [
             numberOfFollower: "97.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-            artistImage: "ns2.png",
+            artistImage:
+              "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSQSyUgtbtwz_jjQW9HdgngLzR5eyIZAErOKbpXwdgHsT8WOae4",
           },
         ],
       },
       {
         id: 2,
         songName: "Tonight",
-        songImage: "onlylove.jpg",
+        songImage:
+          "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQQBiRMWQlGXhL2kXESEBNFL6d1BzuzmkZPkStrvoYJWAywjp4R",
         isFavorite: 0,
         timeLimit: "2:59",
         songLink: "Tonight.mp3",
@@ -321,7 +349,8 @@ export const AlbumData = [
             numberOfFollower: "927.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-            artistImage: "BTS_image.jpg",
+            artistImage:
+              "https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/02/21/10/bts.jpg?quality=75&width=990&crop=4%3A3%2Csmart&auto=webp",
           },
           {
             id: 1,
@@ -329,7 +358,8 @@ export const AlbumData = [
             numberOfFollower: "97.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-            artistImage: "ns2.png",
+            artistImage:
+              "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSQSyUgtbtwz_jjQW9HdgngLzR5eyIZAErOKbpXwdgHsT8WOae4",
           },
         ],
       },
@@ -356,7 +386,8 @@ export const AlbumData = [
         numberOfFollower: "927.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-        artistImage: "BTS_image.jpg",
+        artistImage:
+          "https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/02/21/10/bts.jpg?quality=75&width=990&crop=4%3A3%2Csmart&auto=webp",
       },
       {
         id: 1,
@@ -364,14 +395,16 @@ export const AlbumData = [
         numberOfFollower: "97.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-        artistImage: "ns1.jpg",
+        artistImage:
+          "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTirgJDvMLhQK3nUI2LaUVY9vqGxBBZHLduUQZdf2n1L6Bmw-Xq",
       },
     ],
     songs: [
       {
         id: 7,
         songName: "IDOL",
-        songImage: "idol.png",
+        songImage:
+          "https://cdn.shopify.com/s/files/1/0090/5258/6081/products/grupo-erik-gpe5360-bts-blue-poster-91-5x61cm_500x.jpg?v=1678202019",
         isFavorite: 1,
         timeLimit: "3:43",
         songLink: "IDOL.mp3",
@@ -382,7 +415,8 @@ export const AlbumData = [
             numberOfFollower: "927.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-            artistImage: "BTS_image.jpg",
+            artistImage:
+              "https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/02/21/10/bts.jpg?quality=75&width=990&crop=4%3A3%2Csmart&auto=webp",
           },
           {
             id: 1,
@@ -390,14 +424,16 @@ export const AlbumData = [
             numberOfFollower: "97.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-            artistImage: "ns1.jpg",
+            artistImage:
+              "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTirgJDvMLhQK3nUI2LaUVY9vqGxBBZHLduUQZdf2n1L6Bmw-Xq",
           },
         ],
       },
       {
         id: 2,
         songName: "Tonight",
-        songImage: "onlylove.jpg",
+        songImage:
+          "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQQBiRMWQlGXhL2kXESEBNFL6d1BzuzmkZPkStrvoYJWAywjp4R",
         isFavorite: 0,
         timeLimit: "2:59",
         songLink: "Tonight.mp3",
@@ -408,7 +444,8 @@ export const AlbumData = [
             numberOfFollower: "97.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-            artistImage: "ns1.jpg",
+            artistImage:
+              "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTirgJDvMLhQK3nUI2LaUVY9vqGxBBZHLduUQZdf2n1L6Bmw-Xq",
           },
         ],
       },
@@ -435,7 +472,8 @@ export const AlbumData = [
         numberOfFollower: "27.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-        artistImage: "ns3.jpg",
+        artistImage:
+          "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS577cuhYFeSCYDO6fyzkSbk5FSa505r5pSpmvJmzDLX3f2ybEs",
       },
       {
         id: 4,
@@ -443,14 +481,16 @@ export const AlbumData = [
         numberOfFollower: "927.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-        artistImage: "BTS_image.jpg",
+        artistImage:
+          "https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/02/21/10/bts.jpg?quality=75&width=990&crop=4%3A3%2Csmart&auto=webp",
       },
     ],
     songs: [
       {
         id: 7,
         songName: "IDOL",
-        songImage: "idol.png",
+        songImage:
+          "https://cdn.shopify.com/s/files/1/0090/5258/6081/products/grupo-erik-gpe5360-bts-blue-poster-91-5x61cm_500x.jpg?v=1678202019",
         isFavorite: 1,
         timeLimit: "3:43",
         songLink: "IDOL.mp3",
@@ -461,17 +501,19 @@ export const AlbumData = [
             numberOfFollower: "27.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-            artistImage: "ns3.jpg",
+            artistImage:
+              "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS577cuhYFeSCYDO6fyzkSbk5FSa505r5pSpmvJmzDLX3f2ybEs",
           },
         ],
       },
       {
         id: 1,
         songName: "Only Love",
-        songImage: "onlylove.jpg",
+        songImage:
+          "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQQBiRMWQlGXhL2kXESEBNFL6d1BzuzmkZPkStrvoYJWAywjp4R",
         isFavorite: 1,
         timeLimit: "4:07",
-        songLink: "OnlyLove.mp3",
+        songLink: "OnlyLove",
         representation: [
           {
             id: 4,
@@ -479,7 +521,8 @@ export const AlbumData = [
             numberOfFollower: "927.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-            artistImage: "BTS_image.jpg",
+            artistImage:
+              "https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/02/21/10/bts.jpg?quality=75&width=990&crop=4%3A3%2Csmart&auto=webp",
           },
           {
             id: 3,
@@ -487,14 +530,16 @@ export const AlbumData = [
             numberOfFollower: "27.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-            artistImage: "ns3.jpg",
+            artistImage:
+              "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS577cuhYFeSCYDO6fyzkSbk5FSa505r5pSpmvJmzDLX3f2ybEs",
           },
         ],
       },
       {
         id: 2,
         songName: "Tonight",
-        songImage: "onlylove.jpg",
+        songImage:
+          "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQQBiRMWQlGXhL2kXESEBNFL6d1BzuzmkZPkStrvoYJWAywjp4R",
         isFavorite: 0,
         timeLimit: "2:59",
         songLink: "Tonight.mp3",
@@ -505,7 +550,8 @@ export const AlbumData = [
             numberOfFollower: "27.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-            artistImage: "ns3.jpg",
+            artistImage:
+              "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS577cuhYFeSCYDO6fyzkSbk5FSa505r5pSpmvJmzDLX3f2ybEs",
           },
         ],
       },
@@ -532,7 +578,8 @@ export const AlbumData = [
         numberOfFollower: "927.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-        artistImage: "ns5.jpg",
+        artistImage:
+          "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTQmsoi9PPIK8QFU9X9F4GitRhVsWhz4sooOvoausr15K8mawB_",
       },
       {
         id: 4,
@@ -540,14 +587,16 @@ export const AlbumData = [
         numberOfFollower: "927.713",
         introduce:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-        artistImage: "BTS_image.jpg",
+        artistImage:
+          "https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/02/21/10/bts.jpg?quality=75&width=990&crop=4%3A3%2Csmart&auto=webp",
       },
     ],
     songs: [
       {
         id: 7,
         songName: "IDOL",
-        songImage: "idol.png",
+        songImage:
+          "https://cdn.shopify.com/s/files/1/0090/5258/6081/products/grupo-erik-gpe5360-bts-blue-poster-91-5x61cm_500x.jpg?v=1678202019",
         isFavorite: 1,
         timeLimit: "3:43",
         songLink: "IDOL.mp3",
@@ -558,7 +607,8 @@ export const AlbumData = [
             numberOfFollower: "927.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-            artistImage: "ns5.jpg",
+            artistImage:
+              "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTQmsoi9PPIK8QFU9X9F4GitRhVsWhz4sooOvoausr15K8mawB_",
           },
           {
             id: 4,
@@ -566,14 +616,16 @@ export const AlbumData = [
             numberOfFollower: "927.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-            artistImage: "BTS_image.jpg",
+            artistImage:
+              "https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/02/21/10/bts.jpg?quality=75&width=990&crop=4%3A3%2Csmart&auto=webp",
           },
         ],
       },
       {
         id: 1,
         songName: "Only Love",
-        songImage: "onlylove.jpg",
+        songImage:
+          "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQQBiRMWQlGXhL2kXESEBNFL6d1BzuzmkZPkStrvoYJWAywjp4R",
         isFavorite: 1,
         timeLimit: "4:07",
         songLink: "OnlyLove.mp3",
@@ -584,7 +636,8 @@ export const AlbumData = [
             numberOfFollower: "927.713",
             introduce:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-            artistImage: "ns5.jpg",
+            artistImage:
+              "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTQmsoi9PPIK8QFU9X9F4GitRhVsWhz4sooOvoausr15K8mawB_",
           },
         ],
       },
