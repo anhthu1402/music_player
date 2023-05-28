@@ -7,6 +7,8 @@ import {
 } from "@mui/icons-material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import "../../styles/TrackItem.css";
+import Popup from "reactjs-popup";
+import "reactjs-popup/dist/index.css";
 class TrackItem extends Component {
   render() {
     function printReleaseDate(dateParam) {
@@ -101,7 +103,59 @@ class TrackItem extends Component {
           ) : (
             <FavoriteIcon fontSize="medium" className="favIcon" />
           )}
-          <MoreHoriz fontSize="medium" className="moreIcon" />
+          <Popup
+            contentStyle={{
+              zIndex: "2000",
+              marginTop: 10,
+              width: "20%",
+              padding: "10px",
+            }}
+            arrow={false}
+            trigger={<MoreHoriz fontSize="medium" className="moreIcon" />}
+            position={"bottom right"}
+            on={"click"}
+          >
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+              }}
+            >
+              <img
+                src={`${this.props.item.songImage}`}
+                alt={this.props.item.songName}
+                width={50}
+                height={50}
+                style={{ borderRadius: "5px" }}
+              />
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  marginLeft: 10,
+                }}
+              >
+                <p
+                  style={{
+                    fontSize: `medium`,
+                    fontWeight: "bold",
+                    textOverflow: "ellipsis",
+                    whiteSpace: "nowrap",
+                    overflow: "hidden",
+                    marginBottom: 2,
+                  }}
+                >
+                  {this.props.item.songName}
+                </p>
+                {/* <div>
+                  <FavoriteBorderOutlined
+                    fontSize="smaller"
+                    sx={{ color: "grey" }}
+                  />
+                </div> */}
+              </div>
+            </div>
+          </Popup>
         </div>
       </div>
     );
