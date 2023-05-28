@@ -5,7 +5,7 @@ import "../styles/TopTrendingArtist.css";
 
 function TopTrendingArtist() {
   function getPlaylistImgUrl(url) {
-    return require(url);
+    return require(`../assets/`+url);
   }
   return (
     <div className="topTrendingArtists" style={{ width: `100%` }}>

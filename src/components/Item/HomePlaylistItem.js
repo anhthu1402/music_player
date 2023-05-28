@@ -33,7 +33,7 @@ function PlaylistAtHome({ item }) {
     song.setPlaylist(tracks);
   };
   function getPlaylistImgUrl(url) {
-    return require(url);
+    return require(`../../assets/`+url);
   }
   const artists = [],
     uniqueArtist = [];

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 function BannerPlaylist() {
   const [activeSlide, setActiveSlide] = useState(0);
   function getPlaylistImgUrl(url) {
-    return require(url);
+    return require(`../assets/`+url);
   }
   return (
     <div className="slider_wrapper">

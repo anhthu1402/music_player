@@ -70,10 +70,10 @@ const MusicPlayer = () => {
   let songName = musicPlayer.isUsing ? array[index].songName : "";
   let representation = musicPlayer.isUsing ? array[index].representation : [];
   const getAudioSource = (source) => {
-    return require(source);
+    return require(`../assets/audio/`+source);
   };
   const getImgUrl = (url) => {
-    return require(url);
+    return require(`../assets/`+url);
   };
   const audioRef = useRef();
   const [duration, setDuration] = useState(0); //seconds

@@ -7,7 +7,6 @@ import {
 } from "@mui/icons-material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import "../../styles/TrackItem.css";
-
 class TrackItem extends Component {
   render() {
     function printReleaseDate(dateParam) {
@@ -47,7 +46,7 @@ class TrackItem extends Component {
       <div className="item">
         <div className="songImg">
           <img
-            src={require(`${this.props.item.songImage}`)}
+            src={require(`../../assets/${this.props.item.songImage}`)}
             alt={this.props.item.songName}
           />
           <PlayCircleFilled
