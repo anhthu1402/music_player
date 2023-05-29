@@ -4,11 +4,21 @@ import {
   MoreHoriz,
   FavoriteBorderOutlined,
   PlayCircleFilled,
+  QueueRounded,
+  PlaylistAddRounded,
+  QueueMusicRounded,
+  AddCircleRounded,
+  FileDownloadOutlined,
+  LyricsOutlined,
+  NotInterestedOutlined,
 } from "@mui/icons-material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import "../../styles/TrackItem.css";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
+import { getMyPlaylists } from "../API/getMyPlaylists";
+import { Button, ButtonGroup } from "@mui/material";
+
 class TrackItem extends Component {
   render() {
     function printReleaseDate(dateParam) {
@@ -107,8 +117,8 @@ class TrackItem extends Component {
             contentStyle={{
               zIndex: "2000",
               marginTop: 10,
-              width: "20%",
-              padding: "10px",
+              width: "25%",
+              padding: 0,
             }}
             arrow={false}
             trigger={<MoreHoriz fontSize="medium" className="moreIcon" />}
@@ -119,6 +129,7 @@ class TrackItem extends Component {
               style={{
                 display: "flex",
                 flexDirection: "row",
+                padding: "10px",
               }}
             >
               <img
@@ -137,24 +148,98 @@ class TrackItem extends Component {
               >
                 <p
                   style={{
-                    fontSize: `medium`,
-                    fontWeight: "bold",
+                    fontSize: `20px`,
+                    fontWeight: "500",
                     textOverflow: "ellipsis",
                     whiteSpace: "nowrap",
                     overflow: "hidden",
-                    marginBottom: 2,
+                    marginBottom: 1,
                   }}
                 >
                   {this.props.item.songName}
                 </p>
-                {/* <div>
-                  <FavoriteBorderOutlined
-                    fontSize="smaller"
-                    sx={{ color: "grey" }}
-                  />
-                </div> */}
+                <div className="artistPopup">
+                  {this.props.item.representation.map((child, index) => (
+                    <span key={index} item={child}>
+                      <Link to={`/artist/${child.artistName}`} state={child}>
+                        {child.artistName}
+                      </Link>
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                margin: 7,
+              }}
+            >
+              <ButtonGroup variant="outlined" size="medium">
+                <Button className="buttonPopup">
+                  <FileDownloadOutlined fontSize="small" />
+                  <p style={{ fontSize: "12px" }}>Tải xuống</p>
+                </Button>
+                <Button className="buttonPopup">
+                  <LyricsOutlined fontSize="small" />
+                  <p style={{ fontSize: "12px" }}>Lời bài hát</p>
+                </Button>
+                <Button className="buttonPopup">
+                  <NotInterestedOutlined fontSize="small" />
+                  <p style={{ fontSize: "12px" }}>Chặn</p>
+                </Button>
+              </ButtonGroup>
+            </div>
+            <div className="songItemPopup">
+              <FavoriteBorderOutlined
+                fontSize="small"
+                sx={{ color: "grey", marginRight: 1 }}
+              />
+              <p>Thêm vào thư viện</p>
+            </div>
+            <div className="songItemPopup">
+              <QueueRounded
+                fontSize="small"
+                sx={{ color: "grey", marginRight: 1 }}
+              />
+              <p>Thêm vào danh sách phát</p>
+            </div>
+            <Popup
+              contentStyle={{
+                width: "17%",
+                padding: 10,
+              }}
+              trigger={
+                <div className="songItemPopup">
+                  <PlaylistAddRounded
+                    fontSize="small"
+                    sx={{ color: "grey", marginRight: 1 }}
+                  />
+                  <p>Thêm vào playlist</p>
+                </div>
+              }
+              on={"hover"}
+              position={"left center"}
+            >
+              <div className="songItemPopup">
+                <AddCircleRounded
+                  fontSize="small"
+                  sx={{ color: "grey", marginRight: 1 }}
+                />
+                <p>Tạo playlist mới</p>
+              </div>
+              {getMyPlaylists.map((playlist, index) => (
+                <div key={index} className="songItemPopup">
+                  <QueueMusicRounded
+                    fontSize="small"
+                    sx={{ color: "grey", marginRight: 1 }}
+                  />
+                  <p>{playlist.playlistName}</p>
+                </div>
+              ))}
+            </Popup>
           </Popup>
         </div>
       </div>
