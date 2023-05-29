@@ -60,7 +60,6 @@
     display: none;
   }
 }
-
 .item .songDetail .artist,
 .artistPopup {
   text-decoration: none;
@@ -89,6 +88,13 @@
     left: 0;
     transform: translate(0, 0);
   }
+}
+.item .songDetail .songTitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 12vw;
+  max-width: 400px;
 }
 .item .songDetail .trackDuration {
   position: absolute;

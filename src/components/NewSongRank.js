@@ -9,26 +9,33 @@ function NewSongRank() {
     const tracks = SongData;
     const song = useContext(MusicPlayerContext);
     useEffect(() => {
-        let box = document.querySelector('.trackList');
-        let item = box.querySelectorAll('.item');
-        let width = box.clientWidth;
-        if(width > 970){
-            for (let i = 0; i < item.length; i++) 
-                item[i].style.width = (width-30)/3 - 20 + "px";
-        }
-        else if(width <= 970 && width > 645){
-            for (let i = 0; i < item.length; i++) 
-                item[i].style.width = (width-30)/2 - 15 + "px";
-        }
-        else if (width <= 645 && width >= 300) {
-            for (let i = 0; i < item.length; i++) 
-                item[i].style.width = width - 30 + "px";
-        }
-        else {
-            for (let i = 0; i < item.length; i++) 
-                item[i].style.width = "300px";
-        }
-    }, []);
+        const handleWindowResize = () => {
+            let box = document.querySelector('.trackList');
+            let item = box.querySelectorAll('.item');
+            let width = box.clientWidth;
+            if(width > 970){
+                for (let i = 0; i < item.length; i++) 
+                    item[i].style.width = (width-30)/3 - 20 + "px";
+            }
+            else if(width <= 970 && width > 645){
+                for (let i = 0; i < item.length; i++) 
+                    item[i].style.width = (width-30)/2 - 15 + "px";
+            }
+            else if (width <= 645 && width >= 300) {
+                for (let i = 0; i < item.length; i++) 
+                    item[i].style.width = width - 30 + "px";
+            }
+            else {
+                for (let i = 0; i < item.length; i++) 
+                    item[i].style.width = "300px";
+            }
+        };
+        window.addEventListener('resize', handleWindowResize);
+        handleWindowResize();
+        return () => {
+            window.removeEventListener('resize', handleWindowResize);
+        };
+    });
     const btnPrev = () => {
         let box = document.querySelector('.trackList');
         let width = box.clientWidth;

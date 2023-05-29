@@ -6,17 +6,14 @@
 }
 
 .topTrendingArtists .artist {
-  width: 100%;
   max-width: 300px;
-  min-width: 100px;
+  aspect-ratio: 1;
   justify-content: center;
   align-items: center;
 }
 .topTrendingArtists img {
-  max-width: 300px;
-  min-width: 100px;
   width: 100%;
   aspect-ratio: 1;
   border-radius: 20px;
-  object-fit: fill;
+  object-fit: cover;
 }
