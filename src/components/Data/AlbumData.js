@@ -513,7 +513,7 @@ export const AlbumData = [
           "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQQBiRMWQlGXhL2kXESEBNFL6d1BzuzmkZPkStrvoYJWAywjp4R",
         isFavorite: 1,
         timeLimit: "4:07",
-        songLink: "OnlyLove",
+        songLink: "OnlyLove.mp3",
         representation: [
           {
             id: 4,

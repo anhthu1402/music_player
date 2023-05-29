@@ -15,7 +15,6 @@ import TopRank from "./pages/TopRank";
 import Chart from "./pages/Chart";
 import AllArtistSongs from "./components/AllArtistSongs";
 import AllArtistAlbums from "./components/AllArtistAlbums";
-import { SidebarProvider } from "./SidebarContext";
 
 function App() {
   window.onbeforeunload = localStorage.setItem("play", JSON.stringify(false));
@@ -80,11 +79,9 @@ function App() {
     },
   ]);
   return (
-    <SidebarProvider>
-      <MusicPlayerProvider>
-        <RouterProvider router={router} />
-      </MusicPlayerProvider>
-    </SidebarProvider>
+    <MusicPlayerProvider>
+      <RouterProvider router={router} />
+    </MusicPlayerProvider>
   );
 }
 

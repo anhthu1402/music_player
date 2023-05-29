@@ -21,8 +21,7 @@ export const RecentlyPlaylistData = [
           "https://cdn.shopify.com/s/files/1/0090/5258/6081/products/grupo-erik-gpe5360-bts-blue-poster-91-5x61cm_500x.jpg?v=1678202019",
         isFavorite: 1,
         timeLimit: "3:43",
-        songLink:
-          "https://drive.google.com/file/d/1Bs08NuVHogCO6deBQuUU7WzDpdmR9goo/view?usp=drive_link",
+        songLink: "IDOL.mp3",
       },
       {
         id: "1",
@@ -45,8 +44,7 @@ export const RecentlyPlaylistData = [
           "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQQBiRMWQlGXhL2kXESEBNFL6d1BzuzmkZPkStrvoYJWAywjp4R",
         isFavorite: 1,
         timeLimit: "4:07",
-        songLink:
-          "https://drive.google.com/file/d/1hTetUWAy13EOp2ZaOVxUkWlUqMOBkQd3/view?usp=drive_link",
+        songLink: "OnlyLove.mp3",
       },
       {
         id: "2",
