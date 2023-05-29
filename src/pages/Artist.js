@@ -43,7 +43,7 @@ function Artist() {
             <div className="headerDetail">
               <Avatar
                 alt={artist.artistName}
-                src={require(`${artist.artistImage}`)}
+                src={require(`../assets/${artist.artistImage}`)}
                 sx={{ width: "12.5vw", height: "12.5vw", marginRight: "2.3vw" }}
               />
               <div

@@ -42,7 +42,7 @@ const PlaylistDetail = () => {
           <div className="detail">
             <div className="playlistImg">
               <img
-                src={require(`${playlist.playlistImg}`)}
+                src={require(`../assets/${playlist.playlistImg}`)}
                 alt={playlist.playlistName}
               />
               <PlayCircle className="playPlaylist" onClick={play} />
