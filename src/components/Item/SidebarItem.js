@@ -15,7 +15,11 @@ export default function SidebarItem({ item }) {
           : { backgroundColor: "transparent" }
       }
       onClick={() => {
-        localStorage.setItem("sidebarPath", JSON.stringify(item.title));
+        sessionStorage.setItem(
+          "sidebarPathPrev",
+          JSON.stringify(sidebar.pathName)
+        );
+        sessionStorage.setItem("sidebarPath", JSON.stringify(item.title));
         sidebar.setPathName(item.title);
       }}
     >

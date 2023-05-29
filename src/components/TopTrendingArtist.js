@@ -5,7 +5,7 @@ import "../styles/TopTrendingArtist.css";
 
 function TopTrendingArtist() {
   function getPlaylistImgUrl(url) {
-    return require(`../assets/`+url);
+    return require(`../assets/` + url);
   }
   return (
     <div className="topTrendingArtists" style={{ width: `100%` }}>
@@ -15,7 +15,7 @@ function TopTrendingArtist() {
             <Link to={`/artist/${item.artistName}`} state={item}>
               <div key={index} className="artist">
                 <img
-                  src={getPlaylistImgUrl(`${item.artistImage}`)}
+                  src={item.artistImage}
                   title={item.artistName}
                   alt={item.artistName}
                 />

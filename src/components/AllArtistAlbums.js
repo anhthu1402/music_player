@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Grid, Box } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 import ArtistAlbumItem from "./Item/ArtistAlbumItem";
+import MusicPlayerContext from "../MusicPlayerContext";
 
 function AllArtistAlbums() {
   const location = useLocation();
   const artist = location.state.artist;
   const albums = location.state.albums;
+  const musicplayer = useContext(MusicPlayerContext);
   return (
     <div>
       <div className="aaaHeader" style={{ marginBottom: 10 }}>
@@ -26,6 +28,9 @@ function AllArtistAlbums() {
           ))}
         </Grid>
       </Box>
+      <div
+        style={musicplayer.isUsing ? { height: "9em" } : { height: "15px" }}
+      ></div>
     </div>
   );
 }

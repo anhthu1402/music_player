@@ -9,11 +9,10 @@ import MusicPlayerContext from "../../MusicPlayerContext";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/PlaylistAlbum.css";
-import { getPlaylistDetail } from "../../service";
+import { getAlbumDetail } from "../../service";
 
-function PlaylistAtHome({ id }) {
-  const playlistDetail = getPlaylistDetail(id);
-  const tracks = playlistDetail.songPlaylist;
+function HomeAlbumItem({ item }) {
+  const tracks = getAlbumDetail(item.id).songs;
   const song = useContext(MusicPlayerContext);
   const length = tracks.length;
   const [rnd, setRnd] = useState(0);
@@ -31,17 +30,33 @@ function PlaylistAtHome({ id }) {
     localStorage.setItem("playlist", JSON.stringify(tracks));
     song.setPlaylist(tracks);
   };
-  // function getPlaylistImgUrl(url) {
-  //   return require(`../../assets/` + url);
-  // }
+  //   const artists = [],
+  //     uniqueArtist = [];
+  //   tracks.map((item2) =>
+  //     item2.representation.map((child) => {
+  //       artists.push(child);
+  //     })
+  //   );
+  //   uniqueArtist.push(artists[0]);
+  //   for (let i = 1; i < artists.length; i++) {
+  //     let dup = 0;
+  //     for (let j = 0; j < i; j++)
+  //       if (artists[i].artistName === artists[j].artistName) {
+  //         dup = 1;
+  //         break;
+  //       }
+  //     if (dup === 0) {
+  //       uniqueArtist.push(artists[i]);
+  //     }
+  //   }
   return (
     <>
       <div className="playlistItem">
         <img
-          src={`${playlistDetail.playlistImg}`}
+          src={item.albumImage}
           className="imagePlaylist"
-          alt={playlistDetail.playlistName}
-          title={playlistDetail.playlistName}
+          alt={item.albumImage}
+          title={item.albumImage}
         />
         <div className="playPlaylist">
           <FavoriteBorderOutlined
@@ -49,10 +64,7 @@ function PlaylistAtHome({ id }) {
             fontSize="large"
             style={{ color: "white" }}
           />
-          <Link
-            to={`/playlistDetail/${playlistDetail.playlistName}`}
-            state={id}
-          >
+          <Link to={`/album/${item.albumName}`} state={item.id}>
             <PlayCircleFilled
               className="icon"
               fontSize="large"
@@ -67,14 +79,24 @@ function PlaylistAtHome({ id }) {
           />
         </div>
       </div>
-      <Link
-        to={`/playlistDetail/${playlistDetail.playlistName}`}
-        state={playlistDetail.id}
-      >
-        <h3 className="playlistName">{playlistDetail.playlistName}</h3>
+      <Link to={`/album/${item.albumName}`} state={item.id}>
+        <h3 className="playlistName">{item.albumName}</h3>
       </Link>
+      <div className="artists">
+        <span>
+          {item.artist.map((child, index) => {
+            return (
+              <span key={index} item={child} className="artist">
+                <Link to={`/artist/${child.artistName}`} state={child}>
+                  {child.artistName}
+                </Link>
+              </span>
+            );
+          })}
+        </span>
+      </div>
     </>
   );
 }
 
-export default PlaylistAtHome;
+export default HomeAlbumItem;

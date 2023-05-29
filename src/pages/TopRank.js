@@ -1,7 +1,7 @@
 import React from "react";
-import '../styles/TopRank.css'
-import { AlbumData } from '../components/Data/AlbumData';
-import HomePlaylistItem from '../components/Item/HomePlaylistItem';
+import "../styles/TopRank.css";
+import { getAllAlbum } from "../components/API/getAllAlbums";
+import HomeAlbumItem from "../components/Item/HomeAlbumItem";
 
 function TopRank() {
   return (
@@ -10,20 +10,18 @@ function TopRank() {
       <div className="top100Body">
         <div className="top100TitleGenre">Nổi bật</div>
         <div className="listTop100">
-          {AlbumData.map(
-            (item, key) => (
-                <div className="listPlaylists">
-                  <HomePlaylistItem key={key} item={item} />
-                </div>
-              )
-          )}
+          {getAllAlbum.map((item, key) => (
+            <div className="listPlaylists">
+              <HomeAlbumItem key={key} item={item} />
+            </div>
+          ))}
         </div>
         <div className="top100TitleGenre">Nhạc Việt Nam</div>
         <div className="top100TitleGenre">Nhạc Châu Á</div>
         <div className="top100TitleGenre">Nhạc Âu Mỹ</div>
       </div>
     </div>
-  )
+  );
 }
 
 export default TopRank;

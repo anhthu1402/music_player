@@ -6,9 +6,9 @@ import "../../styles/PlaylistItem.css";
 import { Link } from "react-router-dom";
 
 function PlaylistItem({ item }) {
-  function getPlaylistImgUrl(url) {
-    return require(`../../assets/`+url);
-  }
+  // function getPlaylistImgUrl(url) {
+  //   return require("../../assets/" + url);
+  // }
   return (
     <Card className={"cardPlaylist"} sx={{ border: "none", boxShadow: "none" }}>
       <div className="cardContent">
@@ -21,14 +21,14 @@ function PlaylistItem({ item }) {
             border: `0.2px solid transparent`,
             borderRadius: `15px`,
           }}
-          image={getPlaylistImgUrl(`${item.playlistImg}`)}
+          image={`${item.playlistImg}`}
           alt={item.playlistName}
         />
         <div className="playlistMoreDetail">
           <button className="btn">
             <ClearIcon sx={{ fontSize: "2.1vw" }} />
           </button>
-          <Link to={`/playlistDetail/${item.playlistName}`} state={item}>
+          <Link to={`/playlistDetail/${item.playlistName}`} state={item.id}>
             <button>
               <PlayCircleFilled sx={{ fontSize: "2.1vw" }} />
             </button>

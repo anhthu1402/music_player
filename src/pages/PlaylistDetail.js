@@ -11,11 +11,13 @@ import { useContext } from "react";
 import MusicPlayerContext from "../MusicPlayerContext";
 import { useState } from "react";
 import TrackItem from "../components/Item/TrackItem";
+import { getPlaylistDetail } from "../service";
 
 const PlaylistDetail = () => {
   const location = useLocation();
-  const playlist = location.state;
-  const tracks = playlist.songPlaylist;
+  const playlistID = location.state;
+  const playlistDetail = getPlaylistDetail(playlistID);
+  const tracks = playlistDetail.songPlaylist;
   const song = useContext(MusicPlayerContext);
   const length = tracks.length;
   const [rnd, setRnd] = useState(0);
@@ -37,13 +39,13 @@ const PlaylistDetail = () => {
   };
   return (
     <div className="playlistDetailContainer">
-      {playlist && (
+      {playlistDetail && (
         <div className="playlistDetail">
           <div className="detail">
             <div className="playlistImg">
               <img
-                src={require(`../assets/${playlist.playlistImg}`)}
-                alt={playlist.playlistName}
+                src={playlistDetail.playlistImg}
+                alt={playlistDetail.playlistName}
               />
               <PlayCircle className="playPlaylist" onClick={play} />
             </div>
@@ -54,7 +56,7 @@ const PlaylistDetail = () => {
                   fontSize: "2.2vw",
                 }}
               >
-                {playlist.playlistName}
+                {playlistDetail.playlistName}
                 <EditRounded sx={{ marginLeft: "10px" }} />
               </h1>
               <p
@@ -65,7 +67,7 @@ const PlaylistDetail = () => {
               >
                 Tạo bởi{" "}
                 <span style={{ color: "grey", fontWeight: "bold" }}>
-                  {playlist.user}
+                  {playlistDetail.user}
                 </span>
               </p>
               <div className="detailButton">
@@ -80,10 +82,10 @@ const PlaylistDetail = () => {
             </div>
           </div>
           <div className="songs">
-            {playlist.songPlaylist.map((item, index) => (
+            {tracks.map((item, index) => (
               <div className="song shadowDiv">
                 <TrackItem
-                  key={index}
+                  key={item.id}
                   item={item}
                   tracks={tracks}
                   song={song}

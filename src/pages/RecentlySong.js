@@ -13,7 +13,7 @@ function RecentlySong() {
       {SongData.map((item, index) => (
         <div className="song shadowDiv">
           <TrackItem
-            key={index}
+            key={item.id}
             item={item}
             tracks={tracks}
             song={song}

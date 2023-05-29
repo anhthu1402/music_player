@@ -4,6 +4,7 @@ import { MyPlaylistData } from "./Data/MyPlaylistData";
 import "../styles/MyPlaylist.css";
 import { Card, Typography, Grid } from "@mui/material";
 import { AddCircleRounded } from "@mui/icons-material";
+import { getMyPlaylists } from "./API/getMyPlaylists";
 
 function MyPlaylist() {
   return (
@@ -37,7 +38,7 @@ function MyPlaylist() {
           </Typography>
         </Card>
       </Grid>
-      {MyPlaylistData.map((item, index) => (
+      {getMyPlaylists.map((item, index) => (
         <Grid item sm={3} xs={4}>
           <PlaylistItem item={item} key={index} />
         </Grid>

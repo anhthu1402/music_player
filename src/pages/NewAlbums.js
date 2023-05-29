@@ -8,11 +8,13 @@ import {
 import AlbumItem from "../components/Item/AlbumItem";
 import "../styles/NewAlbums.css";
 import { AlbumData } from "../components/Data/AlbumData";
+import { getAllAlbum } from "../components/API/getAllAlbums";
+import { getAlbumDetail } from "../service";
 
 function NewAlbums() {
   const [toggleState, setToggleState] = useState(1);
   const albumsByCountry = [];
-  AlbumData.map((item, index) => {
+  getAllAlbum.map((item, index) => {
     if (toggleState === 1) {
       albumsByCountry.push(item);
     } else if (toggleState === 2) {
@@ -82,20 +84,20 @@ function NewAlbums() {
                 fontSize="large"
                 className="icon"
                 onClick={() => {
-                  setRnd(Math.floor(Math.random() * item.songs.length));
+                  const albumDetail = getAlbumDetail(item.id);
+                  const songs = albumDetail.songs;
+                  setRnd(Math.floor(Math.random() * songs.length));
                   song.setUsing(true);
-                  song.setTracks(item.songs);
+                  song.setTracks(songs);
                   song.setSongIndex(rnd);
-                  song.setSong(item.songs[rnd]);
+                  song.setSong(songs[rnd]);
                   song.setPlay(true);
-                  localStorage.setItem("song", JSON.stringify(item.songs[rnd]));
-                  localStorage.setItem("tracks", JSON.stringify(item.songs));
-                  localStorage.setItem("playlist", JSON.stringify(item.songs));
+                  localStorage.setItem("song", JSON.stringify(songs[rnd]));
+                  localStorage.setItem("tracks", JSON.stringify(songs));
+                  localStorage.setItem("playlist", JSON.stringify(songs));
                   localStorage.setItem("index", JSON.stringify(rnd));
                   localStorage.setItem("play", JSON.stringify(true));
-                  localStorage.setItem("currentTime", 0);
-                  this.props.song.setCurrentTime(0);
-                  song.setPlaylist(item.songs);
+                  song.setPlaylist(songs);
                 }}
               />
             </div>
