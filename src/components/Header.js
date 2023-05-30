@@ -1,5 +1,4 @@
 import React from "react";
-import { SearchBar } from "./SearchBar";
 import InputSearch from "./InputSearch";
 import SettingsIcon from "@mui/icons-material/Settings";
 import "../styles/Header.css";
@@ -21,11 +20,10 @@ function Header() {
           }}
         >
           <div className="searchBar">
-            {/* <SearchBar /> */}
             <InputSearch />
           </div>
           <div className="personal">
-            <div>
+            {/* <div>
               <Popup
                 contentStyle={{
                   zIndex: "2000",
@@ -54,7 +52,7 @@ function Header() {
               >
                 <div>Do something here ...</div>
               </Popup>
-            </div>
+            </div> */}
             <Link to={"/signIn"}>
               <button className="signInBtn">Đăng nhập</button>
             </Link>

@@ -117,7 +117,7 @@ class TrackItem extends Component {
             contentStyle={{
               zIndex: "2000",
               marginTop: 10,
-              width: "25%",
+              width: "20%",
               padding: 0,
             }}
             arrow={false}
@@ -154,9 +154,8 @@ class TrackItem extends Component {
                     whiteSpace: "nowrap",
                     overflow: "hidden",
                     marginBottom: 1,
-                    
-                    width: '12vw',
-                    maxWidth: '400px'
+                    width: "12vw",
+                    maxWidth: "400px",
                   }}
                 >
                   {this.props.item.songName}
@@ -185,14 +184,56 @@ class TrackItem extends Component {
                   <FileDownloadOutlined fontSize="small" />
                   <p style={{ fontSize: "12px" }}>Tải xuống</p>
                 </Button>
-                <Button className="buttonPopup">
-                  <LyricsOutlined fontSize="small" />
-                  <p style={{ fontSize: "12px" }}>Lời bài hát</p>
-                </Button>
-                <Button className="buttonPopup">
-                  <NotInterestedOutlined fontSize="small" />
-                  <p style={{ fontSize: "12px" }}>Chặn</p>
-                </Button>
+                <Popup
+                  contentStyle={{
+                    zIndex: "3000",
+                    borderRadius: "10px",
+                    padding: "20px",
+                    width: "40%",
+                  }}
+                  trigger={
+                    <Button className="buttonPopup">
+                      <LyricsOutlined fontSize="small" />
+                      <p style={{ fontSize: "12px" }}>Lời bài hát</p>
+                    </Button>
+                  }
+                  modal
+                  nested
+                >
+                  {(close) => (
+                    <div className="modal">
+                      <div className="content">
+                        <h2 style={{ padding: 3 }}>Lời bài hát</h2>
+                        <div
+                          className="lyric"
+                          style={{
+                            overflow: "scroll",
+                            height: "300px",
+                            padding: "10px 20px",
+                            border: "1px solid lightgray",
+                            borderRadius: "10px",
+                          }}
+                        >
+                          <pre>{this.props.item.lyric}</pre>
+                        </div>
+                      </div>
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "flex-end",
+                          marginTop: "10px",
+                        }}
+                      >
+                        <Button
+                          onClick={() => close()}
+                          sx={{ borderColor: "lightgray", color: "grey" }}
+                        >
+                          Đóng
+                        </Button>
+                      </div>
+                    </div>
+                  )}
+                </Popup>
               </ButtonGroup>
             </div>
             <div className="songItemPopup">

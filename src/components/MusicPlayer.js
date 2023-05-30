@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { styled } from "@mui/material/styles";
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Slider from "@mui/material/Slider";
 import IconButton from "@mui/material/IconButton";
@@ -162,6 +162,14 @@ const MusicPlayer = () => {
     }
     localStorage.setItem("currentTime", 0);
     musicPlayer.setCurrentTime(0);
+  };
+  const removeMusicplayer = () => {
+    localStorage.removeItem("play");
+    localStorage.removeItem("song");
+    localStorage.removeItem("tracks");
+    localStorage.removeItem("index");
+    localStorage.removeItem("currentTime");
+    musicPlayer.setUsing(false);
   };
   return (
     musicPlayer.isUsing && (
@@ -381,38 +389,52 @@ const MusicPlayer = () => {
               </TinyText>
             </Box>
           </Box>
-          <Stack
-            spacing={2}
-            direction="row"
-            sx={{ mb: 1, px: 1, width: "13vw" }}
-            alignItems="center"
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-end",
+              justifyContent: "center",
+            }}
           >
-            <VolumeDownRounded />
-            <Slider
-              aria-label="Volume"
-              defaultValue={40}
-              sx={{
-                color: "rgba(0,0,0,0.87)",
-                width: 100,
-                "& .MuiSlider-track": {
-                  border: "none",
-                },
-                "& .MuiSlider-thumb": {
-                  width: 13,
-                  height: 13,
-                  backgroundColor: "#fff",
-                  "&:before": {
-                    boxShadow: "0 4px 8px rgba(0,0,0,0.4)",
+            <Button sx={{ mb: 2, color: "black" }} onClick={removeMusicplayer}>
+              X
+            </Button>
+            <Stack
+              spacing={2}
+              direction="row"
+              sx={{ mb: 1, px: 1, width: "13vw" }}
+              alignItems="center"
+            >
+              <VolumeDownRounded />
+              <Slider
+                aria-label="Volume"
+                defaultValue={40}
+                sx={{
+                  color: "rgba(0,0,0,0.87)",
+                  width: 100,
+                  "& .MuiSlider-track": {
+                    border: "none",
                   },
-                  "&:hover, &.Mui-focusVisible, &.Mui-active": {
-                    boxShadow: "none",
+                  "& .MuiSlider-thumb": {
+                    width: 13,
+                    height: 13,
+                    backgroundColor: "#fff",
+                    "&:before": {
+                      boxShadow: "0 4px 8px rgba(0,0,0,0.4)",
+                    },
+                    "&:hover, &.Mui-focusVisible, &.Mui-active": {
+                      boxShadow: "none",
+                    },
                   },
-                },
-              }}
-              onChange={(e) => (audioRef.current.volume = e.target.value / 100)}
-            />
-            <VolumeUpRounded />
-          </Stack>
+                }}
+                onChange={(e) =>
+                  (audioRef.current.volume = e.target.value / 100)
+                }
+              />
+              <VolumeUpRounded />
+            </Stack>
+          </Box>
         </Widget>
       </Box>
     )
