@@ -10,7 +10,6 @@ import {
   AddCircleRounded,
   FileDownloadOutlined,
   LyricsOutlined,
-  NotInterestedOutlined,
 } from "@mui/icons-material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import "../../styles/TrackItem.css";
@@ -18,6 +17,8 @@ import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import { getMyPlaylists } from "../API/getMyPlaylists";
 import { Button, ButtonGroup } from "@mui/material";
+import { addFavSong } from "../../service";
+import "reactjs-popup/dist/index";
 
 class TrackItem extends Component {
   render() {
@@ -115,7 +116,7 @@ class TrackItem extends Component {
           )}
           <Popup
             contentStyle={{
-              zIndex: "2000",
+              zIndex: "10",
               marginTop: 10,
               width: "20%",
               padding: 0,
@@ -123,7 +124,6 @@ class TrackItem extends Component {
             arrow={false}
             trigger={<MoreHoriz fontSize="medium" className="moreIcon" />}
             position={"bottom right"}
-            on={"click"}
           >
             <div
               style={{
@@ -186,7 +186,7 @@ class TrackItem extends Component {
                 </Button>
                 <Popup
                   contentStyle={{
-                    zIndex: "3000",
+                    zIndex: "11",
                     borderRadius: "10px",
                     padding: "20px",
                     width: "40%",
@@ -199,8 +199,9 @@ class TrackItem extends Component {
                   }
                   modal
                   nested
+                  lockScroll={true}
                 >
-                  {(close) => (
+                  {(closePopup) => (
                     <div className="modal">
                       <div className="content">
                         <h2 style={{ padding: 3 }}>Lời bài hát</h2>
@@ -225,7 +226,9 @@ class TrackItem extends Component {
                         }}
                       >
                         <Button
-                          onClick={() => close()}
+                          onClick={() => {
+                            closePopup();
+                          }}
                           sx={{ borderColor: "lightgray", color: "grey" }}
                         >
                           Đóng
@@ -236,7 +239,11 @@ class TrackItem extends Component {
                 </Popup>
               </ButtonGroup>
             </div>
-            <div className="songItemPopup">
+            {/* userId de tam */}
+            <div
+              className="songItemPopup"
+              onClick={() => addFavSong(this.props.item.id, 1)}
+            >
               <FavoriteBorderOutlined
                 fontSize="small"
                 sx={{ color: "grey", marginRight: 1 }}
@@ -254,6 +261,7 @@ class TrackItem extends Component {
               contentStyle={{
                 width: "17%",
                 padding: 10,
+                zIndex: 20,
               }}
               trigger={
                 <div className="songItemPopup">
@@ -264,7 +272,7 @@ class TrackItem extends Component {
                   <p>Thêm vào playlist</p>
                 </div>
               }
-              on={"hover"}
+              on={"click"}
               position={"left center"}
             >
               <div className="songItemPopup">
@@ -274,15 +282,19 @@ class TrackItem extends Component {
                 />
                 <p>Tạo playlist mới</p>
               </div>
-              {getMyPlaylists.map((playlist, index) => (
-                <div key={index} className="songItemPopup">
-                  <QueueMusicRounded
-                    fontSize="small"
-                    sx={{ color: "grey", marginRight: 1 }}
-                  />
-                  <p>{playlist.playlistName}</p>
-                </div>
-              ))}
+              <div>
+                {getMyPlaylists.map((playlist, index) => {
+                  return (
+                    <div key={index} className="songItemPopup">
+                      <QueueMusicRounded
+                        fontSize="small"
+                        sx={{ color: "grey", marginRight: 1 }}
+                      />
+                      <p>{playlist.playlistName}</p>
+                    </div>
+                  );
+                })}
+              </div>
             </Popup>
           </Popup>
         </div>

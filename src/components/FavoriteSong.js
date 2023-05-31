@@ -21,7 +21,7 @@ function FavoriteSong() {
       }}
     >
       {favTracks.map((item, index) => (
-        <div className="song shadowDiv">
+        <div className="song shadowDiv" key={index}>
           <TrackItem
             key={index}
             item={item}
