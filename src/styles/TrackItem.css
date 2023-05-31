@@ -135,6 +135,7 @@
   align-items: center;
   padding: 7px 10px;
   cursor: pointer;
+  margin: 5px 0px;
 }
 .songItemPopup:hover {
   background-color: #ff73944a;

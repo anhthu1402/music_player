@@ -1,29 +1,28 @@
 import React, { useRef, useState } from "react";
-import { Card, Typography, Button } from "@mui/material";
-import { AddCircleRounded } from "@mui/icons-material";
+import { Button } from "@mui/material";
 import Popup from "reactjs-popup";
 import { TextField } from "@mui/material";
-import { createPlaylist } from "../service";
+import { changePlaylistName } from "../service";
 
-function CreateNewPlaylist({ createRef, closeCreatePlaylist }) {
-  const [disabled, setDisabled] = useState(true);
-  const name = useRef();
+function ModifyPlaylist({ closeModifyPopup, name, modifyRef, id }) {
+  const [disabled, setDisabled] = useState(false);
+  const nameRef = useRef();
   return (
     <Popup
-      ref={createRef}
+      ref={modifyRef}
       contentStyle={{
         zIndex: "11",
         borderRadius: "10px",
         padding: "20px",
         width: "25%",
       }}
-      onClose={() => setDisabled(true)}
+      onClose={() => setDisabled(false)}
       modal
       nested
     >
       <div className="modal">
         <p
-          onClick={() => closeCreatePlaylist()}
+          onClick={closeModifyPopup}
           style={{
             textAlign: "right",
             marginRight: 5,
@@ -34,17 +33,18 @@ function CreateNewPlaylist({ createRef, closeCreatePlaylist }) {
         </p>
         <div className="content" style={{ textAlign: "center" }}>
           <div>
-            <h2 style={{ marginBottom: "20px" }}>Tạo playlist mới</h2>
+            <h2 style={{ marginBottom: "20px" }}>Chỉnh sửa playlist</h2>
           </div>
           <TextField
             required
             onChange={(e) => {
-              name.current.value = e.target.value;
-              if (name.current.value === "") setDisabled(true);
+              nameRef.current.value = e.target.value;
+              if (nameRef.current.value === "") setDisabled(true);
               else setDisabled(false);
             }}
-            inputRef={name}
+            inputRef={nameRef}
             placeholder="Nhập tên playlist"
+            defaultValue={name}
           />
         </div>
         <div
@@ -57,8 +57,8 @@ function CreateNewPlaylist({ createRef, closeCreatePlaylist }) {
           <Button
             variant="contained"
             onClick={() => {
-              createPlaylist(name.current.value);
-              closeCreatePlaylist();
+              changePlaylistName(id, nameRef.current.value);
+              closeModifyPopup();
             }}
             disabled={disabled}
             sx={{
@@ -76,4 +76,4 @@ function CreateNewPlaylist({ createRef, closeCreatePlaylist }) {
   );
 }
 
-export default CreateNewPlaylist;
+export default ModifyPlaylist;
