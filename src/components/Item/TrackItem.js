@@ -277,7 +277,7 @@ class TrackItem extends Component {
             <div
               className="songItemPopup"
               onClick={() => {
-                addToLocalPlaylist(this.props.item.id, this.props.song);
+                addToLocalPlaylist(this.props.item, this.props.song);
                 closePopup();
                 showNotification(
                   this.props.notification,

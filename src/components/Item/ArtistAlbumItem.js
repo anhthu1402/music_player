@@ -5,12 +5,18 @@ import {
   PlayCircleFilled,
   FavoriteBorderRounded,
 } from "@mui/icons-material";
+import { Link } from "react-router-dom";
+import AlbumPopup from "../AlbumPopup";
+import { useRef } from "react";
 
 function ArtistAlbumItem({ item }) {
   function getReleaseYear(dateParam) {
     const date = new Date(dateParam);
     return date.getFullYear();
   }
+  const popupRef = useRef();
+  const openPopup = () => popupRef.current.open();
+  const closePopup = () => popupRef.current.close();
   return (
     <div className="artistAblumDetail">
       <div className="artistAlbum">
@@ -21,11 +27,19 @@ function ArtistAlbumItem({ item }) {
           <button className="btn">
             <FavoriteBorderRounded sx={{ fontSize: "2.4vw" }} />
           </button>
-          <button>
-            <PlayCircleFilled sx={{ fontSize: "2.4vw" }} />
-          </button>
-          <button>
+          <Link to={"/album/" + item.albumName} state={item.id}>
+            <button>
+              <PlayCircleFilled sx={{ fontSize: "2.4vw" }} />
+            </button>
+          </Link>
+
+          <button onClick={openPopup}>
             <MoreHoriz sx={{ fontSize: "2.4vw" }} />
+            <AlbumPopup
+              albumId={item.id}
+              closePopup={closePopup}
+              popupRef={popupRef}
+            />
           </button>
         </div>
       </div>

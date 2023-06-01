@@ -42,6 +42,7 @@ function AppRoot() {
           width: "35vw",
           marginLeft: "30px",
           bottom: "3em",
+          zIndex: 3,
         }}
       >
         <Notification />

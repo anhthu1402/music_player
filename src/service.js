@@ -1,13 +1,5 @@
-import { SongData } from "./components/Data/SongData";
 import { PlaylistData } from "./components/Data/PlaylistData";
 import { AlbumData } from "./components/Data/AlbumData";
-import React, { useContext } from "react";
-import MusicPlayerContext from "./MusicPlayerContext";
-import NotificationContext from "./NotificationContext";
-
-export const getSongDetail = (songId) => {
-  return SongData.find((song) => song.id === songId);
-};
 
 export const getPlaylistDetail = (playlistId) => {
   return PlaylistData.find((playlist) => playlist.id === playlistId);
@@ -52,10 +44,9 @@ export const showNotification = (notification, content) => {
   notification.setContent(content);
 };
 
-export const addToLocalPlaylist = (songId, musicPlayer) => {
-  const songDetail = getSongDetail(songId);
-  const playlist = musicPlayer.playlist;
-  playlist.push(songDetail);
+export const addToLocalPlaylist = (song, musicPlayer) => {
+  const playlist = JSON.parse(localStorage.getItem("playlist"));
+  playlist.push(song);
   musicPlayer.setPlaylist(playlist);
   localStorage.setItem("playlist", JSON.stringify(playlist));
   console.log(playlist);
@@ -63,8 +54,19 @@ export const addToLocalPlaylist = (songId, musicPlayer) => {
 
 export const addPlaylistToLocalPlaylist = (playlistId, musicPlayer) => {
   const playlistDetail = getPlaylistDetail(playlistId);
-  const playlist = musicPlayer.playlist;
+  const playlist = JSON.parse(localStorage.getItem("playlist"));
   playlistDetail.songPlaylist.map((item, index) => {
+    playlist.push(item);
+  });
+  musicPlayer.setPlaylist(playlist);
+  localStorage.setItem("playlist", JSON.stringify(playlist));
+  console.log(playlist);
+};
+
+export const addAlbumToLocalPlaylist = (albumId, musicPlayer) => {
+  const albumDetail = getAlbumDetail(albumId);
+  const playlist = JSON.parse(localStorage.getItem("playlist"));
+  albumDetail.songs.map((item, key) => {
     playlist.push(item);
   });
   musicPlayer.setPlaylist(playlist);

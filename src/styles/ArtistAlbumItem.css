@@ -24,11 +24,12 @@
   transform-origin: center center;
   filter: brightness(100%);
   height: 100%;
+  aspect-ratio: 1;
 }
-.artistAlbum:hover .albumImage {
+
+.artistAlbum:hover img {
   transform: scale(1.05);
-  opacity: 40%;
-  cursor: pointer;
+  filter: brightness(70%);
 }
 
 .albumMoreDetail {
@@ -40,6 +41,7 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+  color: white;
 }
 .artistAlbum:hover .albumMoreDetail {
   display: flex;

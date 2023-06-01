@@ -11,9 +11,7 @@ import {
 import { SongData } from "../components/Data/SongData";
 import TrackItem from "../components/Item/TrackItem";
 import { Grid, Box } from "@mui/material";
-import { AlbumData } from "../components/Data/AlbumData";
 import ArtistAlbumItem from "../components/Item/ArtistAlbumItem";
-import { getAlbumDetail } from "../service";
 import { getAllAlbum } from "../components/API/getAllAlbums";
 import NotificationContext from "../NotificationContext";
 
@@ -133,9 +131,7 @@ function Artist() {
                     (item, index) =>
                       index < 4 && (
                         <Grid item xs={3}>
-                          <Link to={"/album/" + item.albumName} state={item.id}>
-                            <ArtistAlbumItem key={index} item={item} />
-                          </Link>
+                          <ArtistAlbumItem key={index} item={item} />
                         </Grid>
                       )
                   )}

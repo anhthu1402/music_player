@@ -27,7 +27,6 @@ import NotificationContext from "../../NotificationContext";
 import PlaylistPopup from "../PlaylistPopup";
 
 function PlaylistItem({ item }) {
-  const notification = useContext(NotificationContext);
   const tracks = getPlaylistDetail(item.id).songPlaylist;
   const song = useContext(MusicPlayerContext);
   const length = tracks.length;
@@ -108,12 +107,14 @@ function PlaylistItem({ item }) {
           </button>
         </div>
       </div>
-      <Typography
-        component="header"
-        sx={{ fontSize: `1.35vw`, marginTop: `0.4vw` }}
-      >
-        {item.playlistName}
-      </Typography>
+      <Link to={`/playlistDetail/${item.playlistName}`} state={item.id}>
+        <Typography
+          component="header"
+          sx={{ fontSize: `1.35vw`, marginTop: `0.4vw`, color: "black" }}
+        >
+          {item.playlistName}
+        </Typography>
+      </Link>
       <Typography component="p" color={"grey"} sx={{ fontSize: "1vw" }}>
         {item.user}
       </Typography>

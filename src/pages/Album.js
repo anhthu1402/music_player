@@ -12,6 +12,8 @@ import MusicPlayerContext from "../MusicPlayerContext";
 import TrackItem from "../components/Item/TrackItem";
 import { getAlbumDetail } from "../service";
 import NotificationContext from "../NotificationContext";
+import { useRef } from "react";
+import AlbumPopup from "../components/AlbumPopup";
 
 function Album() {
   const notification = useContext(NotificationContext);
@@ -43,6 +45,9 @@ function Album() {
     const date = new Date(strDate);
     return date.toJSON().slice(0, 10).split("-").reverse().join("/");
   }
+  const popupRef = useRef();
+  const openPopup = () => popupRef.current.open();
+  const closePopup = () => popupRef.current.close();
   return (
     <div className="albumDetailContainer">
       {albumDetail && (
@@ -69,7 +74,12 @@ function Album() {
                 <PlayArrowRounded /> Phát ngẫu nhiên
               </button>
               <FavoriteBorderOutlined className="favIcon" />
-              <MoreHoriz className="moreIcon" />
+              <MoreHoriz className="moreIcon" onClick={() => openPopup()} />
+              <AlbumPopup
+                albumId={albumDetail.id}
+                closePopup={closePopup}
+                popupRef={popupRef}
+              />
             </div>
           </div>
           <div className="albumTracksBody">
@@ -80,7 +90,7 @@ function Album() {
             {tracks.map((item, key) => (
               <div class="song shadowDiv">
                 <TrackItem
-                  key={key}
+                  key={item.id}
                   item={item}
                   tracks={tracks}
                   song={song}
