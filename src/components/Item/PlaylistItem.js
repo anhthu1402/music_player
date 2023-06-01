@@ -18,12 +18,16 @@ import {
   deletePlaylist,
   addFavPlaylist,
   removeFromFavPlaylist,
+  showNotification,
 } from "../../service";
 import MusicPlayerContext from "../../MusicPlayerContext";
 import ModifyPlaylist from "../ModifyPlaylist";
 import Popup from "reactjs-popup";
+import NotificationContext from "../../NotificationContext";
+import PlaylistPopup from "../PlaylistPopup";
 
 function PlaylistItem({ item }) {
+  const notification = useContext(NotificationContext);
   const tracks = getPlaylistDetail(item.id).songPlaylist;
   const song = useContext(MusicPlayerContext);
   const length = tracks.length;
@@ -46,12 +50,9 @@ function PlaylistItem({ item }) {
   //Nếu playlist thuộc user thì có thêm mục chỉnh sửa, xóa playlist khi bấm vô MoreHiriz
   //Vì chưa đăng nhập nên để tạm userId là 1
   const userId = 1;
-  const deleteRef = useRef();
-  const closeDeletePopup = () => deleteRef.current.close();
-  const openDeletePopup = () => deleteRef.current.open();
-  const modifyRef = useRef();
-  const closeModifyPopup = () => modifyRef.current.close();
-  const openModifyPopup = () => modifyRef.current.open();
+  const popupRef = useRef();
+  const closePopup = () => popupRef.current.close();
+  const openPopup = () => popupRef.current.open();
   return (
     <Card className={"cardPlaylist"} sx={{ border: "none", boxShadow: "none" }}>
       <div className="cardContent">
@@ -93,115 +94,17 @@ function PlaylistItem({ item }) {
             </button>
           </Link>
           <button>
-            <Popup
-              contentStyle={{
-                zIndex: "10",
-                marginTop: 10,
-                width: "20%",
-                padding: 0,
-              }}
-              arrow={false}
-              position={"bottom right"}
-              trigger={<MoreHoriz sx={{ fontSize: "2.1vw", color: "white" }} />}
-            >
-              <div className="playlistItemPopup">
-                <QueueRounded
-                  fontSize="small"
-                  sx={{ color: "grey", marginRight: 1 }}
-                />
-                <p>Thêm vào danh sách phát</p>
-              </div>
-              <div className="playlistItemPopup">
-                <FileDownloadOutlined
-                  fontSize="small"
-                  sx={{ color: "grey", marginRight: 1 }}
-                />
-                <p>Tải xuống</p>
-              </div>
-              {/* Giả sử userId đã đăng nhập là 1 */}
-              {userId === 1 ? (
-                <div>
-                  <div className="playlistItemPopup" onClick={openModifyPopup}>
-                    <EditOutlined
-                      fontSize="small"
-                      sx={{ color: "grey", marginRight: 1 }}
-                    />
-                    <p>Chỉnh sửa playlist</p>
-                  </div>
-                  <div className="playlistItemPopup" onClick={openDeletePopup}>
-                    <DeleteOutline
-                      fontSize="small"
-                      sx={{ color: "grey", marginRight: 1 }}
-                    />
-                    <p>Xóa playlist</p>
-                  </div>
-                </div>
-              ) : (
-                <div></div>
-              )}
-            </Popup>
-            <ModifyPlaylist
-              id={item.id}
-              modifyRef={modifyRef}
-              name={item.playlistName}
-              closeModifyPopup={closeModifyPopup}
+            <MoreHoriz
+              sx={{ fontSize: "2.1vw", color: "white" }}
+              onClick={openPopup}
             />
-            <Popup
-              ref={deleteRef}
-              modal
-              lockScroll={true}
-              contentStyle={{
-                zIndex: "11",
-                borderRadius: "10px",
-                padding: "25px 30px",
-                width: "40%",
-              }}
-            >
-              <div>
-                <h2>Xóa playlist</h2>
-                <p style={{ margin: "10px 0" }}>
-                  Playlist của bạn sẽ bị xóa khỏi thư viện cá nhân. Các bài hát
-                  do bạn tải lên sẽ vẫn được giữ lại. Bạn có muốn xóa?
-                </p>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    justifyContent: "flex-end",
-                  }}
-                >
-                  <Button
-                    variant="contained"
-                    color="inherit"
-                    sx={{
-                      marginRight: "30px",
-                      ":hover": {
-                        backgroundColor: "lightgray",
-                      },
-                    }}
-                    onClick={closeDeletePopup}
-                  >
-                    Không
-                  </Button>
-                  <Button
-                    variant="contained"
-                    sx={{
-                      backgroundColor: "#ff7394",
-                      ":hover": {
-                        backgroundColor: "rgb(244, 161, 175)",
-                      },
-                    }}
-                    onClick={(e) => {
-                      deletePlaylist(item.id, userId);
-                      closeDeletePopup();
-                    }}
-                  >
-                    Có
-                  </Button>
-                </div>
-              </div>
-            </Popup>
+            <PlaylistPopup
+              playlistDetail={item}
+              userId={userId}
+              popupRef={popupRef}
+              closePopup={closePopup}
+              length={length}
+            />
           </button>
         </div>
       </div>

@@ -1,8 +1,9 @@
 import { SongData } from "./components/Data/SongData";
 import { PlaylistData } from "./components/Data/PlaylistData";
 import { AlbumData } from "./components/Data/AlbumData";
-import { useContext } from "react";
+import React, { useContext } from "react";
 import MusicPlayerContext from "./MusicPlayerContext";
+import NotificationContext from "./NotificationContext";
 
 export const getSongDetail = (songId) => {
   return SongData.find((song) => song.id === songId);
@@ -44,4 +45,29 @@ export const removeFromFavPlaylist = (playlistId, userId) => {
 };
 export const removeFromFavSong = (songId, userId) => {
   console.log(songId, userId);
+};
+
+export const showNotification = (notification, content) => {
+  notification.setUsing(true);
+  notification.setContent(content);
+};
+
+export const addToLocalPlaylist = (songId, musicPlayer) => {
+  const songDetail = getSongDetail(songId);
+  const playlist = musicPlayer.playlist;
+  playlist.push(songDetail);
+  musicPlayer.setPlaylist(playlist);
+  localStorage.setItem("playlist", JSON.stringify(playlist));
+  console.log(playlist);
+};
+
+export const addPlaylistToLocalPlaylist = (playlistId, musicPlayer) => {
+  const playlistDetail = getPlaylistDetail(playlistId);
+  const playlist = musicPlayer.playlist;
+  playlistDetail.songPlaylist.map((item, index) => {
+    playlist.push(item);
+  });
+  musicPlayer.setPlaylist(playlist);
+  localStorage.setItem("playlist", JSON.stringify(playlist));
+  console.log(playlist);
 };

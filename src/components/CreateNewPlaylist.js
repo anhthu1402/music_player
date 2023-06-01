@@ -1,13 +1,14 @@
-import React, { useRef, useState } from "react";
-import { Card, Typography, Button } from "@mui/material";
-import { AddCircleRounded } from "@mui/icons-material";
+import React, { useRef, useState, useContext } from "react";
+import { Button } from "@mui/material";
 import Popup from "reactjs-popup";
 import { TextField } from "@mui/material";
-import { createPlaylist } from "../service";
+import { createPlaylist, showNotification } from "../service";
+import NotificationContext from "../NotificationContext";
 
 function CreateNewPlaylist({ createRef, closeCreatePlaylist }) {
   const [disabled, setDisabled] = useState(true);
   const name = useRef();
+  const notification = useContext(NotificationContext);
   return (
     <Popup
       ref={createRef}
@@ -58,6 +59,10 @@ function CreateNewPlaylist({ createRef, closeCreatePlaylist }) {
             variant="contained"
             onClick={() => {
               createPlaylist(name.current.value);
+              showNotification(
+                notification,
+                'Tạo playlist "' + name.current.value + '" thành công.'
+              );
               closeCreatePlaylist();
             }}
             disabled={disabled}

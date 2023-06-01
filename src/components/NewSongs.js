@@ -4,8 +4,10 @@ import MusicPlayerContext from "../MusicPlayerContext";
 import TrackItem from "./Item/TrackItem";
 import { SongData } from "./Data/SongData";
 import "../styles/NewSongs.css";
+import NotificationContext from "../NotificationContext";
 
 function NewSongs() {
+  const notification = useContext(NotificationContext);
   const [toggleState, setToggleState] = useState(1);
   const tracksByCountry = [];
   SongData.map((item, index) => {
@@ -76,6 +78,7 @@ function NewSongs() {
                   tracks={tracks}
                   song={song}
                   index={key}
+                  notification={notification}
                 />
               </div>
             )

@@ -11,8 +11,10 @@ import "../styles/Album.css";
 import MusicPlayerContext from "../MusicPlayerContext";
 import TrackItem from "../components/Item/TrackItem";
 import { getAlbumDetail } from "../service";
+import NotificationContext from "../NotificationContext";
 
 function Album() {
+  const notification = useContext(NotificationContext);
   const location = useLocation();
   const id = location.state;
   const albumDetail = getAlbumDetail(id);
@@ -83,6 +85,7 @@ function Album() {
                   tracks={tracks}
                   song={song}
                   index={key}
+                  notification={notification}
                 />
               </div>
             ))}

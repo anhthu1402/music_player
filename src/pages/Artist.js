@@ -15,8 +15,10 @@ import { AlbumData } from "../components/Data/AlbumData";
 import ArtistAlbumItem from "../components/Item/ArtistAlbumItem";
 import { getAlbumDetail } from "../service";
 import { getAllAlbum } from "../components/API/getAllAlbums";
+import NotificationContext from "../NotificationContext";
 
 function Artist() {
+  const notification = useContext(NotificationContext);
   const player = useContext(MusicPlayerContext);
   const location = useLocation();
   const artist = location.state;
@@ -104,6 +106,7 @@ function Artist() {
                           tracks={artistSongs}
                           song={player}
                           index={index}
+                          notification={notification}
                         />
                       </div>
                     )

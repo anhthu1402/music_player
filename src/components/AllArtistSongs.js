@@ -3,12 +3,14 @@ import { useLocation } from "react-router-dom";
 import { SongData } from "./Data/SongData";
 import TrackItem from "./Item/TrackItem";
 import MusicPlayerContext from "../MusicPlayerContext";
+import NotificationContext from "../NotificationContext";
 
 function AllArtistSongs() {
   const location = useLocation();
   const player = useContext(MusicPlayerContext);
   const artist = location.state.artist;
   const songs = location.state.songs;
+  const notification = useContext(NotificationContext);
   return (
     <div>
       <div className="aasHeader" style={{ marginBottom: 10 }}>
@@ -23,6 +25,7 @@ function AllArtistSongs() {
               tracks={songs}
               song={player}
               index={0}
+              notification={notification}
             />
           </div>
         ))}

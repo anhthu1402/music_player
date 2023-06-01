@@ -2,11 +2,14 @@ import React, { useRef, useState } from "react";
 import { Button } from "@mui/material";
 import Popup from "reactjs-popup";
 import { TextField } from "@mui/material";
-import { changePlaylistName } from "../service";
+import { changePlaylistName, showNotification } from "../service";
+import { useContext } from "react";
+import NotificationContext from "../NotificationContext";
 
 function ModifyPlaylist({ closeModifyPopup, name, modifyRef, id }) {
   const [disabled, setDisabled] = useState(false);
   const nameRef = useRef();
+  const notification = useContext(NotificationContext);
   return (
     <Popup
       ref={modifyRef}
@@ -58,6 +61,7 @@ function ModifyPlaylist({ closeModifyPopup, name, modifyRef, id }) {
             variant="contained"
             onClick={() => {
               changePlaylistName(id, nameRef.current.value);
+              showNotification(notification, "Cập nhật playlist thành công");
               closeModifyPopup();
             }}
             disabled={disabled}

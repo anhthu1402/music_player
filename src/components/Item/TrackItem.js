@@ -17,12 +17,16 @@ import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import { getMyPlaylists } from "../API/getMyPlaylists";
 import { Button, ButtonGroup } from "@mui/material";
-import { addFavSong, addToPlaylist, removeFromFavSong } from "../../service";
+import {
+  addFavSong,
+  addToPlaylist,
+  removeFromFavSong,
+  showNotification,
+  addToLocalPlaylist,
+} from "../../service";
 import CreateNewPlaylist from "../CreateNewPlaylist";
-import MusicPlayerContext from "../../MusicPlayerContext";
 
 class TrackItem extends Component {
-  static contextType = MusicPlayerContext;
   render() {
     function printReleaseDate(dateParam) {
       const date = new Date(dateParam);
@@ -65,16 +69,6 @@ class TrackItem extends Component {
 
     const popupRef = React.createRef();
     const closePopup = () => popupRef.current.close();
-
-    const musicPlayer = this.context;
-
-    const addToLocalPlaylist = (item) => {
-      const playlist = musicPlayer.playlist;
-      playlist.push(item);
-      musicPlayer.setPlaylist(playlist);
-      localStorage.setItem("playlist", JSON.stringify(playlist));
-      console.log(playlist);
-    };
 
     return (
       <div className="item">
@@ -225,7 +219,6 @@ class TrackItem extends Component {
                   }
                   modal
                   nested
-                  lockScroll={true}
                 >
                   {(close) => (
                     <div className="modal">
@@ -269,6 +262,10 @@ class TrackItem extends Component {
               onClick={() => {
                 addFavSong(this.props.item.id, 1);
                 closePopup();
+                showNotification(
+                  this.props.notification,
+                  "Đã thêm bài hát vào thư viện yêu thích"
+                );
               }}
             >
               <FavoriteBorderOutlined
@@ -280,8 +277,12 @@ class TrackItem extends Component {
             <div
               className="songItemPopup"
               onClick={() => {
-                addToLocalPlaylist(this.props.item);
+                addToLocalPlaylist(this.props.item.id, this.props.song);
                 closePopup();
+                showNotification(
+                  this.props.notification,
+                  "Đã thêm bài hát vào danh sách phát"
+                );
               }}
             >
               <QueueRounded
@@ -324,6 +325,12 @@ class TrackItem extends Component {
                     onClick={() => {
                       addToPlaylist(this.props.item.id, playlist.id);
                       closeAddPlaylistPopup();
+                      showNotification(
+                        this.props.notification,
+                        "Đã thêm bài hát vào playlist " +
+                          playlist.playlistName +
+                          "."
+                      );
                     }}
                   >
                     <QueueMusicRounded

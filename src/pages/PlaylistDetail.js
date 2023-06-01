@@ -12,10 +12,10 @@ import MusicPlayerContext from "../MusicPlayerContext";
 import { useState } from "react";
 import TrackItem from "../components/Item/TrackItem";
 import { getPlaylistDetail } from "../service";
-import Popup from "reactjs-popup";
-import { Button, TextField } from "@mui/material";
 import { useRef } from "react";
-import { changePlaylistName } from "../service";
+import NotificationContext from "../NotificationContext";
+import ModifyPlaylist from "../components/ModifyPlaylist";
+import PlaylistPopup from "../components/PlaylistPopup";
 
 const PlaylistDetail = () => {
   const location = useLocation();
@@ -41,8 +41,14 @@ const PlaylistDetail = () => {
     localStorage.setItem("play", JSON.stringify(true));
     localStorage.setItem("playlist", JSON.stringify(tracks));
   };
-  const [disabled, setDisabled] = useState(false);
-  const name = useRef();
+  const modifyRef = useRef();
+  const closeModifyPopup = () => modifyRef.current.close();
+  const openModifyPopup = () => modifyRef.current.open();
+  const popupRef = useRef();
+  const closePopup = () => popupRef.current.close();
+  const openPopup = () => popupRef.current.open();
+  const notification = useContext(NotificationContext);
+  const userId = 1;
   return (
     <div className="playlistDetailContainer">
       {playlistDetail && (
@@ -63,82 +69,20 @@ const PlaylistDetail = () => {
                 }}
               >
                 {playlistDetail.playlistName}
-                <Popup
-                  contentStyle={{
-                    zIndex: "11",
-                    borderRadius: "10px",
-                    padding: "20px",
-                    width: "25%",
+                <EditRounded
+                  sx={{ marginLeft: "10px", cursor: "pointer" }}
+                  onClick={() => {
+                    if (userId === 1) {
+                      openModifyPopup();
+                    }
                   }}
-                  onOpen={() => setDisabled(false)}
-                  modal
-                  nested
-                  trigger={
-                    <EditRounded
-                      sx={{ marginLeft: "10px", cursor: "pointer" }}
-                    />
-                  }
-                >
-                  {(close) => (
-                    <div className="modal">
-                      <p
-                        onClick={() => close()}
-                        style={{
-                          textAlign: "right",
-                          marginRight: 5,
-                          cursor: "pointer",
-                        }}
-                      >
-                        X
-                      </p>
-                      <div className="content" style={{ textAlign: "center" }}>
-                        <div>
-                          <h2 style={{ marginBottom: "20px" }}>
-                            Chỉnh sửa playlist
-                          </h2>
-                        </div>
-                        <TextField
-                          required
-                          onChange={(e) => {
-                            name.current.value = e.target.value;
-                            if (name.current.value === "") setDisabled(true);
-                            else setDisabled(false);
-                          }}
-                          inputRef={name}
-                          placeholder="Nhập tên playlist"
-                          defaultValue={playlistDetail.playlistName}
-                        />
-                      </div>
-                      <div
-                        style={{
-                          display: "flex",
-                          justifyContent: "center",
-                          marginTop: "20px",
-                        }}
-                      >
-                        <Button
-                          variant="contained"
-                          onClick={() => {
-                            changePlaylistName(
-                              playlistDetail.id,
-                              name.current.value
-                            );
-                            close();
-                          }}
-                          disabled={disabled}
-                          sx={{
-                            backgroundColor: "#ff7394",
-                            ":hover": {
-                              backgroundColor: "rgb(244, 161, 175)",
-                            },
-                          }}
-                        >
-                          Lưu
-                        </Button>
-                      </div>
-                    </div>
-                  )}
-                </Popup>
+                />
+                <ModifyPlaylist
+                  id={playlistDetail.id}
+                  modifyRef={modifyRef}
+                  name={playlistDetail.playlistName}
+                  closeModifyPopup={closeModifyPopup}
+                />
               </p>
               <p
                 style={{
@@ -157,7 +101,14 @@ const PlaylistDetail = () => {
                   Phát ngẫu nhiên
                 </button>
                 <button className="moreButton">
-                  <MoreHoriz />
+                  <MoreHoriz onClick={openPopup} />
+                  <PlaylistPopup
+                    playlistDetail={playlistDetail}
+                    length={length}
+                    userId={userId}
+                    popupRef={popupRef}
+                    closePopup={closePopup}
+                  />
                 </button>
               </div>
             </div>
@@ -171,6 +122,7 @@ const PlaylistDetail = () => {
                   tracks={tracks}
                   song={song}
                   index={index}
+                  notification={notification}
                 />
               </div>
             ))}

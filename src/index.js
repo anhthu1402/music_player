@@ -3,13 +3,16 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { SidebarProvider } from "./SidebarContext";
+import { NotificationProvider } from "./NotificationContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <SidebarProvider value={"Khám phá"}>
-      <App />
-    </SidebarProvider>
+    <NotificationProvider>
+      <SidebarProvider value={"Khám phá"}>
+        <App />
+      </SidebarProvider>
+    </NotificationProvider>
   </React.StrictMode>
 );
 
