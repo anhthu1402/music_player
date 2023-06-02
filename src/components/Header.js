@@ -9,11 +9,11 @@ import "reactjs-popup/dist/index.css";
 import { useRef } from "react";
 
 function Header() {
-  const deleteRef = useRef();
-  const closeDeletePopup = () => deleteRef.current.close();
-  const openDeletePopup = () => deleteRef.current.open();
+  const popupRef = useRef();
+  const closePopup = () => popupRef.current.close();
+  const openPopup = () => popupRef.current.open();
   //tạm
-  const userId = 1;
+  const userId = 2;
   return (
     <div className="header">
       <Toolbar>
@@ -29,16 +29,15 @@ function Header() {
             <InputSearch />
           </div>
           <div className="personal">
-            {userId === 2 ? (
+            {userId === 1 ? (
               <Link to={"/signIn"}>
                 <button className="signInBtn">Đăng nhập</button>
               </Link>
             ) : (
               <Popup
-                ref={deleteRef}
+                ref={popupRef}
                 trigger={<button className="signInBtn">Đăng xuất</button>}
                 modal
-                lockScroll={true}
                 contentStyle={{
                   zIndex: "11",
                   borderRadius: "10px",
@@ -68,7 +67,7 @@ function Header() {
                           backgroundColor: "lightgray",
                         },
                       }}
-                      onClick={closeDeletePopup}
+                      onClick={closePopup}
                     >
                       Không
                     </Button>
@@ -81,7 +80,7 @@ function Header() {
                         },
                       }}
                       onClick={(e) => {
-                        closeDeletePopup();
+                        closePopup();
                       }}
                     >
                       Đăng xuất

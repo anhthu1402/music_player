@@ -73,3 +73,21 @@ export const addAlbumToLocalPlaylist = (albumId, musicPlayer) => {
   localStorage.setItem("playlist", JSON.stringify(playlist));
   console.log(playlist);
 };
+
+export const addLocalPlaylistToPlaylist = (playlistId) => {
+  const playlist = JSON.parse(localStorage.getItem("playlist"));
+  playlist.map((item, index) => {
+    addToPlaylist(item.id, playlistId);
+  });
+  console.log(playlist);
+};
+
+export const deleteLocalPlaylist = (musicPlayer) => {
+  localStorage.removeItem("playlist");
+  musicPlayer.setPlaylist([]);
+  localStorage.removeItem("song");
+  localStorage.removeItem("tracks");
+  localStorage.removeItem("index");
+  localStorage.removeItem("currentTime");
+  musicPlayer.setUsing(false);
+};

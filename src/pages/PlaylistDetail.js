@@ -16,6 +16,7 @@ import { useRef } from "react";
 import NotificationContext from "../NotificationContext";
 import ModifyPlaylist from "../components/ModifyPlaylist";
 import PlaylistPopup from "../components/PlaylistPopup";
+import { Tooltip } from "@mui/material";
 
 const PlaylistDetail = () => {
   const location = useLocation();
@@ -101,7 +102,9 @@ const PlaylistDetail = () => {
                   Phát ngẫu nhiên
                 </button>
                 <button className="moreButton">
-                  <MoreHoriz onClick={openPopup} />
+                  <Tooltip title="Khác">
+                    <MoreHoriz onClick={openPopup} />
+                  </Tooltip>
                   <PlaylistPopup
                     playlistDetail={playlistDetail}
                     length={length}

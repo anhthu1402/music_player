@@ -16,7 +16,7 @@ import "../../styles/TrackItem.css";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import { getMyPlaylists } from "../API/getMyPlaylists";
-import { Button, ButtonGroup } from "@mui/material";
+import { Button, ButtonGroup, Tooltip } from "@mui/material";
 import {
   addFavSong,
   addToPlaylist,
@@ -142,7 +142,11 @@ class TrackItem extends Component {
               padding: 0,
             }}
             arrow={false}
-            trigger={<MoreHoriz fontSize="medium" className="moreIcon" />}
+            trigger={
+              <Tooltip title="Khác">
+                <MoreHoriz fontSize="medium" className="moreIcon" />
+              </Tooltip>
+            }
             position={"bottom right"}
           >
             <div

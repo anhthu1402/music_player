@@ -14,6 +14,7 @@ import { getAlbumDetail } from "../service";
 import NotificationContext from "../NotificationContext";
 import { useRef } from "react";
 import AlbumPopup from "../components/AlbumPopup";
+import { Tooltip } from "@mui/material";
 
 function Album() {
   const notification = useContext(NotificationContext);
@@ -74,7 +75,9 @@ function Album() {
                 <PlayArrowRounded /> Phát ngẫu nhiên
               </button>
               <FavoriteBorderOutlined className="favIcon" />
-              <MoreHoriz className="moreIcon" onClick={() => openPopup()} />
+              <Tooltip title="Khác">
+                <MoreHoriz className="moreIcon" onClick={() => openPopup()} />
+              </Tooltip>
               <AlbumPopup
                 albumId={albumDetail.id}
                 closePopup={closePopup}

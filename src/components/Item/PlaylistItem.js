@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Button, Card, CardMedia, Typography } from "@mui/material";
+import { Button, Card, CardMedia, Tooltip, Typography } from "@mui/material";
 import {
   DeleteOutline,
   EditOutlined,
@@ -93,10 +93,12 @@ function PlaylistItem({ item }) {
             </button>
           </Link>
           <button>
-            <MoreHoriz
-              sx={{ fontSize: "2.1vw", color: "white" }}
-              onClick={openPopup}
-            />
+            <Tooltip title="Khác">
+              <MoreHoriz
+                sx={{ fontSize: "2.1vw", color: "white" }}
+                onClick={openPopup}
+              />
+            </Tooltip>
             <PlaylistPopup
               playlistDetail={item}
               userId={userId}

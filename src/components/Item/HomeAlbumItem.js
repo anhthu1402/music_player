@@ -12,6 +12,7 @@ import "../../styles/PlaylistAlbum.css";
 import { getAlbumDetail } from "../../service";
 import { useRef } from "react";
 import AlbumPopup from "../AlbumPopup";
+import { Tooltip } from "@mui/material";
 
 function HomeAlbumItem({ item }) {
   const tracks = getAlbumDetail(item.id).songs;
@@ -58,12 +59,14 @@ function HomeAlbumItem({ item }) {
               style={{ color: "white" }}
             />
           </Link>
-          <MoreHoriz
-            onClick={() => openPopup()}
-            className="icon"
-            fontSize="large"
-            style={{ color: "white" }}
-          />
+          <Tooltip title="Khác">
+            <MoreHoriz
+              onClick={() => openPopup()}
+              className="icon"
+              fontSize="large"
+              style={{ color: "white" }}
+            />
+          </Tooltip>
           <AlbumPopup
             albumId={item.id}
             closePopup={closePopup}

@@ -16,6 +16,7 @@ import {
   removeFromFavPlaylist,
 } from "../../service";
 import PlaylistPopup from "../PlaylistPopup";
+import { Tooltip } from "@mui/material";
 
 function PlaylistAtHome({ id }) {
   const playlistDetail = getPlaylistDetail(id);
@@ -84,12 +85,14 @@ function PlaylistAtHome({ id }) {
               style={{ color: "white" }}
             />
           </Link>
-          <MoreHoriz
-            onClick={() => openPopup()}
-            className="icon"
-            fontSize="large"
-            style={{ color: "white" }}
-          />
+          <Tooltip title="Khác">
+            <MoreHoriz
+              onClick={() => openPopup()}
+              className="icon"
+              fontSize="large"
+              style={{ color: "white" }}
+            />
+          </Tooltip>
           <PlaylistPopup
             playlistDetail={playlistDetail}
             userId={userId}

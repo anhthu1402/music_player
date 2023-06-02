@@ -4,15 +4,18 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { SidebarProvider } from "./SidebarContext";
 import { NotificationProvider } from "./NotificationContext";
+import { LocalPlaylistProvider } from "./LocalPlaylistContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <NotificationProvider>
-      <SidebarProvider value={"Khám phá"}>
-        <App />
-      </SidebarProvider>
-    </NotificationProvider>
+    <LocalPlaylistProvider>
+      <NotificationProvider>
+        <SidebarProvider value={"Khám phá"}>
+          <App />
+        </SidebarProvider>
+      </NotificationProvider>
+    </LocalPlaylistProvider>
   </React.StrictMode>
 );
 

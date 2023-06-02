@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { styled } from "@mui/material/styles";
-import { Box, Button } from "@mui/material";
+import { Box, Button, Tooltip } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Slider from "@mui/material/Slider";
 import IconButton from "@mui/material/IconButton";
@@ -15,11 +15,13 @@ import {
   ShuffleRounded,
   RepeatRounded,
   RepeatOneRounded,
+  PlaylistPlay,
 } from "@mui/icons-material";
 import MusicPlayerContext from "../MusicPlayerContext";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import "../styles/MusicPlayer.css";
+import LocalPlaylistContext from "../LocalPlaylistContext";
 
 const Widget = styled("div")(() => ({
   padding: 10,
@@ -59,9 +61,13 @@ const TinyText = styled(Typography)({
 });
 
 const MusicPlayer = () => {
+  const localPlaylist = useContext(LocalPlaylistContext);
   const musicPlayer = useContext(MusicPlayerContext);
   const tracks = musicPlayer.isUsing ? musicPlayer.tracks : [];
-  const array = JSON.parse(localStorage.getItem("playlist"));
+  const array =
+    localStorage.getItem("playlist") !== null
+      ? JSON.parse(localStorage.getItem("playlist"))
+      : tracks;
   const tracksLen = tracks.length;
   // 0: Phát theo trình tự , 1: Phát lại 1 bài, 2: Phát lại tất cả (như phát theo trình tự nhưng phát theo trình tự khi hết bài cuối của playlist sẽ chuyển sang playlist khác có liên quan - khó, chưa làm được), 3: Phát ngẫu nhiên
   const [playMode, setPlayMode] = useState(0);
@@ -71,9 +77,6 @@ const MusicPlayer = () => {
   let representation = musicPlayer.isUsing ? array[index].representation : [];
   const getAudioSource = (source) => {
     return require(`../assets/audio/` + source);
-  };
-  const getImgUrl = (url) => {
-    return require(`../assets/` + url);
   };
   const audioRef = useRef();
   const [duration, setDuration] = useState(0); //seconds
@@ -397,9 +400,38 @@ const MusicPlayer = () => {
               justifyContent: "center",
             }}
           >
-            <Button sx={{ mb: 2, color: "black" }} onClick={removeMusicplayer}>
-              X
-            </Button>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+            >
+              <Tooltip title="Danh sách phát" placement="top">
+                <Button
+                  sx={{ mb: 2, color: "black" }}
+                  onClick={() => {
+                    localStorage.setItem(
+                      "openLocalPlaylist",
+                      !localPlaylist.open
+                    );
+                    localPlaylist.setOpen(!localPlaylist.open);
+                  }}
+                >
+                  <PlaylistPlay />
+                </Button>
+              </Tooltip>
+              <Button
+                sx={{ mb: 2, color: "black" }}
+                onClick={() => {
+                  removeMusicplayer();
+                  localStorage.setItem("openLocalPlaylist", false);
+                  localPlaylist.setOpen(false);
+                }}
+              >
+                X
+              </Button>
+            </div>
             <Stack
               spacing={2}
               direction="row"

@@ -8,6 +8,7 @@ import {
 import { Link } from "react-router-dom";
 import AlbumPopup from "../AlbumPopup";
 import { useRef } from "react";
+import { Tooltip } from "@mui/material";
 
 function ArtistAlbumItem({ item }) {
   function getReleaseYear(dateParam) {
@@ -34,7 +35,9 @@ function ArtistAlbumItem({ item }) {
           </Link>
 
           <button onClick={openPopup}>
-            <MoreHoriz sx={{ fontSize: "2.4vw" }} />
+            <Tooltip title="Khác">
+              <MoreHoriz sx={{ fontSize: "2.4vw" }} />
+            </Tooltip>
             <AlbumPopup
               albumId={item.id}
               closePopup={closePopup}

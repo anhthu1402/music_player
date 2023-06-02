@@ -4,6 +4,7 @@ import SideBar from "./SideBar";
 import MusicPlayer from "./MusicPlayer";
 import AppAppBar from "./AppAppBar";
 import Notification from "./Notification";
+import NavBarPlaylist from "./NavBarPlaylist";
 
 function AppRoot() {
   return (
@@ -34,6 +35,7 @@ function AppRoot() {
           >
             <MusicPlayer />
           </div>
+          <NavBarPlaylist />
         </div>
       </div>
       <div
@@ -42,7 +44,7 @@ function AppRoot() {
           width: "35vw",
           marginLeft: "30px",
           bottom: "3em",
-          zIndex: 3,
+          zIndex: 10,
         }}
       >
         <Notification />
