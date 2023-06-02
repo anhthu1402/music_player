@@ -26,6 +26,7 @@ import {
 } from "../service";
 import CreateNewPlaylist from "./CreateNewPlaylist";
 import { useRef } from "react";
+import { useState } from "react";
 
 function NavBarPlaylist() {
   const localPlaylist = useContext(LocalPlaylistContext);
@@ -40,8 +41,8 @@ function NavBarPlaylist() {
     localStorage.setItem(open);
   };
   const musicPlayer = useContext(MusicPlayerContext);
-  const playlist = musicPlayer.playlist;
-  const length = playlist.length;
+  let playlist = JSON.parse(localStorage.getItem("playlist"));
+  const length = musicPlayer.playlist.length;
   const notification = useContext(NotificationContext);
   const addPlaylistRef = useRef();
   const closeAddPlaylistPopup = () => addPlaylistRef.current.close();
@@ -52,7 +53,6 @@ function NavBarPlaylist() {
   const deleteRef = useRef();
   const closeDeletePopup = () => deleteRef.current.close();
   const openDeletePopup = () => deleteRef.current.open();
-  console.log(musicPlayer.playlist);
   return (
     <div style={{ zIndex: "8", position: "absolute" }}>
       <div>
@@ -126,18 +126,26 @@ function NavBarPlaylist() {
                 </div>
               </Popup>
             </div>
-            {playlist.map((item, index) => (
-              <div className="song shadowDiv" key={index}>
-                <TrackItem
-                  key={index}
-                  item={item}
-                  tracks={playlist}
-                  song={musicPlayer}
-                  index={index}
-                  notification={notification}
-                />
-              </div>
-            ))}
+            {localStorage.getItem("playlist") !== null ? (
+              playlist.map((item, index) => (
+                <div className="song shadowDiv" key={index}>
+                  <TrackItem
+                    key={index}
+                    item={item}
+                    tracks={playlist}
+                    song={musicPlayer}
+                    index={index}
+                    notification={notification}
+                  />
+                </div>
+              ))
+            ) : (
+              <div></div>
+            )}
+
+            <div
+              style={musicPlayer.isUsing ? { height: "8em" } : { height: 0 }}
+            ></div>
           </Box>
         </SwipeableDrawer>
       </div>
@@ -238,6 +246,7 @@ function NavBarPlaylist() {
                 },
               }}
               onClick={(e) => {
+                playlist = musicPlayer.playlist;
                 localPlaylist.setOpen(false);
                 localStorage.setItem("openLocalPlaylist", false);
                 deleteLocalPlaylist(musicPlayer);

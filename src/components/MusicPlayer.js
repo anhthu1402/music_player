@@ -67,10 +67,14 @@ const MusicPlayer = () => {
   const array =
     localStorage.getItem("playlist") !== null
       ? JSON.parse(localStorage.getItem("playlist"))
-      : tracks;
+      : musicPlayer.playlist;
   const tracksLen = tracks.length;
-  // 0: Phát theo trình tự , 1: Phát lại 1 bài, 2: Phát lại tất cả (như phát theo trình tự nhưng phát theo trình tự khi hết bài cuối của playlist sẽ chuyển sang playlist khác có liên quan - khó, chưa làm được), 3: Phát ngẫu nhiên
-  const [playMode, setPlayMode] = useState(0);
+  // 0: Phát theo trình tự, 1: Phát ngẫu nhiên
+  const [playMode, setPlayMode] = useState(
+    localStorage.getItem("playMode") === null
+      ? 0
+      : JSON.parse(localStorage.getItem("playMode"))
+  );
   let index = musicPlayer.songIndex;
   let song = musicPlayer.isUsing ? array[index] : "";
   let songName = musicPlayer.isUsing ? array[index].songName : "";
@@ -141,7 +145,6 @@ const MusicPlayer = () => {
       // Tạm xem phát lại tất cả như phát theo trình tự
       musicPlayer.setSongIndex((index + 1) % tracksLen);
       musicPlayer.setSong(song);
-      if (playMode === 1) setRepeat(1);
     }
     if (!play) {
       setPlay(true);
@@ -157,7 +160,6 @@ const MusicPlayer = () => {
       // Tạm xem phát lại tất cả như phát theo trình tự
       musicPlayer.setSongIndex(index - 1 < 0 ? tracksLen - 1 : index - 1);
       musicPlayer.setSong(song);
-      if (playMode === 1) setRepeat(1);
     }
     if (!play) {
       setPlay(true);
@@ -196,7 +198,7 @@ const MusicPlayer = () => {
               localStorage.setItem("currentTime", 0);
               setCurrentTime(0);
             } else {
-              musicPlayer.setSongIndex(index + 1);
+              musicPlayer.setSongIndex((index + 1) % tracksLen);
               musicPlayer.setSong(array[musicPlayer.songIndex]);
               localStorage.setItem("song", JSON.stringify(musicPlayer.song));
               localStorage.setItem(
@@ -267,26 +269,29 @@ const MusicPlayer = () => {
                 maxWidth: "100%",
               }}
             >
-              <IconButton sx={{ margin: "0 0.5em" }}>
+              <IconButton
+                sx={{ margin: "0 0.5em" }}
+                onClick={() => {
+                  if (playMode === 1) {
+                    setPlayMode(0);
+                    localStorage.setItem("playMode", 0);
+                    localStorage.setItem(
+                      "playlist",
+                      JSON.stringify(musicPlayer.playlist)
+                    );
+                  } else {
+                    setPlayMode(1);
+                    localStorage.setItem("playMode", 1);
+                    localStorage.setItem(
+                      "playlist",
+                      JSON.stringify(shuffleArray(array))
+                    );
+                  }
+                }}
+              >
                 <ShuffleRounded
-                  onClick={() => {
-                    if (playMode === 3) {
-                      setPlayMode(0);
-                      localStorage.setItem(
-                        "playlist",
-                        localStorage.getItem("tracks")
-                      );
-                    } else {
-                      setPlayMode(3);
-                      localStorage.setItem(
-                        "playlist",
-                        JSON.stringify(shuffleArray(array))
-                      );
-                      if (repeat) setRepeat(0);
-                    }
-                  }}
                   sx={
-                    playMode === 3
+                    playMode === 1
                       ? { color: "pink", fontSize: "1.5vw" }
                       : { color: "grey", fontSize: "1.5vw" }
                   }
@@ -318,29 +323,15 @@ const MusicPlayer = () => {
               >
                 <FastForwardRounded sx={{ fontSize: "2.4vw" }} />
               </IconButton>
-              <IconButton
-                sx={{ margin: "0 0.5em" }}
-                onClick={() => {
-                  if (playMode === 0 || playMode === 3) {
-                    setPlayMode(2);
-                  } else if (playMode === 2) {
-                    setPlayMode(1);
-                    setRepeat(1);
-                  } else {
-                    setPlayMode(0);
-                    setRepeat(0);
-                  }
-                }}
-              >
-                {playMode === 1 ? (
-                  <RepeatOneRounded
-                    sx={playMode === 1 ? { color: "pink" } : { color: "grey" }}
-                  />
-                ) : (
-                  <RepeatRounded
-                    sx={playMode === 2 ? { color: "pink" } : { color: "grey" }}
-                  />
-                )}
+              <IconButton sx={{ margin: "0 0.5em" }}>
+                <RepeatOneRounded
+                  onClick={() => {
+                    if (repeat === 1) {
+                      setRepeat(0);
+                    } else setRepeat(1);
+                  }}
+                  sx={repeat === 1 ? { color: "pink" } : { color: "grey" }}
+                />
               </IconButton>
             </Box>
             <Box
@@ -418,7 +409,13 @@ const MusicPlayer = () => {
                     localPlaylist.setOpen(!localPlaylist.open);
                   }}
                 >
-                  <PlaylistPlay />
+                  <PlaylistPlay
+                    sx={
+                      localPlaylist.open
+                        ? { color: "pink" }
+                        : { color: "black" }
+                    }
+                  />
                 </Button>
               </Tooltip>
               <Button

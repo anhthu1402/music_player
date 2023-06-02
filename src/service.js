@@ -54,7 +54,10 @@ export const addToLocalPlaylist = (song, musicPlayer) => {
 
 export const addPlaylistToLocalPlaylist = (playlistId, musicPlayer) => {
   const playlistDetail = getPlaylistDetail(playlistId);
-  const playlist = JSON.parse(localStorage.getItem("playlist"));
+  const playlist =
+    localStorage.getItem("playlist") !== null
+      ? JSON.parse(localStorage.getItem("playlist"))
+      : musicPlayer.playlist;
   playlistDetail.songPlaylist.map((item, index) => {
     playlist.push(item);
   });
@@ -90,4 +93,5 @@ export const deleteLocalPlaylist = (musicPlayer) => {
   localStorage.removeItem("index");
   localStorage.removeItem("currentTime");
   musicPlayer.setUsing(false);
+  localStorage.setItem("play", false);
 };
