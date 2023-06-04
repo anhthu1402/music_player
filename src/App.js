@@ -15,6 +15,7 @@ import TopRank from "./pages/TopRank";
 import Chart from "./pages/Chart";
 import AllArtistSongs from "./components/AllArtistSongs";
 import AllArtistAlbums from "./components/AllArtistAlbums";
+import NavBarPlaylist from "./components/NavBarPlaylist";
 
 function App() {
   window.onbeforeunload = localStorage.setItem("play", JSON.stringify(false));
@@ -74,6 +75,10 @@ function App() {
         {
           path: "top100",
           element: <TopRank />,
+        },
+        {
+          path: "navbarPlaylist",
+          element: <NavBarPlaylist />,
         },
       ],
     },

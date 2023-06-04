@@ -32,11 +32,13 @@ html::-webkit-scrollbar {
   /* padding: 10px; */
   /* left: 0;
   z-index: 2; */
+  z-index: 10;
 }
 .mainscreen {
   margin-top: 6em;
 }
-::-moz-selection { /* Code for Firefox */
+::-moz-selection {
+  /* Code for Firefox */
   background: #ffbccc;
   color: white;
 }

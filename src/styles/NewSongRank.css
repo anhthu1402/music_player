@@ -1,120 +1,124 @@
 .newSongRankContainer {
-    width: 100%;
-    height: fit-content;
-    position: relative;
+  width: 100%;
+  height: fit-content;
+  position: relative;
 }
-.newSongRankContainer .btnBack, .newSongRankContainer .btnForw {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #eee;
-    border-radius: 50%;
-    border: none;
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-    color: #ff7394;
-    cursor: pointer;
-    z-index: 1;
+.newSongRankContainer .btnBack,
+.newSongRankContainer .btnForw {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #eee;
+  border-radius: 50%;
+  border: none;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  color: #ff7394;
+  cursor: pointer;
+  z-index: 1;
 }
-.newSongRankContainer .btnBack:hover, .newSongRankContainer .btnForw:hover {
-    background-color: #ff7394;
-    color: white;
+.newSongRankContainer .btnBack:hover,
+.newSongRankContainer .btnForw:hover {
+  background-color: #ff7394;
+  color: white;
 }
 .newSongRankContainer .btnForw {
-    right: -10px;
-    transform: translate(0, -50%);
+  right: -10px;
+  transform: translate(0, -50%);
 }
 .newSongRankContainer .btnBack {
-    left: -10px;
-    transform: translate(0, -50%);
+  left: -10px;
+  transform: translate(0, -50%);
 }
 .newSongRankContainer .trackList {
-    display: flex;
-    column-gap: 20px;
-    overflow-x: scroll;
-    width: 100%;
-    padding: 5px 10px;
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none; 
-    scroll-behavior: smooth;
+  display: flex;
+  column-gap: 20px;
+  overflow-x: scroll;
+  width: 100%;
+  padding: 5px 10px;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  scroll-behavior: smooth;
 }
-.newSongRankContainer .trackList::-webkit-scrollbar { 
-    display: none;  /* Safari and Chrome */
-    width: 0;
-    height: 0;
+.newSongRankContainer .trackList::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+  width: 0;
+  height: 0;
 }
-.newSongRankContainer .trackList>.song {
-    position: relative;
-    transition: transform 0.5s, opacity 0.5s;
+.newSongRankContainer .trackList > .song {
+  position: relative;
+  transition: transform 0.5s, opacity 0.5s;
 }
 .newSongRankContainer {
-    .favIcon,
-    .favOutlineIcon,
-    .moreIcon,
-    .trackDuration {
-        display: none;
-    }
+  .favIcon,
+  .favOutlineIcon,
+  .moreIcon,
+  .trackDuration {
+    display: none;
+  }
 }
 .newSongRankContainer .trackReleaseDate {
-    display: block !important;
-    right: 0;
-    bottom: 0;
-    margin-right: 15px;
-    transform: translate(0, 0) !important;
-    left: auto !important;
-    top: auto !important;
-    position: absolute !important;
+  display: block !important;
+  right: 0;
+  bottom: 0;
+  margin-right: 15px;
+  transform: translate(0, 0) !important;
+  left: auto !important;
+  top: auto !important;
+  position: absolute !important;
 }
 .newSongRankContainer .trackList .item .songImg {
-    max-width: 90px;
-    min-width: 70px;
-  }
+  max-width: 90px;
+  min-width: 70px;
+}
 .newSongRankContainer .trackList .item .songImg img {
-    width: 100%;
-    max-width: 90px;
-    min-width: 70px;
+  width: 100%;
+  max-width: 90px;
+  min-width: 70px;
 }
 .newSongRankContainer .trackList .song .ordinalNum {
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(0, 0);
-    font-size: 45px;
-    margin: 0 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(0, 0);
+  font-size: 45px;
+  margin: 0 10px;
 }
 .newSongRankContainer .trackList {
-    .song:nth-child(1) .ordinalNum {
-        color: #ff7394;
-    }
-    .song:nth-child(2) .ordinalNum {
-        color: cornflowerblue;
-    }
-    .song:nth-child(3) .ordinalNum {
-        color: #98cc3c;
-    }
-}
-.newSongRankContainer .song .item>.center {
-    height: 110px;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    display: table;
-}
-.newSongRankContainer .song .item>.center p {
-    text-align: center;
-    vertical-align: middle;
-    display: table-cell;
-    font-size: 18px;
-}
-.newSongRankContainer .song .item>.center p>a {
+  .song:nth-child(1) .ordinalNum {
     color: #ff7394;
+  }
+  .song:nth-child(2) .ordinalNum {
+    color: cornflowerblue;
+  }
+  .song:nth-child(3) .ordinalNum {
+    color: #98cc3c;
+  }
+}
+.newSongRankContainer .song .item > .center {
+  height: 110px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  display: table;
+}
+.newSongRankContainer .song .item > .center p {
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+  font-size: 18px;
+}
+.newSongRankContainer .song .item > .center p > a {
+  color: #ff7394;
 }
 @media screen and (max-width: 700px) {
-    *, html, body {
-        font-size: 15px;
-    }
-    .newSongRankContainer .ordinalNum {
-        font-size: 18px;
-    }
+  *,
+  html,
+  body {
+    font-size: 15px;
+  }
+  .newSongRankContainer .ordinalNum {
+    font-size: 18px;
+  }
 }

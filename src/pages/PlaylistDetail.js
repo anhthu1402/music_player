@@ -12,6 +12,11 @@ import MusicPlayerContext from "../MusicPlayerContext";
 import { useState } from "react";
 import TrackItem from "../components/Item/TrackItem";
 import { getPlaylistDetail } from "../service";
+import { useRef } from "react";
+import NotificationContext from "../NotificationContext";
+import ModifyPlaylist from "../components/ModifyPlaylist";
+import PlaylistPopup from "../components/PlaylistPopup";
+import { Tooltip } from "@mui/material";
 
 const PlaylistDetail = () => {
   const location = useLocation();
@@ -37,6 +42,14 @@ const PlaylistDetail = () => {
     localStorage.setItem("play", JSON.stringify(true));
     localStorage.setItem("playlist", JSON.stringify(tracks));
   };
+  const modifyRef = useRef();
+  const closeModifyPopup = () => modifyRef.current.close();
+  const openModifyPopup = () => modifyRef.current.open();
+  const popupRef = useRef();
+  const closePopup = () => popupRef.current.close();
+  const openPopup = () => popupRef.current.open();
+  const notification = useContext(NotificationContext);
+  const userId = 1;
   return (
     <div className="playlistDetailContainer">
       {playlistDetail && (
@@ -50,15 +63,28 @@ const PlaylistDetail = () => {
               <PlayCircle className="playPlaylist" onClick={play} />
             </div>
             <div>
-              <h1
+              <p
                 style={{
                   marginTop: "20px",
                   fontSize: "2.2vw",
                 }}
               >
                 {playlistDetail.playlistName}
-                <EditRounded sx={{ marginLeft: "10px" }} />
-              </h1>
+                <EditRounded
+                  sx={{ marginLeft: "10px", cursor: "pointer" }}
+                  onClick={() => {
+                    if (userId === 1) {
+                      openModifyPopup();
+                    }
+                  }}
+                />
+                <ModifyPlaylist
+                  id={playlistDetail.id}
+                  modifyRef={modifyRef}
+                  name={playlistDetail.playlistName}
+                  closeModifyPopup={closeModifyPopup}
+                />
+              </p>
               <p
                 style={{
                   marginBottom: "10px",
@@ -76,7 +102,16 @@ const PlaylistDetail = () => {
                   Phát ngẫu nhiên
                 </button>
                 <button className="moreButton">
-                  <MoreHoriz />
+                  <Tooltip title="Khác">
+                    <MoreHoriz onClick={openPopup} />
+                  </Tooltip>
+                  <PlaylistPopup
+                    playlistDetail={playlistDetail}
+                    length={length}
+                    userId={userId}
+                    popupRef={popupRef}
+                    closePopup={closePopup}
+                  />
                 </button>
               </div>
             </div>
@@ -90,6 +125,7 @@ const PlaylistDetail = () => {
                   tracks={tracks}
                   song={song}
                   index={index}
+                  notification={notification}
                 />
               </div>
             ))}

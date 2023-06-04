@@ -10,14 +10,21 @@ import {
   AddCircleRounded,
   FileDownloadOutlined,
   LyricsOutlined,
-  NotInterestedOutlined,
 } from "@mui/icons-material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import "../../styles/TrackItem.css";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import { getMyPlaylists } from "../API/getMyPlaylists";
-import { Button, ButtonGroup } from "@mui/material";
+import { Button, ButtonGroup, Tooltip } from "@mui/material";
+import {
+  addFavSong,
+  addToPlaylist,
+  removeFromFavSong,
+  showNotification,
+  addToLocalPlaylist,
+} from "../../service";
+import CreateNewPlaylist from "../CreateNewPlaylist";
 
 class TrackItem extends Component {
   render() {
@@ -53,6 +60,15 @@ class TrackItem extends Component {
       }
       return date.toJSON().slice(0, 10).split("-").reverse().join("/");
     }
+    const addPlaylistRef = React.createRef();
+    const closeAddPlaylistPopup = () => addPlaylistRef.current.close();
+    const openAddPlaylistPopup = () => addPlaylistRef.current.open();
+    const createRef = React.createRef();
+    const closeCreatePlaylist = () => createRef.current.close();
+    const openCreatePlaylist = () => createRef.current.open();
+
+    const popupRef = React.createRef();
+    const closePopup = () => popupRef.current.close();
 
     return (
       <div className="item">
@@ -85,7 +101,6 @@ class TrackItem extends Component {
             }}
           />
         </div>
-
         <div className="songDetail">
           <div className="songTitle">{this.props.item.songName}</div>
           <div className="artist">
@@ -109,21 +124,30 @@ class TrackItem extends Component {
             <FavoriteBorderOutlined
               fontSize="medium"
               className="favOutlineIcon"
+              onClick={() => addFavSong(this.props.item.id, 1)}
             />
           ) : (
-            <FavoriteIcon fontSize="medium" className="favIcon" />
+            <FavoriteIcon
+              fontSize="medium"
+              className="favIcon"
+              onClick={() => removeFromFavSong(this.props.item.id, 1)}
+            />
           )}
           <Popup
+            ref={popupRef}
             contentStyle={{
-              zIndex: "2000",
+              zIndex: "10",
               marginTop: 10,
-              width: "25%",
+              width: "20%",
               padding: 0,
             }}
             arrow={false}
-            trigger={<MoreHoriz fontSize="medium" className="moreIcon" />}
+            trigger={
+              <Tooltip title="Khác">
+                <MoreHoriz fontSize="medium" className="moreIcon" />
+              </Tooltip>
+            }
             position={"bottom right"}
-            on={"click"}
           >
             <div
               style={{
@@ -154,9 +178,8 @@ class TrackItem extends Component {
                     whiteSpace: "nowrap",
                     overflow: "hidden",
                     marginBottom: 1,
-                    
-                    width: '12vw',
-                    maxWidth: '400px'
+                    width: "12vw",
+                    maxWidth: "400px",
                   }}
                 >
                   {this.props.item.songName}
@@ -185,65 +208,149 @@ class TrackItem extends Component {
                   <FileDownloadOutlined fontSize="small" />
                   <p style={{ fontSize: "12px" }}>Tải xuống</p>
                 </Button>
-                <Button className="buttonPopup">
-                  <LyricsOutlined fontSize="small" />
-                  <p style={{ fontSize: "12px" }}>Lời bài hát</p>
-                </Button>
-                <Button className="buttonPopup">
-                  <NotInterestedOutlined fontSize="small" />
-                  <p style={{ fontSize: "12px" }}>Chặn</p>
-                </Button>
+                <Popup
+                  contentStyle={{
+                    zIndex: "11",
+                    borderRadius: "10px",
+                    padding: "20px",
+                    width: "40%",
+                  }}
+                  trigger={
+                    <Button className="buttonPopup">
+                      <LyricsOutlined fontSize="small" />
+                      <p style={{ fontSize: "12px" }}>Lời bài hát</p>
+                    </Button>
+                  }
+                  modal
+                  nested
+                >
+                  {(close) => (
+                    <div className="modal">
+                      <div className="content">
+                        <h2 style={{ padding: 3 }}>Lời bài hát</h2>
+                        <div
+                          className="lyric"
+                          style={{
+                            overflow: "scroll",
+                            height: "300px",
+                            padding: "10px 20px",
+                            border: "1px solid lightgray",
+                            borderRadius: "10px",
+                          }}
+                        >
+                          <pre>{this.props.item.lyric}</pre>
+                        </div>
+                      </div>
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "flex-end",
+                          marginTop: "10px",
+                        }}
+                      >
+                        <Button
+                          onClick={() => close()}
+                          sx={{ borderColor: "lightgray", color: "grey" }}
+                        >
+                          Đóng
+                        </Button>
+                      </div>
+                    </div>
+                  )}
+                </Popup>
               </ButtonGroup>
             </div>
-            <div className="songItemPopup">
+            {/* userId de tam */}
+            <div
+              className="songItemPopup"
+              onClick={() => {
+                addFavSong(this.props.item.id, 1);
+                closePopup();
+                showNotification(
+                  this.props.notification,
+                  "Đã thêm bài hát vào thư viện yêu thích"
+                );
+              }}
+            >
               <FavoriteBorderOutlined
                 fontSize="small"
                 sx={{ color: "grey", marginRight: 1 }}
               />
               <p>Thêm vào thư viện</p>
             </div>
-            <div className="songItemPopup">
+            <div
+              className="songItemPopup"
+              onClick={() => {
+                addToLocalPlaylist(this.props.item, this.props.song);
+                closePopup();
+                showNotification(
+                  this.props.notification,
+                  "Đã thêm bài hát vào danh sách phát"
+                );
+              }}
+            >
               <QueueRounded
                 fontSize="small"
                 sx={{ color: "grey", marginRight: 1 }}
               />
               <p>Thêm vào danh sách phát</p>
             </div>
-            <Popup
-              contentStyle={{
-                width: "17%",
-                padding: 10,
-              }}
-              trigger={
-                <div className="songItemPopup">
-                  <PlaylistAddRounded
-                    fontSize="small"
-                    sx={{ color: "grey", marginRight: 1 }}
-                  />
-                  <p>Thêm vào playlist</p>
-                </div>
-              }
-              on={"hover"}
-              position={"left center"}
-            >
-              <div className="songItemPopup">
-                <AddCircleRounded
-                  fontSize="small"
-                  sx={{ color: "grey", marginRight: 1 }}
-                />
-                <p>Tạo playlist mới</p>
-              </div>
-              {getMyPlaylists.map((playlist, index) => (
-                <div key={index} className="songItemPopup">
-                  <QueueMusicRounded
-                    fontSize="small"
-                    sx={{ color: "grey", marginRight: 1 }}
-                  />
-                  <p>{playlist.playlistName}</p>
-                </div>
-              ))}
-            </Popup>
+            <div className="songItemPopup" onClick={openAddPlaylistPopup}>
+              <PlaylistAddRounded
+                fontSize="small"
+                sx={{ color: "grey", marginRight: 1 }}
+              />
+              <p>Thêm vào playlist</p>
+            </div>
           </Popup>
+          <Popup
+            ref={addPlaylistRef}
+            contentStyle={{
+              width: "17%",
+              padding: 10,
+              zIndex: 20,
+            }}
+            on={"click"}
+            position={"left center"}
+          >
+            <div className="songItemPopup" onClick={() => openCreatePlaylist()}>
+              <AddCircleRounded
+                fontSize="small"
+                sx={{ color: "grey", marginRight: 1 }}
+              />
+              <p>Tạo playlist mới</p>
+            </div>
+            <div>
+              {getMyPlaylists.map((playlist, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="songItemPopup"
+                    onClick={() => {
+                      addToPlaylist(this.props.item.id, playlist.id);
+                      closeAddPlaylistPopup();
+                      showNotification(
+                        this.props.notification,
+                        "Đã thêm bài hát vào playlist " +
+                          playlist.playlistName +
+                          "."
+                      );
+                    }}
+                  >
+                    <QueueMusicRounded
+                      fontSize="small"
+                      sx={{ color: "grey", marginRight: 1 }}
+                    />
+                    <p>{playlist.playlistName}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </Popup>
+          <CreateNewPlaylist
+            createRef={createRef}
+            closeCreatePlaylist={closeCreatePlaylist}
+          />
         </div>
       </div>
     );

@@ -22,6 +22,116 @@ export const MyPlaylistData = [
         isFavorite: 1,
         timeLimit: "3:43",
         songLink: "IDOL.mp3",
+        lyric: `[Verse 1: RM, j-hope]
+You can call me artist (Artist)
+You can call me idol (Idol)
+Anim eotteon dareun (Dareun) mwora haedo
+I don't care
+I'm proud of it (Proud of it)
+Nan jayurobne (Jayurobne)
+No more irony (Irony)
+Naneun hangsang nayeossgie
+
+[Verse 2: SUGA, RM]
+Songaragjil hae (Oh yeah, yeah, yeah), naneun jeonhyeo singyeong sseuji anhne
+Nareul yoghaneun (Woah!) neoui geu iyuga mwodeun gane
+I know what I am (I know what I am)
+I know what I want (I know what I want)
+I never gon' change (I ain't never gonna change)
+I never gon' trade
+(Trade off, uh uh)
+
+[Pre-Chorus: V, RM, Jimin]
+Mwol eojjeogo jeojjeogo tteodeureodaesyeo
+(Talk it, talk it, talk it)
+I do what I do, geunikka neon neona jalhasyeo (Nah, nah)
+You can't stop me lovin' myself
+
+[Chorus: V, Jimin]
+(Hoo hoo) Eolssu johda
+You can't stop me lovin' myself
+(Hoo hoo) Jihwaja johda
+You can't stop me lovin' myself
+
+[Post-Chorus: All, Jung Kook]
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu
+
+[Verse 3: j-hope, SUGA]
+Face off machi ousam, ayy
+Top star with that spotlight, ayy
+Ttaeron syupeohieoroga dwae
+Dollyeodae neoui Anpanman
+Woah, 24sigani jeogji
+Hesgallim, naegen sachi (Woah!)
+I do my thang (I do my thang)
+I love myself (I love myself)
+
+[Verse 4: Jung Kook, V]
+I love myself, I love my fans
+Love my dance and my what
+Nae soganen myeoch sib myeoch baegmyeongui naega isseo
+Oneul tto dareun nal majihae
+Eochapi jeonbu da naigie
+Gominbodaneun gyang dalline
+Runnin' man, runnin' man
+Runnin' man, run!
+
+[Pre-Chorus: Jin, Jung Kook, Jimin]
+Mwol eojjeogo jeojjeogo tteodeureodaesyeo
+(Talk it, talk it, talk it)
+I do what I do, geunikka neon neona jalhasyeo
+You can't stop me lovin' myself
+
+[Chorus: V, j-hope, Jimin]
+(Hoo hoo) Eolssu johda
+You can't stop me lovin' myself
+(Hoo hoo) Jihwaja johda
+You can't stop me lovin' myself
+
+[Post-Chorus: All, Jung Kook]
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu
+
+[Bridge: Jimin, Jin, Jimin & Jin]
+I'm so fine wherever I go (I go, I go, I go, I go)
+Gakkeum meolli doragado (oh)
+It's okay, I'm in love with my-my myself
+It's okay, nan i sungan haengbokhae!
+
+[Chorus: V, SUGA, Jimin]
+(Hoo hoo) Eolssu johda
+You can't stop me lovin' myself
+(Hoo hoo) Jihwaja johda
+You can't stop me lovin' myself
+
+[Post-Chorus: All, Jung Kook]
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu`,
       },
       {
         id: "1",
@@ -45,6 +155,34 @@ export const MyPlaylistData = [
         isFavorite: 1,
         timeLimit: "4:07",
         songLink: "OnlyLove.mp3",
+        lyric: `2 a.m. and the rain is falling
+Here we are at the crossroads once again
+You're telling me you're so confused
+You can't make up your mind
+Is this meant to be
+You're asking me
+
+But only love can say - try again or walk away
+But i believe for you and me
+The sun will shine one day
+So i'll just play my part
+And pray you'll have a change of heart
+But i can't make you see it through
+That's something only love can do
+
+In your arms as the dawn is breaking
+Face to face and a thousand miles apart
+I've tried my best to make you see
+There's hope beyond the pain
+If we give enough, if we learn to trust
+
+Chorus
+
+I know if i could find the words
+To touch you deep inside
+You'd give our dream just one more chance
+Don't let this be our last good-bye
+`,
       },
       {
         id: "2",
@@ -62,6 +200,34 @@ export const MyPlaylistData = [
         isFavorite: 0,
         timeLimit: "2:59",
         songLink: "Tonight.mp3",
+        lyric: `2 a.m. and the rain is falling
+Here we are at the crossroads once again
+You're telling me you're so confused
+You can't make up your mind
+Is this meant to be
+You're asking me
+
+But only love can say - try again or walk away
+But i believe for you and me
+The sun will shine one day
+So i'll just play my part
+And pray you'll have a change of heart
+But i can't make you see it through
+That's something only love can do
+
+In your arms as the dawn is breaking
+Face to face and a thousand miles apart
+I've tried my best to make you see
+There's hope beyond the pain
+If we give enough, if we learn to trust
+
+Chorus
+
+I know if i could find the words
+To touch you deep inside
+You'd give our dream just one more chance
+Don't let this be our last good-bye
+`,
       },
     ],
   },
@@ -88,6 +254,34 @@ export const MyPlaylistData = [
         isFavorite: 0,
         timeLimit: "2:59",
         songLink: "Tonight.mp3",
+        lyric: `2 a.m. and the rain is falling
+Here we are at the crossroads once again
+You're telling me you're so confused
+You can't make up your mind
+Is this meant to be
+You're asking me
+
+But only love can say - try again or walk away
+But i believe for you and me
+The sun will shine one day
+So i'll just play my part
+And pray you'll have a change of heart
+But i can't make you see it through
+That's something only love can do
+
+In your arms as the dawn is breaking
+Face to face and a thousand miles apart
+I've tried my best to make you see
+There's hope beyond the pain
+If we give enough, if we learn to trust
+
+Chorus
+
+I know if i could find the words
+To touch you deep inside
+You'd give our dream just one more chance
+Don't let this be our last good-bye
+`,
       },
       {
         id: "3",
@@ -105,6 +299,116 @@ export const MyPlaylistData = [
         isFavorite: 1,
         timeLimit: "3:43",
         songLink: "IDOL.mp3",
+        lyric: `[Verse 1: RM, j-hope]
+You can call me artist (Artist)
+You can call me idol (Idol)
+Anim eotteon dareun (Dareun) mwora haedo
+I don't care
+I'm proud of it (Proud of it)
+Nan jayurobne (Jayurobne)
+No more irony (Irony)
+Naneun hangsang nayeossgie
+
+[Verse 2: SUGA, RM]
+Songaragjil hae (Oh yeah, yeah, yeah), naneun jeonhyeo singyeong sseuji anhne
+Nareul yoghaneun (Woah!) neoui geu iyuga mwodeun gane
+I know what I am (I know what I am)
+I know what I want (I know what I want)
+I never gon' change (I ain't never gonna change)
+I never gon' trade
+(Trade off, uh uh)
+
+[Pre-Chorus: V, RM, Jimin]
+Mwol eojjeogo jeojjeogo tteodeureodaesyeo
+(Talk it, talk it, talk it)
+I do what I do, geunikka neon neona jalhasyeo (Nah, nah)
+You can't stop me lovin' myself
+
+[Chorus: V, Jimin]
+(Hoo hoo) Eolssu johda
+You can't stop me lovin' myself
+(Hoo hoo) Jihwaja johda
+You can't stop me lovin' myself
+
+[Post-Chorus: All, Jung Kook]
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu
+
+[Verse 3: j-hope, SUGA]
+Face off machi ousam, ayy
+Top star with that spotlight, ayy
+Ttaeron syupeohieoroga dwae
+Dollyeodae neoui Anpanman
+Woah, 24sigani jeogji
+Hesgallim, naegen sachi (Woah!)
+I do my thang (I do my thang)
+I love myself (I love myself)
+
+[Verse 4: Jung Kook, V]
+I love myself, I love my fans
+Love my dance and my what
+Nae soganen myeoch sib myeoch baegmyeongui naega isseo
+Oneul tto dareun nal majihae
+Eochapi jeonbu da naigie
+Gominbodaneun gyang dalline
+Runnin' man, runnin' man
+Runnin' man, run!
+
+[Pre-Chorus: Jin, Jung Kook, Jimin]
+Mwol eojjeogo jeojjeogo tteodeureodaesyeo
+(Talk it, talk it, talk it)
+I do what I do, geunikka neon neona jalhasyeo
+You can't stop me lovin' myself
+
+[Chorus: V, j-hope, Jimin]
+(Hoo hoo) Eolssu johda
+You can't stop me lovin' myself
+(Hoo hoo) Jihwaja johda
+You can't stop me lovin' myself
+
+[Post-Chorus: All, Jung Kook]
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu
+
+[Bridge: Jimin, Jin, Jimin & Jin]
+I'm so fine wherever I go (I go, I go, I go, I go)
+Gakkeum meolli doragado (oh)
+It's okay, I'm in love with my-my myself
+It's okay, nan i sungan haengbokhae!
+
+[Chorus: V, SUGA, Jimin]
+(Hoo hoo) Eolssu johda
+You can't stop me lovin' myself
+(Hoo hoo) Jihwaja johda
+You can't stop me lovin' myself
+
+[Post-Chorus: All, Jung Kook]
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu`,
       },
       {
         id: "4",
@@ -122,6 +426,116 @@ export const MyPlaylistData = [
         isFavorite: 0,
         timeLimit: "3:28",
         songLink: "IDo.mp3",
+        lyric: `[Verse 1: RM, j-hope]
+You can call me artist (Artist)
+You can call me idol (Idol)
+Anim eotteon dareun (Dareun) mwora haedo
+I don't care
+I'm proud of it (Proud of it)
+Nan jayurobne (Jayurobne)
+No more irony (Irony)
+Naneun hangsang nayeossgie
+
+[Verse 2: SUGA, RM]
+Songaragjil hae (Oh yeah, yeah, yeah), naneun jeonhyeo singyeong sseuji anhne
+Nareul yoghaneun (Woah!) neoui geu iyuga mwodeun gane
+I know what I am (I know what I am)
+I know what I want (I know what I want)
+I never gon' change (I ain't never gonna change)
+I never gon' trade
+(Trade off, uh uh)
+
+[Pre-Chorus: V, RM, Jimin]
+Mwol eojjeogo jeojjeogo tteodeureodaesyeo
+(Talk it, talk it, talk it)
+I do what I do, geunikka neon neona jalhasyeo (Nah, nah)
+You can't stop me lovin' myself
+
+[Chorus: V, Jimin]
+(Hoo hoo) Eolssu johda
+You can't stop me lovin' myself
+(Hoo hoo) Jihwaja johda
+You can't stop me lovin' myself
+
+[Post-Chorus: All, Jung Kook]
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu
+
+[Verse 3: j-hope, SUGA]
+Face off machi ousam, ayy
+Top star with that spotlight, ayy
+Ttaeron syupeohieoroga dwae
+Dollyeodae neoui Anpanman
+Woah, 24sigani jeogji
+Hesgallim, naegen sachi (Woah!)
+I do my thang (I do my thang)
+I love myself (I love myself)
+
+[Verse 4: Jung Kook, V]
+I love myself, I love my fans
+Love my dance and my what
+Nae soganen myeoch sib myeoch baegmyeongui naega isseo
+Oneul tto dareun nal majihae
+Eochapi jeonbu da naigie
+Gominbodaneun gyang dalline
+Runnin' man, runnin' man
+Runnin' man, run!
+
+[Pre-Chorus: Jin, Jung Kook, Jimin]
+Mwol eojjeogo jeojjeogo tteodeureodaesyeo
+(Talk it, talk it, talk it)
+I do what I do, geunikka neon neona jalhasyeo
+You can't stop me lovin' myself
+
+[Chorus: V, j-hope, Jimin]
+(Hoo hoo) Eolssu johda
+You can't stop me lovin' myself
+(Hoo hoo) Jihwaja johda
+You can't stop me lovin' myself
+
+[Post-Chorus: All, Jung Kook]
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu
+
+[Bridge: Jimin, Jin, Jimin & Jin]
+I'm so fine wherever I go (I go, I go, I go, I go)
+Gakkeum meolli doragado (oh)
+It's okay, I'm in love with my-my myself
+It's okay, nan i sungan haengbokhae!
+
+[Chorus: V, SUGA, Jimin]
+(Hoo hoo) Eolssu johda
+You can't stop me lovin' myself
+(Hoo hoo) Jihwaja johda
+You can't stop me lovin' myself
+
+[Post-Chorus: All, Jung Kook]
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu`,
       },
 
       {
@@ -146,6 +560,116 @@ export const MyPlaylistData = [
         isFavorite: 1,
         timeLimit: "4:21",
         songLink: "IDOLFeat.mp3",
+        lyric: `[Verse 1: RM, j-hope]
+You can call me artist (Artist)
+You can call me idol (Idol)
+Anim eotteon dareun (Dareun) mwora haedo
+I don't care
+I'm proud of it (Proud of it)
+Nan jayurobne (Jayurobne)
+No more irony (Irony)
+Naneun hangsang nayeossgie
+
+[Verse 2: SUGA, RM]
+Songaragjil hae (Oh yeah, yeah, yeah), naneun jeonhyeo singyeong sseuji anhne
+Nareul yoghaneun (Woah!) neoui geu iyuga mwodeun gane
+I know what I am (I know what I am)
+I know what I want (I know what I want)
+I never gon' change (I ain't never gonna change)
+I never gon' trade
+(Trade off, uh uh)
+
+[Pre-Chorus: V, RM, Jimin]
+Mwol eojjeogo jeojjeogo tteodeureodaesyeo
+(Talk it, talk it, talk it)
+I do what I do, geunikka neon neona jalhasyeo (Nah, nah)
+You can't stop me lovin' myself
+
+[Chorus: V, Jimin]
+(Hoo hoo) Eolssu johda
+You can't stop me lovin' myself
+(Hoo hoo) Jihwaja johda
+You can't stop me lovin' myself
+
+[Post-Chorus: All, Jung Kook]
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu
+
+[Verse 3: j-hope, SUGA]
+Face off machi ousam, ayy
+Top star with that spotlight, ayy
+Ttaeron syupeohieoroga dwae
+Dollyeodae neoui Anpanman
+Woah, 24sigani jeogji
+Hesgallim, naegen sachi (Woah!)
+I do my thang (I do my thang)
+I love myself (I love myself)
+
+[Verse 4: Jung Kook, V]
+I love myself, I love my fans
+Love my dance and my what
+Nae soganen myeoch sib myeoch baegmyeongui naega isseo
+Oneul tto dareun nal majihae
+Eochapi jeonbu da naigie
+Gominbodaneun gyang dalline
+Runnin' man, runnin' man
+Runnin' man, run!
+
+[Pre-Chorus: Jin, Jung Kook, Jimin]
+Mwol eojjeogo jeojjeogo tteodeureodaesyeo
+(Talk it, talk it, talk it)
+I do what I do, geunikka neon neona jalhasyeo
+You can't stop me lovin' myself
+
+[Chorus: V, j-hope, Jimin]
+(Hoo hoo) Eolssu johda
+You can't stop me lovin' myself
+(Hoo hoo) Jihwaja johda
+You can't stop me lovin' myself
+
+[Post-Chorus: All, Jung Kook]
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu
+
+[Bridge: Jimin, Jin, Jimin & Jin]
+I'm so fine wherever I go (I go, I go, I go, I go)
+Gakkeum meolli doragado (oh)
+It's okay, I'm in love with my-my myself
+It's okay, nan i sungan haengbokhae!
+
+[Chorus: V, SUGA, Jimin]
+(Hoo hoo) Eolssu johda
+You can't stop me lovin' myself
+(Hoo hoo) Jihwaja johda
+You can't stop me lovin' myself
+
+[Post-Chorus: All, Jung Kook]
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu`,
       },
       {
         id: "8",
@@ -163,6 +687,34 @@ export const MyPlaylistData = [
         isFavorite: 1,
         timeLimit: "4:07",
         songLink: "OnlyLove.mp3",
+        lyric: `2 a.m. and the rain is falling
+Here we are at the crossroads once again
+You're telling me you're so confused
+You can't make up your mind
+Is this meant to be
+You're asking me
+
+But only love can say - try again or walk away
+But i believe for you and me
+The sun will shine one day
+So i'll just play my part
+And pray you'll have a change of heart
+But i can't make you see it through
+That's something only love can do
+
+In your arms as the dawn is breaking
+Face to face and a thousand miles apart
+I've tried my best to make you see
+There's hope beyond the pain
+If we give enough, if we learn to trust
+
+Chorus
+
+I know if i could find the words
+To touch you deep inside
+You'd give our dream just one more chance
+Don't let this be our last good-bye
+`,
       },
       {
         id: "6",
@@ -180,6 +732,34 @@ export const MyPlaylistData = [
         isFavorite: 0,
         timeLimit: "4:02",
         songLink: "Aloha.mp3",
+        lyric: `2 a.m. and the rain is falling
+Here we are at the crossroads once again
+You're telling me you're so confused
+You can't make up your mind
+Is this meant to be
+You're asking me
+
+But only love can say - try again or walk away
+But i believe for you and me
+The sun will shine one day
+So i'll just play my part
+And pray you'll have a change of heart
+But i can't make you see it through
+That's something only love can do
+
+In your arms as the dawn is breaking
+Face to face and a thousand miles apart
+I've tried my best to make you see
+There's hope beyond the pain
+If we give enough, if we learn to trust
+
+Chorus
+
+I know if i could find the words
+To touch you deep inside
+You'd give our dream just one more chance
+Don't let this be our last good-bye
+`,
       },
       {
         id: "10",
@@ -203,6 +783,116 @@ export const MyPlaylistData = [
         isFavorite: 1,
         timeLimit: "4:21",
         songLink: "IDOLFeat.mp3",
+        lyric: `[Verse 1: RM, j-hope]
+You can call me artist (Artist)
+You can call me idol (Idol)
+Anim eotteon dareun (Dareun) mwora haedo
+I don't care
+I'm proud of it (Proud of it)
+Nan jayurobne (Jayurobne)
+No more irony (Irony)
+Naneun hangsang nayeossgie
+
+[Verse 2: SUGA, RM]
+Songaragjil hae (Oh yeah, yeah, yeah), naneun jeonhyeo singyeong sseuji anhne
+Nareul yoghaneun (Woah!) neoui geu iyuga mwodeun gane
+I know what I am (I know what I am)
+I know what I want (I know what I want)
+I never gon' change (I ain't never gonna change)
+I never gon' trade
+(Trade off, uh uh)
+
+[Pre-Chorus: V, RM, Jimin]
+Mwol eojjeogo jeojjeogo tteodeureodaesyeo
+(Talk it, talk it, talk it)
+I do what I do, geunikka neon neona jalhasyeo (Nah, nah)
+You can't stop me lovin' myself
+
+[Chorus: V, Jimin]
+(Hoo hoo) Eolssu johda
+You can't stop me lovin' myself
+(Hoo hoo) Jihwaja johda
+You can't stop me lovin' myself
+
+[Post-Chorus: All, Jung Kook]
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu
+
+[Verse 3: j-hope, SUGA]
+Face off machi ousam, ayy
+Top star with that spotlight, ayy
+Ttaeron syupeohieoroga dwae
+Dollyeodae neoui Anpanman
+Woah, 24sigani jeogji
+Hesgallim, naegen sachi (Woah!)
+I do my thang (I do my thang)
+I love myself (I love myself)
+
+[Verse 4: Jung Kook, V]
+I love myself, I love my fans
+Love my dance and my what
+Nae soganen myeoch sib myeoch baegmyeongui naega isseo
+Oneul tto dareun nal majihae
+Eochapi jeonbu da naigie
+Gominbodaneun gyang dalline
+Runnin' man, runnin' man
+Runnin' man, run!
+
+[Pre-Chorus: Jin, Jung Kook, Jimin]
+Mwol eojjeogo jeojjeogo tteodeureodaesyeo
+(Talk it, talk it, talk it)
+I do what I do, geunikka neon neona jalhasyeo
+You can't stop me lovin' myself
+
+[Chorus: V, j-hope, Jimin]
+(Hoo hoo) Eolssu johda
+You can't stop me lovin' myself
+(Hoo hoo) Jihwaja johda
+You can't stop me lovin' myself
+
+[Post-Chorus: All, Jung Kook]
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu
+
+[Bridge: Jimin, Jin, Jimin & Jin]
+I'm so fine wherever I go (I go, I go, I go, I go)
+Gakkeum meolli doragado (oh)
+It's okay, I'm in love with my-my myself
+It's okay, nan i sungan haengbokhae!
+
+[Chorus: V, SUGA, Jimin]
+(Hoo hoo) Eolssu johda
+You can't stop me lovin' myself
+(Hoo hoo) Jihwaja johda
+You can't stop me lovin' myself
+
+[Post-Chorus: All, Jung Kook]
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu`,
       },
       {
         id: "9",
@@ -220,6 +910,34 @@ export const MyPlaylistData = [
         isFavorite: 0,
         timeLimit: "4:02",
         songLink: "Aloha.mp3",
+        lyric: `2 a.m. and the rain is falling
+Here we are at the crossroads once again
+You're telling me you're so confused
+You can't make up your mind
+Is this meant to be
+You're asking me
+
+But only love can say - try again or walk away
+But i believe for you and me
+The sun will shine one day
+So i'll just play my part
+And pray you'll have a change of heart
+But i can't make you see it through
+That's something only love can do
+
+In your arms as the dawn is breaking
+Face to face and a thousand miles apart
+I've tried my best to make you see
+There's hope beyond the pain
+If we give enough, if we learn to trust
+
+Chorus
+
+I know if i could find the words
+To touch you deep inside
+You'd give our dream just one more chance
+Don't let this be our last good-bye
+`,
       },
     ],
   },
@@ -252,6 +970,116 @@ export const MyPlaylistData = [
         isFavorite: 1,
         timeLimit: "4:21",
         songLink: "IDOLFeat.mp3",
+        lyric: `[Verse 1: RM, j-hope]
+You can call me artist (Artist)
+You can call me idol (Idol)
+Anim eotteon dareun (Dareun) mwora haedo
+I don't care
+I'm proud of it (Proud of it)
+Nan jayurobne (Jayurobne)
+No more irony (Irony)
+Naneun hangsang nayeossgie
+
+[Verse 2: SUGA, RM]
+Songaragjil hae (Oh yeah, yeah, yeah), naneun jeonhyeo singyeong sseuji anhne
+Nareul yoghaneun (Woah!) neoui geu iyuga mwodeun gane
+I know what I am (I know what I am)
+I know what I want (I know what I want)
+I never gon' change (I ain't never gonna change)
+I never gon' trade
+(Trade off, uh uh)
+
+[Pre-Chorus: V, RM, Jimin]
+Mwol eojjeogo jeojjeogo tteodeureodaesyeo
+(Talk it, talk it, talk it)
+I do what I do, geunikka neon neona jalhasyeo (Nah, nah)
+You can't stop me lovin' myself
+
+[Chorus: V, Jimin]
+(Hoo hoo) Eolssu johda
+You can't stop me lovin' myself
+(Hoo hoo) Jihwaja johda
+You can't stop me lovin' myself
+
+[Post-Chorus: All, Jung Kook]
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu
+
+[Verse 3: j-hope, SUGA]
+Face off machi ousam, ayy
+Top star with that spotlight, ayy
+Ttaeron syupeohieoroga dwae
+Dollyeodae neoui Anpanman
+Woah, 24sigani jeogji
+Hesgallim, naegen sachi (Woah!)
+I do my thang (I do my thang)
+I love myself (I love myself)
+
+[Verse 4: Jung Kook, V]
+I love myself, I love my fans
+Love my dance and my what
+Nae soganen myeoch sib myeoch baegmyeongui naega isseo
+Oneul tto dareun nal majihae
+Eochapi jeonbu da naigie
+Gominbodaneun gyang dalline
+Runnin' man, runnin' man
+Runnin' man, run!
+
+[Pre-Chorus: Jin, Jung Kook, Jimin]
+Mwol eojjeogo jeojjeogo tteodeureodaesyeo
+(Talk it, talk it, talk it)
+I do what I do, geunikka neon neona jalhasyeo
+You can't stop me lovin' myself
+
+[Chorus: V, j-hope, Jimin]
+(Hoo hoo) Eolssu johda
+You can't stop me lovin' myself
+(Hoo hoo) Jihwaja johda
+You can't stop me lovin' myself
+
+[Post-Chorus: All, Jung Kook]
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu
+
+[Bridge: Jimin, Jin, Jimin & Jin]
+I'm so fine wherever I go (I go, I go, I go, I go)
+Gakkeum meolli doragado (oh)
+It's okay, I'm in love with my-my myself
+It's okay, nan i sungan haengbokhae!
+
+[Chorus: V, SUGA, Jimin]
+(Hoo hoo) Eolssu johda
+You can't stop me lovin' myself
+(Hoo hoo) Jihwaja johda
+You can't stop me lovin' myself
+
+[Post-Chorus: All, Jung Kook]
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu
+Oh-oh-owoah (Hey!)
+Oh-oh-owoah-owoah
+Oh-oh-owoah
+Deonggideok kungdeoreoreo
+Eolssu`,
       },
       {
         id: "9",
@@ -269,6 +1097,34 @@ export const MyPlaylistData = [
         isFavorite: 0,
         timeLimit: "4:02",
         songLink: "Aloha.mp3",
+        lyric: `2 a.m. and the rain is falling
+Here we are at the crossroads once again
+You're telling me you're so confused
+You can't make up your mind
+Is this meant to be
+You're asking me
+
+But only love can say - try again or walk away
+But i believe for you and me
+The sun will shine one day
+So i'll just play my part
+And pray you'll have a change of heart
+But i can't make you see it through
+That's something only love can do
+
+In your arms as the dawn is breaking
+Face to face and a thousand miles apart
+I've tried my best to make you see
+There's hope beyond the pain
+If we give enough, if we learn to trust
+
+Chorus
+
+I know if i could find the words
+To touch you deep inside
+You'd give our dream just one more chance
+Don't let this be our last good-bye
+`,
       },
     ],
   },
@@ -295,6 +1151,34 @@ export const MyPlaylistData = [
         isFavorite: 0,
         timeLimit: "4:02",
         songLink: "Aloha.mp3",
+        lyric: `2 a.m. and the rain is falling
+Here we are at the crossroads once again
+You're telling me you're so confused
+You can't make up your mind
+Is this meant to be
+You're asking me
+
+But only love can say - try again or walk away
+But i believe for you and me
+The sun will shine one day
+So i'll just play my part
+And pray you'll have a change of heart
+But i can't make you see it through
+That's something only love can do
+
+In your arms as the dawn is breaking
+Face to face and a thousand miles apart
+I've tried my best to make you see
+There's hope beyond the pain
+If we give enough, if we learn to trust
+
+Chorus
+
+I know if i could find the words
+To touch you deep inside
+You'd give our dream just one more chance
+Don't let this be our last good-bye
+`,
       },
 
       {
@@ -313,6 +1197,34 @@ export const MyPlaylistData = [
         isFavorite: 1,
         timeLimit: "4:07",
         songLink: "OnlyLove.mp3",
+        lyric: `2 a.m. and the rain is falling
+Here we are at the crossroads once again
+You're telling me you're so confused
+You can't make up your mind
+Is this meant to be
+You're asking me
+
+But only love can say - try again or walk away
+But i believe for you and me
+The sun will shine one day
+So i'll just play my part
+And pray you'll have a change of heart
+But i can't make you see it through
+That's something only love can do
+
+In your arms as the dawn is breaking
+Face to face and a thousand miles apart
+I've tried my best to make you see
+There's hope beyond the pain
+If we give enough, if we learn to trust
+
+Chorus
+
+I know if i could find the words
+To touch you deep inside
+You'd give our dream just one more chance
+Don't let this be our last good-bye
+`,
       },
     ],
   },
@@ -339,6 +1251,34 @@ export const MyPlaylistData = [
         isFavorite: 1,
         timeLimit: "4:07",
         songLink: "OnlyLove.mp3",
+        lyric: `2 a.m. and the rain is falling
+Here we are at the crossroads once again
+You're telling me you're so confused
+You can't make up your mind
+Is this meant to be
+You're asking me
+
+But only love can say - try again or walk away
+But i believe for you and me
+The sun will shine one day
+So i'll just play my part
+And pray you'll have a change of heart
+But i can't make you see it through
+That's something only love can do
+
+In your arms as the dawn is breaking
+Face to face and a thousand miles apart
+I've tried my best to make you see
+There's hope beyond the pain
+If we give enough, if we learn to trust
+
+Chorus
+
+I know if i could find the words
+To touch you deep inside
+You'd give our dream just one more chance
+Don't let this be our last good-bye
+`,
       },
 
       {
@@ -357,6 +1297,34 @@ export const MyPlaylistData = [
         isFavorite: 0,
         timeLimit: "4:02",
         songLink: "Aloha.mp3",
+        lyric: `2 a.m. and the rain is falling
+Here we are at the crossroads once again
+You're telling me you're so confused
+You can't make up your mind
+Is this meant to be
+You're asking me
+
+But only love can say - try again or walk away
+But i believe for you and me
+The sun will shine one day
+So i'll just play my part
+And pray you'll have a change of heart
+But i can't make you see it through
+That's something only love can do
+
+In your arms as the dawn is breaking
+Face to face and a thousand miles apart
+I've tried my best to make you see
+There's hope beyond the pain
+If we give enough, if we learn to trust
+
+Chorus
+
+I know if i could find the words
+To touch you deep inside
+You'd give our dream just one more chance
+Don't let this be our last good-bye
+`,
       },
     ],
   },

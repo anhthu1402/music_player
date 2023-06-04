@@ -10,6 +10,8 @@ import "../styles/NewAlbums.css";
 import { AlbumData } from "../components/Data/AlbumData";
 import { getAllAlbum } from "../components/API/getAllAlbums";
 import { getAlbumDetail } from "../service";
+import { useRef } from "react";
+import AlbumPopup from "../components/AlbumPopup";
 
 function NewAlbums() {
   const [toggleState, setToggleState] = useState(1);
@@ -42,6 +44,9 @@ function NewAlbums() {
   };
   const song = useContext(MusicPlayerContext);
   const [rnd, setRnd] = useState(0);
+  const popupRef = useRef();
+  const openPopup = () => popupRef.current.open();
+  const closePopup = () => popupRef.current.close();
 
   return (
     <div className="newAlbumReleaseContainer">
@@ -106,7 +111,16 @@ function NewAlbums() {
                 fontSize="large"
                 className="favOutlineIcon"
               />
-              <MoreHoriz fontSize="large" className="moreHoriz" />
+              <MoreHoriz
+                fontSize="large"
+                className="moreHoriz"
+                onClick={() => openPopup()}
+              />
+              <AlbumPopup
+                albumId={item.id}
+                closePopup={closePopup}
+                popupRef={popupRef}
+              />
             </div>
           </div>
         ))}

@@ -25,6 +25,7 @@ function AppAppBar(props) {
             width: `calc(100% - 17vw)`,
             padding: `1.2vw`,
             backgroundColor: "white",
+            zIndex: 8,
           }}
         >
           <Header className="header" />
