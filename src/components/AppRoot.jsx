@@ -26,7 +26,10 @@ function AppRoot() {
         <div
           className="musicPlayer"
           style={{
-            width: `calc(100% - 17vw)`,
+            // width: `calc(100% - 17vw)`,
+            width: `100%`,
+            // margin: `-10px`
+            
           }}
         >
           <MusicPlayer />

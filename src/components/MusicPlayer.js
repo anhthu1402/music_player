@@ -23,13 +23,16 @@ import "../styles/MusicPlayer.css";
 
 const Widget = styled("div")(() => ({
   padding: 10,
-  borderRadius: 16,
+  // borderRadius: 16,
   width: "100%",
   maxWidth: "100%",
-  margin: "auto",
+  // margin: "auto",
   position: "relative",
   zIndex: 1,
-  backgroundColor: "rgba(255,255,255,0.4)",
+  // backgroundColor: "rgba(255,255,255,0.4)",
+  backgroundColor: "white",
+  boxShadow: "rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;",
+
   backdropFilter: "blur(40px)",
   display: "flex",
   flexDirection: "row",
@@ -37,8 +40,11 @@ const Widget = styled("div")(() => ({
 }));
 
 const CoverImage = styled("div")({
-  width: 100,
-  height: 100,
+  // width: 100,
+  // height: 100,
+  width: 60,
+  aspectRatio: 1,
+
   objectFit: "cover",
   overflow: "hidden",
   flexShrink: 0,
@@ -199,7 +205,7 @@ const MusicPlayer = () => {
           <Box sx={{ display: `flex`, alignItems: "center" }}>
             <CoverImage
               sx={{
-                width: "6vw",
+                // width: "6vw",
                 backgroundColor: "transparent",
               }}
             >

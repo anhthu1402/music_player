@@ -28,6 +28,10 @@ html::-webkit-scrollbar {
   max-width: 100%;
   left: 17vw;
   padding: 2vw 2vw 1vw;
+
+  /* padding: 10px; */
+  /* left: 0;
+  z-index: 2; */
 }
 .mainscreen {
   margin-top: 6em;

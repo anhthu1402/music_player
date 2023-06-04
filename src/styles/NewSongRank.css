@@ -15,7 +15,7 @@
     font-size: 20px;
     color: #ff7394;
     cursor: pointer;
-    z-index: 9;
+    z-index: 1;
 }
 .newSongRankContainer .btnBack:hover, .newSongRankContainer .btnForw:hover {
     background-color: #ff7394;
