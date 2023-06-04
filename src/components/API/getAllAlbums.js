@@ -178,15 +178,6 @@ export const getAllAlbum = [
         artistImage:
           "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS577cuhYFeSCYDO6fyzkSbk5FSa505r5pSpmvJmzDLX3f2ybEs",
       },
-      {
-        id: 4,
-        artistName: "BTS",
-        numberOfFollower: "927.713",
-        introduce:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac nunc ut justo tincidunt sagittis quis eu magna. Suspendisse posuere tellus velit, ...",
-        artistImage:
-          "https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/02/21/10/bts.jpg?quality=75&width=990&crop=4%3A3%2Csmart&auto=webp",
-      },
     ],
   },
   {

@@ -47,7 +47,9 @@ function ArtistAlbumItem({ item }) {
         </div>
       </div>
       <div className="albumTitle">
-        <h3 style={{ fontSize: "1.2vw" }}>{item.albumName}</h3>
+        <h3 style={{ fontSize: "1.2vw" }} onClick={() => console.log("ghuj")}>
+          {item.albumName}
+        </h3>
         <h4 style={{ fontWeight: "normal", fontSize: "1vw" }}>
           {getReleaseYear(item.releaseDate)}
         </h4>
