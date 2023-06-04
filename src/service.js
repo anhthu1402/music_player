@@ -95,3 +95,7 @@ export const deleteLocalPlaylist = (musicPlayer) => {
   musicPlayer.setUsing(false);
   localStorage.setItem("play", false);
 };
+
+export const changeUserName = (userId, name) => {
+  console.log(userId, name);
+};
