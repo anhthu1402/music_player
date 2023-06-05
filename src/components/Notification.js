@@ -1,16 +1,19 @@
 import React, { useContext } from "react";
 import { Alert, Stack } from "@mui/material";
 import NotificationContext from "../NotificationContext";
+import MusicPlayerContext from "../MusicPlayerContext";
 
 function Notification() {
   const notification = useContext(NotificationContext);
+  const song = useContext(MusicPlayerContext);
   setTimeout(() => {
     if (notification.isUsing === true) {
       notification.setUsing(false);
     }
-  }, 5000);
+  }, 50000);
   return notification.isUsing ? (
-    <Stack sx={{ width: "100%" }} spacing={2}>
+    <Stack className="notification" style={song.isUsing ? { bottom: '17.5vh' } : { bottom: "0" }}
+            spacing={2}>
       <Alert
         onClose={() => {
           notification.setUsing(false);

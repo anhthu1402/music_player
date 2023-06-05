@@ -25,15 +25,19 @@ import LocalPlaylistContext from "../LocalPlaylistContext";
 
 const Widget = styled("div")(() => ({
   padding: 10,
-  // borderRadius: 16,
+  
+  borderRadius: 16,
+  
   width: "100%",
   maxWidth: "100%",
-  // margin: "auto",
+  
+  margin: "auto",
+  
   position: "relative",
   zIndex: 1,
-  // backgroundColor: "rgba(255,255,255,0.4)",
-  backgroundColor: "white",
-  boxShadow: "rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;",
+  backgroundColor: "rgba(255,255,255,0.4)",
+  // backgroundColor: "white",
+  // boxShadow: "rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;",
 
   backdropFilter: "blur(40px)",
   display: "flex",
@@ -42,10 +46,10 @@ const Widget = styled("div")(() => ({
 }));
 
 const CoverImage = styled("div")({
-  // width: 100,
-  // height: 100,
-  width: 60,
-  aspectRatio: 1,
+  width: 100,
+  height: 100,
+  // width: 60,
+  // aspectRatio: 1,
 
   objectFit: "cover",
   overflow: "hidden",
@@ -214,18 +218,21 @@ const MusicPlayer = () => {
             }
           }}
         />
-        <Widget>
+        <Widget sx={{ backgroundColor: "white", borderRadius: 0,  boxShadow: `rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px`}}>
           <Box sx={{ display: `flex`, alignItems: "center" }}>
             <CoverImage
               sx={{
-                // width: "6vw",
+                width: '6vw',
+                height: '6vw',
+                minWidth: "40px",
+                minHeight: '40px',
                 backgroundColor: "transparent",
               }}
             >
               <img
                 alt={songName}
                 src={imgUrl}
-                style={{ borderRadius: "10px" }}
+                style={{ borderRadius: "5px", width: '100%', aspectRatio: 1, objectFit: 'cover' }}
               ></img>
             </CoverImage>
             <Box sx={{ ml: 1.5, minWidth: 0 }}>
@@ -406,7 +413,7 @@ const MusicPlayer = () => {
             >
               <Tooltip title="Danh sách phát" placement="top">
                 <Button
-                  sx={{ mb: 2, color: "black" }}
+                  sx={{ mb: 0.1, color: "black" }}
                   onClick={() => {
                     localStorage.setItem(
                       "openLocalPlaylist",
@@ -425,7 +432,7 @@ const MusicPlayer = () => {
                 </Button>
               </Tooltip>
               <Button
-                sx={{ mb: 2, color: "black" }}
+                sx={{ mb: 0.1, color: "black" }}
                 onClick={() => {
                   removeMusicplayer();
                   localStorage.setItem("openLocalPlaylist", false);
@@ -438,7 +445,7 @@ const MusicPlayer = () => {
             <Stack
               spacing={2}
               direction="row"
-              sx={{ mb: 1, px: 1, width: "13vw" }}
+              sx={{ mb: 0.1, px: 1, width: "13vw" }}
               alignItems="center"
             >
               <VolumeDownRounded />

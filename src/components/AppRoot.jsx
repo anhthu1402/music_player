@@ -30,7 +30,8 @@ function AppRoot() {
           <div
             className="musicPlayer"
             style={{
-              width: `calc(100% - 17vw)`,
+              // width: `calc(100% - 17vw)`,
+              width: `100%`
             }}
           >
             <MusicPlayer />
@@ -39,32 +40,6 @@ function AppRoot() {
           <NavBarPlaylist />
         </div>
       </div>
-      {/* <div
-        style={{
-          position: "fixed",
-          width: "35vw",
-          marginLeft: "30px",
-          bottom: "3em",
-          zIndex: 10,
-        }}
-      >
-        <AppAppBar />
-        <div>
-          <Outlet />
-        </div>
-        <div
-          className="musicPlayer"
-          style={{
-            // width: `calc(100% - 17vw)`,
-            width: `100%`,
-            // margin: `-10px`
-            
-          }}
-        >
-          <MusicPlayer />
-        </div>
-        
-      </div> */}
     </>
   );
 }
