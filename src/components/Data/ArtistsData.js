@@ -29,7 +29,7 @@ export const ArtistsData = [
   },
   {
     id: 5,
-    artistName: "911",
+    artistName: "V",
     artistImage:
       "https://pbs.twimg.com/media/Fr4eP4aWcAE4Cu1?format=jpg&name=900x900",
     numberOfFollower: "907.713",
@@ -38,8 +38,8 @@ export const ArtistsData = [
     id: 6,
     artistName: "Jin",
     artistImage:
-      "https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/02/21/10/bts.jpg?quality=75&width=990&crop=4%3A3%2Csmart&auto=webp",
-    numberOfFollower: "927.713",
+      "https://lh3.googleusercontent.com/FY1xLPJ6CP6gi_hgp2UYwXxj1dY8pF3boxxrhjQez0zAksVIXUTF6D8VCB_ZAQg-0BvSE1-2vtjFZ7qggQkDs4y0t8fgU8mYOA=w1600-rj-nu-e365",
+    numberOfFollower: "827.713",
   },
   {
     id: 7,
