@@ -26,7 +26,7 @@ import {
 } from "../service";
 import CreateNewPlaylist from "./CreateNewPlaylist";
 import { useRef } from "react";
-import { useState } from "react";
+import AppAppBarPlaylist from "./AppAppBarPlaylist";
 
 function NavBarPlaylist() {
   const localPlaylist = useContext(LocalPlaylistContext);
@@ -64,68 +64,11 @@ function NavBarPlaylist() {
           anchor="right"
         >
           <Box sx={{ padding: 3, width: 400 }}>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-                alignItems: "center",
-                marginBottom: "10px",
-              }}
-            >
-              <h2>Danh sách phát</h2>
-
-              <Popup
-                contentStyle={{
-                  zIndex: "10",
-                  width: "18%",
-                  padding: 0,
-                }}
-                trigger={
-                  <Tooltip title="Khác">
-                    <MoreHoriz sx={{ cursor: "pointer" }} />
-                  </Tooltip>
-                }
-                position={"bottom right"}
-              >
-                <div className="playlistItemPopup" onClick={openDeletePopup}>
-                  <DeleteOutline
-                    fontSize="small"
-                    sx={{ color: "grey", marginRight: 1 }}
-                  />
-                  <p>Xóa danh sách phát</p>
-                </div>
-                <div className="playlistItemPopup">
-                  <FileDownloadOutlined
-                    fontSize="small"
-                    sx={{ color: "grey", marginRight: 1 }}
-                  />
-                  <p>Tải danh sách phát</p>
-                </div>
-                <div
-                  className="playlistItemPopup"
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                  }}
-                  onClick={openAddPlaylistPopup}
-                >
-                  <div style={{ display: "flex", flexDirection: "row" }}>
-                    <AddCircleOutline
-                      fontSize="small"
-                      sx={{ color: "grey", marginRight: 1 }}
-                    />
-                    <p>Thêm vào playlist</p>
-                  </div>
-                  <ArrowForwardIosOutlined
-                    fontSize="smaller"
-                    sx={{ color: "grey", marginRight: 1 }}
-                  />
-                </div>
-              </Popup>
-            </div>
+            <AppAppBarPlaylist
+              openAddPlaylistPopup={openAddPlaylistPopup}
+              openCreatePlaylist={openCreatePlaylist}
+              openDeletePopup={openDeletePopup}
+            />
             {localStorage.getItem("playlist") !== null ? (
               playlist.map((item, index) => (
                 <div className="song shadowDiv" key={index}>

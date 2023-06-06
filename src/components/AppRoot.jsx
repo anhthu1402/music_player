@@ -31,7 +31,7 @@ function AppRoot() {
             className="musicPlayer"
             style={{
               // width: `calc(100% - 17vw)`,
-              width: `100%`
+              width: `100%`,
             }}
           >
             <MusicPlayer />

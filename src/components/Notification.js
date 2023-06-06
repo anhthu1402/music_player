@@ -10,10 +10,13 @@ function Notification() {
     if (notification.isUsing === true) {
       notification.setUsing(false);
     }
-  }, 50000);
+  }, 5000);
   return notification.isUsing ? (
-    <Stack className="notification" style={song.isUsing ? { bottom: '17.5vh' } : { bottom: "0" }}
-            spacing={2}>
+    <Stack
+      className="notification"
+      style={song.isUsing ? { bottom: "17.5vh" } : { bottom: "5vh" }}
+      spacing={2}
+    >
       <Alert
         onClose={() => {
           notification.setUsing(false);
