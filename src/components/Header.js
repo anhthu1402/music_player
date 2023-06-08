@@ -1,6 +1,5 @@
 import React from "react";
 import InputSearch from "./InputSearch";
-import SettingsIcon from "@mui/icons-material/Settings";
 import "../styles/Header.css";
 import { Link } from "react-router-dom";
 import { Box, Button, TextField, Toolbar } from "@mui/material";
@@ -25,7 +24,7 @@ function Header() {
   const notification = useContext(NotificationContext);
   const username = "Anh Thư";
   //tạm
-  const userId = 2;
+  const userId = 1;
   return (
     <div className="header">
       <Toolbar>

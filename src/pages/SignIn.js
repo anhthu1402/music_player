@@ -44,7 +44,7 @@ function SignIn() {
             <p>Mật khẩu</p>
             <Input
               name="userPassword"
-              placeholder="example@gmail.com"
+              placeholder="password"
               type={values ? "text" : "password"}
             />
           </div>
