@@ -24,37 +24,24 @@ import "../styles/MusicPlayer.css";
 import LocalPlaylistContext from "../LocalPlaylistContext";
 
 const Widget = styled("div")(() => ({
-  padding: 10,
-  
-  borderRadius: 16,
-  
   width: "100%",
   maxWidth: "100%",
-  
   margin: "auto",
-  
   position: "relative",
   zIndex: 1,
-  backgroundColor: "rgba(255,255,255,0.4)",
-  // backgroundColor: "white",
-  // boxShadow: "rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;",
+  backgroundColor: "white",
+  boxShadow: `rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px`,
 
-  backdropFilter: "blur(40px)",
+  // backdropFilter: "blur(40px)",
   display: "flex",
   flexDirection: "row",
   justifyContent: "space-between",
 }));
 
 const CoverImage = styled("div")({
-  width: 100,
-  height: 100,
-  // width: 60,
-  // aspectRatio: 1,
-
-  objectFit: "cover",
   overflow: "hidden",
   flexShrink: 0,
-  borderRadius: 8,
+  borderRadius: 5,
   backgroundColor: "rgba(0,0,0,0.08)",
   "& > img": {
     width: "100%",
@@ -218,7 +205,7 @@ const MusicPlayer = () => {
             }
           }}
         />
-        <Widget sx={{ backgroundColor: "white", borderRadius: 0,  boxShadow: `rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px`}}>
+        <Widget>
           <Box sx={{ display: `flex`, alignItems: "center" }}>
             <CoverImage
               sx={{
@@ -226,6 +213,7 @@ const MusicPlayer = () => {
                 height: '6vw',
                 minWidth: "40px",
                 minHeight: '40px',
+                margin: '10px',
                 backgroundColor: "transparent",
               }}
             >
@@ -238,7 +226,7 @@ const MusicPlayer = () => {
             <Box sx={{ ml: 1.5, minWidth: 0 }}>
               <Typography
                 noWrap
-                sx={{ fontSize: "1.6vw", width: "13vw", marginBottom: "5px" }}
+                sx={{ fontWeight: 'bold', fontSize: "1.6vw", width: "13vw", marginBottom: "5px" }}
               >
                 {songName}
               </Typography>
