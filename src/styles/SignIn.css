@@ -3,6 +3,9 @@
   max-width: 700px;
   margin: auto;
   justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 .signinContainer h1 {
   color: #ff7394;
@@ -101,30 +104,30 @@
   background-color: transparent;
 }
 .signinForm .div3 {
-  margin: -10px 0 40px 0;
+  margin: -10px 0 20px 0;
 }
 .signinForm .div3 div {
   display: flex;
 }
-.signinForm .div3 div > p {
+/* .signinForm .div3 div > p {
   margin-left: 10px;
-}
-.signinForm .div3 .signup_forgotpw {
+} */
+/* .signinForm .div3 .signup_forgotpw {
   display: flex;
   width: 100%;
-  justify-content: space-between;
-}
-.signinForm .div3 > p {
+  justify-content: flex-end;
+} */
+/* .signinForm .div3 > p {
   float: right;
   font-style: italic;
-}
+} */
 .signinForm .div3 a,
 .signinForm .div3 a:visited,
 .signinForm .div3 .forgotPwBtn {
   color: #ff7394;
   cursor: pointer;
 }
-.signinForm .div3 a:hover, 
+.signinForm .div3 a:hover,
 .signinForm .div3 .forgotPwBtn:hover {
   color: #ffb0c3;
 }
@@ -148,7 +151,7 @@ input.submitSignin a:visited {
   color: white;
 }
 input.submitSignin:hover,
-.forgotPwBody input[type=submit]:hover,
+.forgotPwBody input[type="submit"]:hover,
 .closeBtn:hover {
   background-color: #ffb0c3;
 }
@@ -174,14 +177,14 @@ input.submitSignin:hover,
   transform: translate(-50%, -50%);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.forgotPwBody input[type=email] {
+.forgotPwBody input[type="email"] {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
   border: 1px groove gray;
   margin-top: 10px;
 }
-.forgotPwBody input[type=submit] {
+.forgotPwBody input[type="submit"] {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
