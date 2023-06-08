@@ -7,13 +7,18 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { FcGoogle } from "react-icons/fc";
 import { IconButton, Input } from "@mui/material";
+import ForgotPassword from "./ForgotPassword";
 
 function SignIn() {
   const [values, setValues] = useState(false);
+  const [isOpenFP, setIsOpenFP] = useState(false);
 
   const handleClickShowPassword = () => {
     setValues(!values);
   };
+  const forgotPw = () => {
+    setIsOpenFP(!isOpenFP);
+  }
   return (
     <div className="signinContainer">
       <h1>Đăng nhập</h1>
@@ -60,9 +65,11 @@ function SignIn() {
             <input alignItems="left" type="checkbox" name="rememberAccount" />
             <p>Nhớ tên tài khoản</p>
           </div>
-          <p>
-            <Link to={"#"}>Quên mật khẩu?</Link>
+          <p className="signup_forgotpw">
+            <div><Link to={"/signUp"}>Chưa có tài khoản?</Link></div>
+            <div className="forgotPwBtn" onClick={forgotPw}><i>Quên mật khẩu?</i></div>
           </p>
+          {isOpenFP && <ForgotPassword handleClose={forgotPw}/>}
         </div>
         <input
           type="submit"

@@ -12,3 +12,10 @@
   text-decoration: underline;
   color: grey;
 }
+.css-1q7hqz6 {
+  top: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 0;
+}

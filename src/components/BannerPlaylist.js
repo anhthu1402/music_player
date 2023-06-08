@@ -77,7 +77,7 @@ function BannerPlaylist() {
           },
         ]}
       >
-        {getAllPlaylists.map((item, index) => (
+        {getAllPlaylists.map((item, index) => index < 4 && (
           <div className="slider">
             <Link to={`/playlistDetail/${item.playlistName}`} state={item.id}>
               <img

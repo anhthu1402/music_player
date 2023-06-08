@@ -25,7 +25,7 @@ function Header() {
   const notification = useContext(NotificationContext);
   const username = "Anh Thư";
   //tạm
-  const userId = 2;
+  const userId = 1;
   return (
     <div className="header">
       <Toolbar>

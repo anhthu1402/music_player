@@ -6,6 +6,7 @@ import AppRoot from "./components/AppRoot";
 import Home from "./pages/Home";
 import Library from "./pages/Library";
 import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
 import NewRelease from "./pages/NewRelease";
 import MyRecently from "./pages/MyRecently";
 import Album from "./pages/Album";
@@ -39,6 +40,10 @@ function App() {
         {
           path: "signIn",
           element: <SignIn />,
+        },
+        {
+          path: "signUp",
+          element: <SignUp />,
         },
         {
           path: "newRelease",
