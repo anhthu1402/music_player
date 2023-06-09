@@ -99,3 +99,22 @@ export const deleteLocalPlaylist = (musicPlayer) => {
 export const changeUserName = (userId, name) => {
   console.log(userId, name);
 };
+
+export const uploadSong = (
+  songName,
+  songLink,
+  representation,
+  songImage,
+  timeLimit,
+  userId
+) => {
+  console.log(
+    songName + ",",
+    songLink + ",",
+    songImage + ",",
+    representation + ",",
+    timeLimit + ",",
+    userId
+  );
+  console.log("successful upload");
+};

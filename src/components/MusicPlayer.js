@@ -209,24 +209,34 @@ const MusicPlayer = () => {
           <Box sx={{ display: `flex`, alignItems: "center" }}>
             <CoverImage
               sx={{
-                width: '6vw',
-                height: '6vw',
+                width: "6vw",
+                height: "6vw",
                 minWidth: "40px",
-                minHeight: '40px',
-                margin: '10px',
+                minHeight: "40px",
+                margin: "10px",
                 backgroundColor: "transparent",
               }}
             >
               <img
                 alt={songName}
                 src={imgUrl}
-                style={{ borderRadius: "5px", width: '100%', aspectRatio: 1, objectFit: 'cover' }}
+                style={{
+                  borderRadius: "5px",
+                  width: "100%",
+                  aspectRatio: 1,
+                  objectFit: "cover",
+                }}
               ></img>
             </CoverImage>
             <Box sx={{ ml: 1.5, minWidth: 0 }}>
               <Typography
                 noWrap
-                sx={{ fontWeight: 'bold', fontSize: "1.6vw", width: "13vw", marginBottom: "5px" }}
+                sx={{
+                  fontWeight: "bold",
+                  fontSize: "1.6vw",
+                  width: "13vw",
+                  marginBottom: "5px",
+                }}
               >
                 {songName}
               </Typography>
