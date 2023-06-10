@@ -10,7 +10,7 @@ import Popup from "reactjs-popup";
 import NotificationContext from "../NotificationContext";
 import MusicPlayerContext from "../MusicPlayerContext";
 
-function AlbumPopup({ albumId, closePopup, popupRef }) {
+function AlbumPopup({ albumId, closePopup, popupRef, downloadAlbum }) {
   const notification = useContext(NotificationContext);
   const musicPlayer = useContext(MusicPlayerContext);
   const albumDetail = getAlbumDetail(albumId);
@@ -43,7 +43,13 @@ function AlbumPopup({ albumId, closePopup, popupRef }) {
           />
           <p>Thêm vào danh sách phát</p>
         </div>
-        <div className="playlistItemPopup">
+        <div
+          className="playlistItemPopup"
+          onClick={() => {
+            downloadAlbum();
+            closePopup();
+          }}
+        >
           <FileDownloadOutlined
             fontSize="small"
             sx={{ color: "grey", marginRight: 1 }}

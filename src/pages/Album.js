@@ -15,6 +15,8 @@ import NotificationContext from "../NotificationContext";
 import { useRef } from "react";
 import AlbumPopup from "../components/AlbumPopup";
 import { Tooltip } from "@mui/material";
+import JSZip from "jszip";
+import { saveAs } from "file-saver";
 
 function Album() {
   const notification = useContext(NotificationContext);
@@ -49,6 +51,20 @@ function Album() {
   const popupRef = useRef();
   const openPopup = () => popupRef.current.open();
   const closePopup = () => popupRef.current.close();
+  const downloadAlbum = () => {
+    const zip = new JSZip();
+    albumDetail.songs.map((item, index) => {
+      var filename = item.songName + ".mp3";
+      zip.file(filename, item.songLink, { binary: true });
+    });
+    zip.generateAsync({ type: "blob" }).then(function (content) {
+      saveAs(content, "uitmp3.zip");
+    });
+    // setTimeout(() => {
+    //   notification.setUsing(true);
+    //   notification.setContent("Đã tải " + length + " bài hát.");
+    // }, 2000);
+  };
   return (
     <div className="albumDetailContainer">
       {albumDetail && (
@@ -82,6 +98,7 @@ function Album() {
                 albumId={albumDetail.id}
                 closePopup={closePopup}
                 popupRef={popupRef}
+                downloadAlbum={downloadAlbum}
               />
             </div>
           </div>

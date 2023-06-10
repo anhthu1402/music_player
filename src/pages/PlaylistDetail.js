@@ -17,6 +17,8 @@ import NotificationContext from "../NotificationContext";
 import ModifyPlaylist from "../components/ModifyPlaylist";
 import PlaylistPopup from "../components/PlaylistPopup";
 import { Tooltip } from "@mui/material";
+import JSZip from "jszip";
+import { saveAs } from "file-saver";
 
 const PlaylistDetail = () => {
   const location = useLocation();
@@ -50,6 +52,20 @@ const PlaylistDetail = () => {
   const openPopup = () => popupRef.current.open();
   const notification = useContext(NotificationContext);
   const userId = 1;
+  const downloadPlaylist = () => {
+    const zip = new JSZip();
+    playlistDetail.songPlaylist.map((item, index) => {
+      var filename = item.songName + ".mp3";
+      zip.file(filename, item.songLink, { binary: true });
+    });
+    zip.generateAsync({ type: "blob" }).then(function (content) {
+      saveAs(content, "uitmp3.zip");
+    });
+    // setTimeout(() => {
+    //   notification.setUsing(true);
+    //   notification.setContent("Đã tải " + length + " bài hát.");
+    // }, 2000);
+  };
   return (
     <div className="playlistDetailContainer">
       {playlistDetail && (
@@ -111,6 +127,7 @@ const PlaylistDetail = () => {
                     userId={userId}
                     popupRef={popupRef}
                     closePopup={closePopup}
+                    downloadPlaylist={downloadPlaylist}
                   />
                 </button>
               </div>

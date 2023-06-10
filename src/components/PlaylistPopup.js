@@ -23,6 +23,7 @@ function PlaylistPopup({
   closePopup,
   popupRef,
   length,
+  downloadPlaylist,
 }) {
   const deleteRef = useRef();
   const closeDeletePopup = () => deleteRef.current.close();
@@ -59,7 +60,13 @@ function PlaylistPopup({
           />
           <p>Thêm vào danh sách phát</p>
         </div>
-        <div className="playlistItemPopup">
+        <div
+          className="playlistItemPopup"
+          onClick={() => {
+            downloadPlaylist();
+            closePopup();
+          }}
+        >
           <FileDownloadOutlined
             fontSize="small"
             sx={{ color: "grey", marginRight: 1 }}

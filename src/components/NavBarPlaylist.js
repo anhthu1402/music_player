@@ -27,6 +27,8 @@ import {
 import CreateNewPlaylist from "./CreateNewPlaylist";
 import { useRef } from "react";
 import AppAppBarPlaylist from "./AppAppBarPlaylist";
+import JSZip from "jszip";
+import { saveAs } from "file-saver";
 
 function NavBarPlaylist() {
   const localPlaylist = useContext(LocalPlaylistContext);
@@ -53,6 +55,22 @@ function NavBarPlaylist() {
   const deleteRef = useRef();
   const closeDeletePopup = () => deleteRef.current.close();
   const openDeletePopup = () => deleteRef.current.open();
+
+  const downloadPlaylist = () => {
+    const zip = new JSZip();
+    playlist.map((item, index) => {
+      var filename = item.songName + ".mp3";
+      zip.file(filename, item.songLink, { binary: true });
+    });
+    zip.generateAsync({ type: "blob" }).then(function (content) {
+      saveAs(content, "uitmp3.zip");
+    });
+    // setTimeout(() => {
+    //   notification.setUsing(true);
+    //   notification.setContent("Đã tải " + length + " bài hát.");
+    // }, 2000);
+  };
+
   return (
     <div style={{ zIndex: "8", position: "absolute" }}>
       <div>
@@ -68,6 +86,7 @@ function NavBarPlaylist() {
               openAddPlaylistPopup={openAddPlaylistPopup}
               openCreatePlaylist={openCreatePlaylist}
               openDeletePopup={openDeletePopup}
+              downloadPlaylist={downloadPlaylist}
             />
             {localStorage.getItem("playlist") !== null ? (
               playlist.map((item, index) => (

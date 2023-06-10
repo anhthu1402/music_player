@@ -10,7 +10,11 @@ import {
   MoreHoriz,
 } from "@mui/icons-material";
 
-function AppAppBarPlaylist({ openAddPlaylistPopup, openDeletePopup }) {
+function AppAppBarPlaylist({
+  openAddPlaylistPopup,
+  openDeletePopup,
+  downloadPlaylist,
+}) {
   return (
     <div style={{ marginBottom: "35px" }}>
       <AppBar
@@ -48,7 +52,7 @@ function AppAppBarPlaylist({ openAddPlaylistPopup, openDeletePopup }) {
             />
             <p>Xóa danh sách phát</p>
           </div>
-          <div className="playlistItemPopup">
+          <div className="playlistItemPopup" onClick={downloadPlaylist}>
             <FileDownloadOutlined
               fontSize="small"
               sx={{ color: "grey", marginRight: 1 }}
