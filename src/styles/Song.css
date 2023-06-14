@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap"); */
 .horizoneLine {
   margin-bottom: 30px;
 }
@@ -19,7 +19,7 @@
   width: 7vw;
   text-decoration: none;
   font-size: 1vw;
-  font-family: "Rubik", sans-serif;
+  /* font-family: "Rubik", sans-serif; */
   margin-right: 25px;
 }
 .songInactiveBtn {

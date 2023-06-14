@@ -7,20 +7,20 @@ function TopTrendingArtist() {
   function getPlaylistImgUrl(url) {
     return require(`../assets/` + url);
   }
-  useEffect(() => {
-    const handleWindowResize = () => {
-      let topTrendingArtists = document.querySelector('.topTrendingArtists');
-      let artist = topTrendingArtists.querySelectorAll('.artist');
-      let width = topTrendingArtists.clientWidth;
-      for (let i = 0; i < artist.length; i++) 
-        artist[i].style.width = (width)/5 - 25 + "px";
-    };
-    window.addEventListener('resize', handleWindowResize);
-    handleWindowResize();
-    return () => {
-      window.removeEventListener('resize', handleWindowResize);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const handleWindowResize = () => {
+  //     let topTrendingArtists = document.querySelector('.topTrendingArtists');
+  //     let artist = topTrendingArtists.querySelectorAll('.artist');
+  //     let width = topTrendingArtists.clientWidth;
+  //     for (let i = 0; i < artist.length; i++) 
+  //       artist[i].style.width = (width)/5 - 25 + "px";
+  //   };
+  //   window.addEventListener('resize', handleWindowResize);
+  //   handleWindowResize();
+  //   return () => {
+  //     window.removeEventListener('resize', handleWindowResize);
+  //   };
+  // }, []);
   return (
     <div className="topTrendingArtists" style={{ width: `100%` }}>
       {ArtistsData.map(
