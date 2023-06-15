@@ -79,6 +79,7 @@ function App() {
       ],
     },
   ]);
+
   return (
     <SidebarProvider>
       <MusicPlayerProvider>
