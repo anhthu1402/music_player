@@ -1,7 +1,7 @@
 .signinContainer {
   width: 90%;
   max-width: 700px;
-  margin: auto;
+  margin: 20px auto;
   justify-content: center;
   display: flex;
   align-items: center;
@@ -11,33 +11,8 @@
   color: #ff7394;
   font-weight: bolder;
   font-size: xx-large;
-  margin: 5% auto;
+  margin: 1vh auto;
   text-align: center;
-}
-.signinGoogle {
-  width: 100%;
-  border: none;
-  border-radius: 5px;
-  background: #e4e4e4;
-  padding: 15px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  cursor: pointer;
-}
-.signinGoogle .signinIcon {
-  margin-right: 10px;
-}
-.signinGoogle a,
-.signinGoogle a:visited {
-  color: black;
-}
-.signinGoogle:hover,
-.signinGoogle a:hover {
-  background: #ebebeb;
-  color: gray;
 }
 .dividingLine {
   margin-top: 20px;
@@ -105,22 +80,11 @@
 }
 .signinForm .div3 {
   margin: -10px 0 20px 0;
-}
-.signinForm .div3 div {
-  display: flex;
-}
-/* .signinForm .div3 div > p {
-  margin-left: 10px;
-} */
-/* .signinForm .div3 .signup_forgotpw {
   display: flex;
   width: 100%;
-  justify-content: flex-end;
-} */
-/* .signinForm .div3 > p {
-  float: right;
-  font-style: italic;
-} */
+  align-items: center;
+  justify-content: space-between;
+}
 .signinForm .div3 a,
 .signinForm .div3 a:visited,
 .signinForm .div3 .forgotPwBtn {
@@ -168,6 +132,7 @@ input.submitSignin:hover,
 }
 .forgotPwBody {
   position: relative;
+  width: 50vw;
   height: fit-content;
   background: #fff;
   border-radius: 8px;
