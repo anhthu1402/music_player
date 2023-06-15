@@ -1,5 +1,5 @@
-.songArtist span:not(:last-of-type)::after {
-  content: ", " !important;
+.songArtist span.artist:not(:last-of-type)::after {
+  content: ",\00a0" !important;
 }
 .artist a {
   font-weight: normal;
@@ -11,4 +11,11 @@
   cursor: pointer;
   text-decoration: underline;
   color: grey;
+}
+.css-1q7hqz6 {
+  top: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 0;
 }

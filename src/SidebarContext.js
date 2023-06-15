@@ -2,9 +2,9 @@ import React, { createContext, useState } from "react";
 const SidebarContext = createContext();
 export const SidebarProvider = ({ children }) => {
   const [pathName, setPathName] = useState(
-    localStorage.getItem("sidebarPath") !== null
-      ? JSON.parse(localStorage.getItem("sidebarPath"))
-      : ""
+    sessionStorage.getItem("sidebarPath") !== null
+      ? JSON.parse(sessionStorage.getItem("sidebarPath"))
+      : "Khám phá"
   );
   return (
     <SidebarContext.Provider value={{ pathName, setPathName }}>

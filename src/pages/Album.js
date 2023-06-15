@@ -11,8 +11,15 @@ import "../styles/Album.css";
 import MusicPlayerContext from "../MusicPlayerContext";
 import TrackItem from "../components/Item/TrackItem";
 import { getAlbumDetail } from "../service";
+import NotificationContext from "../NotificationContext";
+import { useRef } from "react";
+import AlbumPopup from "../components/AlbumPopup";
+import { Tooltip } from "@mui/material";
+import JSZip from "jszip";
+import { saveAs } from "file-saver";
 
 function Album() {
+  const notification = useContext(NotificationContext);
   const location = useLocation();
   const id = location.state;
   const albumDetail = getAlbumDetail(id);
@@ -41,6 +48,23 @@ function Album() {
     const date = new Date(strDate);
     return date.toJSON().slice(0, 10).split("-").reverse().join("/");
   }
+  const popupRef = useRef();
+  const openPopup = () => popupRef.current.open();
+  const closePopup = () => popupRef.current.close();
+  const downloadAlbum = () => {
+    const zip = new JSZip();
+    albumDetail.songs.map((item, index) => {
+      var filename = item.songName + ".mp3";
+      zip.file(filename, item.songLink, { binary: true });
+    });
+    zip.generateAsync({ type: "blob" }).then(function (content) {
+      saveAs(content, "uitmp3.zip");
+    });
+    // setTimeout(() => {
+    //   notification.setUsing(true);
+    //   notification.setContent("Đã tải " + length + " bài hát.");
+    // }, 2000);
+  };
   return (
     <div className="albumDetailContainer">
       {albumDetail && (
@@ -67,7 +91,15 @@ function Album() {
                 <PlayArrowRounded /> Phát ngẫu nhiên
               </button>
               <FavoriteBorderOutlined className="favIcon" />
-              <MoreHoriz className="moreIcon" />
+              <Tooltip title="Khác">
+                <MoreHoriz className="moreIcon" onClick={() => openPopup()} />
+              </Tooltip>
+              <AlbumPopup
+                albumId={albumDetail.id}
+                closePopup={closePopup}
+                popupRef={popupRef}
+                downloadAlbum={downloadAlbum}
+              />
             </div>
           </div>
           <div className="albumTracksBody">
@@ -78,11 +110,12 @@ function Album() {
             {tracks.map((item, key) => (
               <div class="song shadowDiv">
                 <TrackItem
-                  key={key}
+                  key={item.id}
                   item={item}
                   tracks={tracks}
                   song={song}
                   index={key}
+                  notification={notification}
                 />
               </div>
             ))}

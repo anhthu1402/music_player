@@ -26,15 +26,17 @@
   border-radius: 20px;
   overflow: hidden;
   aspect-ratio: 1;
+  max-width: 350px;
+  width: 100%;
 }
 .playlistDetailContainer .playlistDetail .detail .playlistImg img {
-  height: 100%;
   width: 100%;
   border-radius: 20px;
   transition: transform 0.5s, filter 0.5s ease-in-out;
   transform-origin: center center;
   filter: brightness(100%);
   object-fit: cover;
+  height: 100%;
 }
 .playlistDetailContainer .playlistDetail .detail .playlistImg:hover img {
   transform: scale(1.03);

@@ -11,12 +11,12 @@ import {
 import { SongData } from "../components/Data/SongData";
 import TrackItem from "../components/Item/TrackItem";
 import { Grid, Box } from "@mui/material";
-import { AlbumData } from "../components/Data/AlbumData";
 import ArtistAlbumItem from "../components/Item/ArtistAlbumItem";
-import { getAlbumDetail } from "../service";
 import { getAllAlbum } from "../components/API/getAllAlbums";
+import NotificationContext from "../NotificationContext";
 
 function Artist() {
+  const notification = useContext(NotificationContext);
   const player = useContext(MusicPlayerContext);
   const location = useLocation();
   const artist = location.state;
@@ -45,7 +45,7 @@ function Artist() {
             <div className="headerDetail">
               <Avatar
                 alt={artist.artistName}
-                src={require(`../assets/${artist.artistImage}`)}
+                src={artist.artistImage}
                 sx={{ width: "12.5vw", height: "12.5vw", marginRight: "2.3vw" }}
               />
               <div
@@ -104,6 +104,7 @@ function Artist() {
                           tracks={artistSongs}
                           song={player}
                           index={index}
+                          notification={notification}
                         />
                       </div>
                     )
@@ -130,9 +131,7 @@ function Artist() {
                     (item, index) =>
                       index < 4 && (
                         <Grid item xs={3}>
-                          <Link to={"/album/" + item.albumName} state={item.id}>
-                            <ArtistAlbumItem key={index} item={item} />
-                          </Link>
+                          <ArtistAlbumItem key={index} item={item} />
                         </Grid>
                       )
                   )}

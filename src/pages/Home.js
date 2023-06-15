@@ -7,7 +7,6 @@ import HomePlaylistItem from "../components/Item/HomePlaylistItem";
 import NewSongs from "../components/NewSongs";
 import NewSongRank from "../components/NewSongRank";
 import { PlaylistData } from "../components/Data/PlaylistData";
-import { AlbumData } from "../components/Data/AlbumData";
 import "../styles/PlaylistAlbum.css";
 import "../styles/Home.css";
 import SidebarContext from "../SidebarContext";

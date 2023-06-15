@@ -4,9 +4,9 @@ import "../styles/DiscoveryRecentlyPlaylist.css";
 import { MyPlaylistData } from "./Data/MyPlaylistData";
 
 function RecentlyPlaylist() {
-  function getPlaylistImgUrl(url) {
-    return require(url);
-  }
+  // function getPlaylistImgUrl(url) {
+  //   return require(url);
+  // }
   return (
     <div className="recentlyListen" style={{ width: `100%` }}>
       {MyPlaylistData.map(
@@ -15,7 +15,7 @@ function RecentlyPlaylist() {
             <Link to={`/playlistDetail/${item.playlistName}`} state={item}>
               <div key={index} className="playlistItem">
                 <img
-                  src={getPlaylistImgUrl(`${item.playlistImg}`)}
+                  src={item.playlistImg}
                   className="imagePlaylist"
                   alt={item.playlistName}
                 />

@@ -26,13 +26,17 @@ html::-webkit-scrollbar {
   bottom: 0;
   position: fixed;
   max-width: 100%;
-  left: 17vw;
-  padding: 2vw 2vw 1vw;
+  /* left: 17vw;
+  padding: 2vw 2vw 1vw; */
+  left: 0;
+
+  z-index: 10;
 }
 .mainscreen {
   margin-top: 6em;
 }
-::-moz-selection { /* Code for Firefox */
+::-moz-selection {
+  /* Code for Firefox */
   background: #ffbccc;
   color: white;
 }
@@ -40,4 +44,15 @@ html::-webkit-scrollbar {
 ::selection {
   background: #ffbccc;
   color: white;
+}
+.notification {
+  width: fit-content;
+  z-index: 99;
+  position: fixed;
+  left: 2vw;
+  margin: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.css-wnkddu-MuiPaper-root-MuiAlert-root {
+  background-color: white !important;
 }

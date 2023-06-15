@@ -18,7 +18,8 @@
   transition: 0.3s ease-in;
 }
 .cardPlaylist:hover .playlistMedia {
-  opacity: 50%;
+  filter: brightness(70%);
+  transform: scale(1.02);
 }
 .playlistMoreDetail {
   position: absolute;
@@ -33,4 +34,18 @@
 .cardPlaylist:hover .playlistMoreDetail {
   display: flex;
   justify-content: space-around;
+}
+.playlistMoreDetail button:hover {
+  transform: scale(0.8);
+  transition: 0.1s ease-in-out;
+}
+.playlistItemPopup {
+  display: flex;
+  flex-direction: row;
+  padding: 7px 10px;
+  cursor: pointer;
+  margin: 5px 0px;
+}
+.playlistItemPopup:hover {
+  background-color: #ff73944a;
 }

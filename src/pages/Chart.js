@@ -5,10 +5,12 @@ import { useContext } from "react";
 import MusicPlayerContext from "../MusicPlayerContext";
 import { SongData } from "../components/Data/SongData";
 import Track from "../components/Item/TrackItem";
+import NotificationContext from "../NotificationContext";
 
 function Chart() {
   const musicPlayer = useContext(MusicPlayerContext);
   const [rnd, setRnd] = useState(0);
+  const notification = useContext(NotificationContext);
   return (
     <div className="chartContainer">
       <div className="chartHeading">
@@ -44,6 +46,7 @@ function Chart() {
               tracks={SongData}
               song={musicPlayer}
               index={index}
+              notification={notification}
             />
           </div>
         ))}

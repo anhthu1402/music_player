@@ -10,6 +10,9 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/PlaylistAlbum.css";
 import { getAlbumDetail } from "../../service";
+import { useRef } from "react";
+import AlbumPopup from "../AlbumPopup";
+import { Tooltip } from "@mui/material";
 
 function HomeAlbumItem({ item }) {
   const tracks = getAlbumDetail(item.id).songs;
@@ -30,25 +33,9 @@ function HomeAlbumItem({ item }) {
     localStorage.setItem("playlist", JSON.stringify(tracks));
     song.setPlaylist(tracks);
   };
-  //   const artists = [],
-  //     uniqueArtist = [];
-  //   tracks.map((item2) =>
-  //     item2.representation.map((child) => {
-  //       artists.push(child);
-  //     })
-  //   );
-  //   uniqueArtist.push(artists[0]);
-  //   for (let i = 1; i < artists.length; i++) {
-  //     let dup = 0;
-  //     for (let j = 0; j < i; j++)
-  //       if (artists[i].artistName === artists[j].artistName) {
-  //         dup = 1;
-  //         break;
-  //       }
-  //     if (dup === 0) {
-  //       uniqueArtist.push(artists[i]);
-  //     }
-  //   }
+  const popupRef = useRef();
+  const openPopup = () => popupRef.current.open();
+  const closePopup = () => popupRef.current.close();
   return (
     <>
       <div className="playlistItem">
@@ -72,10 +59,18 @@ function HomeAlbumItem({ item }) {
               style={{ color: "white" }}
             />
           </Link>
-          <MoreHoriz
-            className="icon"
-            fontSize="large"
-            style={{ color: "white" }}
+          <Tooltip title="Khác">
+            <MoreHoriz
+              onClick={() => openPopup()}
+              className="icon"
+              fontSize="large"
+              style={{ color: "white" }}
+            />
+          </Tooltip>
+          <AlbumPopup
+            albumId={item.id}
+            closePopup={closePopup}
+            popupRef={popupRef}
           />
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { styled } from "@mui/material/styles";
-import { Box } from "@mui/material";
+import { Box, Button, Tooltip } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Slider from "@mui/material/Slider";
 import IconButton from "@mui/material/IconButton";
@@ -15,34 +15,33 @@ import {
   ShuffleRounded,
   RepeatRounded,
   RepeatOneRounded,
+  PlaylistPlay,
 } from "@mui/icons-material";
 import MusicPlayerContext from "../MusicPlayerContext";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import "../styles/MusicPlayer.css";
+import LocalPlaylistContext from "../LocalPlaylistContext";
 
 const Widget = styled("div")(() => ({
-  padding: 10,
-  borderRadius: 16,
   width: "100%",
   maxWidth: "100%",
   margin: "auto",
   position: "relative",
   zIndex: 1,
-  backgroundColor: "rgba(255,255,255,0.4)",
-  backdropFilter: "blur(40px)",
+  backgroundColor: "white",
+  boxShadow: `rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px`,
+
+  // backdropFilter: "blur(40px)",
   display: "flex",
   flexDirection: "row",
   justifyContent: "space-between",
 }));
 
 const CoverImage = styled("div")({
-  width: 100,
-  height: 100,
-  objectFit: "cover",
   overflow: "hidden",
   flexShrink: 0,
-  borderRadius: 8,
+  borderRadius: 5,
   backgroundColor: "rgba(0,0,0,0.08)",
   "& > img": {
     width: "100%",
@@ -59,21 +58,26 @@ const TinyText = styled(Typography)({
 });
 
 const MusicPlayer = () => {
+  const localPlaylist = useContext(LocalPlaylistContext);
   const musicPlayer = useContext(MusicPlayerContext);
   const tracks = musicPlayer.isUsing ? musicPlayer.tracks : [];
-  const array = JSON.parse(localStorage.getItem("playlist"));
+  const array =
+    localStorage.getItem("playlist") !== null
+      ? JSON.parse(localStorage.getItem("playlist"))
+      : musicPlayer.playlist;
   const tracksLen = tracks.length;
-  // 0: Phát theo trình tự , 1: Phát lại 1 bài, 2: Phát lại tất cả (như phát theo trình tự nhưng phát theo trình tự khi hết bài cuối của playlist sẽ chuyển sang playlist khác có liên quan - khó, chưa làm được), 3: Phát ngẫu nhiên
-  const [playMode, setPlayMode] = useState(0);
+  // 0: Phát theo trình tự, 1: Phát ngẫu nhiên
+  const [playMode, setPlayMode] = useState(
+    localStorage.getItem("playMode") === null
+      ? 0
+      : JSON.parse(localStorage.getItem("playMode"))
+  );
   let index = musicPlayer.songIndex;
   let song = musicPlayer.isUsing ? array[index] : "";
   let songName = musicPlayer.isUsing ? array[index].songName : "";
   let representation = musicPlayer.isUsing ? array[index].representation : [];
   const getAudioSource = (source) => {
-    return require(`../assets/audio/`+source);
-  };
-  const getImgUrl = (url) => {
-    return require(`../assets/`+url);
+    return require(`../assets/audio/` + source);
   };
   const audioRef = useRef();
   const [duration, setDuration] = useState(0); //seconds
@@ -138,7 +142,6 @@ const MusicPlayer = () => {
       // Tạm xem phát lại tất cả như phát theo trình tự
       musicPlayer.setSongIndex((index + 1) % tracksLen);
       musicPlayer.setSong(song);
-      if (playMode === 1) setRepeat(1);
     }
     if (!play) {
       setPlay(true);
@@ -154,7 +157,6 @@ const MusicPlayer = () => {
       // Tạm xem phát lại tất cả như phát theo trình tự
       musicPlayer.setSongIndex(index - 1 < 0 ? tracksLen - 1 : index - 1);
       musicPlayer.setSong(song);
-      if (playMode === 1) setRepeat(1);
     }
     if (!play) {
       setPlay(true);
@@ -162,6 +164,14 @@ const MusicPlayer = () => {
     }
     localStorage.setItem("currentTime", 0);
     musicPlayer.setCurrentTime(0);
+  };
+  const removeMusicplayer = () => {
+    localStorage.removeItem("play");
+    localStorage.removeItem("song");
+    localStorage.removeItem("tracks");
+    localStorage.removeItem("index");
+    localStorage.removeItem("currentTime");
+    musicPlayer.setUsing(false);
   };
   return (
     musicPlayer.isUsing && (
@@ -185,7 +195,7 @@ const MusicPlayer = () => {
               localStorage.setItem("currentTime", 0);
               setCurrentTime(0);
             } else {
-              musicPlayer.setSongIndex(index + 1);
+              musicPlayer.setSongIndex((index + 1) % tracksLen);
               musicPlayer.setSong(array[musicPlayer.songIndex]);
               localStorage.setItem("song", JSON.stringify(musicPlayer.song));
               localStorage.setItem(
@@ -200,19 +210,33 @@ const MusicPlayer = () => {
             <CoverImage
               sx={{
                 width: "6vw",
+                height: "6vw",
+                minWidth: "40px",
+                minHeight: "40px",
+                margin: "10px",
                 backgroundColor: "transparent",
               }}
             >
               <img
                 alt={songName}
-                src={getImgUrl(imgUrl)}
-                style={{ borderRadius: "10px" }}
+                src={imgUrl}
+                style={{
+                  borderRadius: "5px",
+                  width: "100%",
+                  aspectRatio: 1,
+                  objectFit: "cover",
+                }}
               ></img>
             </CoverImage>
             <Box sx={{ ml: 1.5, minWidth: 0 }}>
               <Typography
                 noWrap
-                sx={{ fontSize: "1.6vw", width: "13vw", marginBottom: "5px" }}
+                sx={{
+                  fontWeight: "bold",
+                  fontSize: "1.6vw",
+                  width: "13vw",
+                  marginBottom: "5px",
+                }}
               >
                 {songName}
               </Typography>
@@ -256,26 +280,29 @@ const MusicPlayer = () => {
                 maxWidth: "100%",
               }}
             >
-              <IconButton sx={{ margin: "0 0.5em" }}>
+              <IconButton
+                sx={{ margin: "0 0.5em" }}
+                onClick={() => {
+                  if (playMode === 1) {
+                    setPlayMode(0);
+                    localStorage.setItem("playMode", 0);
+                    localStorage.setItem(
+                      "playlist",
+                      JSON.stringify(musicPlayer.playlist)
+                    );
+                  } else {
+                    setPlayMode(1);
+                    localStorage.setItem("playMode", 1);
+                    localStorage.setItem(
+                      "playlist",
+                      JSON.stringify(shuffleArray(array))
+                    );
+                  }
+                }}
+              >
                 <ShuffleRounded
-                  onClick={() => {
-                    if (playMode === 3) {
-                      setPlayMode(0);
-                      localStorage.setItem(
-                        "playlist",
-                        localStorage.getItem("tracks")
-                      );
-                    } else {
-                      setPlayMode(3);
-                      localStorage.setItem(
-                        "playlist",
-                        JSON.stringify(shuffleArray(array))
-                      );
-                      if (repeat) setRepeat(0);
-                    }
-                  }}
                   sx={
-                    playMode === 3
+                    playMode === 1
                       ? { color: "pink", fontSize: "1.5vw" }
                       : { color: "grey", fontSize: "1.5vw" }
                   }
@@ -307,29 +334,15 @@ const MusicPlayer = () => {
               >
                 <FastForwardRounded sx={{ fontSize: "2.4vw" }} />
               </IconButton>
-              <IconButton
-                sx={{ margin: "0 0.5em" }}
-                onClick={() => {
-                  if (playMode === 0 || playMode === 3) {
-                    setPlayMode(2);
-                  } else if (playMode === 2) {
-                    setPlayMode(1);
-                    setRepeat(1);
-                  } else {
-                    setPlayMode(0);
-                    setRepeat(0);
-                  }
-                }}
-              >
-                {playMode === 1 ? (
-                  <RepeatOneRounded
-                    sx={playMode === 1 ? { color: "pink" } : { color: "grey" }}
-                  />
-                ) : (
-                  <RepeatRounded
-                    sx={playMode === 2 ? { color: "pink" } : { color: "grey" }}
-                  />
-                )}
+              <IconButton sx={{ margin: "0 0.5em" }}>
+                <RepeatOneRounded
+                  onClick={() => {
+                    if (repeat === 1) {
+                      setRepeat(0);
+                    } else setRepeat(1);
+                  }}
+                  sx={repeat === 1 ? { color: "pink" } : { color: "grey" }}
+                />
               </IconButton>
             </Box>
             <Box
@@ -381,38 +394,87 @@ const MusicPlayer = () => {
               </TinyText>
             </Box>
           </Box>
-          <Stack
-            spacing={2}
-            direction="row"
-            sx={{ mb: 1, px: 1, width: "13vw" }}
-            alignItems="center"
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-end",
+              justifyContent: "center",
+            }}
           >
-            <VolumeDownRounded />
-            <Slider
-              aria-label="Volume"
-              defaultValue={40}
-              sx={{
-                color: "rgba(0,0,0,0.87)",
-                width: 100,
-                "& .MuiSlider-track": {
-                  border: "none",
-                },
-                "& .MuiSlider-thumb": {
-                  width: 13,
-                  height: 13,
-                  backgroundColor: "#fff",
-                  "&:before": {
-                    boxShadow: "0 4px 8px rgba(0,0,0,0.4)",
-                  },
-                  "&:hover, &.Mui-focusVisible, &.Mui-active": {
-                    boxShadow: "none",
-                  },
-                },
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
               }}
-              onChange={(e) => (audioRef.current.volume = e.target.value / 100)}
-            />
-            <VolumeUpRounded />
-          </Stack>
+            >
+              <Tooltip title="Danh sách phát" placement="top">
+                <Button
+                  sx={{ mb: 0.1, color: "black" }}
+                  onClick={() => {
+                    localStorage.setItem(
+                      "openLocalPlaylist",
+                      !localPlaylist.open
+                    );
+                    localPlaylist.setOpen(!localPlaylist.open);
+                  }}
+                >
+                  <PlaylistPlay
+                    sx={
+                      localPlaylist.open
+                        ? { color: "pink" }
+                        : { color: "black" }
+                    }
+                  />
+                </Button>
+              </Tooltip>
+              <Button
+                sx={{ mb: 0.1, color: "black" }}
+                onClick={() => {
+                  removeMusicplayer();
+                  localStorage.setItem("openLocalPlaylist", false);
+                  localPlaylist.setOpen(false);
+                }}
+              >
+                X
+              </Button>
+            </div>
+            <Stack
+              spacing={2}
+              direction="row"
+              sx={{ mb: 0.1, px: 1, width: "13vw" }}
+              alignItems="center"
+            >
+              <VolumeDownRounded />
+              <Slider
+                aria-label="Volume"
+                defaultValue={40}
+                sx={{
+                  color: "rgba(0,0,0,0.87)",
+                  width: 100,
+                  "& .MuiSlider-track": {
+                    border: "none",
+                  },
+                  "& .MuiSlider-thumb": {
+                    width: 13,
+                    height: 13,
+                    backgroundColor: "#fff",
+                    "&:before": {
+                      boxShadow: "0 4px 8px rgba(0,0,0,0.4)",
+                    },
+                    "&:hover, &.Mui-focusVisible, &.Mui-active": {
+                      boxShadow: "none",
+                    },
+                  },
+                }}
+                onChange={(e) =>
+                  (audioRef.current.volume = e.target.value / 100)
+                }
+              />
+              <VolumeUpRounded />
+            </Stack>
+          </Box>
         </Widget>
       </Box>
     )

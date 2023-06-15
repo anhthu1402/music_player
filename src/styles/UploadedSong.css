@@ -1,0 +1,43 @@
+label.label input[type="file"] {
+  position: absolute;
+  top: -1000px;
+}
+.label {
+  cursor: pointer;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 5px 15px;
+  margin: 5px;
+  background-color: #ff5f85;
+  display: inline-block;
+  color: white;
+}
+.label:hover {
+  background-color: #fba1b6;
+  cursor: pointer;
+  transition: 0.3s ease;
+  color: #373b3e;
+}
+.label:active {
+  background: #9fa1a0;
+}
+.label:invalid + span {
+  color: #000000;
+}
+.label:valid + span {
+  color: #ffffff;
+}
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  vertical-align: middle;
+}
+.empty img {
+  width: 9vw;
+  height: 9vw;
+}
+.empty label {
+  margin: 20px;
+  font-size: 1.3vw;
+}

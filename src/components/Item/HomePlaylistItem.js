@@ -3,13 +3,20 @@ import {
   FavoriteBorderOutlined,
   MoreHoriz,
   PlayCircleFilled,
+  FavoriteRounded,
 } from "@mui/icons-material";
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import MusicPlayerContext from "../../MusicPlayerContext";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/PlaylistAlbum.css";
-import { getPlaylistDetail } from "../../service";
+import {
+  getPlaylistDetail,
+  addFavPlaylist,
+  removeFromFavPlaylist,
+} from "../../service";
+import PlaylistPopup from "../PlaylistPopup";
+import { Tooltip } from "@mui/material";
 
 function PlaylistAtHome({ id }) {
   const playlistDetail = getPlaylistDetail(id);
@@ -31,43 +38,42 @@ function PlaylistAtHome({ id }) {
     localStorage.setItem("playlist", JSON.stringify(tracks));
     song.setPlaylist(tracks);
   };
-  function getPlaylistImgUrl(url) {
-    return require(`../../assets/` + url);
-  }
-  // const artists = [],
-  //   uniqueArtist = [];
-  // tracks.map((item2) =>
-  //   item2.representation.map((child) => {
-  //     artists.push(child);
-  //   })
-  // );
-  // uniqueArtist.push(artists[0]);
-  // for (let i = 1; i < artists.length; i++) {
-  //   let dup = 0;
-  //   for (let j = 0; j < i; j++)
-  //     if (artists[i].artistName === artists[j].artistName) {
-  //       dup = 1;
-  //       break;
-  //     }
-  //   if (dup === 0) {
-  //     uniqueArtist.push(artists[i]);
-  //   }
-  // }
+  const userId = 1;
+  const popupRef = useRef();
+  const closePopup = () => popupRef.current.close();
+  const openPopup = () => popupRef.current.open();
+  const [isFavorite, setFavorite] = useState(false);
   return (
     <>
       <div className="playlistItem">
         <img
-          src={getPlaylistImgUrl(`${playlistDetail.playlistImg}`)}
+          src={`${playlistDetail.playlistImg}`}
           className="imagePlaylist"
           alt={playlistDetail.playlistName}
           title={playlistDetail.playlistName}
         />
         <div className="playPlaylist">
-          <FavoriteBorderOutlined
-            className="icon"
-            fontSize="large"
-            style={{ color: "white" }}
-          />
+          {isFavorite ? (
+            <FavoriteRounded
+              className="icon"
+              fontSize="large"
+              style={{ color: "#ff7394" }}
+              onClick={() => {
+                removeFromFavPlaylist(playlistDetail.id, userId);
+                setFavorite(false);
+              }}
+            />
+          ) : (
+            <FavoriteBorderOutlined
+              className="icon"
+              fontSize="large"
+              style={{ color: "white" }}
+              onClick={() => {
+                addFavPlaylist(playlistDetail.id, userId);
+                setFavorite(true);
+              }}
+            />
+          )}
           <Link
             to={`/playlistDetail/${playlistDetail.playlistName}`}
             state={id}
@@ -79,10 +85,20 @@ function PlaylistAtHome({ id }) {
               style={{ color: "white" }}
             />
           </Link>
-          <MoreHoriz
-            className="icon"
-            fontSize="large"
-            style={{ color: "white" }}
+          <Tooltip title="Khác">
+            <MoreHoriz
+              onClick={() => openPopup()}
+              className="icon"
+              fontSize="large"
+              style={{ color: "white" }}
+            />
+          </Tooltip>
+          <PlaylistPopup
+            playlistDetail={playlistDetail}
+            userId={userId}
+            popupRef={popupRef}
+            closePopup={closePopup}
+            length={length}
           />
         </div>
       </div>
@@ -92,19 +108,6 @@ function PlaylistAtHome({ id }) {
       >
         <h3 className="playlistName">{playlistDetail.playlistName}</h3>
       </Link>
-      {/* <div className="artists">
-        <span>
-          {uniqueArtist.map((child, index) => {
-            return (
-              <span key={index} item={child} className="artist">
-                <Link to={`/artist/${child.artistName}`} state={child}>
-                  {child.artistName}
-                </Link>
-              </span>
-            );
-          })}
-        </span>
-      </div> */}
     </>
   );
 }

@@ -4,10 +4,12 @@ import TrackItem from "../components/Item/TrackItem";
 import MusicPlayerContext from "../MusicPlayerContext";
 // import "../styles/MyRecently.css";
 import "../styles/RecentlySong.css";
+import NotificationContext from "../NotificationContext";
 
 function RecentlySong() {
   const tracks = SongData;
   const song = useContext(MusicPlayerContext);
+  const notification = useContext(NotificationContext);
   return (
     <div className="recentlySongContainer">
       {SongData.map((item, index) => (
@@ -18,6 +20,7 @@ function RecentlySong() {
             tracks={tracks}
             song={song}
             index={index}
+            notification={notification}
           />
         </div>
       ))}

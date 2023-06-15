@@ -39,39 +39,7 @@
 .indexSong {
   width: 5vw;
 }
-.empty {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  vertical-align: middle;
-}
-.empty img {
-  width: 9vw;
-  height: 9vw;
-}
-.empty button {
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  justify-content: center;
-  background-color: #ff5f85;
-  height: 2.8vw;
-  width: 10vw;
-  color: white;
-  text-decoration: none;
-  font-size: 1.3vw;
-}
 
-.empty button:hover {
-  background-color: #fba1b6;
-  cursor: pointer;
-  transition: 0.3s ease;
-  color: #373b3e;
-}
-.empty label {
-  margin: 20px;
-  font-size: 1.3vw;
-}
 .favSong.active {
   margin-bottom: 7em;
 }

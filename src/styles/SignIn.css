@@ -3,7 +3,9 @@
   max-width: 700px;
   margin: auto;
   justify-content: center;
-  margin-bottom: 90px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 .signinContainer h1 {
   color: #ff7394;
@@ -102,23 +104,31 @@
   background-color: transparent;
 }
 .signinForm .div3 {
-  margin: -10px 0 40px 0;
+  margin: -10px 0 20px 0;
 }
 .signinForm .div3 div {
   display: flex;
 }
-.signinForm .div3 div > p {
+/* .signinForm .div3 div > p {
   margin-left: 10px;
-}
-.signinForm .div3 > p {
+} */
+/* .signinForm .div3 .signup_forgotpw {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+} */
+/* .signinForm .div3 > p {
   float: right;
   font-style: italic;
-}
+} */
 .signinForm .div3 a,
-.signinForm .div3 a:visited {
+.signinForm .div3 a:visited,
+.signinForm .div3 .forgotPwBtn {
   color: #ff7394;
+  cursor: pointer;
 }
-.signinForm .div3 a:hover {
+.signinForm .div3 a:hover,
+.signinForm .div3 .forgotPwBtn:hover {
   color: #ffb0c3;
 }
 input.submitSignin {
@@ -134,11 +144,67 @@ input.submitSignin {
 }
 .submitSignin {
   cursor: pointer;
+  margin-bottom: 30px;
 }
 input.submitSignin a,
 input.submitSignin a:visited {
   color: white;
 }
-input.submitSignin:hover {
+input.submitSignin:hover,
+.forgotPwBody input[type="submit"]:hover,
+.closeBtn:hover {
   background-color: #ffb0c3;
+}
+
+/* CSS trang quên mật khẩu */
+.forgotPwContainer {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 99;
+  background-color: #e4e4e4a3;
+  top: 0;
+  left: 0;
+}
+.forgotPwBody {
+  position: relative;
+  height: fit-content;
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.forgotPwBody input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px groove gray;
+  margin-top: 10px;
+}
+.forgotPwBody input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #ff7394;
+  color: white;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.closeBtn {
+  cursor: pointer;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  transform: translate(0, 0);
+  background: #ff7394;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  line-height: 20px;
+  text-align: center;
 }
