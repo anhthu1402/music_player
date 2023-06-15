@@ -175,7 +175,7 @@ const MusicPlayer = () => {
   };
   return (
     musicPlayer.isUsing && (
-      <Box
+      <Box className="musicPlayerBox"
         style={musicPlayer.isUsing ? { display: "flex" } : { display: "none" }}
       >
         <audio
@@ -229,7 +229,7 @@ const MusicPlayer = () => {
               ></img>
             </CoverImage>
             <Box sx={{ ml: 1.5, minWidth: 0 }}>
-              <Typography
+              <Typography className="trackPlayingName"
                 noWrap
                 sx={{
                   fontWeight: "bold",

@@ -30,9 +30,14 @@
   font-weight: 642;
   line-height: 39px;
   font-size: 2vw;
-  color: #86a7ff;
+  /*color: #86a7ff;*/
   font-stretch: 105;
   -webkit-text-stroke: 0.1vw white;
+  text-shadow: 0 0 0 12px #699afb;
+  background-image: -webkit-linear-gradient(#699afb, #f4b2e9);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
 }
 
 .sidebar-header img {

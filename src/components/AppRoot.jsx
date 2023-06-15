@@ -3,19 +3,25 @@ import { Outlet } from "react-router-dom";
 import SideBar from "./SideBar";
 import MusicPlayer from "./MusicPlayer";
 import AppAppBar from "./AppAppBar";
+import axios from "axios";
 import Notification from "./Notification";
 import NavBarPlaylist from "./NavBarPlaylist";
-import axios from "axios";
 
 function AppRoot() {
-  const [songs, setSongs]=useState([]);
+  const [message, setMessage] = useState([]);
+  const id = 1;
+  // useEffect(() => {
+  //   axios.get("/api/getPlaylistById/" + id).then((result) => {
+  //     const playlists = result.data.playlist;
+  //     setMessage(playlists);
+  //   });
+  // });
   useEffect(() => {
-    axios.get("/api/getSongById/1").then((res) => {
-      const Songs = res.data.song;
-      setSongs(Songs);
+    axios.get("/api/getAllSongs").then((res) => {
+      const playlists = res.data.songs;
+      setMessage(playlists);
     });
   });
-  
   return (
     <>
       <div style={{ position: "relative" }}>
@@ -34,12 +40,9 @@ function AppRoot() {
         >
           <AppAppBar />
           <div>
-          {/* {songs.map((item) => (
-            <div key={item.id}>{item.SongName}</div>
-          ))} */}
-          {songs.map((item) => (
-            <div key={item.id}>{item.SongName}</div>
-          ))}
+            {message.map((item, index) => (
+              <div key={item.id}>{item.SongName}</div>
+            ))}
             <Outlet />
           </div>
           <div

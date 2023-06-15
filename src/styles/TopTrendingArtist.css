@@ -1,12 +1,17 @@
 .topTrendingArtists {
-  display: flex;
-  column-gap: 25px;
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  column-gap: 20px;
   width: 100%;
   overflow: hidden;
+  grid-auto-rows: 0;
+    /* position: relative; */
+    height: 200px;
 }
 
 .topTrendingArtists .artist {
-  max-width: 300px;
+  width: 200px;
   aspect-ratio: 1;
   justify-content: center;
   align-items: center;
