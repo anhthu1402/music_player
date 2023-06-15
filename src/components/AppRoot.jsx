@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import SideBar from "./SideBar";
 import MusicPlayer from "./MusicPlayer";
 import AppAppBar from "./AppAppBar";
 import Notification from "./Notification";
 import NavBarPlaylist from "./NavBarPlaylist";
+import axios from "axios";
 
 function AppRoot() {
+  const [songs, setSongs]=useState([]);
+  useEffect(() => {
+    axios.get("/api/getSongById/1").then((res) => {
+      const Songs = res.data.song;
+      setSongs(Songs);
+    });
+  });
+  
   return (
     <>
       <div style={{ position: "relative" }}>
@@ -25,6 +34,12 @@ function AppRoot() {
         >
           <AppAppBar />
           <div>
+          {/* {songs.map((item) => (
+            <div key={item.id}>{item.SongName}</div>
+          ))} */}
+          {songs.map((item) => (
+            <div key={item.id}>{item.SongName}</div>
+          ))}
             <Outlet />
           </div>
           <div

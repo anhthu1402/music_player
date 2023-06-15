@@ -11,6 +11,8 @@ import { Box } from "@mui/material";
 import { uploadSong } from "../service";
 
 function UploadedSong() {
+  const cloudName = "dpwehcnso"; //vi
+  // const cloudName = "dvmxvwqev";
   const player = useContext(MusicPlayerContext);
   const notification = useContext(NotificationContext);
   // const uploadSong = () => {
@@ -72,13 +74,13 @@ function UploadedSong() {
       },
     });
 
-    var POST_URL = "https://api.cloudinary.com/v1_1/dvmxvwqev/upload";
+    var POST_URL = "https://api.cloudinary.com/v1_1/" + cloudName + "/upload";
     processFile();
     var uniqueId;
 
     function processFile(e) {
       console.log("changed");
-      uniqueId = "dvmxvwqev" + new Date().getTime();
+      uniqueId = cloudName + new Date().getTime();
       var size = file.size;
       var sliceSize = 10 * 1000000;
       var start = 0;
@@ -105,7 +107,7 @@ function UploadedSong() {
       var formdata = new FormData();
 
       formdata.append("file", piece);
-      formdata.append("cloud_name", "dvmxvwqev");
+      formdata.append("cloud_name", cloudName);
       formdata.append("upload_preset", "musicplayer_audio");
 
       const headers = {
@@ -148,13 +150,13 @@ function UploadedSong() {
   const processFileImage = async (src) => {
     var file = DataURIToBlob(src);
 
-    var POST_URL = "https://api.cloudinary.com/v1_1/dvmxvwqev/upload";
+    var POST_URL = "https://api.cloudinary.com/v1_1/" + cloudName + "/upload";
     processFile();
     var uniqueId;
 
     function processFile(e) {
       console.log("changed");
-      uniqueId = "dvmxvwqev" + new Date().getTime();
+      uniqueId = cloudName + new Date().getTime();
       var size = file.size;
       var sliceSize = 10 * 1000000;
       var start = 0;
@@ -183,7 +185,7 @@ function UploadedSong() {
       var formdata = new FormData();
 
       formdata.append("file", piece);
-      formdata.append("cloud_name", "dvmxvwqev");
+      formdata.append("cloud_name", cloudName);
       formdata.append("upload_preset", "musicplayer_image");
 
       const headers = {
