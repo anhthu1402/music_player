@@ -88,6 +88,7 @@ function App() {
       ],
     },
   ]);
+
   return (
     <MusicPlayerProvider>
       <RouterProvider router={router} />
