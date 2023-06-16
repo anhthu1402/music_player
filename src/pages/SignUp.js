@@ -40,7 +40,13 @@ function SignUp() {
     if (password.length < 8 || password.length > 20) {
       return setAlertError("Độ dài mật khẩu phải từ 8 đến 20 ký tự!");
     }
-
+    if (
+      !password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=]).{8,}$/)
+    ) {
+      return setAlertError(
+        "Mật khẩu phải chứa ít nhất 1 kí tự thường, 1 kí tự viết hoa, 1 kí tự đặc biệt và chữ số."
+      );
+    }
     if (password !== passwordConfirm) {
       return setAlertError("Mật khẩu xác nhận không khớp!");
     }

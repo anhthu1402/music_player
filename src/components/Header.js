@@ -1,7 +1,7 @@
 import React from "react";
 import InputSearch from "./InputSearch";
 import "../styles/Header.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Box, Button, TextField, Toolbar } from "@mui/material";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
@@ -11,6 +11,7 @@ import { useState } from "react";
 import { useContext } from "react";
 import NotificationContext from "../NotificationContext";
 import { changeUserName, showNotification } from "../service";
+import SidebarContext from "../SidebarContext";
 
 function Header() {
   const modifyRef = useRef();
@@ -23,6 +24,9 @@ function Header() {
   const nameRef = useRef();
   const notification = useContext(NotificationContext);
   const username = "Anh Thư";
+  const sidebar = useContext(SidebarContext);
+  const navigate = useNavigate();
+  
   //tạm
   const userId = 1;
   return (
@@ -40,7 +44,7 @@ function Header() {
             <InputSearch />
           </div>
           <div className="personal">
-            {userId === 1 ? (
+            {userId === 2 ? (
               <Link to={"/signIn"}>
                 <button className="signInBtn">Đăng nhập</button>
               </Link>
@@ -116,6 +120,8 @@ function Header() {
                         }}
                         onClick={(e) => {
                           closeLogoutPopup();
+                          navigate("/home");
+                          sidebar.setPathName("Khám phá");
                         }}
                       >
                         Đăng xuất

@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import SideBar from "./SideBar";
 import MusicPlayer from "./MusicPlayer";
 import AppAppBar from "./AppAppBar";
 import Notification from "./Notification";
 import NavBarPlaylist from "./NavBarPlaylist";
+import axios from "axios";
 
 function AppRoot() {
   return (

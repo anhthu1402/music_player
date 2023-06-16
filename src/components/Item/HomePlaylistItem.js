@@ -43,6 +43,7 @@ function PlaylistAtHome({ id }) {
   const closePopup = () => popupRef.current.close();
   const openPopup = () => popupRef.current.open();
   const [isFavorite, setFavorite] = useState(false);
+
   return (
     <>
       <div className="playlistItem">
