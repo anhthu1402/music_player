@@ -121,8 +121,9 @@ function SignUp() {
       </form>
       <div
         style={{
-          display: "flex",
-          justifyContent: "center",
+          // display: "flex",
+          // justifyContent: "center",
+          paddingBottom: "20px",
           fontStyle: "italic",
         }}
       >

@@ -95,13 +95,10 @@ function SignIn() {
           <FormControlLabel
             control={<Checkbox />}
             label="Nhớ tên tài khoản"
-            sx={{ marginLeft: "0.5em" }}
           />
-          {/* <p className="signup_forgotpw">
-            <div className="forgotPwBtn" onClick={forgotPw}>
-              <i>Quên mật khẩu?</i>
-            </div>
-          </p> */}
+          <div className="forgotPwBtn" onClick={forgotPw}>
+            <p><i>Quên mật khẩu?</i></p>
+          </div>
           {isOpenFP && <ForgotPassword handleClose={forgotPw} />}
         </div>
         {showAlert && (

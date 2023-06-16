@@ -5,8 +5,17 @@ import TrackItem from "./Item/TrackItem";
 import { SongData } from "./Data/SongData";
 import "../styles/NewSongs.css";
 import NotificationContext from "../NotificationContext";
+import axios from "axios";
 
 function NewSongs() {
+  const [songs, setSongs]=useState([]);
+  useEffect(() => {
+    axios.get("/api/getAllSongByDateDesc").then((res) => {
+      const Songs = res.data.song;
+      setSongs(Songs);
+    });
+  });
+
   const notification = useContext(NotificationContext);
   const [toggleState, setToggleState] = useState(1);
   const tracksByCountry = [];
