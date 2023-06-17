@@ -3,8 +3,8 @@ import PlaylistItem from "./Item/PlaylistItem";
 import "../styles/MyPlaylist.css";
 import { Card, Typography, Grid } from "@mui/material";
 import { AddCircleRounded } from "@mui/icons-material";
-import { getMyPlaylists } from "./API/getMyPlaylists";
 import CreateNewPlaylist from "./CreateNewPlaylist";
+import { MyPlaylistData } from "./Data/MyPlaylistData";
 
 function MyPlaylist() {
   const createRef = useRef();
@@ -47,7 +47,7 @@ function MyPlaylist() {
         </Card>
         <CreateNewPlaylist />
       </Grid>
-      {getMyPlaylists.map((item, index) => (
+      {MyPlaylistData.map((item, index) => (
         <Grid item sm={3} xs={4}>
           <PlaylistItem item={item} key={index} />
         </Grid>

@@ -10,7 +10,6 @@ import LibraryMusicIcon from "@mui/icons-material/LibraryMusic";
 import "../styles/Album.css";
 import MusicPlayerContext from "../MusicPlayerContext";
 import TrackItem from "../components/Item/TrackItem";
-import { getAlbumDetail } from "../service";
 import NotificationContext from "../NotificationContext";
 import { useRef } from "react";
 import AlbumPopup from "../components/AlbumPopup";
@@ -21,8 +20,7 @@ import { saveAs } from "file-saver";
 function Album() {
   const notification = useContext(NotificationContext);
   const location = useLocation();
-  const id = location.state;
-  const albumDetail = getAlbumDetail(id);
+  const albumDetail = location.state;
   const tracks = albumDetail.songs;
   const song = useContext(MusicPlayerContext);
   const length = tracks.length;

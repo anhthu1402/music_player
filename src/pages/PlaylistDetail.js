@@ -22,8 +22,7 @@ import { saveAs } from "file-saver";
 
 const PlaylistDetail = () => {
   const location = useLocation();
-  const playlistID = location.state;
-  const playlistDetail = getPlaylistDetail(playlistID);
+  const playlistDetail = location.state;
   const tracks = playlistDetail.songPlaylist;
   const song = useContext(MusicPlayerContext);
   const length = tracks.length;

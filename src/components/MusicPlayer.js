@@ -175,12 +175,13 @@ const MusicPlayer = () => {
   };
   return (
     musicPlayer.isUsing && (
-      <Box className="musicPlayerBox"
+      <Box
+        className="musicPlayerBox"
         style={musicPlayer.isUsing ? { display: "flex" } : { display: "none" }}
       >
         <audio
           ref={audioRef}
-          src={getAudioSource(source)}
+          src={source}
           onLoadedData={handleLoadedData}
           onTimeUpdate={() => {
             setCurrentTime(audioRef.current.currentTime);
@@ -229,12 +230,13 @@ const MusicPlayer = () => {
               ></img>
             </CoverImage>
             <Box sx={{ ml: 1.5, minWidth: 0 }}>
-              <Typography className="trackPlayingName"
+              <Typography
+                className="trackPlayingName"
                 noWrap
                 sx={{
                   fontWeight: "bold",
                   fontSize: "1.6vw",
-                  width: "13vw",
+                  width: "22vw",
                   marginBottom: "5px",
                 }}
               >

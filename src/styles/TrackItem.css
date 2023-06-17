@@ -43,6 +43,10 @@
   cursor: pointer;
   display: none;
 }
+.song .item .rightIcon {
+  display: flex;
+  align-items: center;
+}
 .song:hover {
   background-color: #ffdde5;
   .item .songImg .playSongIcon {
@@ -51,6 +55,10 @@
   .item .songImg img {
     transform: scale(1.05);
     filter: brightness(70%);
+  }
+  .item .rightIcon {
+    display: flex;
+    align-items: center;
   }
   .item .rightIcon .favOutlineIcon,
   .item .rightIcon .moreIcon {
@@ -98,7 +106,7 @@
 }
 .item .songDetail .trackDuration {
   position: absolute;
-  top: 35%;
+  top: 33%;
   right: 0;
   transform: translate(0, -65%);
   margin: 15px;

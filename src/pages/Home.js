@@ -10,9 +10,8 @@ import { PlaylistData } from "../components/Data/PlaylistData";
 import "../styles/PlaylistAlbum.css";
 import "../styles/Home.css";
 import SidebarContext from "../SidebarContext";
-import { getAllPlaylists } from "../components/API/getAllPlaylists";
 import HomeAlbumItem from "../components/Item/HomeAlbumItem";
-import { getAllAlbum } from "../components/API/getAllAlbums";
+import { AlbumData } from "../components/Data/AlbumData";
 
 function Home() {
   const song = useContext(MusicPlayerContext);
@@ -35,11 +34,11 @@ function Home() {
         </Link>
       </div>
       <div className="homeRecentlyPlaylist">
-        {getAllPlaylists.map(
+        {PlaylistData.map(
           (item, key) =>
             key < 4 && (
               <div className="listPlaylists">
-                <HomePlaylistItem key={key} id={item.id} />
+                <HomePlaylistItem key={key} item={item} />
               </div>
             )
         )}
@@ -53,7 +52,7 @@ function Home() {
           (item, key) =>
             key < 4 && (
               <div className="listPlaylists">
-                <HomePlaylistItem key={key} id={item.id} />
+                <HomePlaylistItem key={key} item={item} />
               </div>
             )
         )}
@@ -86,7 +85,7 @@ function Home() {
         <p className="categoryTitle">Album Hot</p>
       </div>
       <div className="albumHot">
-        {getAllAlbum.map(
+        {AlbumData.map(
           (item, key) =>
             key < 4 && (
               <div className="listPlaylists">
@@ -115,11 +114,11 @@ function Home() {
         <p className="categoryTitle">Top 100</p>
       </div>
       <div className="top100">
-        {getAllPlaylists.map(
+        {PlaylistData.map(
           (item, key) =>
             key < 4 && (
               <div className="listPlaylists">
-                <HomePlaylistItem key={key} id={item.id} />
+                <HomePlaylistItem key={key} item={item} />
               </div>
             )
         )}

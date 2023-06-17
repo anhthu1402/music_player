@@ -6,7 +6,7 @@ import { changePlaylistName, showNotification } from "../service";
 import { useContext } from "react";
 import NotificationContext from "../NotificationContext";
 
-function ModifyPlaylist({ closeModifyPopup, name, modifyRef, id, setName }) {
+function ModifyPlaylist({ closeModifyPopup, name, modifyRef, id }) {
   const [disabled, setDisabled] = useState(false);
   const nameRef = useRef();
   const notification = useContext(NotificationContext);
@@ -63,8 +63,6 @@ function ModifyPlaylist({ closeModifyPopup, name, modifyRef, id, setName }) {
               changePlaylistName(id, nameRef.current.value);
               showNotification(notification, "Cập nhật playlist thành công");
               closeModifyPopup();
-
-              setName(nameRef.current.value);
             }}
             disabled={disabled}
             sx={{

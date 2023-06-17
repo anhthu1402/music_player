@@ -28,7 +28,7 @@ function ArtistAlbumItem({ item }) {
           <button className="btn">
             <FavoriteBorderRounded sx={{ fontSize: "2.4vw" }} />
           </button>
-          <Link to={"/album/" + item.albumName} state={item.id}>
+          <Link to={"/album/" + item.albumName} state={item}>
             <button>
               <PlayCircleFilled sx={{ fontSize: "2.4vw" }} />
             </button>

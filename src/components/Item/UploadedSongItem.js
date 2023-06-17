@@ -15,7 +15,6 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import "../../styles/TrackItem.css";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
-import { getMyPlaylists } from "../API/getMyPlaylists";
 import { Button, ButtonGroup, Tooltip } from "@mui/material";
 import {
   addFavSong,
@@ -25,6 +24,7 @@ import {
   addToLocalPlaylist,
 } from "../../service";
 import CreateNewPlaylist from "../CreateNewPlaylist";
+import { MyPlaylistData } from "../Data/MyPlaylistData";
 
 export class UploadedSongItem extends Component {
   render() {
@@ -274,7 +274,7 @@ export class UploadedSongItem extends Component {
               <p>Tạo playlist mới</p>
             </div>
             <div>
-              {getMyPlaylists.map((playlist, index) => {
+              {MyPlaylistData.map((playlist, index) => {
                 return (
                   <div
                     key={index}

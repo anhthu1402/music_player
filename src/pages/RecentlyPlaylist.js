@@ -3,7 +3,6 @@ import PlaylistItem from "../components/Item/PlaylistItem";
 import MusicPlayerContext from "../MusicPlayerContext";
 import { RecentlyPlaylistData } from "../components/Data/RecentlyPlaylistData";
 import { Grid } from "@mui/material";
-import { getRecentlyPlaylist } from "../components/API/getRecentlyPlaylist";
 
 function RecentlyPlaylist() {
   const song = useContext(MusicPlayerContext);
@@ -15,7 +14,7 @@ function RecentlyPlaylist() {
         rowSpacing={1}
         columnSpacing={{ sm: 2, xs: 1 }}
       >
-        {getRecentlyPlaylist.map((item, index) => (
+        {RecentlyPlaylistData.map((item, index) => (
           <Grid item sm={3} xs={4}>
             <PlaylistItem item={item} key={index} />
           </Grid>

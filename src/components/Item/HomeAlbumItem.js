@@ -9,13 +9,12 @@ import MusicPlayerContext from "../../MusicPlayerContext";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/PlaylistAlbum.css";
-import { getAlbumDetail } from "../../service";
 import { useRef } from "react";
 import AlbumPopup from "../AlbumPopup";
 import { Tooltip } from "@mui/material";
 
 function HomeAlbumItem({ item }) {
-  const tracks = getAlbumDetail(item.id).songs;
+  const tracks = item.songs;
   const song = useContext(MusicPlayerContext);
   const length = tracks.length;
   const [rnd, setRnd] = useState(0);
@@ -51,7 +50,7 @@ function HomeAlbumItem({ item }) {
             fontSize="large"
             style={{ color: "white" }}
           />
-          <Link to={`/album/${item.albumName}`} state={item.id}>
+          <Link to={`/album/${item.albumName}`} state={item}>
             <PlayCircleFilled
               className="icon"
               fontSize="large"
@@ -74,7 +73,7 @@ function HomeAlbumItem({ item }) {
           />
         </div>
       </div>
-      <Link to={`/album/${item.albumName}`} state={item.id}>
+      <Link to={`/album/${item.albumName}`} state={item}>
         <h3 className="playlistName">{item.albumName}</h3>
       </Link>
       <div className="artists">

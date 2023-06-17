@@ -18,7 +18,6 @@ import MusicPlayerContext from "../MusicPlayerContext";
 import NotificationContext from "../NotificationContext";
 import LocalPlaylistContext from "../LocalPlaylistContext";
 import Popup from "reactjs-popup";
-import { getMyPlaylists } from "./API/getMyPlaylists";
 import {
   addLocalPlaylistToPlaylist,
   deleteLocalPlaylist,
@@ -29,6 +28,7 @@ import { useRef } from "react";
 import AppAppBarPlaylist from "./AppAppBarPlaylist";
 import JSZip from "jszip";
 import { saveAs } from "file-saver";
+import { MyPlaylistData } from "./Data/MyPlaylistData";
 
 function NavBarPlaylist() {
   const localPlaylist = useContext(LocalPlaylistContext);
@@ -129,7 +129,7 @@ function NavBarPlaylist() {
           <p>Tạo playlist mới</p>
         </div>
         <div>
-          {getMyPlaylists.map((playlist, index) => {
+          {MyPlaylistData.map((playlist, index) => {
             return (
               <div
                 key={index}

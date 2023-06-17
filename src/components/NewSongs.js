@@ -8,7 +8,8 @@ import NotificationContext from "../NotificationContext";
 import axios from "axios";
 
 function NewSongs() {
-  const [songs, setSongs]=useState([]);
+  const [songs, setSongs] = useState([]);
+  //sửa này lại nhe
   useEffect(() => {
     axios.get("/api/getAllSongByDateDesc").then((res) => {
       const Songs = res.data.song;

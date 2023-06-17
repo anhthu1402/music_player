@@ -21,13 +21,12 @@ import {
   showNotification,
 } from "../../service";
 import MusicPlayerContext from "../../MusicPlayerContext";
-import ModifyPlaylist from "../ModifyPlaylist";
-import Popup from "reactjs-popup";
-import NotificationContext from "../../NotificationContext";
 import PlaylistPopup from "../PlaylistPopup";
+import JSZip from "jszip";
+import saveAs from "file-saver";
 
 function PlaylistItem({ item }) {
-  const tracks = getPlaylistDetail(item.id).songPlaylist;
+  const tracks = item.songPlaylist;
   const song = useContext(MusicPlayerContext);
   const length = tracks.length;
   const [rnd, setRnd] = useState(0);
@@ -52,6 +51,20 @@ function PlaylistItem({ item }) {
   const popupRef = useRef();
   const closePopup = () => popupRef.current.close();
   const openPopup = () => popupRef.current.open();
+  const downloadPlaylist = () => {
+    const zip = new JSZip();
+    tracks.map((item, index) => {
+      var filename = item.songName + ".mp3";
+      zip.file(filename, item.songLink, { binary: true });
+    });
+    zip.generateAsync({ type: "blob" }).then(function (content) {
+      saveAs(content, "uitmp3.zip");
+    });
+    // setTimeout(() => {
+    //   notification.setUsing(true);
+    //   notification.setContent("Đã tải " + length + " bài hát.");
+    // }, 2000);
+  };
   return (
     <Card className={"cardPlaylist"} sx={{ border: "none", boxShadow: "none" }}>
       <div className="cardContent">
@@ -87,7 +100,7 @@ function PlaylistItem({ item }) {
               />
             )}
           </button>
-          <Link to={`/playlistDetail/${item.playlistName}`} state={item.id}>
+          <Link to={`/playlistDetail/${item.playlistName}`} state={item}>
             <button onClick={() => play()}>
               <PlayCircleFilled sx={{ fontSize: "2.1vw", color: "white" }} />
             </button>
@@ -105,11 +118,12 @@ function PlaylistItem({ item }) {
               popupRef={popupRef}
               closePopup={closePopup}
               length={length}
+              downloadPlaylist={downloadPlaylist}
             />
           </button>
         </div>
       </div>
-      <Link to={`/playlistDetail/${item.playlistName}`} state={item.id}>
+      <Link to={`/playlistDetail/${item.playlistName}`} state={item}>
         <Typography
           component="header"
           sx={{ fontSize: `1.35vw`, marginTop: `0.4vw`, color: "black" }}

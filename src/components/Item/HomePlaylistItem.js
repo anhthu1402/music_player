@@ -10,17 +10,14 @@ import MusicPlayerContext from "../../MusicPlayerContext";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/PlaylistAlbum.css";
-import {
-  getPlaylistDetail,
-  addFavPlaylist,
-  removeFromFavPlaylist,
-} from "../../service";
+import { addFavPlaylist, removeFromFavPlaylist } from "../../service";
 import PlaylistPopup from "../PlaylistPopup";
 import { Tooltip } from "@mui/material";
+import JSZip from "jszip";
+import saveAs from "file-saver";
 
-function PlaylistAtHome({ id }) {
-  const playlistDetail = getPlaylistDetail(id);
-  const tracks = playlistDetail.songPlaylist;
+function PlaylistAtHome({ item }) {
+  const tracks = item.songPlaylist;
   const song = useContext(MusicPlayerContext);
   const length = tracks.length;
   const [rnd, setRnd] = useState(0);
@@ -43,15 +40,29 @@ function PlaylistAtHome({ id }) {
   const closePopup = () => popupRef.current.close();
   const openPopup = () => popupRef.current.open();
   const [isFavorite, setFavorite] = useState(false);
+  const downloadPlaylist = () => {
+    const zip = new JSZip();
+    tracks.map((item, index) => {
+      var filename = item.songName + ".mp3";
+      zip.file(filename, item.songLink, { binary: true });
+    });
+    zip.generateAsync({ type: "blob" }).then(function (content) {
+      saveAs(content, "uitmp3.zip");
+    });
+    // setTimeout(() => {
+    //   notification.setUsing(true);
+    //   notification.setContent("Đã tải " + length + " bài hát.");
+    // }, 2000);
+  };
 
   return (
     <>
       <div className="playlistItem">
         <img
-          src={`${playlistDetail.playlistImg}`}
+          src={`${item.playlistImg}`}
           className="imagePlaylist"
-          alt={playlistDetail.playlistName}
-          title={playlistDetail.playlistName}
+          alt={item.playlistName}
+          title={item.playlistName}
         />
         <div className="playPlaylist">
           {isFavorite ? (
@@ -60,7 +71,7 @@ function PlaylistAtHome({ id }) {
               fontSize="large"
               style={{ color: "#ff7394" }}
               onClick={() => {
-                removeFromFavPlaylist(playlistDetail.id, userId);
+                removeFromFavPlaylist(item.id, userId);
                 setFavorite(false);
               }}
             />
@@ -70,15 +81,12 @@ function PlaylistAtHome({ id }) {
               fontSize="large"
               style={{ color: "white" }}
               onClick={() => {
-                addFavPlaylist(playlistDetail.id, userId);
+                addFavPlaylist(item.id, userId);
                 setFavorite(true);
               }}
             />
           )}
-          <Link
-            to={`/playlistDetail/${playlistDetail.playlistName}`}
-            state={id}
-          >
+          <Link to={`/playlistDetail/${item.playlistName}`} state={item}>
             <PlayCircleFilled
               className="icon"
               fontSize="large"
@@ -95,19 +103,17 @@ function PlaylistAtHome({ id }) {
             />
           </Tooltip>
           <PlaylistPopup
-            playlistDetail={playlistDetail}
+            playlistDetail={item}
             userId={userId}
             popupRef={popupRef}
             closePopup={closePopup}
             length={length}
+            downloadPlaylist={downloadPlaylist}
           />
         </div>
       </div>
-      <Link
-        to={`/playlistDetail/${playlistDetail.playlistName}`}
-        state={playlistDetail.id}
-      >
-        <h3 className="playlistName">{playlistDetail.playlistName}</h3>
+      <Link to={`/playlistDetail/${item.playlistName}`} state={item}>
+        <h3 className="playlistName">{item.playlistName}</h3>
       </Link>
     </>
   );
