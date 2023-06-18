@@ -44,28 +44,6 @@ function InputSearch() {
                         onkeydown="return event.key != 'Enter';" />
             </div>
             <div className={searchTerm !== "" ? 'resultSearch' : 'hideRS'}>
-                {/* <div id='headingSearchSong'>Bài hát</div>
-                <div className='rs_songs'>
-                    {AlbumData.map((value) => {
-                        value.songs.map((val, key) => {
-                            if (val.songName.toLowerCase().includes(searchTerm.toLowerCase())) {
-                                return (
-                                    <div className="song">
-                                        <TrackItem
-                                            key={key}
-                                            item={val}
-                                            tracks={value.songs}
-                                            index={key}
-                                            song={song} 
-                                            notification={notification}
-                                        />
-                                    </div>
-                                
-                                );
-                            }
-                        })}
-                    )}
-                </div> */}
                 {(rsSong.length <= 0 && rsArtist.length <= 0 && rsAlbum.length <= 0) ? 
                     <p align="center"><i>Không tìm thấy!</i></p> : '' }
                 {rsSong.length <= 0 ? '' : <>

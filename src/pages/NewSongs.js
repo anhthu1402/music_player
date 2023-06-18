@@ -13,19 +13,19 @@ function NewSongs() {
       tracksByCountry.push(item);
     } else if (toggleState === 2) {
       item.country.map((child) => {
-        if (child.id === "1") {
+        if (child.id === 1) {
           tracksByCountry.push(item);
         }
       });
     } else if (toggleState === 3) {
       item.country.map((child) => {
-        if (child.id === "4") {
+        if (child.id === 4) {
           tracksByCountry.push(item);
         }
       });
     } else {
       item.country.map((child) => {
-        if (child.id !== "1" && child.id !== "4") {
+        if (child.id !== 1 && child.id !== 4) {
           tracksByCountry.push(item);
         }
       });

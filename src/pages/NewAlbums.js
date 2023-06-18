@@ -20,19 +20,19 @@ function NewAlbums() {
       albumsByCountry.push(item);
     } else if (toggleState === 2) {
       item.country.map((child) => {
-        if (child.id === 1) {
+        if (child.id === "1") {
           albumsByCountry.push(item);
         }
       });
     } else if (toggleState === 3) {
       item.country.map((child) => {
-        if (child.id === 4) {
+        if (child.id === "4") {
           albumsByCountry.push(item);
         }
       });
     } else {
       item.country.map((child) => {
-        if (child.id === 2) {
+        if (child.id === "2") {
           albumsByCountry.push(item);
         }
       });
