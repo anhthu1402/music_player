@@ -22,8 +22,7 @@ import { saveAs } from "file-saver";
 
 const PlaylistDetail = () => {
   const location = useLocation();
-  const playlistID = location.state;
-  const playlistDetail = getPlaylistDetail(playlistID);
+  const playlistDetail = location.state;
   const tracks = playlistDetail.songPlaylist;
   const song = useContext(MusicPlayerContext);
   const length = tracks.length;
@@ -56,16 +55,13 @@ const PlaylistDetail = () => {
     const zip = new JSZip();
     playlistDetail.songPlaylist.map((item, index) => {
       var filename = item.songName + ".mp3";
-      zip.file(filename, item.songLink, { binary: true });
+      zip.file(filename, item.songLink);
     });
     zip.generateAsync({ type: "blob" }).then(function (content) {
       saveAs(content, "uitmp3.zip");
     });
-    // setTimeout(() => {
-    //   notification.setUsing(true);
-    //   notification.setContent("Đã tải " + length + " bài hát.");
-    // }, 2000);
   };
+  const [playlistName, setName] = useState(playlistDetail.playlistName);
   return (
     <div className="playlistDetailContainer">
       {playlistDetail && (
@@ -85,7 +81,7 @@ const PlaylistDetail = () => {
                   fontSize: "2.2vw",
                 }}
               >
-                {playlistDetail.playlistName}
+                {playlistName}
                 <EditRounded
                   sx={{ marginLeft: "10px", cursor: "pointer" }}
                   onClick={() => {
@@ -98,6 +94,7 @@ const PlaylistDetail = () => {
                   id={playlistDetail.id}
                   modifyRef={modifyRef}
                   name={playlistDetail.playlistName}
+                  setName={setName}
                   closeModifyPopup={closeModifyPopup}
                 />
               </p>

@@ -1,9 +1,9 @@
 import React from "react";
 import "../styles/TopRank.css";
-import { getAllAlbum } from "../components/API/getAllAlbums";
 import HomeAlbumItem from "../components/Item/HomeAlbumItem";
 import { useContext } from "react";
 import MusicPlayerContext from "../MusicPlayerContext";
+import { AlbumData } from "../components/Data/AlbumData";
 
 function TopRank() {
   const musicPlayer = useContext(MusicPlayerContext);
@@ -13,7 +13,7 @@ function TopRank() {
       <div className="top100Body">
         <div className="top100TitleGenre">Nổi bật</div>
         <div className="listTop100">
-          {getAllAlbum.map((item, key) => (
+          {AlbumData.map((item, key) => (
             <div className="listPlaylists">
               <HomeAlbumItem key={key} item={item} />
             </div>

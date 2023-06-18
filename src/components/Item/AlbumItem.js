@@ -43,7 +43,7 @@ function AlbumItem({ item }) {
 
       <div className="albumDetail">
         <div>
-          <Link to={`/album/${item.albumName}`} state={item.id}>
+          <Link to={`/album/${item.albumName}`} state={item}>
             {item.albumName}
           </Link>
         </div>

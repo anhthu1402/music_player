@@ -8,7 +8,6 @@ import {
 import AlbumItem from "../components/Item/AlbumItem";
 import "../styles/NewAlbums.css";
 import { AlbumData } from "../components/Data/AlbumData";
-import { getAllAlbum } from "../components/API/getAllAlbums";
 import { getAlbumDetail } from "../service";
 import { useRef } from "react";
 import AlbumPopup from "../components/AlbumPopup";
@@ -16,7 +15,7 @@ import AlbumPopup from "../components/AlbumPopup";
 function NewAlbums() {
   const [toggleState, setToggleState] = useState(1);
   const albumsByCountry = [];
-  getAllAlbum.map((item, index) => {
+  AlbumData.map((item, index) => {
     if (toggleState === 1) {
       albumsByCountry.push(item);
     } else if (toggleState === 2) {
@@ -27,7 +26,7 @@ function NewAlbums() {
       });
     } else if (toggleState === 3) {
       item.country.map((child) => {
-        if (child.id === 3 || child.id === 4) {
+        if (child.id === 4) {
           albumsByCountry.push(item);
         }
       });
@@ -89,8 +88,7 @@ function NewAlbums() {
                 fontSize="large"
                 className="icon"
                 onClick={() => {
-                  const albumDetail = getAlbumDetail(item.id);
-                  const songs = albumDetail.songs;
+                  const songs = item.songs;
                   setRnd(Math.floor(Math.random() * songs.length));
                   song.setUsing(true);
                   song.setTracks(songs);

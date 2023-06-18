@@ -3,7 +3,6 @@ import Carousel from "react-simply-carousel";
 import "../styles/BannerPlaylist.css";
 import { PlaylistData } from "./Data/PlaylistData";
 import { Link } from "react-router-dom";
-import { getAllPlaylists } from "./API/getAllPlaylists";
 
 function BannerPlaylist() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -77,19 +76,25 @@ function BannerPlaylist() {
           },
         ]}
       >
-        {getAllPlaylists.map((item, index) => index < 4 && (
-          <div className="slider">
-            <Link to={`/playlistDetail/${item.playlistName}`} state={item.id}>
-              <img
-                key={index}
-                title={item.playlistName}
-                src={item.playlistImg}
-                className="image"
-                alt={item.playlistName}
-              />
-            </Link>
-          </div>
-        ))}
+        {PlaylistData.map(
+          (item, index) =>
+            index < 4 && (
+              <div className="slider">
+                <Link
+                  to={`/playlistDetail/${item.playlistName}`}
+                  state={item.id}
+                >
+                  <img
+                    key={index}
+                    title={item.playlistName}
+                    src={item.playlistImg}
+                    className="image"
+                    alt={item.playlistName}
+                  />
+                </Link>
+              </div>
+            )
+        )}
       </Carousel>
     </div>
   );

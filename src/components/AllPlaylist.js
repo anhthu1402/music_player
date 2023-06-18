@@ -2,10 +2,10 @@ import React from "react";
 import { Grid, Card, Typography } from "@mui/material";
 import PlaylistItem from "./Item/PlaylistItem";
 import "../styles/MyPlaylist.css";
-import { getAllPlaylists } from "./API/getAllPlaylists";
 import CreateNewPlaylist from "./CreateNewPlaylist";
 import { AddCircleRounded } from "@mui/icons-material";
 import { useRef } from "react";
+import { PlaylistData } from "./Data/PlaylistData";
 
 function AllPlaylist() {
   const createRef = useRef();
@@ -49,7 +49,7 @@ function AllPlaylist() {
           </Card>
           <CreateNewPlaylist />
         </Grid>
-        {getAllPlaylists.map((item, index) => (
+        {PlaylistData.map((item, index) => (
           <Grid item sm={3} xs={4}>
             <PlaylistItem item={item} key={index} />
           </Grid>
