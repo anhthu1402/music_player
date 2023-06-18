@@ -1,6 +1,7 @@
 .searchBar {
   box-sizing: border-box;
-  width: 100%;
+  width: 60%;
+  min-width: 400px;
   height: 2.7rem;
 }
 .signInBtn {

@@ -41,7 +41,7 @@
 .moreOption {
   background-color: transparent;
   border: none;
-  display: none;
+  /* display: none; */
   cursor: pointer;
   margin-left: 1vw;
   margin-right: 0.5vw;

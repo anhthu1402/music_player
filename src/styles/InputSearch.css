@@ -1,10 +1,24 @@
 .inputSearchContainer {
-    position: absolute;
-    top:50%;
-    transform: translateY(-50%);
-    width: 50%;
+    margin-right: 50px;
 }
-.inputSearchContainer form.nosubmit {
+.hideRS {
+    display: none;
+}
+.resultSearch {
+    color: black;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 2px;
+    padding: 10px 15px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    height: 70vh;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+.inputSearchContainer div.nosubmit {
     border: none;
     border-radius: 5px;
     padding: 0;
@@ -23,13 +37,88 @@
 .inputSearchContainer input[type="search"]:focus {
     outline : none;
 }
-.inputSearchContainer ul {
-    list-style: none;  
-    display: flex;  
-    flex-direction: column;  
-    align-items: center;  
+#headingSearchSong {
+    font-weight: bold;
+    margin: 15px 0;
+    &::before {
+        content: '🎵\00a0';
+    }
+}
+#headingSearchArtist {
+    font-weight: bold;
+    margin: 15px 0;
+    &::before {
+        content: '🎤\00a0';
+    }
+}
+#headingSearchAlbum {
+    font-weight: bold;
+    margin: 15px 0;
+    &::before {
+        content: '💿\00a0';
+    }
+}
+.resultSearch .rs_songs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
+}
+.resultSearch .song {
+    background-color: transparent !important;
+    border-radius: 5px;
+    margin-bottom: 0;
     padding: 0;
-    z-index: 99;
-    background-color: white;
+    .trackDuration {
+        display: none;
+    }
+    .favIcon {
+        font-size: 20px !important;
+    }
+    .favOutlineIcon, .moreIcon {
+        color: black !important;
+        font-size: 20px !important;
+    }
+    .item .songImg {
+        margin: 5px 10px 5px 5px !important;
+        width: 50px;
+
+    }
+    &:hover {
+        background-color: rgb(225, 225, 225) !important;
+    }
+}
+.resultSearch .artistsResult {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+}
+.resultSearch .artistResult {
+    display: flex;
+    gap: 10px;
+    >img {
+        width: 50px;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 2px solid #ff7394;
+    }   
+}
+
+.resultSearch .albumsResult {
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+}
+.resultSearch .albumResult {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    >img {
+        width: 50px;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 5px;
+    }
     
 }
