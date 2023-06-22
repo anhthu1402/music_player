@@ -24,10 +24,14 @@ import MusicPlayerContext from "../../MusicPlayerContext";
 import PlaylistPopup from "../PlaylistPopup";
 import JSZip from "jszip";
 import saveAs from "file-saver";
+import NotificationContext from "../../NotificationContext";
+import { useSelector } from "react-redux";
 
 function PlaylistItem({ item }) {
+  const { isAuthed } = useSelector((state) => state.auth);
   const tracks = item.songPlaylist;
   const song = useContext(MusicPlayerContext);
+  const notification = useContext(NotificationContext);
   const length = tracks.length;
   const [rnd, setRnd] = useState(0);
   const play = () => {
@@ -60,11 +64,8 @@ function PlaylistItem({ item }) {
     zip.generateAsync({ type: "blob" }).then(function (content) {
       saveAs(content, "uitmp3.zip");
     });
-    // setTimeout(() => {
-    //   notification.setUsing(true);
-    //   notification.setContent("Đã tải " + length + " bài hát.");
-    // }, 2000);
   };
+  const [playlistName, setPlaylistName] = useState(item.playlistName);
   return (
     <Card className={"cardPlaylist"} sx={{ border: "none", boxShadow: "none" }}>
       <div className="cardContent">
@@ -82,20 +83,40 @@ function PlaylistItem({ item }) {
         />
         <div className="playlistMoreDetail">
           <button className="btn">
-            {isFavorite ? (
-              <FavoriteRounded
-                sx={{ fontSize: "2.1vw", color: "#ff7394" }}
-                onClick={() => {
-                  removeFromFavPlaylist(item.id, userId);
-                  setFavorite(false);
-                }}
-              />
+            {isAuthed ? (
+              isFavorite ? (
+                <FavoriteRounded
+                  sx={{ fontSize: "2.1vw", color: "#ff7394" }}
+                  onClick={() => {
+                    removeFromFavPlaylist(item.id, userId);
+                    setFavorite(false);
+                    showNotification(
+                      notification,
+                      "Đã xóa playlist khỏi thư viện yêu thích"
+                    );
+                  }}
+                />
+              ) : (
+                <FavoriteBorderOutlined
+                  sx={{ fontSize: "2.1vw", color: "white" }}
+                  onClick={() => {
+                    addFavPlaylist(item.id, userId);
+                    setFavorite(true);
+                    showNotification(
+                      notification,
+                      "Đã thêm playlist vào thư viện yêu thích"
+                    );
+                  }}
+                />
+              )
             ) : (
               <FavoriteBorderOutlined
                 sx={{ fontSize: "2.1vw", color: "white" }}
                 onClick={() => {
-                  addFavPlaylist(item.id, userId);
-                  setFavorite(true);
+                  showNotification(
+                    notification,
+                    "Đăng nhập để thêm playlist vào thư viện yêu thích"
+                  );
                 }}
               />
             )}
@@ -119,6 +140,7 @@ function PlaylistItem({ item }) {
               closePopup={closePopup}
               length={length}
               downloadPlaylist={downloadPlaylist}
+              setPlaylistName={setPlaylistName}
             />
           </button>
         </div>
@@ -128,7 +150,7 @@ function PlaylistItem({ item }) {
           component="header"
           sx={{ fontSize: `1.35vw`, marginTop: `0.4vw`, color: "black" }}
         >
-          {item.playlistName}
+          {playlistName}
         </Typography>
       </Link>
       <Typography component="p" color={"grey"} sx={{ fontSize: "1vw" }}>

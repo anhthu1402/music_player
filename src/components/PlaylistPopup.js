@@ -24,6 +24,7 @@ function PlaylistPopup({
   popupRef,
   length,
   downloadPlaylist,
+  setPlaylistName,
 }) {
   const deleteRef = useRef();
   const closeDeletePopup = () => deleteRef.current.close();
@@ -73,8 +74,8 @@ function PlaylistPopup({
           />
           <p>Tải xuống</p>
         </div>
-        {/* Giả sử userId đã đăng nhập là 1 */}
-        {userId === 1 ? (
+        {/* Giả sử user đã đăng nhập là Anh Thư */}
+        {playlistDetail.user === "Anh Thư" ? (
           <div>
             <div className="playlistItemPopup" onClick={openModifyPopup}>
               <EditOutlined
@@ -99,6 +100,7 @@ function PlaylistPopup({
         id={playlistDetail.id}
         modifyRef={modifyRef}
         name={playlistDetail.playlistName}
+        setPlaylistName={setPlaylistName}
         closeModifyPopup={closeModifyPopup}
       />
       <Popup

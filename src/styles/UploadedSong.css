@@ -27,7 +27,8 @@ label.label input[type="file"] {
 .label:valid + span {
   color: #ffffff;
 }
-.empty {
+.empty,
+.uploadedSong {
   display: flex;
   flex-direction: column;
   align-items: center;

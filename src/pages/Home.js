@@ -12,43 +12,61 @@ import "../styles/Home.css";
 import SidebarContext from "../SidebarContext";
 import HomeAlbumItem from "../components/Item/HomeAlbumItem";
 import { AlbumData } from "../components/Data/AlbumData";
+import { RecentlyPlaylistData } from "../components/Data/RecentlyPlaylistData";
+import { Tooltip } from "@mui/material";
+import { useSelector } from "react-redux";
 
 function Home() {
   const song = useContext(MusicPlayerContext);
   const sidebar = useContext(SidebarContext);
+  const recommendationPlaylist = [];
+  PlaylistData.map((item) => {
+    if (item.user !== "Anh Thư") {
+      recommendationPlaylist.push(item);
+    }
+  });
+  const { isAuthed } = useSelector((state) => state.auth);
   return (
     <div className="container">
       <BannerPlaylist />
 
-      <div className="categoryHeader">
-        <p className="categoryTitle">Nghe gần đây</p>
-        <Link
-          className="linkToAllPlaylist"
-          to={"/recently?type=playlist"}
-          onClick={() => {
-            localStorage.setItem("sidebarPath", JSON.stringify("Gần đây"));
-            sidebar.setPathName("Gần đây");
-          }}
-        >
-          <p>Tất cả &gt;</p>
-        </Link>
-      </div>
-      <div className="homeRecentlyPlaylist">
-        {PlaylistData.map(
-          (item, key) =>
-            key < 4 && (
-              <div className="listPlaylists">
-                <HomePlaylistItem key={key} item={item} />
-              </div>
-            )
-        )}
-      </div>
+      {isAuthed ? (
+        <div>
+          <div className="categoryHeader">
+            <p className="categoryTitle">Nghe gần đây</p>
+            <Link
+              className="linkToAllPlaylist"
+              to={"/recently?type=playlist"}
+              onClick={() => {
+                localStorage.setItem("sidebarPath", JSON.stringify("Gần đây"));
+                sidebar.setPathName("Gần đây");
+              }}
+            >
+              <p>Tất cả &gt;</p>
+            </Link>
+          </div>
+          <div className="homeRecentlyPlaylist">
+            {RecentlyPlaylistData.map(
+              (item, key) =>
+                key < 4 && (
+                  <div className="listPlaylists">
+                    <Tooltip title={item.playlistName}>
+                      <HomePlaylistItem key={key} item={item} />
+                    </Tooltip>
+                  </div>
+                )
+            )}
+          </div>
+        </div>
+      ) : (
+        <div></div>
+      )}
 
       <div className="categoryHeader">
         <p className="categoryTitle">Đề xuất cho bạn</p>
       </div>
       <div className="recommendationPlaylist">
-        {PlaylistData.map(
+        {recommendationPlaylist.map(
           (item, key) =>
             key < 4 && (
               <div className="listPlaylists">
@@ -83,6 +101,16 @@ function Home() {
 
       <div className="categoryHeader">
         <p className="categoryTitle">Album Hot</p>
+        <Link
+          className="linkToAllPlaylist"
+          to={"/topalbum"}
+          onClick={() => {
+            localStorage.setItem("sidebarPath", JSON.stringify("Top album"));
+            sidebar.setPathName("Top album");
+          }}
+        >
+          <p>Tất cả &gt;</p>
+        </Link>
       </div>
       <div className="albumHot">
         {AlbumData.map(
@@ -110,19 +138,20 @@ function Home() {
       </div>
       <NewSongRank className="newSongChart" />
 
-      <div className="categoryHeader">
+      {/* <div className="categoryHeader">
         <p className="categoryTitle">Top 100</p>
       </div>
       <div className="top100">
-        {PlaylistData.map(
+        {AlbumData.map(
           (item, key) =>
-            key < 4 && (
+            key < 8 &&
+            key % 2 === 0 && (
               <div className="listPlaylists">
-                <HomePlaylistItem key={key} item={item} />
+                <HomeAlbumItem key={key} item={item} />
               </div>
             )
         )}
-      </div>
+      </div> */}
 
       <div style={song.isUsing ? { height: "10em" } : { height: "3em" }}></div>
     </div>

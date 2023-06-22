@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/SignIn.css";
 import KeyIcon from "@mui/icons-material/Key";
@@ -13,11 +13,14 @@ import {
 } from "@mui/material";
 import ForgotPassword from "./ForgotPassword";
 import { Error, PersonRounded } from "@mui/icons-material";
+import { useDispatch } from "react-redux";
+import { authActions } from "../stores/auth";
+import SidebarContext from "../SidebarContext";
 
 function SignIn() {
   const [values, setValues] = useState(false);
   const [isOpenFP, setIsOpenFP] = useState(false);
-
+  const dispatch = useDispatch();
   const handleClickShowPassword = () => {
     setValues(!values);
   };
@@ -37,29 +40,29 @@ function SignIn() {
 
   const usernameRef = useRef();
   const passwordRef = useRef();
-
+  const sidebar = useContext(SidebarContext);
   const signinHandler = () => {
     const username = usernameRef.current.value;
     const password = passwordRef.current.value;
 
     if (!username || !password) {
-      return setAlertError("Vui lòng điền đầy đủ các thông tin đăng ký!");
+      return setAlertError("Vui lòng điền đầy đủ các thông tin!");
     }
-
-    //truy van csdl (tam)
-    const check = (username, password) => {
-      return 1;
-    };
-
-    if (!check(username, password)) {
-      return setAlertError("Tên đăng nhập hoặc mật khẩu không chính xác.");
-    }
+    // if (!check(username, password)) {
+    //   return setAlertError("Tên đăng nhập hoặc mật khẩu không chính xác.");
+    // }
 
     //sign in successfully
     setError(null);
     setShowAlert(false);
-    console.log(username, password);
+    const user = {
+      username,
+      password,
+    };
+    dispatch(authActions.setAuth(user));
     navigate("/home");
+    localStorage.setItem("sidebarPath", JSON.stringify("Khám phá"));
+    sidebar.setPathName("Khám phá");
   };
 
   return (
@@ -92,12 +95,11 @@ function SignIn() {
           </IconButton>
         </div>
         <div className="div3">
-          <FormControlLabel
-            control={<Checkbox />}
-            label="Nhớ tên tài khoản"
-          />
+          <FormControlLabel control={<Checkbox />} label="Nhớ tên tài khoản" />
           <div className="forgotPwBtn" onClick={forgotPw}>
-            <p><i>Quên mật khẩu?</i></p>
+            <p>
+              <i>Quên mật khẩu?</i>
+            </p>
           </div>
           {isOpenFP && <ForgotPassword handleClose={forgotPw} />}
         </div>

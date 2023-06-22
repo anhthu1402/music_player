@@ -770,7 +770,7 @@ Unmyeongul neukkyeo nan nan nan~ nan`,
   {
     id: 2,
     playlistName: "Japanese playlist",
-    user: "Anh Thu",
+    user: "Anh Thư",
     playlistImg:
       "https://t2.genius.com/unsafe/425x425/https%3A%2F%2Fimages.genius.com%2F37713c711b52331c2cb5750ab3fc7480.369x369x1.png",
     songPlaylist: [
@@ -1123,9 +1123,9 @@ Ah-ah-ah-ah`,
   {
     id: 4,
     playlistName: "Anh Thư playlist",
-    user: "Anh Thu",
+    user: "Anh Thư",
     playlistImg:
-      "https://t2.genius.com/unsafe/932x0/https%3A%2F%2Fimages.genius.com%2Faa3ea466a15dca525a9c750b9e9437f7.1000x1000x1.jpg",
+      "https://t2.genius.com/unsafe/425x425/https%3A%2F%2Fimages.genius.com%2F73972496cce86fec06be96ba5e5b96e7.500x500x1.jpg",
     songPlaylist: [
       {
         id: "20",

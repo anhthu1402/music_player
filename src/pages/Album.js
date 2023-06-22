@@ -5,6 +5,7 @@ import {
   MoreHoriz,
   FavoriteBorderOutlined,
   PlayCircle,
+  FavoriteRounded,
 } from "@mui/icons-material";
 import LibraryMusicIcon from "@mui/icons-material/LibraryMusic";
 import "../styles/Album.css";
@@ -16,6 +17,8 @@ import AlbumPopup from "../components/AlbumPopup";
 import { Tooltip } from "@mui/material";
 import JSZip from "jszip";
 import { saveAs } from "file-saver";
+import { showNotification } from "../service";
+import { useSelector } from "react-redux";
 
 function Album() {
   const notification = useContext(NotificationContext);
@@ -63,6 +66,9 @@ function Album() {
     //   notification.setContent("Đã tải " + length + " bài hát.");
     // }, 2000);
   };
+
+  const { isAuthed } = useSelector((state) => state.auth);
+  const [isFavorite, setFavorite] = useState(false);
   return (
     <div className="albumDetailContainer">
       {albumDetail && (
@@ -88,7 +94,44 @@ function Album() {
               <button className="playButton" onClick={randomPlay}>
                 <PlayArrowRounded /> Phát ngẫu nhiên
               </button>
-              <FavoriteBorderOutlined className="favIcon" />
+              {isAuthed ? (
+                isFavorite ? (
+                  <FavoriteRounded
+                    className="favIcon"
+                    sx={{ fontSize: "2.1vw", color: "#ff7394" }}
+                    onClick={() => {
+                      setFavorite(false);
+                      showNotification(
+                        notification,
+                        "Đã xóa album khỏi thư viện yêu thích"
+                      );
+                    }}
+                  />
+                ) : (
+                  <FavoriteBorderOutlined
+                    className="favIcon"
+                    sx={{ fontSize: "2.1vw" }}
+                    onClick={() => {
+                      setFavorite(true);
+                      showNotification(
+                        notification,
+                        "Đã thêm album vào thư viện yêu thích"
+                      );
+                    }}
+                  />
+                )
+              ) : (
+                <FavoriteBorderOutlined
+                  className="favIcon"
+                  fontSize="medium"
+                  onClick={() => {
+                    showNotification(
+                      notification,
+                      "Đăng nhập để thêm album vào thư viện yêu thích"
+                    );
+                  }}
+                />
+              )}
               <Tooltip title="Khác">
                 <MoreHoriz className="moreIcon" onClick={() => openPopup()} />
               </Tooltip>

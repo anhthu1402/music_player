@@ -6,11 +6,6 @@ import MusicPlayerContext from "../MusicPlayerContext";
 function Notification() {
   const notification = useContext(NotificationContext);
   const song = useContext(MusicPlayerContext);
-  setTimeout(() => {
-    if (notification.isUsing === true) {
-      notification.setUsing(false);
-    }
-  }, 5000);
   return notification.isUsing ? (
     <Stack
       className="notification"

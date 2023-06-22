@@ -1,6 +1,5 @@
 import React from "react";
 import UploadPicture from "../assets/upload.png";
-import { UploadedData } from "./Data/UploadedData";
 import UploadedSongItem from "./Item/UploadedSongItem";
 import { useContext, useEffect, useState } from "react";
 import MusicPlayerContext from "../MusicPlayerContext";
@@ -8,7 +7,7 @@ import NotificationContext from "../NotificationContext";
 import "../styles/UploadedSong.css";
 import axios from "axios";
 import { Box } from "@mui/material";
-import { uploadSong } from "../service";
+import { showNotification, uploadSong } from "../service";
 
 function UploadedSong() {
   const cloudName = "dpwehcnso"; //vi
@@ -31,6 +30,7 @@ function UploadedSong() {
   const [loadImage, setLoadImage] = useState(false);
   const [loadAudio, setLoadAudio] = useState(false);
   const processFileAudio = async (e) => {
+    showNotification(notification, "Đang tải bài hát lên");
     setLoadImage(false);
     setLoadAudio(false);
     var file = e.target.files[0];
@@ -216,14 +216,18 @@ function UploadedSong() {
     const secondLeft = value - minute * 60;
     return `${minute}:${secondLeft < 10 ? `0${secondLeft}` : secondLeft}`;
   }
+  const [isUploaded, setIsUploaded] = useState(false);
+  window.onload = function () {
+    setIsUploaded(false);
+  };
   useEffect(() => {
     if (loadAudio && loadImage) {
       //cập nhật bài hát vào csdl
       uploadSong(title, audioUrl, artist, src, timeLimit, userId);
-      notification.setUsing(true);
-      notification.setContent("Một file đã được tải lên");
+      showNotification(notification, "Một file đã được tải lên");
       setLoadAudio(false);
       setLoadImage(false);
+      setIsUploaded(true);
     }
   }, [
     artist,
@@ -234,58 +238,37 @@ function UploadedSong() {
     src,
     timeLimit,
     title,
+    isUploaded,
   ]);
   return (
-    // <div>
-    //   {notification.isUploaded ? (
-    //     <div className="uploadedSong">
-    //       {/* hiển thị khi có bài hát */}
-    //       {/* {UploadedData.map((item, index) => (
-    //         <div className="song shadowDiv" key={index}>
-    //           <UploadedSongItem
-    //             key={index}
-    //             item={item}
-    //             tracks={UploadedData}
-    //             song={player}
-    //             index={0}
-    //             notification={notification}
-    //           />
-    //         </div>
-    //       ))} */}
-    //       {/* để tạm thời, khi nào ghép api xong sửa sau */}
-    //       {src && <img src={src} alt="" width={400} height={400} />}
-    //       {title && <p>Tên bài hát: {title}</p>}
-    //       {timeLimit && <p>Thời lượng: {timeLimit}</p>}
-    //       {artist && <p>Nghệ sĩ: {artist}</p>}
-    //     </div>
-    //   ) : (
-    //     <div className="empty">
-    //       <img src={UploadPicture} alt="" />
-    //       <label>Chưa có bài hát tải lên trong thư viện</label>
-    //       <label class="label">
-    //         <input type="file" required onChange={processFileAudio} />
-    //         <span>Select a file</span>
-    //       </label>
-    //       {src && <img src={src} alt="" width={400} height={400} />}
-    //       {title && <p>Tên bài hát: {title}</p>}
-    //       {timeLimit && <p>Thời lượng: {timeLimit}</p>}
-    //       {artist && <p>Nghệ sĩ: {artist}</p>}
-    //     </div>
-    //   )}
-    // </div>
     <div>
-      <div className="empty">
-        <img src={UploadPicture} alt="" />
-        <label>Chưa có bài hát tải lên trong thư viện</label>
+      <div className="uploadedSong">
+        {isUploaded ? (
+          <div></div>
+        ) : (
+          <div className="empty">
+            <img src={UploadPicture} alt="" />
+            <label>Chưa có bài hát tải lên trong thư viện</label>
+          </div>
+        )}
         <label class="label">
           <input type="file" required onChange={processFileAudio} />
-          <span>Select a file</span>
+          <span>Tải bài hát lên</span>
         </label>
       </div>
-      {src && <img src={src} alt="" width={400} height={400} />}
-      {title && <p>Tên bài hát: {title}</p>}
-      {timeLimit && <p>Thời lượng: {timeLimit}</p>}
-      {artist && <p>Nghệ sĩ: {artist}</p>}
+      {isUploaded ? (
+        <div className="song shadowDiv">
+          <UploadedSongItem
+            songName={title}
+            songLink={audioUrl}
+            representation={artist}
+            songImage={src}
+            timeLimit={timeLimit}
+          />
+        </div>
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 }

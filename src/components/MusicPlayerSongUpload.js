@@ -22,6 +22,8 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 import "../styles/MusicPlayer.css";
 import LocalPlaylistContext from "../LocalPlaylistContext";
+import { useEffect } from "react";
+import MusicPlayerSongUploadContext from "../MusicplayerSongUploadContext";
 
 const Widget = styled("div")(() => ({
   width: "100%",
@@ -57,57 +59,33 @@ const TinyText = styled(Typography)({
   letterSpacing: 0.2,
 });
 
-const MusicPlayer = () => {
-  const localPlaylist = useContext(LocalPlaylistContext);
-  const musicPlayer = useContext(MusicPlayerContext);
-  const tracks = musicPlayer.isUsing ? musicPlayer.tracks : [];
-  const array =
-    localStorage.getItem("playlist") !== null
-      ? JSON.parse(localStorage.getItem("playlist"))
-      : musicPlayer.playlist;
-  const tracksLen = tracks.length;
-  // 0: Phát theo trình tự, 1: Phát ngẫu nhiên
-  const [playMode, setPlayMode] = useState(
-    localStorage.getItem("playMode") === null
-      ? 0
-      : JSON.parse(localStorage.getItem("playMode"))
-  );
-  let index = musicPlayer.songIndex;
-  let song = musicPlayer.isUsing ? array[index] : "";
-  let songName = musicPlayer.isUsing ? array[index].songName : "";
-  let representation = musicPlayer.isUsing ? array[index].representation : [];
+const MusicPlayerSongUpload = () => {
+  const musicPlayer = useContext(MusicPlayerSongUploadContext);
+  const [isUsing, setUsing] = useState(musicPlayer.isUsingUpload);
+  let songName = JSON.parse(localStorage.getItem("songName"));
+  let representation = JSON.parse(localStorage.getItem("representation"));
   const audioRef = useRef();
   const [duration, setDuration] = useState(0); //seconds
-  const [currentTime, setCurrentTime] = useState(musicPlayer.currentTime);
-  const [play, setPlay] = useState(musicPlayer.play);
-  let source = musicPlayer.isUsing ? array[index].songLink : "Aloha.mp3";
-  let imgUrl = musicPlayer.isUsing ? array[index].songImage : "Logo.png";
-  window.onbeforeunload = function () {
-    localStorage.setItem("song", JSON.stringify(song));
-    localStorage.setItem("index", JSON.stringify(musicPlayer.songIndex));
-  };
+  const [currentTime, setCurrentTime] = useState(0);
+  const [play, setPlay] = useState(JSON.parse(localStorage.getItem("play")));
+  let source = JSON.parse(localStorage.getItem("songLink"));
+  let imgUrl = JSON.parse(localStorage.getItem("songImage"));
   const handleLoadedData = () => {
     setDuration(Math.ceil(audioRef.current.duration));
-    if (!musicPlayer.play) {
-      audioRef.current.currentTime = musicPlayer.currentTime;
+    if (!play) {
+      audioRef.current.currentTime = currentTime;
     }
-    if (musicPlayer.play) {
-      if (!play) {
-        setPlay(true);
-      }
-      audioRef.current.play();
-    }
+    setPlay(true);
+    audioRef.current.play();
   };
   const handlePausePlayClick = () => {
     if (play) {
       audioRef.current.pause();
     } else {
       audioRef.current.play();
-      if (!musicPlayer.play) {
-        musicPlayer.setPlay(true);
+      if (!play) {
         localStorage.setItem("play", true);
       }
-      localStorage.setItem("play", true);
     }
     setPlay(!play);
   };
@@ -125,68 +103,32 @@ const MusicPlayer = () => {
     const secondLeft = value - minute * 60;
     return `${minute}:${secondLeft < 10 ? `0${secondLeft}` : secondLeft}`;
   }
-  const shuffleArray = (array) => {
-    for (var i = array.length - 1; i > 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1));
-      var temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
-    }
-    return array;
-  };
   const [repeat, setRepeat] = useState(0);
-  const setNextIdx = () => {
-    if (playMode === 3) {
-      //setRnd(Math.floor(Math.random() * tracksLen));
-      musicPlayer.setSongIndex((index + 1) % tracksLen);
-      musicPlayer.setSong(song);
-      localStorage.setItem("song", JSON.stringify(song));
-      localStorage.setItem("index", JSON.stringify(musicPlayer.songIndex));
-    } else {
-      // Tạm xem phát lại tất cả như phát theo trình tự
-      musicPlayer.setSongIndex((index + 1) % tracksLen);
-      musicPlayer.setSong(song);
-      localStorage.setItem("song", JSON.stringify(song));
-      localStorage.setItem("index", JSON.stringify(musicPlayer.songIndex));
-    }
-    setPlay(true);
-    audioRef.current.play();
-    localStorage.setItem("currentTime", 0);
-    musicPlayer.setCurrentTime(0);
-  };
-  const setPrevIdx = () => {
-    if (playMode === 3) {
-      //setRnd(Math.floor(Math.random() * tracksLen));
-      musicPlayer.setSongIndex(index - 1 < 0 ? tracksLen - 1 : index - 1);
-      musicPlayer.setSong(song);
-      localStorage.setItem("song", JSON.stringify(song));
-      localStorage.setItem("index", JSON.stringify(musicPlayer.songIndex));
-    } else {
-      // Tạm xem phát lại tất cả như phát theo trình tự
-      musicPlayer.setSongIndex(index - 1 < 0 ? tracksLen - 1 : index - 1);
-      musicPlayer.setSong(song);
-      localStorage.setItem("song", JSON.stringify(song));
-      localStorage.setItem("index", JSON.stringify(musicPlayer.songIndex));
-    }
-    setPlay(true);
-    audioRef.current.play();
-    localStorage.setItem("play", true);
-    localStorage.setItem("currentTime", 0);
-    musicPlayer.setCurrentTime(0);
-  };
   const removeMusicplayer = () => {
+    localStorage.removeItem("isUsing");
     localStorage.removeItem("play");
-    localStorage.removeItem("song");
-    localStorage.removeItem("tracks");
-    localStorage.removeItem("index");
+    localStorage.removeItem("songName");
+    localStorage.removeItem("songLink");
+    localStorage.removeItem("songImage");
+    localStorage.removeItem("representation");
     localStorage.removeItem("currentTime");
-    musicPlayer.setUsing(false);
+    localStorage.removeItem("isUsing");
+    setUsing(false);
+    musicPlayer.setUsingUpload(false);
+    musicPlayer.setCurrentTime(0);
+    musicPlayer.setSongName("");
+    musicPlayer.setSongImage("");
+    musicPlayer.setSongLink("");
+    musicPlayer.setRepresentation("");
+    musicPlayer.setPlay(false);
   };
   return (
-    musicPlayer.isUsing && (
+    musicPlayer.isUsingUpload && (
       <Box
         className="musicPlayerBox"
-        style={musicPlayer.isUsing ? { display: "flex" } : { display: "none" }}
+        style={
+          musicPlayer.isUsingUpload ? { display: "flex" } : { display: "none" }
+        }
       >
         <audio
           ref={audioRef}
@@ -195,7 +137,6 @@ const MusicPlayer = () => {
           onTimeUpdate={() => {
             setCurrentTime(audioRef.current.currentTime);
             localStorage.setItem("currentTime", JSON.stringify(currentTime));
-            musicPlayer.setCurrentTime(currentTime);
           }}
           onEnded={() => {
             if (repeat) {
@@ -204,14 +145,6 @@ const MusicPlayer = () => {
               audioRef.current.play();
               localStorage.setItem("currentTime", 0);
               setCurrentTime(0);
-            } else {
-              musicPlayer.setSongIndex((index + 1) % tracksLen);
-              musicPlayer.setSong(array[musicPlayer.songIndex]);
-              localStorage.setItem("song", JSON.stringify(musicPlayer.song));
-              localStorage.setItem(
-                "index",
-                JSON.stringify(musicPlayer.songIndex)
-              );
             }
           }}
         />
@@ -257,19 +190,7 @@ const MusicPlayer = () => {
                 letterSpacing={-0.25}
                 sx={{ display: `flex`, flexDirection: `row`, fontSize: "1vw" }}
               >
-                {representation.map((child, index) => {
-                  return (
-                    <span key={index} item={child} className="artist">
-                      <Link
-                        to={`/artist/${child.artistName}`}
-                        state={child}
-                        color="grey"
-                      >
-                        {child.artistName}
-                      </Link>
-                    </span>
-                  );
-                })}
+                {representation}
               </Typography>
             </Box>
           </Box>
@@ -291,40 +212,10 @@ const MusicPlayer = () => {
                 maxWidth: "100%",
               }}
             >
-              <IconButton
-                sx={{ margin: "0 0.5em" }}
-                onClick={() => {
-                  if (playMode === 1) {
-                    setPlayMode(0);
-                    localStorage.setItem("playMode", 0);
-                    localStorage.setItem(
-                      "playlist",
-                      JSON.stringify(musicPlayer.playlist)
-                    );
-                  } else {
-                    setPlayMode(1);
-                    localStorage.setItem("playMode", 1);
-                    localStorage.setItem(
-                      "playlist",
-                      JSON.stringify(shuffleArray(array))
-                    );
-                  }
-                }}
-              >
-                <ShuffleRounded
-                  sx={
-                    playMode === 1
-                      ? { color: "pink", fontSize: "1.5vw" }
-                      : { color: "grey", fontSize: "1.5vw" }
-                  }
-                />
+              <IconButton sx={{ margin: "0 0.5em" }}>
+                <ShuffleRounded />
               </IconButton>
-              <IconButton
-                aria-label="previous song"
-                onClick={() => {
-                  setPrevIdx();
-                }}
-              >
+              <IconButton aria-label="previous song">
                 <FastRewindRounded sx={{ fontSize: "2.4vw" }} />
               </IconButton>
               <IconButton
@@ -337,12 +228,7 @@ const MusicPlayer = () => {
                   <PauseRounded sx={{ fontSize: "3vw" }} />
                 )}
               </IconButton>
-              <IconButton
-                aria-label="next song"
-                onClick={() => {
-                  setNextIdx();
-                }}
-              >
+              <IconButton aria-label="next song">
                 <FastForwardRounded sx={{ fontSize: "2.4vw" }} />
               </IconButton>
               <IconButton sx={{ margin: "0 0.5em" }}>
@@ -420,32 +306,10 @@ const MusicPlayer = () => {
                 alignItems: "center",
               }}
             >
-              <Tooltip title="Danh sách phát" placement="top">
-                <Button
-                  sx={{ mb: 0.1, color: "black" }}
-                  onClick={() => {
-                    localStorage.setItem(
-                      "openLocalPlaylist",
-                      !localPlaylist.open
-                    );
-                    localPlaylist.setOpen(!localPlaylist.open);
-                  }}
-                >
-                  <PlaylistPlay
-                    sx={
-                      localPlaylist.open
-                        ? { color: "pink" }
-                        : { color: "black" }
-                    }
-                  />
-                </Button>
-              </Tooltip>
               <Button
                 sx={{ mb: 0.1, color: "black" }}
                 onClick={() => {
                   removeMusicplayer();
-                  localStorage.setItem("openLocalPlaylist", false);
-                  localPlaylist.setOpen(false);
                 }}
               >
                 X
@@ -492,4 +356,4 @@ const MusicPlayer = () => {
   );
 };
 
-export default MusicPlayer;
+export default MusicPlayerSongUpload;

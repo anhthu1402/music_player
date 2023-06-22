@@ -14,7 +14,7 @@
   color: black;
   padding: 0.2vw 1vw;
   margin: 1vw 1vw 1vw 0;
-  width: 10vw;
+  width: 12vw;
   font-size: 1vw;
 }
 .artistDetail .buttonPlay {
@@ -41,9 +41,9 @@
     background-color: white;
   }
   @media (max-width: 850px) {
-      display: block;
-      .song {
-        padding-bottom: 5px;
-      }
+    display: block;
+    .song {
+      padding-bottom: 5px;
+    }
   }
 }

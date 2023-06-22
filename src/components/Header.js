@@ -10,8 +10,10 @@ import { EditOutlined, LogoutOutlined } from "@mui/icons-material";
 import { useState } from "react";
 import { useContext } from "react";
 import NotificationContext from "../NotificationContext";
-import { changeUserName, showNotification } from "../service";
 import SidebarContext from "../SidebarContext";
+import { useDispatch, useSelector } from "react-redux";
+import { authActions } from "../stores/auth";
+import { showNotification } from "../service";
 
 function Header() {
   const modifyRef = useRef();
@@ -23,12 +25,27 @@ function Header() {
   const [disabled, setDisabled] = useState(false);
   const nameRef = useRef();
   const notification = useContext(NotificationContext);
-  const username = "Anh Thư";
   const sidebar = useContext(SidebarContext);
   const navigate = useNavigate();
-  
-  //tạm
-  const userId = 1;
+
+  const { isAuthed, user } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+  const handleSignOut = () => {
+    dispatch(authActions.logout(user));
+    navigate("/home");
+  };
+  const password = isAuthed ? user.password : "";
+  const [username, setName] = useState(isAuthed ? user.username : "");
+  const changeUserName = (name) => {
+    const newUser = {
+      name,
+      password,
+    };
+    setName(name);
+    dispatch(authActions.setAuth(newUser));
+    showNotification(notification, "Cập nhật tên người dùng thành công");
+    closeModifyPopup();
+  };
   return (
     <div className="header">
       <Toolbar>
@@ -44,7 +61,7 @@ function Header() {
             <InputSearch />
           </div>
           <div className="personal">
-            {userId === 2 ? (
+            {!isAuthed ? (
               <Link to={"/signIn"}>
                 <button className="signInBtn">Đăng nhập</button>
               </Link>
@@ -56,7 +73,11 @@ function Header() {
                     width: "18%",
                     padding: 0,
                   }}
-                  trigger={<h5 className="userName">{username}</h5>}
+                  trigger={
+                    <h5 className="userName" style={{ color: "black" }}>
+                      {username}
+                    </h5>
+                  }
                   position={"bottom right"}
                 >
                   <div className="playlistItemPopup" onClick={openModifyPopup}>
@@ -122,6 +143,7 @@ function Header() {
                           closeLogoutPopup();
                           navigate("/home");
                           sidebar.setPathName("Khám phá");
+                          handleSignOut();
                         }}
                       >
                         Đăng xuất
@@ -166,7 +188,7 @@ function Header() {
                           else setDisabled(false);
                         }}
                         inputRef={nameRef}
-                        placeholder="Nhập tên playlist"
+                        placeholder="Nhập tên người dùng"
                         defaultValue={username}
                       />
                     </div>
@@ -180,12 +202,7 @@ function Header() {
                       <Button
                         variant="contained"
                         onClick={() => {
-                          changeUserName(userId, nameRef.current.value);
-                          showNotification(
-                            notification,
-                            "Cập nhật tên người dùng thành công"
-                          );
-                          closeModifyPopup();
+                          changeUserName(nameRef.current.value);
                         }}
                         disabled={disabled}
                         sx={{

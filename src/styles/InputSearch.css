@@ -1,125 +1,154 @@
 .inputSearchContainer {
-    margin-right: 50px;
+  margin-right: 50px;
 }
 .hideRS {
-    display: none;
+  display: none;
 }
 .resultSearch {
-    color: black;
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 2px;
-    padding: 10px 15px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    scroll-behavior: smooth;
-    overflow-y: scroll;
-    height: fit-content;
-    max-height: 70vh;
-    &::-webkit-scrollbar {
-        display: none;
-    }
+  color: black;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 2px;
+  padding: 10px 15px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  height: fit-content;
+  max-height: 70vh;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 .inputSearchContainer div.nosubmit {
-    border: none;
-    border-radius: 5px;
-    padding: 0;
-    background-color: #ffdde5;
-    align-items: center;
+  border: none;
+  border-radius: 5px;
+  padding: 0;
+  background-color: #ffdde5;
+  align-items: center;
 }
 .inputSearchContainer input.nosubmit {
-    width: 100%;
-    border: none;
-    border-radius: 5px;
-    display: block;
-    padding: 12px 10px 12px 40px;
-    align-items: center;
-    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  display: block;
+  padding: 12px 10px 12px 40px;
+  align-items: center;
+  background: transparent
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E")
+    no-repeat 13px center;
+}
+input[type="search"]::-webkit-search-cancel-button:hover {
+  cursor: pointer;
 }
 .inputSearchContainer input[type="search"]:focus {
-    outline : none;
+  outline: none;
 }
 #headingSearchSong {
-    font-weight: bold;
-    margin: 15px 0;
-    &::before {
-        content: '🎵\00a0';
-    }
+  font-weight: bold;
+  margin: 15px 0;
+  &::before {
+    content: "🎵\00a0";
+  }
 }
 #headingSearchArtist {
-    font-weight: bold;
-    margin: 15px 0;
-    &::before {
-        content: '🎤\00a0';
-    }
+  font-weight: bold;
+  margin: 15px 0;
+  &::before {
+    content: "🎤\00a0";
+  }
 }
 #headingSearchAlbum {
-    font-weight: bold;
-    margin: 15px 0;
-    &::before {
-        content: '💿\00a0';
-    }
+  font-weight: bold;
+  margin: 15px 0;
+  &::before {
+    content: "💿\00a0";
+  }
 }
 .resultSearch .rs_songs {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px;
 }
 .resultSearch .song {
-    background-color: transparent !important;
-    border-radius: 5px;
-    margin-bottom: 0;
-    padding: 0;
-    .trackDuration {
-        display: none;
-    }
-    .favIcon {
-        font-size: 20px !important;
-    }
-    .favOutlineIcon, .moreIcon {
-        color: black !important;
-        font-size: 20px !important;
-    }
-    .item .songImg {
-        margin: 5px 10px 5px 5px !important;
-        width: 50px;
-
-    }
-    &:hover {
-        background-color: rgb(225, 225, 225) !important;
-    }
+  background-color: transparent !important;
+  border-radius: 5px;
+  margin-bottom: 0;
+  padding: 0;
+  .trackDuration {
+    display: none;
+  }
+  .favIcon {
+    font-size: 20px !important;
+  }
+  .favOutlineIcon,
+  .moreIcon {
+    color: black !important;
+    font-size: 20px !important;
+  }
+  .item .songImg {
+    margin: 5px 10px 5px 5px !important;
+    width: 50px;
+  }
+  &:hover {
+    background-color: rgb(225, 225, 225) !important;
+  }
+  .songTitle {
+    width: 10vw !important;
+    max-width: 200px;
+  }
+  .artist {
+    font-size: small !important;
+  }
 }
 .resultSearch .artistsResult {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 17px;
 }
 .resultSearch .artistResult {
-    display: flex;
-    gap: 10px;
-    >img {
-        width: 50px;
-        height: 50px;
-        object-fit: cover;
-        border-radius: 50%;
-        border: 2px solid #ff7394;
-    }   
+  display: flex;
+  gap: 15px;
+  > img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #ff7394;
+  }
+  .artist {
+    color: black;
+  }
+  .artist:hover {
+    color: #ff7394;
+    text-decoration: none;
+  }
 }
 
 .resultSearch .albumsResult {
-    margin-bottom: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 10px;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 10px;
 }
 .resultSearch .albumResult {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    >img {
-        width: 50px;
-        aspect-ratio: 1;
-        object-fit: cover;
-        border-radius: 5px;
-    }
-    
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  > img {
+    width: 50px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  .rs_albumName {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 15vw !important;
+    max-width: 400px;
+  }
+  .rs_albumName:hover a {
+    color: #ff7394 !important;
+    text-decoration: none;
+  }
 }

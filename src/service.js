@@ -1,5 +1,7 @@
 import { PlaylistData } from "./components/Data/PlaylistData";
 import { AlbumData } from "./components/Data/AlbumData";
+import JSZip from "jszip";
+import saveAs from "file-saver";
 
 export const getPlaylistDetail = (playlistId) => {
   return PlaylistData.find((playlist) => playlist.id === playlistId);
@@ -42,6 +44,10 @@ export const removeFromFavSong = (songId, userId) => {
 export const showNotification = (notification, content) => {
   notification.setUsing(true);
   notification.setContent(content);
+  setTimeout(() => {
+    notification.setUsing(false);
+    notification.setContent("");
+  }, 5000);
 };
 
 export const addToLocalPlaylist = (song, musicPlayer) => {

@@ -8,7 +8,7 @@ export const AlbumData = [
       "https://t2.genius.com/unsafe/375x0/https%3A%2F%2Fimages.genius.com%2Fbaa38abf7c2d7475218e3facfaa9a689.999x999x1.png",
     country: [
       {
-        id: "2",
+        id: 2,
         countryName: "Hàn Quốc",
       },
     ],
@@ -43,7 +43,7 @@ export const AlbumData = [
         releaseDate: "2018-05-18",
         country: [
           {
-            id: "2",
+            id: 2,
             countryName: "Hàn Quốc",
           },
         ],
@@ -156,7 +156,7 @@ Piul su eopsneun kkocheul kiwosseo`,
         releaseDate: "2018-05-18",
         country: [
           {
-            id: "2",
+            id: 2,
             countryName: "Hàn Quốc",
           },
         ],
@@ -279,7 +279,7 @@ And I still want you`,
         releaseDate: "2022-12-12",
         country: [
           {
-            id: "2",
+            id: 2,
             countryName: "Hàn Quốc",
           },
         ],
@@ -415,7 +415,7 @@ Eolssu`,
         releaseDate: "2018-04-05",
         country: [
           {
-            id: "2",
+            id: 2,
             countryName: "Hàn Quốc",
           },
         ],
@@ -518,7 +518,7 @@ When I'm with you, I'm in utopia`,
         releaseDate: "2018-08-24",
         country: [
           {
-            id: "2",
+            id: 2,
             countryName: "Hàn Quốc",
           },
         ],
@@ -587,7 +587,7 @@ I’m the one I should love`,
         releaseDate: "2018-08-24",
         country: [
           {
-            id: "2",
+            id: 2,
             countryName: "Hàn Quốc",
           },
         ],
@@ -727,7 +727,7 @@ Ppajimeopsi namgimeopsi modu da na`,
         releaseDate: "2020-01-17",
         country: [
           {
-            id: "2",
+            id: 2,
             countryName: "Hàn Quốc",
           },
         ],
@@ -845,7 +845,7 @@ Yeah, yeah, yeah, yeah`,
       "https://t2.genius.com/unsafe/932x0/https%3A%2F%2Fimages.genius.com%2F3313f8f8b0d54f161b2a85c76b6e8dcb.1000x1000x1.png",
     country: [
       {
-        id: "2",
+        id: 2,
         countryName: "Hàn Quốc",
       },
     ],
@@ -960,7 +960,7 @@ Nae joereul sahaejwo jebal`,
         releaseDate: "2016-10-10",
         country: [
           {
-            id: "2",
+            id: 2,
             countryName: "Hàn Quốc",
           },
         ],
@@ -1073,7 +1073,7 @@ Found my way`,
         releaseDate: "2016-10-09",
         country: [
           {
-            id: "2",
+            id: 2,
             countryName: "Hàn Quốc",
           },
         ],
@@ -1160,7 +1160,7 @@ Nae pi ttam nunmul`,
       "https://t2.genius.com/unsafe/375x0/https%3A%2F%2Fimages.genius.com%2F8bb9209efecb1120154c51110becf470.1000x1000x1.png",
     country: [
       {
-        id: "2",
+        id: 2,
         countryName: "Hàn Quốc",
       },
     ],
@@ -1195,7 +1195,7 @@ Nae pi ttam nunmul`,
         releaseDate: "2017-09-18",
         country: [
           {
-            id: "2",
+            id: 2,
             countryName: "Hàn Quốc",
           },
         ],
@@ -1304,7 +1304,7 @@ Uyeoni aninikka, DNA`,
         releaseDate: "2018-08-24",
         country: [
           {
-            id: "2",
+            id: 2,
             countryName: "Hàn Quốc",
           },
         ],
@@ -1419,7 +1419,7 @@ Byeonhaji anneundago, just one more time`,
         releaseDate: "2017-09-18",
         country: [
           {
-            id: "2",
+            id: 2,
             countryName: "Hàn Quốc",
           },
         ],
@@ -1511,7 +1511,7 @@ But I want it anyway, anyway, anyway`,
         releaseDate: "2017-09-18",
         country: [
           {
-            id: "2",
+            id: 2,
             countryName: "Hàn Quốc",
           },
         ],
@@ -1625,7 +1625,7 @@ Kkwae kkwae, pomnaji po po pomnaji, yeah`,
         releaseDate: "2017-09-18",
         country: [
           {
-            id: "2",
+            id: 2,
             countryName: "Hàn Quốc",
           },
         ],
@@ -1749,7 +1749,7 @@ Gominboda go, go (Everybody)`,
       "https://t2.genius.com/unsafe/932x0/https%3A%2F%2Fimages.genius.com%2F216c310ab39cb0b154052466a5f529d4.1000x1000x1.png",
     country: [
       {
-        id: "2",
+        id: 2,
         countryName: "Hàn Quốc",
       },
     ],
@@ -1917,7 +1917,7 @@ Meomulleojwo`,
         releaseDate: "2017-02-14",
         country: [
           {
-            id: "2",
+            id: 2,
             countryName: "Hàn Quốc",
           },
         ],
@@ -2047,7 +2047,7 @@ Chong jojun balsa`,
       "https://t2.genius.com/unsafe/932x0/https%3A%2F%2Fimages.genius.com%2F89647413510027992f481c07fa5b3031.1000x1000x1.png",
     country: [
       {
-        id: "2",
+        id: 2,
         countryName: "Hàn Quốc",
       },
     ],
@@ -2082,7 +2082,7 @@ Chong jojun balsa`,
         releaseDate: "2023-03-24",
         country: [
           {
-            id: "2",
+            id: 2,
             countryName: "Hàn Quốc",
           },
         ],
@@ -2182,7 +2182,7 @@ What's the point?)`,
       "https://t2.genius.com/unsafe/932x0/https%3A%2F%2Fimages.genius.com%2F05f9c301a11f2d5c6aba0007fe6234e4.1000x1000x1.png",
     country: [
       {
-        id: "2",
+        id: 2,
         countryName: "Hàn Quốc",
       },
     ],
@@ -2304,7 +2304,7 @@ Yongseohaejulge`,
       "https://t2.genius.com/unsafe/932x0/https%3A%2F%2Fimages.genius.com%2Fb8e170e7051b3e2837041ba09f6f1767.1000x1000x1.jpg",
     country: [
       {
-        id: "2",
+        id: 2,
         countryName: "Hàn Quốc",
       },
     ],
@@ -2339,7 +2339,7 @@ Yongseohaejulge`,
         releaseDate: "2020-07-15",
         country: [
           {
-            id: "2",
+            id: 2,
             countryName: "Hàn Quốc",
           },
         ],
@@ -2415,8 +2415,8 @@ Ah-ah-ah-ah`,
       "https://t2.genius.com/unsafe/932x0/https%3A%2F%2Fimages.genius.com%2F364b7660cb50f140b9d5f0d0160f8de6.999x999x1.png",
     country: [
       {
-        id: "2",
-        countryName: "Hàn Quốc",
+        id: 3,
+        countryName: "Nhật Bản",
       },
     ],
     artist: [
@@ -2450,7 +2450,7 @@ Ah-ah-ah-ah`,
         releaseDate: "2018-04-04",
         country: [
           {
-            id: "2",
+            id: 2,
             countryName: "Hàn Quốc",
           },
         ],
@@ -2532,7 +2532,7 @@ I'll definitely save you, you are not alone`,
         releaseDate: "2018-04-04",
         country: [
           {
-            id: "2",
+            id: 2,
             countryName: "Hàn Quốc",
           },
         ],
@@ -2634,7 +2634,7 @@ I'm ready to let go`,
       "https://t2.genius.com/unsafe/932x0/https%3A%2F%2Fimages.genius.com%2Faa3ea466a15dca525a9c750b9e9437f7.1000x1000x1.jpg",
     country: [
       {
-        id: "2",
+        id: 2,
         countryName: "Hàn Quốc",
       },
     ],
@@ -2669,7 +2669,7 @@ I'm ready to let go`,
         releaseDate: "2019-06-26",
         country: [
           {
-            id: "2",
+            id: 2,
             countryName: "Hàn Quốc",
           },
         ],
@@ -2774,7 +2774,7 @@ Unmyeongul neukkyeo nan nan nan~ nan`,
         releaseDate: "2019-06-07",
         country: [
           {
-            id: "2",
+            id: 2,
             countryName: "Hàn Quốc",
           },
         ],
@@ -2832,6 +2832,729 @@ Dream glow, glow (Hey, hey)
 You'll glow, glow (Hey, hey)
 You'll glow-oh-oh, oh-oh, oh-oh-oh-oh-oh
 Glow-oh-oh, oh-oh (Hey, hey)`,
+      },
+    ],
+  },
+  {
+    id: 13,
+    albumName: "Tiếng dương cầm trong đêm (Single)",
+    interestTimes: 10,
+    releaseDate: "2014-06-09T15:16:03.269+07:00",
+    albumImage:
+      "https://tse4.mm.bing.net/th?id=OIP.i64yaC7dhexRDbwCoj7ccAHaHa&pid=Api&P=0&h=180",
+    country: [
+      {
+        id: 1,
+        countryName: "Việt Nam",
+      },
+    ],
+    artist: [
+      {
+        id: 17,
+        artistName: "Bạch Công Khanh",
+        artistImage:
+          "https://tse4.mm.bing.net/th?id=OIP.i64yaC7dhexRDbwCoj7ccAHaHa&pid=Api&P=0&h=180",
+        numberOfFollower: "927.713",
+      },
+    ],
+    songs: [
+      {
+        id: "39",
+        songName: "Tiếng dương cầm trong đêm",
+        representation: [
+          {
+            id: 17,
+            artistName: "Bạch Công Khanh",
+            artistImage:
+              "https://tse4.mm.bing.net/th?id=OIP.i64yaC7dhexRDbwCoj7ccAHaHa&pid=Api&P=0&h=180",
+            numberOfFollower: "927.713",
+          },
+        ],
+        songImage:
+          "https://tse4.mm.bing.net/th?id=OIP.i64yaC7dhexRDbwCoj7ccAHaHa&pid=Api&P=0&h=180",
+        isFavorite: 1,
+        timeLimit: "4:23",
+        songLink:
+          "https://res.cloudinary.com/dvmxvwqev/video/upload/v1686934240/musicplayer/audio/TiengDuongCamTrongDem-BachCongKhan_37xg9_z2tbod.mp3",
+        releaseDate: "2014-06-09",
+        country: [
+          {
+            id: 1,
+            countryName: "Việt Nam",
+          },
+        ],
+        lyric: `Tình cờ anh thây em bỗng anh vui như ngày xưa, vội ôm em sau những xa vời, từng dòng thư gửi em hõi sao em không trả lời, chợt nhìn thấy lệ rơi trên mi buồn.
+Nhín vào đôi mắt em biết em không như ngày xưa, duờng như đôi mắt ấy nghẹn lời, chợt nhận ra với em bóng anh nay chi còn trong ký ức, em đi qua như ta chưa từng quen.
+
+Ngày xưa em xa khuất nơi chân trời để bóng anh buồn vuơng một đời, để nhớ em từng đêm mưa tới để lòng anh chơi vơi biển khơi
+Còn đâu yêu thuơng dẫu em quay về vẫn chỉ anh lạc chân trên đưòng, có tiếng dưong cầm đâu reo dắt dìu anh đi trong đêm gió mưa buồn tênh.
+
+Tình cờ anh thây em bỗng em vui như ngày xưa, vội ôm em sau những xa vời, từng dòng thư gửi em hõi sao em không trả lời, chợt nhìn thấy lệ rơi trên mi buồn.
+Đành thôi anh sẽ thôi tiếng yêu thưong ta đã trao, đành thôi anh sẽ cố quên ngưòi, đành thôi anh bứoc qua bóng em xa phai dần trong ký ức em đi qua như ta chưa từng quen.
+Ngày xưa em xa khuất nơi chân trời để bóng anh buồn vuơng một đời, để nhớ em từng đêm mưa tới để lòng anh chơi vơi biển khơi
+Còn đâu yêu thuơng dẫu em quay về vẫn chỉ anh lạc chân trên đưòng, có tiếng dưong cầm đâu reo dắt dìu anh đi trong đêm gió mưa buồn tênh . . .`,
+      },
+    ],
+  },
+  {
+    id: 14,
+    albumName: "Nếu em còn tồn tại (Single)",
+    interestTimes: 10,
+    releaseDate: "2015-02-11T15:16:03.269+07:00",
+    albumImage:
+      "https://lyricvn.com/wp-content/uploads/2019/11/85b4710d31d2806e237269c1063f7358_1462333009-1.jpg",
+    country: [
+      {
+        id: 1,
+        countryName: "Việt Nam",
+      },
+    ],
+    artist: [
+      {
+        id: 30,
+        artistName: "Trịnh Đình Quang",
+        artistImage:
+          "https://tse3.mm.bing.net/th?id=OIP.xPr28DoaYLjRrXncxDcLZAHaHa&pid=Api&P=0&h=180",
+        numberOfFollower: "927.713",
+      },
+    ],
+    songs: [
+      {
+        id: "56",
+        songName: "Nếu em còn tồn tại",
+        representation: [
+          {
+            id: 30,
+            artistName: "Trịnh Đình Quang",
+            artistImage:
+              "https://tse3.mm.bing.net/th?id=OIP.xPr28DoaYLjRrXncxDcLZAHaHa&pid=Api&P=0&h=180",
+            numberOfFollower: "927.713",
+          },
+        ],
+        songImage:
+          "https://lyricvn.com/wp-content/uploads/2019/11/85b4710d31d2806e237269c1063f7358_1462333009-1.jpg",
+        isFavorite: 0,
+        timeLimit: "5:22",
+        songLink:
+          "https://res.cloudinary.com/dvmxvwqev/video/upload/v1686989313/musicplayer/audio/Neu-Em-Con-Ton-Tai-Trinh-Dinh-Quang_wkcx0n.mp3",
+        releaseDate: "2015-02-11",
+        country: [
+          {
+            id: 1,
+            countryName: "Việt Nam",
+          },
+        ],
+        lyric: `Khi anh bắt đầu một tình yêu
+Là lúc anh tự thay đổi mình
+Không còn những đêm về khuya.
+
+Là vì em, người cho anh suy nghĩ phải sống tốt
+Là vì em, tình yêu của em đáng được trân trọng
+Thay vì phải xin lỗi, anh muốn tự mình thay đổi
+Anh sẽ lo lắng về anh, như em đã từng cố gắng vun đắp
+Mà không thành.
+
+[ĐK:]
+Hứa với mình rằng em không được gục ngã
+Anh muốn nhìn thấy em cười dù là cách xa
+Anh sẽ vẫn tiếp tục để người ta nhìn em
+Bằng sự nuối tiếc khi đã vô tình bỏ rơi em.
+
+Anh sẽ trở về xin em em đừng buồn
+Hãy mạnh mẽ chờ bình minh trong cô đơn
+Ngày mai sẽ vẫn là một ngày tuyệt vời
+Khi em vẫn tồn tại trên thế giới này.`,
+      },
+    ],
+  },
+  {
+    id: 15,
+    albumName: "Thất tình (Single)",
+    interestTimes: 10,
+    releaseDate: "2015-08-26T15:16:03.269+07:00",
+    albumImage:
+      "https://lyricvn.com/wp-content/uploads/2019/11/85b4710d31d2806e237269c1063f7358_1462333009-1.jpg",
+    country: [
+      {
+        id: 1,
+        countryName: "Việt Nam",
+      },
+    ],
+    artist: [
+      {
+        id: 30,
+        artistName: "Trịnh Đình Quang",
+        artistImage:
+          "https://tse3.mm.bing.net/th?id=OIP.xPr28DoaYLjRrXncxDcLZAHaHa&pid=Api&P=0&h=180",
+        numberOfFollower: "927.713",
+      },
+    ],
+    songs: [
+      {
+        id: "57",
+        songName: "Thất tình",
+        representation: [
+          {
+            id: 30,
+            artistName: "Trịnh Đình Quang",
+            artistImage:
+              "https://tse3.mm.bing.net/th?id=OIP.xPr28DoaYLjRrXncxDcLZAHaHa&pid=Api&P=0&h=180",
+            numberOfFollower: "927.713",
+          },
+        ],
+        songImage:
+          "https://lyricvn.com/wp-content/uploads/2019/11/85b4710d31d2806e237269c1063f7358_1462333009-1.jpg",
+        isFavorite: 1,
+        timeLimit: "6:34",
+        songLink:
+          "https://res.cloudinary.com/dvmxvwqev/video/upload/v1686989317/musicplayer/audio/That-Tinh-Trinh-Dinh-Quang_mtyaz5.mp3",
+        releaseDate: "2015-08-26",
+        country: [
+          {
+            id: 1,
+            countryName: "Việt Nam",
+          },
+        ],
+        lyric: `Anh đã không giữ được nhiều hạnh phúc cho em
+Nhiều khi giận nhau nước mắt em cứ rơi thật nhiều
+Anh xin lỗi em hãy tha thứ cho anh lần này
+Đường rời xa anh em nói đi em rất yêu anh
+Nhưng nay cuộc sống không như anh đã ước mong
+Của một tình yêu sẽ hạnh phúc giống như bao người
+Một người yêu em, yêu em đắm say
+Một người bên em bên em mỗi khi
+Mà giờ đây nước mắt anh đã rơi rồi
+Thật ra anh đâu, đâu có muốn chia tay như vậy
+Người yêu em hơi anh lại nhớ em đang ở đâu
+Bàn tay nhỏ bé
+Khuôn mặt ấy sao lại đổi thay để anh nơi này
+Ngoài trơi mưa cứ rơi lặng thầm, chỉ còn mình anh
+Thật sự nhiều khi muốn nhắn tin gửi cho em nhiều
+Lại sợ người ấy đang hạnh phúc vui bên một ai
+Tình yêu đã chết…! Hai người dưng mai này chúng ta có duyên gặp lại
+Thì anh vẫn luôn luôn yêu em như lúc mới yêu`,
+      },
+    ],
+  },
+  {
+    id: 16,
+    albumName: "Manic",
+    interestTimes: 10,
+    releaseDate: "2018-10-04T15:16:03.269+07:00",
+    albumImage:
+      "https://t2.genius.com/unsafe/932x0/https%3A%2F%2Fimages.genius.com%2F958fa4649491000c741454bac1f134c4.1000x1000x1.png",
+    country: [
+      {
+        id: 4,
+        countryName: "US-UK",
+      },
+    ],
+    artist: [
+      {
+        id: 20,
+        artistName: "Halsey",
+        artistImage:
+          "https://tse4.mm.bing.net/th?id=OIP.KzWolxXGB8vdJushsDvucQHaEs&pid=Api&P=0&h=180",
+        numberOfFollower: "927.713",
+      },
+    ],
+    songs: [
+      {
+        id: "45",
+        songName: "Without Me",
+        representation: [
+          {
+            id: 20,
+            artistName: "Halsey",
+            artistImage:
+              "https://tse4.mm.bing.net/th?id=OIP.KzWolxXGB8vdJushsDvucQHaEs&pid=Api&P=0&h=180",
+            numberOfFollower: "927.713",
+          },
+        ],
+        songImage:
+          "https://t2.genius.com/unsafe/425x425/https%3A%2F%2Fimages.genius.com%2F9e29f201cb46dd5f9cbb8bd6a750753b.1000x1000x1.png",
+        isFavorite: 0,
+        timeLimit: "3:22",
+        songLink:
+          "https://res.cloudinary.com/dvmxvwqev/video/upload/v1686934258/musicplayer/audio/WithoutMe-Halsey-5693781_ptnik1.mp3",
+        releaseDate: "2018-10-04",
+        country: [
+          {
+            id: 4,
+            countryName: "US-UK",
+          },
+        ],
+        lyric: `[Verse 1]
+Found you when your heart was broke
+I filled your cup until it overflowed
+Took it so far to keep you close (Keep you close)
+I was afraid to leave you on your own (Ooh)
+
+[Pre-Chorus]
+I said I'd catch you if you fall (Fall)
+And if they laugh, then fuck 'em all (All)
+And then I got you off your knees
+Put you right back on your feet
+Just so you could take advantage of me
+
+[Chorus]
+Tell me, how's it feel sittin' up there?
+Feelin' so high, but too far away to hold me
+You know I'm the one who put you up there
+Name in the sky, does it ever get lonely?
+Thinkin' you could live without me
+Thinkin' you could live without me
+Baby, I'm the one who put you up there
+I don't know why (Yeah, I don't know why)
+Thinkin' you could live without me
+Live without me
+Baby, I'm the one who put you up there
+I don't know why (I don't know why, yeah, yeah)
+
+[Verse 2]
+Gave love 'bout a hundred tries (Hundred tries)
+Just runnin' from the demons in your mind
+Then I took yours and made 'em mine (Mine)
+I didn't notice 'cause my love was blind
+
+[Pre-Chorus]
+Said I'd catch you if you fall (Fall)
+And if they laugh, then fuck 'em all (All)
+And then I got you off your knees
+Put you right back on your feet
+Just so you could take advantage of me
+
+[Chorus]
+Tell me, how's it feel sittin' up there?
+Feelin' so high, but too far away to hold me
+You know I'm the one who put you up there
+Name in the sky, does it ever get lonely?
+Thinkin' you could live without me
+Thinkin' you could live without me
+Baby, I'm the one who put you up there
+I don't know why (Yeah, I don't know why)
+Thinkin' you could live without me
+Live without me
+Baby, I'm the one who put you up there
+I don't know why, yeah
+
+[Bridge]
+You don't have to say just what you did (What you did)
+I already know (I know)
+I had to go and find out from them (Oh-woah)
+So tell me, how's it feel? (Oh-woah)
+
+[Chorus]
+Tell me, how's it feel sittin' up there?
+Feelin' so high, but too far away to hold me
+You know I'm the one who put you up there
+Name in the sky, does it ever get lonely?
+Thinkin' you could live without me
+Thinkin' you could live without me
+Baby, I'm the one who put you up there
+I don't know why (Yeah, I don't know why)`,
+      },
+    ],
+  },
+  {
+    id: 17,
+    albumName: "Now and Then",
+    interestTimes: 10,
+    releaseDate: "1973-05-01T15:16:03.269+07:00",
+    albumImage:
+      "https://t2.genius.com/unsafe/932x0/https%3A%2F%2Fimages.genius.com%2Ff602d5f62d35b5b95195baa707b35ae7.1000x1000x1.jpg",
+    country: [
+      {
+        id: 4,
+        countryName: "US-UK",
+      },
+    ],
+    artist: [
+      {
+        id: 21,
+        artistName: "Carpenters",
+        artistImage:
+          "https://tse4.mm.bing.net/th?id=OIP.6rO3gQxUny4ABXnAzBe3EAHaHV&pid=Api&P=0&h=180",
+        numberOfFollower: "927.713",
+      },
+    ],
+    songs: [
+      {
+        id: "46",
+        songName: "Yesterday Once More",
+        representation: [
+          {
+            id: 21,
+            artistName: "Carpenters",
+            artistImage:
+              "https://tse4.mm.bing.net/th?id=OIP.6rO3gQxUny4ABXnAzBe3EAHaHV&pid=Api&P=0&h=180",
+            numberOfFollower: "927.713",
+          },
+        ],
+        songImage:
+          "https://t2.genius.com/unsafe/425x425/https%3A%2F%2Fimages.genius.com%2F6fd29816322fe93bdfa7139570e29f7c.535x541x1.jpg",
+        isFavorite: 0,
+        timeLimit: "4:01",
+        songLink:
+          "https://res.cloudinary.com/dvmxvwqev/video/upload/v1686934257/musicplayer/audio/YesterdayOnceMore-Carpenters_3qkq8_injbxr.mp3",
+        releaseDate: "1973-05-16",
+        country: [
+          {
+            id: 4,
+            countryName: "US-UK",
+          },
+        ],
+        lyric: `[Verse 1]
+When I was young, I'd listen to the radio
+Waitin' for my favorite songs
+When they played, I'd sing along
+It made me smile
+
+[Pre-Chorus 1]
+Those were such happy times
+And not so long ago
+How I wondered where they'd gone
+But they're back again
+Just like a long-lost friend
+All the songs I loved so well
+
+[Chorus 1]
+Every "sha-la-la-la"
+Every "whoa, whoa-oh" still shines
+Every "shing-a-ling-a-ling"
+That they're starting to sing so fine
+When they get to the part
+Where he's breaking her heart
+It can really make me cry
+Just like before, it's yesterday once more
+(Shoobie-doo, lang, lang)
+(Shoobie-doo, lang, lang)
+
+[Verse 2]
+Lookin' back on how it was in years gone by
+And the good times that I had
+Makes today seem rather sad
+So much has changed
+
+[Pre-Chorus 2]
+It was songs of love
+That I would sing to them
+And I'd memorize each word
+Those old melodies
+Still sound so good to me
+As they melt the years away
+
+[Chorus 2]
+Every "sha-la-la-la"
+Every "whoa, whoa-oh" still shines
+(Only oldies, but goodies)
+Every "shing-a-ling-a-ling"
+That they're starting to sing so fine
+All my best memories
+Come back clearly to me
+Some can even make me cry
+Just like before, it's yesterday once more
+(Shoobie-doo, lang, lang)
+
+[Outro]
+Every "sha-la-la-la"
+Every "whoa, whoa-oh" still shines
+Every "shing-a-ling-a-ling"
+That they're starting to sing so fine
+Every "sha-la-la-la"
+Every "whoa, whoa-oh" still shines
+Every "shing-a-ling-a-ling"
+That they're starting to sing so fine...`,
+      },
+    ],
+  },
+  {
+    id: 18,
+    albumName: "~how i’m feeling~",
+    interestTimes: 10,
+    releaseDate: "2020-03-06T15:16:03.269+07:00",
+    albumImage:
+      "https://t2.genius.com/unsafe/425x425/https%3A%2F%2Fimages.genius.com%2Fb5472fff30b72d1a961d96760bb90209.1000x1000x1.png",
+    country: [
+      {
+        id: 4,
+        countryName: "US-UK",
+      },
+    ],
+    artist: [
+      {
+        id: 22,
+        artistName: "Lauv",
+        artistImage:
+          "https://tse1.mm.bing.net/th?id=OIP.KDo8oD9jyIgJF3Smhlq3-wHaHa&pid=Api&P=0&h=180",
+        numberOfFollower: "927.713",
+      },
+    ],
+    songs: [
+      {
+        id: "47",
+        songName: "Who (ft. BTS)",
+        representation: [
+          {
+            id: 22,
+            artistName: "Lauv",
+            artistImage:
+              "https://tse1.mm.bing.net/th?id=OIP.KDo8oD9jyIgJF3Smhlq3-wHaHa&pid=Api&P=0&h=180",
+            numberOfFollower: "927.713",
+          },
+          {
+            id: 3,
+            artistName: "BTS",
+            artistImage:
+              "https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/02/21/10/bts.jpg?quality=75&width=990&crop=4%3A3%2Csmart&auto=webp",
+            numberOfFollower: "927.713",
+          },
+        ],
+        songImage:
+          "https://t2.genius.com/unsafe/425x425/https%3A%2F%2Fimages.genius.com%2Fb5472fff30b72d1a961d96760bb90209.1000x1000x1.png",
+        isFavorite: 1,
+        timeLimit: "2:56",
+        songLink:
+          "https://res.cloudinary.com/dvmxvwqev/video/upload/v1686934254/musicplayer/audio/Who-LauvBTSBangtanBoys-6231342_qgk9wd.mp3",
+        releaseDate: "2020-03-06",
+        country: [
+          {
+            id: 4,
+            countryName: "US-UK",
+          },
+        ],
+        lyric: `[Verse 1: Lauv]
+Outlines of your eyes and visions of you
+Girl, I think I need a minute
+To figure out what is, what isn't
+These choices and voices, they're all in my head
+Sometimes you make me feel crazy
+Sometimes I swear I think you hate me like, uh
+I need a walk, I need a walk
+I need to get outta here
+'Cause I need to know
+
+[Chorus: Lauv]
+Who are you?
+'Cause you're not the girl I fell in love with, baby
+Who are you?
+'Cause something has changed, you're not the same, I hate it
+I, I'm sick of waiting for love, love
+I, I know that you're not the one, one
+
+[Verse 2: Jungkook & Jimin]
+Feelin' hypnotized by the words that you said
+Don't lie to me, just get in my head
+When the morning comes you're still in my bed
+But it's so, so cold
+Who are you?
+'Cause you're not the girl I fell in love with
+
+[Chorus: Lauv & Jungkook, Jimin]
+Who are you?
+'Cause you're not the girl I fell in love with, baby
+Who are you? (Who are you?)
+'Cause something has changed, you're not the same, I hate it
+I, I'm sick of waiting for love, love
+I, I know that you're not the one, one`,
+      },
+    ],
+  },
+  {
+    id: 19,
+    albumName: "Coast to Coast",
+    interestTimes: 10,
+    releaseDate: "2000-11-06T15:16:03.269+07:00",
+    albumImage:
+      "https://t2.genius.com/unsafe/932x0/https%3A%2F%2Fimages.genius.com%2F4ca0769a0e4a8efaa6af5a68e5ddfe6a.800x800x1.jpg",
+    country: [
+      {
+        id: 4,
+        countryName: "US-UK",
+      },
+    ],
+    artist: [
+      {
+        id: 26,
+        artistName: "Westlife",
+        artistImage:
+          "https://tse2.mm.bing.net/th?id=OIP.tP6T0zb5BiJ8gnwNeLl1lQHaFc&pid=Api&P=0&h=180",
+        numberOfFollower: "927.713",
+      },
+    ],
+    songs: [
+      {
+        id: "51",
+        songName: "Soledad",
+        representation: [
+          {
+            id: 26,
+            artistName: "Westlife",
+            artistImage:
+              "https://tse2.mm.bing.net/th?id=OIP.tP6T0zb5BiJ8gnwNeLl1lQHaFc&pid=Api&P=0&h=180",
+            numberOfFollower: "927.713",
+          },
+        ],
+        songImage:
+          "https://t2.genius.com/unsafe/425x425/https%3A%2F%2Fimages.genius.com%2F4ca0769a0e4a8efaa6af5a68e5ddfe6a.800x800x1.jpg",
+        isFavorite: 0,
+        timeLimit: "3:48",
+        songLink:
+          "https://res.cloudinary.com/dvmxvwqev/video/upload/v1686934227/musicplayer/audio/Soledad-Westlife_38u3d_vpmjm7.mp3",
+        releaseDate: "2000-11-06",
+        country: [
+          {
+            id: 4,
+            countryName: "US-UK",
+          },
+        ],
+        lyric: `[Verse 1]
+If only you could see the tears
+In the world you left behind
+If only you could heal my heart just one more time
+Even when I close my eyes
+There's an image of your face
+And once again I come to realise
+You're a loss I can't replace
+
+[Chorus]
+Soledad
+It's the keeping for the lonely
+Since the day that you were gone
+Why did you leave me?
+Soledad
+In my heart, you were the only
+And your memory lives on
+Why did you leave me?
+Soledad
+
+[Verse 2]
+Walking down the streets of Nothingville
+Where our love was young and free
+Can't believe just what an empty place it has come to be
+I would give my life away
+If that could only be the same
+'Cause I can't still the voice inside of me
+That is calling out your name (Calling out your name)
+
+[Chorus]
+Soledad
+It's the keeping for the lonely
+Since the day that you were gone
+Why did you leave me?
+Soledad
+In my heart, you were the only
+And your memory lives on
+Why did you leave me?
+Soledad
+
+[Bridge]
+Time will never change the things you told me
+But after all, we're meant to be
+Love will bring us back to you and me
+If only you could see
+
+[Chorus]
+Soledad (Soledad)
+It's the keeping for the lonely
+Since the day that you were gone (You were gone)
+Why did you leave me?
+Soledad
+In my heart, you were the only
+And your memory lives on
+Why did you leave me?
+Soledad (Soledad)
+It's the keeping for the lonely (Keeping for the lonely)
+Since the day that you were gone
+Why did you leave me?
+Soledad
+In my heart, you were the only
+And your memory lives on
+Why did you leave me?
+Soledad
+
+[Outro]
+Soledad
+Why did you leave me Soledad?`,
+      },
+    ],
+  },
+  {
+    id: 20,
+    albumName: "Only Love",
+    interestTimes: 10,
+    releaseDate: "2012-06-20T15:16:03.269+07:00",
+    albumImage:
+      "https://assets.genius.com/images/default_cover_art.png?1686857832",
+    country: [
+      {
+        id: 4,
+        countryName: "US-UK",
+      },
+    ],
+    artist: [
+      {
+        id: 1,
+        artistName: "Trademark",
+        artistImage:
+          "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQQBiRMWQlGXhL2kXESEBNFL6d1BzuzmkZPkStrvoYJWAywjp4R",
+        numberOfFollower: "97.713",
+      },
+    ],
+    songs: [
+      {
+        id: "1",
+        songName: "Only Love",
+        representation: [
+          {
+            id: 1,
+            artistName: "Trademark",
+            artistImage:
+              "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQQBiRMWQlGXhL2kXESEBNFL6d1BzuzmkZPkStrvoYJWAywjp4R",
+            numberOfFollower: "97.713",
+          },
+        ],
+        songImage:
+          "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQQBiRMWQlGXhL2kXESEBNFL6d1BzuzmkZPkStrvoYJWAywjp4R",
+        isFavorite: 1,
+        timeLimit: "4:07",
+        songLink:
+          "https://res.cloudinary.com/dvmxvwqev/video/upload/v1686934206/musicplayer/audio/OnlyLove-Trademark-437693_pvkrnr.mp3",
+        releaseDate: "2012-06-20",
+        country: [
+          {
+            id: 4,
+            countryName: "US-UK",
+          },
+        ],
+        lyric: `2 a.m. and the rain is falling
+Here we are at the crossroads once again
+You're telling me you're so confused
+You can't make up your mind
+Is this meant to be
+You're asking me
+
+But only love can say - try again or walk away
+But i believe for you and me
+The sun will shine one day
+So i'll just play my part
+And pray you'll have a change of heart
+But i can't make you see it through
+That's something only love can do
+
+In your arms as the dawn is breaking
+Face to face and a thousand miles apart
+I've tried my best to make you see
+There's hope beyond the pain
+If we give enough, if we learn to trust
+
+Chorus
+
+I know if i could find the words
+To touch you deep inside
+You'd give our dream just one more chance
+Don't let this be our last good-bye
+`,
       },
     ],
   },

@@ -34,8 +34,8 @@ export const SidebarData = [
     icon: <BarChartRounded sx={{ fontSize: "1.7vw" }} />,
   },
   {
-    title: "Top 100",
-    path: "/top100",
+    title: "Top album",
+    path: "/topalbum",
     icon: <TrendingUpRounded sx={{ fontSize: "1.7vw" }} />,
   },
   {

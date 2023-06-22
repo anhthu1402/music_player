@@ -5,6 +5,7 @@ import MusicPlayer from "./MusicPlayer";
 import AppAppBar from "./AppAppBar";
 import Notification from "./Notification";
 import NavBarPlaylist from "./NavBarPlaylist";
+import MusicPlayerSongUpload from "./MusicPlayerSongUpload";
 
 function AppRoot() {
   return (
@@ -35,6 +36,7 @@ function AppRoot() {
             }}
           >
             <MusicPlayer />
+            <MusicPlayerSongUpload />
           </div>
           <Notification />
           <NavBarPlaylist />

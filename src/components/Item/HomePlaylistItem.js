@@ -10,13 +10,20 @@ import MusicPlayerContext from "../../MusicPlayerContext";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/PlaylistAlbum.css";
-import { addFavPlaylist, removeFromFavPlaylist } from "../../service";
+import {
+  addFavPlaylist,
+  removeFromFavPlaylist,
+  showNotification,
+} from "../../service";
 import PlaylistPopup from "../PlaylistPopup";
 import { Tooltip } from "@mui/material";
 import JSZip from "jszip";
 import saveAs from "file-saver";
+import NotificationContext from "../../NotificationContext";
+import { useSelector } from "react-redux";
 
 function PlaylistAtHome({ item }) {
+  const { isAuthed } = useSelector((state) => state.auth);
   const tracks = item.songPlaylist;
   const song = useContext(MusicPlayerContext);
   const length = tracks.length;
@@ -40,6 +47,7 @@ function PlaylistAtHome({ item }) {
   const closePopup = () => popupRef.current.close();
   const openPopup = () => popupRef.current.open();
   const [isFavorite, setFavorite] = useState(false);
+  const notification = useContext(NotificationContext);
   const downloadPlaylist = () => {
     const zip = new JSZip();
     tracks.map((item, index) => {
@@ -54,6 +62,7 @@ function PlaylistAtHome({ item }) {
     //   notification.setContent("Đã tải " + length + " bài hát.");
     // }, 2000);
   };
+  const [playlistName, setPlaylistName] = useState(item.playlistName);
 
   return (
     <>
@@ -65,24 +74,46 @@ function PlaylistAtHome({ item }) {
           title={item.playlistName}
         />
         <div className="playPlaylist">
-          {isFavorite ? (
-            <FavoriteRounded
-              className="icon"
-              fontSize="large"
-              style={{ color: "#ff7394" }}
-              onClick={() => {
-                removeFromFavPlaylist(item.id, userId);
-                setFavorite(false);
-              }}
-            />
+          {isAuthed ? (
+            isFavorite ? (
+              <FavoriteRounded
+                className="icon"
+                fontSize="large"
+                style={{ color: "#ff7394" }}
+                onClick={() => {
+                  removeFromFavPlaylist(item.id, userId);
+                  setFavorite(false);
+                  showNotification(
+                    notification,
+                    "Đã xóa playlist khỏi thư viện yêu thích"
+                  );
+                }}
+              />
+            ) : (
+              <FavoriteBorderOutlined
+                className="icon"
+                fontSize="large"
+                style={{ color: "white" }}
+                onClick={() => {
+                  addFavPlaylist(item.id, userId);
+                  setFavorite(true);
+                  showNotification(
+                    notification,
+                    "Đã thêm playlist vào thư viện yêu thích"
+                  );
+                }}
+              />
+            )
           ) : (
             <FavoriteBorderOutlined
               className="icon"
               fontSize="large"
               style={{ color: "white" }}
               onClick={() => {
-                addFavPlaylist(item.id, userId);
-                setFavorite(true);
+                showNotification(
+                  notification,
+                  "Đăng nhập để thêm playlist vào thư viện yêu thích"
+                );
               }}
             />
           )}
@@ -109,6 +140,7 @@ function PlaylistAtHome({ item }) {
             closePopup={closePopup}
             length={length}
             downloadPlaylist={downloadPlaylist}
+            setPlaylistName={setPlaylistName}
           />
         </div>
       </div>

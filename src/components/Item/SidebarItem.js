@@ -6,13 +6,14 @@ import SidebarContext from "../../SidebarContext";
 import { useRef } from "react";
 import Popup from "reactjs-popup";
 import { Button } from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function SidebarItem({ item }) {
   const popupRef = useRef();
   const openPopup = () => popupRef.current.open();
   const closePopup = () => popupRef.current.close();
-  const userId = 1;
   const sidebar = useContext(SidebarContext);
+  const { isAuthed } = useSelector((state) => state.auth);
   return (
     <div
       className="sidebar-item plain"
@@ -28,8 +29,8 @@ export default function SidebarItem({ item }) {
         );
         sessionStorage.setItem("sidebarPath", JSON.stringify(item.title));
         sidebar.setPathName(item.title);
-        if (item.title === "Thư viện") {
-          if (userId !== 1) {
+        if (item.title === "Thư viện" || item.title === "Gần đây") {
+          if (!isAuthed) {
             openPopup();
           }
         }

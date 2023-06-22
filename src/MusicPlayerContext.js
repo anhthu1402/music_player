@@ -4,6 +4,9 @@ export const MusicPlayerProvider = ({ children }) => {
   const [isUsing, setUsing] = useState(
     localStorage.getItem("song") === null ? false : true
   );
+  const [isUsingUpload, setUsingUpload] = useState(
+    localStorage.getItem("isUsing") === null ? false : true
+  );
   const [tracks, setTracks] = useState(
     localStorage.getItem("tracks") !== null
       ? JSON.parse(localStorage.getItem("tracks"))
@@ -47,6 +50,8 @@ export const MusicPlayerProvider = ({ children }) => {
         setPlay,
         currentTime,
         setCurrentTime,
+        isUsingUpload,
+        setUsingUpload,
       }}
     >
       {children}

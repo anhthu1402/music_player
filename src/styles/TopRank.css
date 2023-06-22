@@ -1,22 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap");
 .top100Container {
-    overflow: hidden;
-    padding: 10px;
-    margin: 0 auto;
-    max-width: 1920px;
+  overflow: hidden;
+  padding: 10px;
+  margin: 0 auto;
+  max-width: 1920px;
 }
 .top100Container h1.top100Heading {
-    font-family: "Fredoka", sans-serif;
-    text-shadow: 0 0 0 12px #699afb;
-    font-size: 5rem;
-    background-image: -webkit-linear-gradient(#699afb, #f4b2e9);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center;
+  font-family: "Fredoka", sans-serif;
+  text-shadow: 0 0 0 12px #699afb;
+  font-size: 5rem;
+  background-image: -webkit-linear-gradient(#699afb, #f4b2e9);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin: 0;
 }
 .top100Container .top100TitleGenre {
-    font-weight: bold;
-    font-size: 1.3em;
+  font-weight: bold;
+  font-size: 1.5em;
+  margin: 20px 0;
 }
 
 .top100Container .listTop100 {
@@ -34,13 +36,13 @@
   @media (max-width: 1135px) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     .listPlaylists {
-        max-width: 200px;
+      max-width: 200px;
     }
     @media (max-width: 905px) {
-        grid-template-columns: 1fr 1fr 1fr;
-        .listPlaylists {
-            max-width: 150px;
-        }
+      grid-template-columns: 1fr 1fr 1fr;
+      .listPlaylists {
+        max-width: 150px;
+      }
     }
   }
 }

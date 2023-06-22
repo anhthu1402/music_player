@@ -7,6 +7,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useContext } from "react";
 import MusicPlayerContext from "../MusicPlayerContext";
 import Popup from "reactjs-popup";
+import { useSelector } from "react-redux";
 
 function Library() {
   const musicPlayer = useContext(MusicPlayerContext);
@@ -14,11 +15,11 @@ function Library() {
   const match = search.match(/type=(.*)/);
   const type = match?.[1];
   const [song, setSongPage] = useState(type === "song" ? true : false);
-  const userId = 1;
+  const { isAuthed } = useSelector((state) => state.auth);
 
   return (
     <div className="library">
-      {userId === 1 ? (
+      {isAuthed ? (
         <div>
           <div className="libraryHeader">
             <h1 style={{ fontSize: "2.1vw" }}>Thư viện</h1>

@@ -7,6 +7,10 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { Alert, IconButton, Input } from "@mui/material";
 import { Error, PersonRounded } from "@mui/icons-material";
 import { useRef } from "react";
+import { authActions } from "../stores/auth";
+import { useDispatch } from "react-redux";
+import SidebarContext from "../SidebarContext";
+import { useContext } from "react";
 
 function SignUp() {
   const [values, setValues] = useState(false);
@@ -24,10 +28,11 @@ function SignUp() {
 
   const navigate = useNavigate();
 
+  const sidebar = useContext(SidebarContext);
   const usernameRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
-
+  const dispatch = useDispatch();
   const signupHandler = () => {
     const username = usernameRef.current.value;
     const password = passwordRef.current.value;
@@ -53,8 +58,14 @@ function SignUp() {
     // sign up successfully
     setError(null);
     setShowAlert(false);
-    console.log(username, password, passwordConfirm);
-    navigate("/signIn");
+    const user = {
+      username,
+      password,
+    };
+    dispatch(authActions.setAuth(user));
+    navigate("/home");
+    localStorage.setItem("sidebarPath", JSON.stringify("Khám phá"));
+    sidebar.setPathName("Khám phá");
   };
 
   return (

@@ -7,6 +7,7 @@ import { Avatar, Button } from "@mui/material";
 import {
   PlayCircleFilledRounded,
   PersonAddAltRounded,
+  HowToRegRounded,
 } from "@mui/icons-material";
 import { SongData } from "../components/Data/SongData";
 import TrackItem from "../components/Item/TrackItem";
@@ -14,8 +15,11 @@ import { Grid, Box } from "@mui/material";
 import ArtistAlbumItem from "../components/Item/ArtistAlbumItem";
 import NotificationContext from "../NotificationContext";
 import { AlbumData } from "../components/Data/AlbumData";
+import { showNotification } from "../service";
+import { useSelector } from "react-redux";
 
 function Artist() {
+  const { isAuthed } = useSelector((state) => state.auth);
   const notification = useContext(NotificationContext);
   const player = useContext(MusicPlayerContext);
   const location = useLocation();
@@ -53,6 +57,7 @@ function Artist() {
     localStorage.setItem("currentTime", 0);
     player.setCurrentTime(0);
   };
+  const [follow, setFollow] = useState(isAuthed ? artist.isFollow : false);
   return (
     <div>
       {artist && (
@@ -89,12 +94,53 @@ function Artist() {
                 <h4 style={{ fontSize: "1.2vw" }}>
                   {artist.numberOfFollower} người theo dõi
                 </h4>
-                <Button className="followBtn">
-                  <PersonAddAltRounded
-                    sx={{ marginRight: "1vw", fontSize: "1.5vw" }}
-                  />{" "}
-                  Theo dõi
-                </Button>
+                {isAuthed ? (
+                  follow ? (
+                    <Button
+                      className="followBtn"
+                      onClick={() => {
+                        setFollow(false);
+                        showNotification(
+                          notification,
+                          "Đã hủy theo dõi nghệ sĩ"
+                        );
+                      }}
+                    >
+                      <HowToRegRounded
+                        sx={{ marginRight: "1vw", fontSize: "1.5vw" }}
+                      />{" "}
+                      Đã theo dõi
+                    </Button>
+                  ) : (
+                    <Button
+                      className="followBtn"
+                      onClick={() => {
+                        setFollow(true);
+                        showNotification(notification, "Đã theo dõi nghệ sĩ");
+                      }}
+                    >
+                      <PersonAddAltRounded
+                        sx={{ marginRight: "1vw", fontSize: "1.5vw" }}
+                      />{" "}
+                      Theo dõi
+                    </Button>
+                  )
+                ) : (
+                  <Button
+                    className="followBtn"
+                    onClick={() => {
+                      showNotification(
+                        notification,
+                        "Đăng nhập để sử dụng tính năng này"
+                      );
+                    }}
+                  >
+                    <PersonAddAltRounded
+                      sx={{ marginRight: "1vw", fontSize: "1.5vw" }}
+                    />{" "}
+                    Theo dõi
+                  </Button>
+                )}
               </div>
             </div>
           </div>

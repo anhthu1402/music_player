@@ -17,6 +17,9 @@ import Chart from "./pages/Chart";
 import AllArtistSongs from "./components/AllArtistSongs";
 import AllArtistAlbums from "./components/AllArtistAlbums";
 import NavBarPlaylist from "./components/NavBarPlaylist";
+import { MusicPlayerSongUploadProvider } from "./MusicplayerSongUploadContext";
+import store from "./stores/store";
+import { Provider } from "react-redux";
 
 function App() {
   window.onbeforeunload = localStorage.setItem("play", JSON.stringify(false));
@@ -78,7 +81,7 @@ function App() {
           element: <Chart />,
         },
         {
-          path: "top100",
+          path: "topalbum",
           element: <TopRank />,
         },
         {
@@ -90,9 +93,13 @@ function App() {
   ]);
 
   return (
-    <MusicPlayerProvider>
-      <RouterProvider router={router} />
-    </MusicPlayerProvider>
+    <Provider store={store}>
+      <MusicPlayerProvider>
+        <MusicPlayerSongUploadProvider>
+          <RouterProvider router={router} />
+        </MusicPlayerSongUploadProvider>
+      </MusicPlayerProvider>
+    </Provider>
   );
 }
 

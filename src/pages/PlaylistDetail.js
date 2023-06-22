@@ -61,7 +61,7 @@ const PlaylistDetail = () => {
       saveAs(content, "uitmp3.zip");
     });
   };
-  const [playlistName, setName] = useState(playlistDetail.playlistName);
+  const [playlistName, setPlaylistName] = useState(playlistDetail.playlistName);
   return (
     <div className="playlistDetailContainer">
       {playlistDetail && (
@@ -83,20 +83,28 @@ const PlaylistDetail = () => {
               >
                 {playlistName}
                 <EditRounded
-                  sx={{ marginLeft: "10px", cursor: "pointer" }}
+                  sx={
+                    playlistDetail.user === "Anh Thư"
+                      ? { marginLeft: "10px", cursor: "pointer" }
+                      : { marginLeft: "10px", cursor: "default" }
+                  }
                   onClick={() => {
-                    if (userId === 1) {
+                    if (playlistDetail.user === "Anh Thư") {
                       openModifyPopup();
                     }
                   }}
                 />
-                <ModifyPlaylist
-                  id={playlistDetail.id}
-                  modifyRef={modifyRef}
-                  name={playlistDetail.playlistName}
-                  setName={setName}
-                  closeModifyPopup={closeModifyPopup}
-                />
+                {playlistDetail.user === "Anh Thư" ? (
+                  <ModifyPlaylist
+                    id={playlistDetail.id}
+                    modifyRef={modifyRef}
+                    name={playlistDetail.playlistName}
+                    setPlaylistName={setPlaylistName}
+                    closeModifyPopup={closeModifyPopup}
+                  />
+                ) : (
+                  <div></div>
+                )}
               </p>
               <p
                 style={{
@@ -125,6 +133,7 @@ const PlaylistDetail = () => {
                     popupRef={popupRef}
                     closePopup={closePopup}
                     downloadPlaylist={downloadPlaylist}
+                    setPlaylistName={setPlaylistName}
                   />
                 </button>
               </div>

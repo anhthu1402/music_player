@@ -101,10 +101,11 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 12vw;
+  width: 24vw;
   max-width: 400px;
 }
-.item .songDetail .trackDuration {
+.item .songDetail .trackDuration,
+.songUploadtrackDuration {
   position: absolute;
   top: 33%;
   right: 0;
