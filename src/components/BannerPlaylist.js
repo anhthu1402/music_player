@@ -80,10 +80,7 @@ function BannerPlaylist() {
           (item, index) =>
             index < 4 && (
               <div className="slider">
-                <Link
-                  to={`/playlistDetail/${item.playlistName}`}
-                  state={item.id}
-                >
+                <Link to={`/playlistDetail/${item.playlistName}`} state={item}>
                   <img
                     key={index}
                     title={item.playlistName}
