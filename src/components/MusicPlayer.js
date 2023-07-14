@@ -83,8 +83,12 @@ const MusicPlayer = () => {
   let source = musicPlayer.isUsing ? array[index].songLink : "Aloha.mp3";
   let imgUrl = musicPlayer.isUsing ? array[index].songImage : "Logo.png";
   window.onbeforeunload = function () {
-    localStorage.setItem("song", JSON.stringify(song));
-    localStorage.setItem("index", JSON.stringify(musicPlayer.songIndex));
+     if(song!==""){
+      localStorage.setItem("song", JSON.stringify(song));
+    }
+    if(index!==0){
+      localStorage.setItem("index", JSON.stringify(index));
+    }
   };
   const handleLoadedData = () => {
     setDuration(Math.ceil(audioRef.current.duration));

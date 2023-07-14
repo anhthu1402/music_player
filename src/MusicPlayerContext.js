@@ -13,12 +13,12 @@ export const MusicPlayerProvider = ({ children }) => {
       : []
   );
   const [song, setSong] = useState(
-    localStorage.getItem("song") !== null
+    JSON.parse(localStorage.getItem("song")) !== ""
       ? JSON.parse(localStorage.getItem("song"))
       : ""
   );
   const [songIndex, setSongIndex] = useState(
-    localStorage.getItem("index") !== null
+    JSON.parse(localStorage.getItem("song")) !== ""
       ? JSON.parse(localStorage.getItem("index"))
       : 0
   );
