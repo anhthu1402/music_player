@@ -401,8 +401,8 @@ function TrackItem({ item, song, notification, index, tracks }) {
                     showNotification(
                       notification,
                       "Đã thêm bài hát vào playlist " +
-                        playlist.playlistName +
-                        "."
+                      playlist.playlistName +
+                      "."
                     );
                   }}
                 >
